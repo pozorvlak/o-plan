@@ -1,0 +1,208 @@
+<html>
+<head>
+<title>AIAI SUO/PDA MOUT Demonstration</title>
+</head>
+
+<body bgcolor="#ffffff">
+
+<center>
+<table>
+<tr>
+<td><img src="img/darpa.gif" hspace=10 alt="DARPA"></td>
+<td><b><font size="+2">Small Unit Operations<br>
+Planning &amp; Decision Aids</font></b></td>
+</tr>
+</table>
+</center>
+<p>
+<hr>
+<p>
+
+<img align=right src="img/soldier.gif" hspace=10>
+
+<h2>MOUT Demonstration</h2>
+
+This is an initial demonstration of plan generation, execution monitoring
+and plan repair for Small Unit Operations (SUO) forces performing Military
+Operations in Urban Terrain (MOUT). The SUO forces are equipped with a
+Situation Awareness System (SAS) which includes a Planning and Decision Aid 
+(PDA) which is intended to assist them in generating, refining, selecting,
+communicating, executing and repairing plans across multiple echelons.
+
+<h2>Demonstration Features</h2>
+
+<ul>
+<li> Generation of alternative COAs under different initial assumptions;
+<li> En route replanning to deal with dynamic situations;
+<li> Plan execution tracking to deal with failures or unexpected events;
+<li> Considered plan repair during the low tempo phase of the mission;
+<li> Fast plan repair during the high tempo phase of the mission;
+<li> Consideration of interfaces to target SUO/SAS environment.
+</ul>
+
+<br clear=all>
+
+<h2>Story Board</h2>
+
+<p>
+<a href="img/mout-col.gif">
+<img align=right src="img/mout-col-small.gif">
+</a>
+
+<b>Initial situation:</b> the action takes place in the village of El
+McKenna (shown right). 17 Opposing Force (OPFOR) soldiers are holding
+the local population as hostages in the three central buildings (32,
+33 and 41). A Small Unit Operations Company is to be sent to
+neutralise the OPFOR threat and free the civilians. The SUO company
+start from a base camp about 20km from the village. They are to be
+transported by helicopter to two landing zones several kilometres from
+the village, march to form Operation Reconnaissance Points (ORPs) on
+the perimeter of the village, then enter the village and free the
+hostages.
+
+<p><b>Constructing a plan:</b> the company commander sets the objectives
+for the overall mission. The objectives editor allows the commander
+to set up the Operation Order (OPORD) for the mission in four parts: 
+assumed situation, assets and resources available, mission and time 
+available.
+
+<p><b>Setting the objectives:</b> the 
+commander specifies the mission as three tasks to rescue the 
+hostages from the three buildings. The commander can also specify 
+the platoon to be used and the toehold building to be used for each 
+of the three tasks. In this scenario the commander explores the use
+of different toehold buildings. The first COA is set up as follows:
+
+<br clear=all>
+
+<p>
+<table border=1>
+<tr><th>Task</th><th>Performer</th><th>Toehold</th><th>Target</th></tr>
+<tr><td>rescue_hostages</td><td>platoon_1</td>
+    <td>building_34</td><td>building_33</td>
+</tr>
+<tr><td>rescue_hostages</td><td>platoon_2</td>
+    <td>building_21</td><td>building_32</td>
+</tr>
+<tr><td>rescue_hostages</td><td>platoon_4</td>
+    <td>building_46</td><td>building_41</td>
+</tr>
+</table>
+
+<p><b>Plan generation:</b> the commander sets the time available to
+4 hours. The commander sets this as the first
+possible mission specification and asks O-Plan to generate a plan.
+This completes successfully, but the time taken is longer than 4 hours.
+On examining the plan, the problem is found to be the use of building 21: 
+this is a large building which take a long time to clear. The commander 
+now sets up a second COA, based on the first but using building 31 as the
+toehold for 2nd platoon instead of 21. This second plan completes within
+the required 4 hours.
+
+<br clear=all>
+
+<p>
+<a href="img/4th-platoon-new-approach.gif">
+<img align=right src="img/4th-platoon-new-approach-small.gif">
+</a>
+
+<p><b>En-route replanning:</b> the company is now dispatched in
+helicopters to the two landing zones. During the flight, the company 
+commander is informed by the recon team on the ground that OPFOR have
+been preparing booby traps in building 46. The commander therefore
+generates a new COA to deal with this, using building 42 as the toehold
+for the 4th platoon rather than building 46 (shown right). Since the new 
+COA completes within the available time, the commander tells the leader 
+of the fourth platoon to go in via building 42.
+
+<p><b>Execution:</b> the helicopters arrive at the landing zone and the
+commander then selects the chosen plan for execution. At this point in
+the demonstration a scenario page will now appear which allows the user
+to select which problems will be encountered during execution. The user
+should select ``concertina wire'' and ``snipers''.
+
+<p><b>Concertina wire:</b> execution of the plan proceeds smoothly until
+4th platoon reach their ORP, 200 yards East of building 42. At this point
+the scouts observe that OPFOR have prepared concertina wire in the open
+ground between the ORP and building 42, making the initial plan of moving
+directly into building 42 invalid. A number of options are available for
+plan repair: go around the wire, cut through, use satchel charges to blow
+through the wire, use the Bangalore torpedoes (currently assigned to 1st
+platoon), use the engineering team (currently assigned to 2nd platoon).
+Having viewed the options, the leader of 4th platoon decides to cut through
+the wire. Going around is risky since it takes the platoon into unknown
+ground where a trap may have been laid, satchel charges may not work and
+the other two options add too much delay to the plan.
+
+<br clear=all>
+
+<p>
+<a href="img/sniper1.gif">
+<img align=right src="img/sniper1-small.gif">
+</a>
+
+<p><b>Snipers:</b> the 1st platoon takes its toehold building (34) 
+successfully but encounters two snipers shooting from building 32 and 
+building 46. The two images (see right)
+show the views that the two snipers have onto building 34.
+There are a number of options available to the leader of the 1st
+platoon for each sniper: suppress with other friendly unit, suppress
+with Advanced Fire Support System (AFSS), suppress with well-aimed
+smoke, use a tactical air strike, etc. However, not all of these are 
+suitable: for example, AFSS and air strikes
+cannot be used if a friendly unit is occupying or planning to occupy
+the building. Suppress with other friendly unit is suitable when the
+other unit will be passing through the building that the sniper is
+occupying. The option of throwing smoke is available so long as the
+platoon holds sufficient smoke grenades.
+
+<br clear=all>
+
+<p>
+<a href="img/sniper2.gif">
+<img align=right src="img/sniper2-small.gif">
+</a>
+
+<p>In the chosen scenario, the snipers are in building 32 and 46. 
+Since 2nd platoon are using building 32 as their toehold, one possible
+option is for them to assist 1st platoon by suppressing this sniper. 
+However, since this building will eventually be occupied by the 2nd 
+platoon, using AFSS or air strikes is not possible. For the other sniper, 
+the three options are to use the AFSS, air strike or throw smoke. 
+The leader of the 1st platoon elects to suppress the first sniper with 
+fire from 2nd platoon and the second sniper with fire from the AFSS.
+The adjusted plan now executes to completion.
+
+<h2>Contributing Technology</h2>
+
+<ul>
+<li><a href="http://www.aiai.ed.ac.uk/~oplan">O-Plan</a>
+<li><a href="http://www.aiai.ed.ac.uk/~arpi/ACP3/1.1/">O-P3</a>
+<li><a href="http://www.aiai.ed.ac.uk/project/ix">I-X Technology</a>
+</ul>
+
+<br clear=all>
+
+<p>
+<table border=1 cellspacing=0 cellpadding=2 width=100%>
+<tr>
+<td align=center valign=center bgcolor=#cccccc>
+<font size=-1>
+<a href="http://www.aiai.ed.ac.uk/">AIAI</a> |
+<a href="http://www.ai.sri.com/">SRI AI Center</a>
+</font>
+</td>
+</tr>
+</table>
+
+<a href="/"><img width=82 height=37 alt="AIAI" align=right border=0
+src="/img/logo/small.gif"></a>
+
+<font size="-2">
+Page maintained by <a href="mailto:J.Levine@ed.ac.uk">John Levine
+(J.Levine@ed.ac.uk)</a>,
+Last updated: Thu Jan 27 14:03:45 2000
+</font><p>
+
+</body>
+</html>

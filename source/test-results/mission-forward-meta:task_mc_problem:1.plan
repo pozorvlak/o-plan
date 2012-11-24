@@ -1,0 +1,334 @@
+
+;;; Statistics:
+(
+(:am-cycles . 28)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 5)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(from . 1)
+(move . 2)
+(task_mc_problem . 0)
+)
+
+;;; Effect levels:
+(
+(tried . 1)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-2 :end))
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (from (left 3 3 0 0))
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-3-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 0 2)
+)
+(node-3-2
+   ((node-3-1 :end))
+   ((node-3-2-1 :begin))
+   ((node-3-2-2 :end))
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (right 3 1 0 2))
+)
+(node-3-2-1
+   ((node-3-2 :begin))
+   nil
+   nil
+   ((node-3-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 0 1)
+)
+(node-3-2-2
+   ((node-3-2-1 :end))
+   ((node-3-2-2-1 :begin))
+   ((node-3-2-2-2 :end))
+   ((node-3-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (left 3 2 0 1))
+)
+(node-3-2-2-1
+   ((node-3-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 0 2)
+)
+(node-3-2-2-2
+   ((node-3-2-2-1 :end))
+   ((node-3-2-2-2-1 :begin))
+   ((node-3-2-2-2-2 :end))
+   ((node-3-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (right 3 0 0 3))
+)
+(node-3-2-2-2-1
+   ((node-3-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 0 1)
+)
+(node-3-2-2-2-2
+   ((node-3-2-2-2-1 :end))
+   ((node-3-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2 :end))
+   ((node-3-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (left 3 1 0 2))
+)
+(node-3-2-2-2-2-1
+   ((node-3-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 2 0)
+)
+(node-3-2-2-2-2-2
+   ((node-3-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2-2 :end))
+   ((node-3-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (right 1 1 2 2))
+)
+(node-3-2-2-2-2-2-1
+   ((node-3-2-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 1)
+)
+(node-3-2-2-2-2-2-2
+   ((node-3-2-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2-2-2 :end))
+   ((node-3-2-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (left 2 2 1 1))
+)
+(node-3-2-2-2-2-2-2-1
+   ((node-3-2-2-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 2 0)
+)
+(node-3-2-2-2-2-2-2-2
+   ((node-3-2-2-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2-2-2-2 :end))
+   ((node-3-2-2-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (right 0 2 3 1))
+)
+(node-3-2-2-2-2-2-2-2-1
+   ((node-3-2-2-2-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 0 1)
+)
+(node-3-2-2-2-2-2-2-2-2
+   ((node-3-2-2-2-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2-2-2-2-2 :end))
+   ((node-3-2-2-2-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (left 0 3 3 0))
+)
+(node-3-2-2-2-2-2-2-2-2-1
+   ((node-3-2-2-2-2-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 0 2)
+)
+(node-3-2-2-2-2-2-2-2-2-2
+   ((node-3-2-2-2-2-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2-2-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2-2-2-2-2-2 :end))
+   ((node-3-2-2-2-2-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (right 0 1 3 2))
+)
+(node-3-2-2-2-2-2-2-2-2-2-1
+   ((node-3-2-2-2-2-2-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 0)
+)
+(node-3-2-2-2-2-2-2-2-2-2-2
+   ((node-3-2-2-2-2-2-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2-2-2-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2-2-2-2-2-2-2 :end))
+   ((node-3-2-2-2-2-2-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (left 1 1 2 2))
+)
+(node-3-2-2-2-2-2-2-2-2-2-2-1
+   ((node-3-2-2-2-2-2-2-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2-2-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 1)
+)
+(node-3-2-2-2-2-2-2-2-2-2-2-2
+   ((node-3-2-2-2-2-2-2-2-2-2-2-1 :end))
+   nil
+   nil
+   ((node-3-2-2-2-2-2-2-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (from (right 0 0 3 3))
+)
+)
+
+;;; TOME:
+(
+((tome (tried (left 0 3 3 0)) (node-3-2-2-2-2-2-2-2-2 :begin)) true)
+((tome (tried (left 1 1 2 2)) (node-3-2-2-2-2-2-2-2-2-2-2 :begin)) true)
+((tome (tried (left 2 2 1 1)) (node-3-2-2-2-2-2-2 :begin)) true)
+((tome (tried (left 3 1 0 2)) (node-3-2-2-2-2 :begin)) true)
+((tome (tried (left 3 2 0 1)) (node-3-2-2 :begin)) true)
+((tome (tried (left 3 3 0 0)) (node-3 :begin)) true)
+((tome (tried (left ?? ?? ?? ??)) (node-1 :end)) false)
+((tome (tried (right 0 1 3 2)) (node-3-2-2-2-2-2-2-2-2-2 :begin)) true)
+((tome (tried (right 0 2 3 1)) (node-3-2-2-2-2-2-2-2 :begin)) true)
+((tome (tried (right 1 1 2 2)) (node-3-2-2-2-2-2 :begin)) true)
+((tome (tried (right 3 0 0 3)) (node-3-2-2-2 :begin)) true)
+((tome (tried (right 3 1 0 2)) (node-3-2 :begin)) true)
+((tome (tried (right ?? ?? ?? ??)) (node-1 :end)) false)
+)
+
+;;; GOST:
+(
+((gost only_use_if (tried (left 0 3 3 0)) false (node-3-2-2-2-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (left 1 1 2 2)) false (node-3-2-2-2-2-2-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (left 2 2 1 1)) false (node-3-2-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (left 3 1 0 2)) false (node-3-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (left 3 2 0 1)) false (node-3-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (right 0 0 3 3)) false (node-3-2-2-2-2-2-2-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (right 0 1 3 2)) false (node-3-2-2-2-2-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (right 0 2 3 1)) false (node-3-2-2-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (right 1 1 2 2)) false (node-3-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (right 3 0 0 3)) false (node-3-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried (right 3 1 0 2)) false (node-3 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+)
+
+;;; PSV descriptions:
+(
+)
+
+;;; PSV equivalence classes:
+(
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((tried (left 0 3 3 0)) true)
+((tried (left 1 1 2 2)) true)
+((tried (left 2 2 1 1)) true)
+((tried (left 3 1 0 2)) true)
+((tried (left 3 2 0 1)) true)
+((tried (left 3 3 0 0)) true)
+((tried (right 0 1 3 2)) true)
+((tried (right 0 2 3 1)) true)
+((tried (right 1 1 2 2)) true)
+((tried (right 3 0 0 3)) true)
+((tried (right 3 1 0 2)) true)
+)

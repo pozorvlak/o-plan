@@ -1,0 +1,165 @@
+
+               Release notes for O-Plan version 3.3
+               ------------------------------------
+
+The O-Plan 3.3 release and further information about it are available
+via
+
+   http://www.aiai.ed.ac.uk/~oplan/release/
+
+Please report any problems to oplan@ed.ac.uk.
+
+
+Differences from 3.2
+--------------------
+What follows is a summary of the principal differences between this
+version of O-Plan and version 3.2.  Some of the changes are described
+further in separate sections.
+
+Portability
+
+- O-Plan can now be used with Linux.
+
+- The default Common Lisp used when building O-Plan is now Allegro
+  Common Lisp.  Allegro 5.0 is now supported on Suns and is the
+  preferred version.
+
+- We are no longer able to test the system in Lucid or Liquid Common
+  Lisp before distribution, but it is still tested in both Allegro 
+  Common Lisp and GCL (GNU Common Lisp).
+
+
+Planner
+
+- O-Plan is now considerably (up to 16 times) faster for larger plans,
+  such as ones with 5,000 to 10,000 nodes.  It is also much faster at
+  handling larger domains for plan-state variables.
+
+- O-Plan version 2.3's support for plan execution and repair has been
+  reactivated and modified to work with our "COA Matrix" Web-based
+  interactive demonstrations.
+
+- O-Plan is able to use a plug-in XML "plan viewer" to output XML
+  representations of plans.
+
+- O-Plan now maintains a greater range of internal descriptive information
+  that can be used when communicating with a user, in particular when
+  asking the user to pick which schema should be used to expand an
+  action or which values to prefer when binding a variable.  O-Plan
+  now also records the parent node for nodes introduced to satisfy
+  "achieve" conditions.
+
+- Achieve condition after-points are now supported.  If a node is
+  introduced to satisfy the condition (rather than having it satisfied
+  by something already in the plan), the new node must be linked after
+  the specified point, which can be the start of the plan, the begin_of
+  the parent node, or either end of a node specified in the same schema
+  as the condition.
+
+  Here is the TF syntax:
+
+    achieve <pattern> [ = <value> ]
+                      [ at <condition_point> ]
+                      [ after <achieve_after_point> ]
+
+    <achieve_after_point> := <end> <node_number>
+                          | [ begin_of] self | [end_of] start
+
+- The sanity-checker now includes a check that simulates execution
+  of the plan.
+
+
+Interface
+
+- The "-http" command-line argument specifies that O-Plan should run
+  as an HTTP server and provide an HTML-based interface suitable for use
+  with a Web browser.  On some platforms, a browser will automatically be
+  started, or else redirected if it is already running.  See the file
+  source/doc/http-mode for more information.  "-http" is available only
+  when O-Plan was built using GNU Common Lisp (GCL).
+
+- The "-server" command-line argument tells O-Plan to operate in
+  "server mode".  O-Plan creates an Internet domain socket on the port
+  specified by the :port parameter (defaulting to 5040); and then a
+  program that connects to that port gets a new O-Plan which behaves as
+  if it were run with "-no -windows -connect" (see source/doc/ta-interface).
+  "-server" is available only when O-Plan was built using GNU Common
+  Lisp (GCL).
+
+- The "-port" command-line argument specifies a port number for use
+  with "-http" or "-server".
+
+- Other new command-line arguments are "-lisp", "-load-system",
+  and "-test-ta-questions".  See source/doc/command-line-arguments
+  and source/doc/parameters.
+
+
+Web interface
+
+- There is now an object-oriented framework for the "COA Matrix"
+  demonstrations that allows new demonstrations to be plugged in more
+  easily.
+
+- The "COA Matrix" demonstrations now support simulated execution
+  and plan repair.
+
+- The "COA Matrix" demonstrations now allow the user to decide which
+  schema should be used to expand an action in the plan, hence how the
+  action should be performed, and to specify preferred values when the
+  planner must choose object to be the value of a variable.
+
+- The "COA Matrix" demonstrations can now supply a "Timeline" plan view.
+
+  Horizontal and vertical "timelines" are available. The vertical one
+  is easier to print, the horizontal one is more like a sync-matrix.
+  This could evolve into a sync-matrix in domains where that makes
+  sense.  It also gives a better notion of execution order than the
+  narrative view does and does a better job in cases where there isn't
+  any interesting numeric time information in the plan.
+
+  Actions (really node-ends) are grouped into blocks, with the steps
+  within a block able to happen in parallel with each other.  (The
+  default narrative respects the same ordering constraints but doesn't
+  show this division into blocks.)
+
+
+TF Compiler
+
+- Added "oplan -tfc" "-e" command-line argument.
+
+  "-e" can be used with "-l" to have the level analysis list the
+  effect names for each action (to make it easier to see where the
+  effect-levels come from).  This does not include the effects of
+  subactions.
+
+- Changed the TF compiler to count warnings and to report the numbers
+  in the table produced by "oplan -tfc -d dirname".
+
+- Better detection of effect names in incomplete TF files of the
+  sort used in some web demos (where tasks are defined interactively
+  rather than being specified in the TF).
+
+- Changed the TF compiler to take include files relative to the
+  pathname of the including file rather than relative to :oplan-tf-dir.
+
+  This makes TF files more modular and less dependent on where
+  they are in the filespace.
+
+- TF type expressions are now supported on an experimental basis.
+  ?{or <type_expr> ...} specifies a union of the objects in the
+  indicated types while ?{and <type_conjunct> ...} specifies an
+  intersection.  A ?{not <type_expr>} within an ?{and ...}
+  specifies objects to be excluded (a set-difference operation).
+
+   types <type_name> = <type_expr> ,
+         ... ;
+
+   <type_expr> ::= <type_enumeration>
+                |  ?{type name}
+                |  ?{and <type_conjunct> ...}
+                |  ?{or <type_expr> ...}
+
+   <type_conjunct> ::= <type_expr> | ?{not <type_expr>}
+
+   <type_enumeration> ::= <name_set> | <integer_range> 
+

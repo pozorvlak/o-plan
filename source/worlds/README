@@ -1,0 +1,53 @@
+This directory contains world definitions, each in its own
+subdirectory.  Normally, the following worlds will already be
+defined:
+
+  micro-exec
+
+    This world is for use with the "micro-exec" execution agent that's
+    built into the O-Plan planner.  It's generic in that it can handle
+    plans for any domain, and it allows the user to determine the fate
+    of actions in the plan and to schedule "unexpected" events; however,
+    its simulation abilities are minimal.
+
+  pacifica
+
+    This world provides a simulator for evacuation operations on the
+    island of Pacifica.  See the WorldSim documentation for the details.
+
+To define a new world W:
+
+1. Make a subdirectory called W.  It will contain the files that
+   define the world.
+
+2. Make a file called W/W-world.lsp.  This file will be loaded at
+   run-time by the world simulator when the simulator is told to use 
+   world W, and W/W-world should arrange for loading any other files
+   that need to be loaded.  The current working directory will be the
+   W subdirectory during the load process, so that file names relative
+   to W can be used.
+
+   If a compiled version of W/W-world.lsp exists, then it will be
+   loaded instead, but only if it is newer than the source file.
+
+   Typical contents for a W/W-world.lsp file are as follows, with
+   "W" replaced by the actual name used:
+
+      (in-package :world)
+
+      (load "W-system")
+
+      (load-system 'W-world)
+
+3. Make a file called W/W-system.lsp.  It must contain a system 
+   definition for a system called W-world.  To see how to define
+   systems, read the documentation in the file source/support/
+   defsys.lsp and look at existing world definitions as examples.
+   The base directory will be the W subdirectory when the system
+   definition is processed, so that file names relative to W
+   can be used.
+
+The Makefile in the WorldSim source directory can be used to compile
+all "known worlds", i.e. all worlds that have a subdirectory in this
+directory and a W-system.lsp file.
+

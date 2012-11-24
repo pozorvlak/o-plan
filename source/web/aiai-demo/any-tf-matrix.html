@@ -1,0 +1,116 @@
+<title>Any-TF Matrix Server</title>
+
+<!--
+  Updated: Wed Sep  8 17:45:48 1999 by Jeff Dalton
+  -->
+
+<body bgcolor=White>
+
+<h1>Any-TF Matrix Server</h1>
+
+<p>
+This demonstration allows you to run an O-Plan planning agent and
+interact with it through a COA evaluation matrix.  The main features
+of the demonstration are summarized below.  A password is required.
+
+<p>
+In this demonstration, two user roles must be played: Task-Assigner
+and Technical Planning Expert.  One user can elect to play both roles,
+or two independent users (anywhere on the Web) can play one each.  
+In the latter case, they must specify the same session name so that
+they will both end up using the same instance of O-Plan.  The session
+name is up to them, but it should be something that is easily
+communicated and is likely to be unique.  It remains valid only until
+both users have joined.  When one user plays both roles,
+no session name is required.
+
+<p>
+When you're ready to begin, press the "Begin" button below.  O-Plan
+will continue running until the Task-Assigner selects "Exit" or
+"Restart" from the menu bar at the top of the main page or until
+there has been no interaction for too long a time.
+
+<!-- Now a form -->
+
+<p>
+<form
+ action="matrix-server.cgi/join/any-tf-matrix"
+ method=post>
+
+<table>
+
+<tr>
+<td>TF file:</td>
+<td colspan=2>
+  <select name="tf-file" size=1>
+    <option>Eusat
+    <option>Gpdt3-web-demo
+    <option selected>House-4
+    <option>MOUT1
+    <option>Pacifica-3
+    <option>Space-platform
+    <option>SUO-0
+    <option value="group/san-roberto-thread-2">Corrected SUO Thread 2
+    <option>Trains-1
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Session:</td> <td><input size=12 name="session"></td>
+<td>User role:
+  <select name="role" size=1>
+    <option>Task-Assigner
+    <option>Planner
+    <option selected>Both Task-Assigner and Planner
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type=password size=12 name="password"></td>
+<td><input type="submit" value="Begin">
+    <input type="reset" value="Undo changes"></td>
+</tr>
+
+</table>
+
+</form>
+
+<!-- What's Cool? -->
+
+This demonstration illustrates mixed-initiative interaction between a
+task-assigner and a planning agent.  It includes:
+
+<ul>
+<li>support for users in two roles: task-assigner and technical
+    planning expert;
+<li>evaluation of multiple courses of action;
+<li>exploration of separate options and sub-options;
+<li>exploration of different initial assumptions;
+<li>incremental task definition by adding constraints to a plan;
+<li>authority setting to allow incremental plan refinement
+    and mixed-initaive work;
+<li>plan analysis facilities that produce evaluations in summary
+    and detailed form;
+<li>selection of the critical plan evaluations to be presented;
+<li>management of the outstanding issues produced by planning or analysis
+    to help in planning and coordination workflow;
+<li>traffic light displays to indicate the nature and status of
+    outstanding issues - green when all issues have been addressed,
+    orange when there are warnings or notes to read, and red when
+    further action may be required.
+</ul>
+
+<!-- O-Plan's standard AIAI page foot -->
+
+<p>
+<hr>
+<A HREF="/">
+<img width=82 height=37 alt="AIAI"
+      align=right border=0 src="/img/logo/small.gif">
+</A>
+<Address><A HREF="/~oplan">O-Plan</A></Address>
+
+</body>

@@ -1,0 +1,58 @@
+<TITLE>O-Plan on the Internet</TITLE>
+<H1>O-Plan on the Internet</H1>
+
+<H2>Still under construction</H2>
+
+When finished, this document will describe:
+
+<UL>
+
+<LI> How to run an O-Plan agent remotely on the Internet and
+communicate with it from a Common Lisp program.  (Source code
+will be provided.)
+
+<LI> How to control O-Plan from within the same Lisp image, 
+effectively using O-Plan as a subroutine.
+
+<LI> How to run O-Plan via the World-Wide Web's Common Gateway
+Interface, e.g. by using HTML forms.
+
+</UL>
+
+<H2>Background</H2>
+
+<P>
+Although it has not been well-publicized, it has been possible
+to run an O-Plan agent remotely on the Internet since at least
+version 1.2.  Indeed, the O-Plan planning and execution agents
+have always communicated in this way.  In version 1.2, the link
+used Internet-domain sockets; version 2.0 introduced a simpler
+mechanism based on <tt>rsh</tt>.
+
+<P>
+[Three-agent architecture.]
+
+<P>
+However, certain limitations have only gradually been removed.
+The 1.2 execution agent could be used remotely, but not the planner,
+because the built-in task-assigner occupied the communication
+channels.  This limitation was removed in version 2.0.  In addition,
+all of the agents needed to display windows and interact with a
+user.  It wasn't possible to run O-Plan invisibly in the background,
+and some things a program might want to access or control were
+available only via the windows.  These problems are being addressed
+in the current development version.
+
+<H2>Web demos</H2>
+
+If you are familiar with 
+<A HREF="http://hoohoo.ncsa.uiuc.edu/cgi/forms.html">HTML FORMs</A>
+and the Web's 
+<A HREF="http://hoohoo.ncsa.uiuc.edu/cgi/overview.html">
+Common Gateway Interface</A>,
+you may be able to guess how some parts of the demos work.
+
+<HR>
+<Address>
+<A HREF="http://www.aiai.ed.ac.uk/~jeff/">Jeff Dalton</A>
+</Address>

@@ -1,0 +1,308 @@
+
+;;; Statistics:
+(
+(:am-cycles . 17)
+(:n-alts-chosen . 1)
+(:n-alts-remaining . 3)
+(:n-poisons . 1)
+)
+
+;;; Action levels:
+(
+(antenna . 3)
+(build . 1)
+(joint . 4)
+(module . 3)
+(place_antenna . 2)
+(place_joint . 3)
+(place_module . 2)
+(place_radiator . 2)
+(place_solar_panel . 2)
+(place_truss . 2)
+(place_tube . 2)
+(radiator . 3)
+(solar_panel . 3)
+(task_large_space_platform . 0)
+(task_small_space_platform . 0)
+(task_space_platform . 0)
+(truss . 3)
+(tube . 3)
+)
+
+;;; Effect levels:
+(
+(anchored . 2)
+(antenna_at . 2)
+(joint_at . 3)
+(location . 0)
+(module_at . 2)
+(port_code . 0)
+(radiator_at . 2)
+(solar_panel_at . 2)
+(truss_at . 2)
+(tube_at . 2)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-5 :end) (node-3-6 :end) (node-3-7 :end) (node-3-8 :end))
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (build small_platform)
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-3-3 :begin) (node-3-2 :begin))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-3-2
+   ((node-3-1 :end))
+   ((node-3-2-1 :begin))
+   ((node-3-2-1 :end))
+   ((node-3-3-1 :begin) (node-3-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (place_joint a)
+)
+(node-3-2-1
+   ((node-3-2 :begin))
+   nil
+   nil
+   ((node-3-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (joint a 100 150 0)
+)
+(node-3-3
+   ((node-3-1 :end))
+   ((node-3-3-1 :begin))
+   ((node-3-3-1 :end))
+   ((node-3-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (place_module 100 a d none none)
+)
+(node-3-3-1
+   ((node-3-2 :end) (node-3-3 :begin))
+   nil
+   nil
+   ((node-3-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (module 100 100 150 0 180)
+)
+(node-3-4
+   ((node-3-2 :end))
+   nil
+   nil
+   ((node-3-8 :begin) (node-3-7 :begin) (node-3-6 :begin) (node-3-5 :begin))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-3-5
+   ((node-3-4 :end) (node-3-3 :end))
+   ((node-3-5-1 :begin))
+   ((node-3-5-1 :end))
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (place_radiator 30 10 a a)
+)
+(node-3-5-1
+   ((node-3-5 :begin))
+   nil
+   nil
+   ((node-3-5 :end))
+   (0 :inf 0 :inf)
+   action
+   (radiator 30 10 100 150 0 90)
+)
+(node-3-6
+   ((node-3-4 :end))
+   ((node-3-6-1 :begin))
+   ((node-3-6-1 :end))
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (place_solar_panel 100 20 20 a e)
+)
+(node-3-6-1
+   ((node-3-6 :begin))
+   nil
+   nil
+   ((node-3-6 :end))
+   (0 :inf 0 :inf)
+   action
+   (solar_panel 100 20 20 100 150 0 1)
+)
+(node-3-7
+   ((node-3-4 :end))
+   ((node-3-7-1 :begin))
+   ((node-3-7-1 :end))
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (place_solar_panel 100 20 20 a f)
+)
+(node-3-7-1
+   ((node-3-7 :begin))
+   nil
+   nil
+   ((node-3-7 :end))
+   (0 :inf 0 :inf)
+   action
+   (solar_panel 100 20 20 100 150 0 -1)
+)
+(node-3-8
+   ((node-3-4 :end))
+   ((node-3-8-1 :begin))
+   ((node-3-8-1 :end))
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (place_antenna 30 20 a c)
+)
+(node-3-8-1
+   ((node-3-8 :begin))
+   nil
+   nil
+   ((node-3-8 :end))
+   (0 :inf 0 :inf)
+   action
+   (antenna 30 20 100 150 0 -90)
+)
+)
+
+;;; TOME:
+(
+((tome (anchored a) (node-1 :end)) true)
+((tome (anchored none) (node-3-3 :end)) true)
+((tome (antenna_at 30 20 100 150 0 -90) (node-3-8-1 :end)) true)
+((tome (joint_at a 100 150 0) (node-3-2 :end)) true)
+((tome (location a) (node-1 :end)) (100 150 0))
+((tome (location b) (node-1 :end)) (180 150 0))
+((tome (location c) (node-1 :end)) (300 150 0))
+((tome (module_at 100 100 150 0 180) (node-3-3 :end)) true)
+((tome (port_code a) :always) 90)
+((tome (port_code b) :always) 0)
+((tome (port_code c) :always) -90)
+((tome (port_code d) :always) 180)
+((tome (port_code e) :always) 1)
+((tome (port_code f) :always) -1)
+((tome (radiator_at 30 10 100 150 0 90) (node-3-5 :end)) true)
+((tome (solar_panel_at 100 20 20 100 150 0 -1) (node-3-7 :end)) true)
+((tome (solar_panel_at 100 20 20 100 150 0 1) (node-3-6 :end)) true)
+)
+
+;;; GOST:
+(
+((gost achievable (joint_at a 100 150 0) true (node-3-3-1 :begin))
+   (((node-3-2 :end) . :link-no-bindings))
+)
+((gost only_use_if (joint_at a 100 150 0) true (node-3-5-1 :begin))
+   (((node-3-2 :end) . :already-satisfied))
+)
+((gost only_use_if (joint_at a 100 150 0) true (node-3-6-1 :begin))
+   (((node-3-2 :end) . :already-satisfied))
+)
+((gost only_use_if (joint_at a 100 150 0) true (node-3-7-1 :begin))
+   (((node-3-2 :end) . :already-satisfied))
+)
+((gost only_use_if (joint_at a 100 150 0) true (node-3-8-1 :begin))
+   (((node-3-2 :end) . :already-satisfied))
+)
+((gost only_use_if (location a) (100 150 0) (node-3-2-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (location a) (100 150 0) (node-3-3-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (port_code a) 90 (node-3-5-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (port_code c) -90 (node-3-8-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (port_code d) 180 (node-3-3-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (port_code e) 1 (node-3-6-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (port_code f) -1 (node-3-7-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost unsupervised (anchored a) true (node-3-2-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+)
+
+;;; PSV descriptions:
+(
+)
+
+;;; PSV equivalence classes:
+(
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+((port_code a) 90)
+((port_code b) 0)
+((port_code c) -90)
+((port_code d) 180)
+((port_code e) 1)
+((port_code f) -1)
+)
+
+;;; World at end of node-2:
+(
+((anchored a) true)
+((anchored none) true)
+((antenna_at 30 20 100 150 0 -90) true)
+((joint_at a 100 150 0) true)
+((location a) (100 150 0))
+((location b) (180 150 0))
+((location c) (300 150 0))
+((module_at 100 100 150 0 180) true)
+((port_code a) 90)
+((port_code b) 0)
+((port_code c) -90)
+((port_code d) 180)
+((port_code e) 1)
+((port_code f) -1)
+((radiator_at 30 10 100 150 0 90) true)
+((solar_panel_at 100 20 20 100 150 0 -1) true)
+((solar_panel_at 100 20 20 100 150 0 1) true)
+)

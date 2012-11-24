@@ -1,0 +1,306 @@
+plan
+
+  node
+    node-1 
+    nil 
+    (end_of node-1) 
+    (begin_of node-1) 
+    (begin_of node-3) 
+    (0 :inf 0 :inf 0 :inf) 
+    start 
+    "" 
+  end_node
+
+  node
+    node-2 
+    (end_of node-3) 
+    (end_of node-2) 
+    (begin_of node-2) 
+    nil 
+    (2678400 :inf 2678400 :inf 0 :inf) 
+    finish 
+    "" 
+  end_node
+
+  node
+    node-3 
+    (end_of node-1) 
+    (end_of node-3 begin_of node-3-1 begin_of node-3-9 begin_of
+            node-3-10) 
+    (begin_of node-3 end_of node-3-8 end_of node-3-9 end_of node-3-10) 
+    (begin_of node-2) 
+    (0 :inf 2678400 :inf 0 :inf) 
+    action 
+    "(build_house)" 
+  end_node
+
+  node
+    node-3-1 
+    (begin_of node-3) 
+    (end_of node-3-1) 
+    (begin_of node-3-1) 
+    (begin_of node-3-2) 
+    (0 :inf 345600 :inf 0 :inf) 
+    action 
+    "(excavate_and_pour_footers)" 
+  end_node
+
+  node
+    node-3-2 
+    (end_of node-3-1) 
+    (end_of node-3-2) 
+    (begin_of node-3-2) 
+    (begin_of node-3-9-2 begin_of node-3-9-1 begin_of node-3-3) 
+    (345600 :inf 518400 :inf 0 :inf) 
+    action 
+    "(pour_concrete_foundations)" 
+  end_node
+
+  node
+    node-3-3 
+    (end_of node-3-2) 
+    (end_of node-3-3) 
+    (begin_of node-3-3) 
+    (begin_of node-3-9-8 begin_of node-3-9-5 begin_of node-3-4) 
+    (518400 :inf 864000 :inf 0 :inf) 
+    action 
+    "(erect_frame_and_roof)" 
+  end_node
+
+  node
+    node-3-4 
+    (end_of node-3-3) 
+    (end_of node-3-4) 
+    (begin_of node-3-4) 
+    (begin_of node-3-5) 
+    (864000 :inf 1468800 :inf 0 :inf) 
+    action 
+    "(lay_brickwork)" 
+  end_node
+
+  node
+    node-3-5 
+    (end_of node-3-4) 
+    (end_of node-3-5) 
+    (begin_of node-3-5) 
+    (begin_of node-3-6) 
+    (1468800 :inf 1728000 :inf 0 :inf) 
+    action 
+    "(finish_roofing_and_flashing)" 
+  end_node
+
+  node
+    node-3-6 
+    (end_of node-3-5) 
+    (end_of node-3-6) 
+    (begin_of node-3-6) 
+    (begin_of node-3-7) 
+    (1728000 :inf 1814400 :inf 0 :inf) 
+    action 
+    "(fasten_gutters_and_downspouts)" 
+  end_node
+
+  node
+    node-3-7 
+    (end_of node-3-9-2 end_of node-3-6) 
+    (end_of node-3-7) 
+    (begin_of node-3-7) 
+    (begin_of node-3-8) 
+    (1814400 :inf 1987200 :inf 0 :inf) 
+    action 
+    "(finish_grading)" 
+  end_node
+
+  node
+    node-3-8 
+    (end_of node-3-7) 
+    (end_of node-3-8) 
+    (begin_of node-3-8) 
+    (end_of node-3) 
+    (1987200 :inf 2419200 :inf 0 :inf) 
+    action 
+    "(pour_walks_and_landscape)" 
+  end_node
+
+  node
+    node-3-9 
+    (begin_of node-3) 
+    (end_of node-3-9 begin_of node-3-9-1 begin_of node-3-9-2 begin_of
+            node-3-9-5 begin_of node-3-9-8) 
+    (begin_of node-3-9 end_of node-3-9-2 end_of node-3-9-4 end_of
+        node-3-9-6 end_of node-3-9-7 end_of node-3-9-8) 
+    (end_of node-3) 
+    (518400 :inf 2592000 :inf 0 :inf) 
+    action 
+    "(install_services)" 
+  end_node
+
+  node
+    node-3-9-1 
+    (end_of node-3-2 begin_of node-3-9) 
+    (end_of node-3-9-1) 
+    (begin_of node-3-9-1) 
+    (begin_of node-3-10-2 begin_of node-3-9-3) 
+    (518400 :inf 604800 :inf 0 :inf) 
+    action 
+    "(install_drains)" 
+  end_node
+
+  node
+    node-3-9-2 
+    (end_of node-3-2 begin_of node-3-9) 
+    (end_of node-3-9-2) 
+    (begin_of node-3-9-2) 
+    (begin_of node-3-7 end_of node-3-9) 
+    (518400 :inf 604800 :inf 0 :inf) 
+    action 
+    "(lay_storm_drains)" 
+  end_node
+
+  node
+    node-3-9-3 
+    (end_of node-3-9-1) 
+    (end_of node-3-9-3) 
+    (begin_of node-3-9-3) 
+    (begin_of node-3-10-1 begin_of node-3-9-7 begin_of node-3-9-4) 
+    (604800 :inf 691200 :inf 0 :inf) 
+    action 
+    "(install_rough_plumbing)" 
+  end_node
+
+  node
+    node-3-9-4 
+    (end_of node-3-10-3 end_of node-3-9-3) 
+    (end_of node-3-9-4) 
+    (begin_of node-3-9-4) 
+    (begin_of node-3-10-6 end_of node-3-9) 
+    (1987200 :inf 2160000 :inf 0 :inf) 
+    action 
+    "(install_finished plumbing)" 
+  end_node
+
+  node
+    node-3-9-5 
+    (end_of node-3-3 begin_of node-3-9) 
+    (end_of node-3-9-5) 
+    (begin_of node-3-9-5) 
+    (begin_of node-3-10-1 begin_of node-3-9-7 begin_of node-3-9-6) 
+    (864000 :inf 1036800 :inf 0 :inf) 
+    action 
+    "(install_rough_wiring)" 
+  end_node
+
+  node
+    node-3-9-6 
+    (end_of node-3-10-6 end_of node-3-9-5) 
+    (end_of node-3-9-6) 
+    (begin_of node-3-9-6) 
+    (end_of node-3-9) 
+    (2505600 :inf 2592000 :inf 0 :inf) 
+    action 
+    "(finish_electrical_work)" 
+  end_node
+
+  node
+    node-3-9-7 
+    (end_of node-3-10-3 end_of node-3-9-5 end_of node-3-9-3) 
+    (end_of node-3-9-7) 
+    (begin_of node-3-9-7) 
+    (begin_of node-3-10-6 end_of node-3-9) 
+    (1987200 :inf 2246400 :inf 0 :inf) 
+    action 
+    "(install_kitchen_equipment)" 
+  end_node
+
+  node
+    node-3-9-8 
+    (end_of node-3-10-2 end_of node-3-3 begin_of node-3-9) 
+    (end_of node-3-9-8) 
+    (begin_of node-3-9-8) 
+    (begin_of node-3-10-1 end_of node-3-9) 
+    (864000 :inf 1123200 :inf 0 :inf) 
+    action 
+    "(install_air_conditioning)" 
+  end_node
+
+  node
+    node-3-10 
+    (begin_of node-3) 
+    (end_of node-3-10 begin_of node-3-10-1 begin_of node-3-10-2
+            begin_of node-3-10-6) 
+    (begin_of node-3-10 end_of node-3-10-5) 
+    (end_of node-3) 
+    (691200 :inf 2678400 :inf 0 :inf) 
+    action 
+    "(decorate)" 
+  end_node
+
+  node
+    node-3-10-1 
+    (end_of node-3-9-8 end_of node-3-9-5 end_of node-3-9-3 begin_of
+            node-3-10) 
+    (end_of node-3-10-1) 
+    (begin_of node-3-10-1) 
+    (begin_of node-3-10-3) 
+    (1123200 :inf 1728000 :inf 0 :inf) 
+    action 
+    "(fasten_plaster_and_plaster_board)" 
+  end_node
+
+  node
+    node-3-10-2 
+    (end_of node-3-9-1 begin_of node-3-10) 
+    (end_of node-3-10-2) 
+    (begin_of node-3-10-2) 
+    (begin_of node-3-9-8 begin_of node-3-10-3) 
+    (691200 :inf 864000 :inf 0 :inf) 
+    action 
+    "(pour_basement_floor)" 
+  end_node
+
+  node
+    node-3-10-3 
+    (end_of node-3-10-1 end_of node-3-10-2) 
+    (end_of node-3-10-3) 
+    (begin_of node-3-10-3) 
+    (begin_of node-3-9-7 begin_of node-3-9-4 begin_of node-3-10-4) 
+    (1728000 :inf 1987200 :inf 0 :inf) 
+    action 
+    "(lay_finished_flooring)" 
+  end_node
+
+  node
+    node-3-10-4 
+    (end_of node-3-10-3) 
+    (end_of node-3-10-4) 
+    (begin_of node-3-10-4) 
+    (begin_of node-3-10-5) 
+    (1987200 :inf 2246400 :inf 0 :inf) 
+    action 
+    "(finish_carpentry)" 
+  end_node
+
+  node
+    node-3-10-5 
+    (end_of node-3-10-6 end_of node-3-10-4) 
+    (end_of node-3-10-5) 
+    (begin_of node-3-10-5) 
+    (end_of node-3-10) 
+    (2505600 :inf 2678400 :inf 0 :inf) 
+    action 
+    "(sand_and_varnish_floors)" 
+  end_node
+
+  node
+    node-3-10-6 
+    (end_of node-3-9-7 end_of node-3-9-4 begin_of node-3-10) 
+    (end_of node-3-10-6) 
+    (begin_of node-3-10-6) 
+    (begin_of node-3-9-6 begin_of node-3-10-5) 
+    (2246400 :inf 2505600 :inf 0 :inf) 
+    action 
+    "(paint)" 
+  end_node
+
+end_plan
+

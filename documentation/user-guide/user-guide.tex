@@ -1,0 +1,1061 @@
+%** File: user-guide.tex
+%** Contains: User guide for the O-Plan system
+%** Author: Brian Drabble (bd@rousay)
+%** Created: Mon Jul 19 16:35:26 1993
+%** Updated: Fri Jan 31 17:20:39 1997 by Jeff Dalton
+%** Release Version: 3.1
+%** Copyright: (c) 1996, AIAI, University of Edinburgh
+%** This material may be reproduced by or for the U.S. Government pursuant
+%** to the copyright license under the clause at DFARS 252.227-7032
+%** (June 1975) -- Rights in Technical Data and Computer Software (Foreign).
+
+\documentstyle [11pt,../oplan-doc]{article}
+\projectdocument{3.1}{User Guide}
+\created{Brian Drabble}{December 11, 1996}
+\lastaltered{Jeff Dalton}{January 31, 1997}{17:51}
+
+\parskip=6pt
+\vfuzz=30pt
+\hfuzz=30pt
+\hyphenation{AutoCAD}
+
+\begin{document}
+
+\TitlePage
+\Headers
+
+\tableofcontents
+
+\opsection{\protect\label{intro} Introduction}
+
+\subsection{Contents of this Guide}
+
+The aim of this guide is to provide the user with an overview of
+setting up and running the O-Plan system. This guide assumes that
+the O-Plan system has been successfully extracted from the tar image
+file and installed and compiled correctly.
+
+You should have installed O-Plan in a directory different from any
+directory used for an earlier version of O-Plan to avoid any confusion
+between files from different versions. The installation procedure is
+described in the {\tt INSTALL} file included in the O-Plan
+distribution. In the remainder of this document it will sometimes be
+assumed that there is a shell command, {\tt oplan}, that can be used
+to invoke O-Plan.  The {\tt INSTALL} file describes how to establish
+such a command.
+
+This guide is divided into the following sections:
+
+\begin{enumerate}
+\item {\bf Setting up to run O-Plan}: this section describes the O-Plan
+startup script and the environment variables used to run the system. 
+\item {\bf Running O-Plan}: this section describes how to run the
+O-Plan system as a planning.
+\item {\bf Plan and World Interfaces}: this section describes the
+PlanWorld interface used by O-Plan to allow the user to examine on
+either the plan or world state.
+\item {\bf O-Plan Processes and Internal Structure}: this section
+provides an overview of the way in which an O-Plan agent is
+implemented in terms of the the mapping of {\em processes} to
+components and the way in which these components communicate.
+\item {\bf Typing Lisp Commands}: this section deals with inputting of
+Lisp commands into the O-Plan system, e.g. to turn on some of the
+debugging tools.
+\item {\bf Dealing with Lisp Errors}: this sections deals with Lisp
+errors which sometimes occur. These can either be caused by typing
+errors in entering Lisp commands or by errors in the O-Plan
+code. In the latter case they should be reported to the O-Plan
+development team.
+\item {\bf Control Panel and Trace Information within O-Plan}: this
+section deals with obtaining different levels of trace information
+within the O-Plan system. 
+\item {\bf Example Demonstration}: this section provides step by step
+instructions on running an example demonstration.
+\end{enumerate}
+
+\opsection{\protect\label{interfaces} Running O-Plan and its Interfaces}
+The aim of this section is to describe the environment variables and
+scripts which have been provided with the O-Plan system
+together with details of the interface which allows for developer
+access to the various components. 
+
+\subsection{O-Plan Scripts}
+A single script has been provided to start the O-Plan system and this
+is as follows:
+
+\begin{enumerate}
+\item {\bf oplan} \newline
+This provides the basic O-Plan system with a textual interface for
+plan and world state browsing. 
+\end{enumerate}
+
+See Section~\ref{viewers} of this document for further details on the
+Plan and World Viewers.
+
+\subsection{\protect\label{variables}Environment Variables used by O-Plan}
+In order to run the demonstrations the user should be in the X windows
+environment and if this is not the case the the user should issue the
+necessary commands to invoke it. In most cases, it is not necessary
+for users to set any environment variables themselves.  However, the
+user may set some of the variables in order to change the defaults if
+that is desired.  The following sections describe the environment
+variables which are used, their purpose and where necessary their
+setting or defaults.
+
+\begin{itemize}
+\item {\bf setenv {\sc oplandir} $<$directory name$>$} \newline
+The directory name should be the full name of the directory that
+contains the O-Plan system.  This variable is set by the {\tt oplan}
+script which should have been edited prior to the first invocation of
+O-Plan as part of the installation procedure. The script's value
+persists only for the duration of the run.  Users may also wish to set
+this variable in their global environment as a shorthand way of
+specifying the top level of the O-Plan file structure.  That is how it
+will be used below.  However, that setting will have no effect on the
+value used by {\tt oplan}.
+
+\item {\bf setenv {\sc oplantmpdir} \${\sc home}/oplan-tmp} \newline
+Specifies the directory into which temporary files generated by the
+O-Plan system will be written.  It is recommended that this
+environment variable be set to {\tt oplan-tmp} in the users
+\${\sc home} directory for uniformity with other O-Plan installations.
+Alternatively it may be:
+
+\begin{enumerate}
+\item set to any user specified directory to which the user has the necessary
+read and write access privilege
+\item left unspecified in which case all temporary files will be
+written to the user's current working directory
+\end{enumerate}
+\end{itemize}
+
+\subsection{\protect\label{scripts}Setting up to Run O-Plan}
+The O-Plan system is invoked from the startup script {\tt oplan}
+which is held in the {\tt {\sc \$oplandir}/bin} directory. There
+are several ways to arrange for this script to be accessible as
+a shell command.
+
+\begin{enumerate}
+\item Define a shell alias, for shells that provide aliases.
+For instance, {\tt tcsh} users can add the following line to their
+home directory's {\tt .tcshrc} file:
+
+\begin{verbatim}
+alias oplan "/applications/oplan/bin/oplan"
+\end{verbatim}
+
+Note that you do not have to use the name {\tt oplan} for the alias.
+
+\item Alter your {\tt PATH} to include the directory containing the
+script.
+\item Move the script to a directory which is on the users current
+{\tt PATH}.
+\end{enumerate}
+
+The O-Plan system is menu driven and requires the X Window System.
+
+\opsection{\protect\label{running}Running O-Plan}
+Once the setup steps have been carried out (defined in
+subsections~\ref{variables} and \ref{scripts}) O-Plan can be invoked
+by typing the relevant command.  For example:
+
+\begin{verbatim}
+   oplan
+\end{verbatim}
+
+When you start O-Plan, a number of windows should appear.  The first
+window to appear ({\tt O-Plan Running Processes}) displays the names
+of the currently running parts of O-Plan.  This window is described
+later in this document in the Pseudo-processes section. After that,
+one window will appear for the Task Assigner ({\sc ta}) and one for
+each of the components of the planner ({\sc im}, {\sc am}, {\sc dm},
+{\sc kp}). Finally a control panel ({\sc cp}) window will appear over
+the top of the {\sc im} window. The window in which you typed the {\tt
+oplan} command will stay connected to O-Plan. When all the other
+windows have appeared, the prompt {\tt form>} should appear in this
+window.  You can type Lisp commands in this window and consequently it
+is called the Lisp interaction window.  For more information see the
+section Typing Lisp Commands below.
+
+The window configuration is specified by the {\tt -config} argument to
+the {\tt oplan} command.  The default, screen-filling, configuration
+can also be specified by starting O-Plan as follows:
+
+\begin{verbatim} 
+   oplan -config oplan-planner-default
+\end{verbatim}
+
+The planner will be brought up in its uninitialised state. This will
+be indicated by a message at the top of the {\sc ta} window. The
+message will also indicate the date the image was created as well as
+the version number. 
+
+Each of the separate parts of the planner has its own window which
+allows the user to follow the plan as it is being generated. The major
+parts of the O-Plan systems are described in the Section~\ref{major}.
+
+\subsection{\protect\label{cla}O-Plan Command Line Arguments}
+The {\tt oplan} startup script has been designed to accept a number of
+optional arguments which allow the user to customise certain aspects
+of the systems functions and display formats. A partial list of the
+arguments are as follows:
+
+\begin{tabular}{lp{11cm}}
+Argument & Description \\
+-break & Enters the Lisp break loop. This allows the user to examine
+the state of the world before O-Plan starts up or to call O-Plan
+procedures without starting O-Plan. \\
+-config {\tt $<$filename$>$} & Use the indicated configuration file. A
+series of configuration files are provided in {\sc \$oplandir}/{\tt lib}. \\
+-eval {\tt $<$form$>$} & Evaluate {\tt $<$form$>$}, where {\tt
+$<$form$>$} is a Common Lisp expression. \\
+-load filename & Load the indicated file. \\
+-noinit & Do not load any {\tt oplan-init} file. \\
+-tfc $<$tfc-arg, ...$>$ & Run the {\sc tf} syntax checker rather than as
+O-Plan. All arguments after the {\tt -tfc} will be processed by the
+syntax checker. 
+\end{tabular}
+
+Note that all arguments are processed {\em before} O-Plan considers
+loading an {\tt oplan-init} file. If you need something to happen
+earlier, use {\tt -eval} or {\tt -load}.
+
+\subsection{The oplan-init file}
+When O-Plan starts, it looks for a file named {\tt oplan-init}, first
+in the current directory and then in the user's home directory.  If
+the file exists, is is loaded into Lisp.
+
+The oplan-init file can contain (Lisp) commands that customise
+certain aspects of O-Plan.  At present, only a few such
+customisations are defined.  See the sections on defining a PostScript
+viewer and on the whats-going-on file for details.
+
+\subsection{Exiting O-Plan}
+The standard way to exit is to use the Quit option in the Task
+Assigner menu or to press the Quit button in the control panel
+window.  However, if something has gone wrong, these methods may
+not work.  In that case, you have several options.
+
+The fastest way to exit is to type the quit character (usually control
+and backslash) in the Lisp interaction window.  All the other windows
+should vanish, and Lisp will exit, leaving you back at the shell.
+This is a hard exit.  Lisp may not perform cleanup tasks such as
+flushing buffered output.  Typing control and C in the Lisp
+interaction window will also cause all other windows to vanish, but in
+most cases Lisp will not exit.  To exit from Lucid Common Lisp, type
+{\tt (lcl:quit)}.
+
+\subsection{\protect\label{major}Major Components of the the
+O-Plan System} 
+
+The screen image in Figure~\ref{screen-dump} shows the screen layout
+for the planner after the initial setup. O-Plan provides an
+interface which allows for developer access to the various components.
+These components are as follows:
+
+\begin{figure}[htb]
+\vspace{12.5cm}
+\special{psfile=../shared/shared-screen-dev.ps}
+\caption{Example screen image from the O-Plan System}
+\label{screen-dump}
+\end{figure}
+
+\begin{itemize}
+\item Task Assignment Window \newline
+This window allows the user to give a range of top level commands,
+such as giving the planner a new task, examining on certain aspects of
+the plan once it has been generated.
+\item Interface Manager \newline
+The interface manager handles interactions with agents external to the
+planner, such as the task assignment agent. The control panel is part
+of the Interface Manager and is used to output changes in the levels
+of diagnostics.
+\item Agenda Manager \newline
+The agenda manager keeps track of the current {\em issues} within the
+plan and decides which issue to tackle next. A issue describes a
+particular problem in the plan which needs to be addressed. For
+example, expand an action to a more detailed level, make sure that a
+condition of an action is satisfied at the right point, ensure enough
+resources are available for an action, etc.
+\item Database Manager \newline
+The database manager provides the support routines required by the
+knowledge sources and holds the emerging plan as it is being
+generated.
+\item Knowledge Source Platform \newline
+All decision making within O-Plan is carried out through knowledge
+sources. There is a separate knowledge source for each possible flaw
+type within a plan and the invocation of the appropriate knowledge
+sources is one of the functions of the agenda manager. Knowledge
+sources run on a knowledge source platform. In the current system there
+is only one such platform.
+\item Running lights \newline
+The running lights window shows the user which component is currently
+active, and in the case of problems where the error may have occurred. 
+\end{itemize}
+
+The user should identify each of the above components of the screen as
+they will be frequently referenced in the Example Demonstration
+Section. 
+
+\subsection{\protect\label{tfc}Compiling O-Plan Domains}
+The input language used by the O-Plan system is Task Formalism ({\sc
+tf}) which is used to describe the actions, their decomposition and
+constraints, tasks, resources in the domain, etc. In order to ensure
+that the {\em syntactic} description of a domain (in {\sc tf} format)
+is correct a command has been provided. (This assumes the user has
+defined an alias {\tt oplan} to invoke the O-Plan system. If an
+alternative method has been defined the command should be altered
+accordingly)
+
+\begin{verbatim} 
+   oplan -tfc
+\end{verbatim}
+
+The command will provide a trace of the compilation process and will
+indicate via appropriate messages where syntax errors have occurred in
+the encoding of a domain. A full description of the {\sc tf} language
+can be found in the O-Plan {\sc tf} Manual.
+
+\subsection{\protect\label{sanity}O-Plan Sanity Checker}
+The O-Plan sanity checker can be run from the window in which the
+O-Plan system was invoked. After start-up the window remains attached
+to the O-Plan system and is capable of accepting Lisp expressions. 
+
+The sanity checker should be run after a plan has been produced and
+its function is to check that certain aspects of the plan are
+syntactically correct. For example, all conditions have a contributor,
+all actions which need expanding have been, etc. Any error reports
+will appear in the Lisp interaction window. The number of errors will
+be reported to the {\sc ta} window, and the user will need to type
+return in the {\sc ta} window to continue. To run the sanity checker
+type {\tt (sanity-check)} in the Lisp-interaction window.
+
+\opsection{\protect\label{viewers}Plan and World Viewers}
+
+In addition to the default text based viewer O-Plan also provides the
+ability to view plans via a PostScript viewer.  One of the plan-view
+options in the Task Assignment menu is {\tt Plan View}.  This causes a
+PostScript picture of the current plan nodes and their order
+relationships to be printed on a PostScript printer.  It is assumed
+that the Unix command {\tt lpr} refers to such a printer by default.
+(That is, {\tt lpr} is called without a {\tt -P} argument to select a
+non-default printer.)
+
+However, a number of PostScript viewers are available, and they allow
+a user to display PostScript output on their screen rather than
+waiting for a hardcopy.  It is possible to inform O-Plan of such a
+viewer by defining the {\tt :ps-viewer} parameter in an {\tt
+oplan-init} file.  For instance, to use GhostView, a user would place
+the following line in their {\tt oplan-init} file:
+
+\begin{verbatim} 
+   (set-parameter :ps-viewer "ghostview -landscape")
+\end{verbatim}
+
+When this parameter has a value (the default is as above), a ``Viewer
+one page'' option will appear in the ``Output format'' menu (the menu
+that appears when a user selects {\tt Print graph} as the plan display
+mode).  Selecting this option will cause the viewer to be run.  The
+viewer is run in the background, and O-Plan can continue
+independently.  However, O-Plan might not exit completely until the
+viewer has exited as well.
+
+If you have difficulty getting a viewer to work, it may help to know
+that the viewer and {\tt lpr} are invoked using the Unix command
+
+\begin{verbatim} 
+   (viewer tmpfile ; /bin/rm tmpfile)&
+\end{verbatim}
+
+where viewer is, e.g., {\tt lpr} or {\tt ghostview -landscape} and
+{\tt tmpfile} is the name of a temporary file generated by O-Plan.
+
+\opsection{\protect\label{intervention}User Interaction with the Planner}
+The O-Plan planner allows the user to intervene at any time during the
+planning process to examine on the plan and world state and to set
+certain modes which allow the user to take choices on behalf of the
+planner. To intervene in the planning process the user needs to click
+in the {\tt Intervene as User} button on the {\tt O-Plan Control
+Panel}. As a result a menu will appear with the following options:
+
+\begin{verbatim}
+   Plan View
+   World View
+   Set Modes
+   Break in
+   Poison
+   Quit
+\end{verbatim}
+
+Each of the options will now be described in further detail.
+
+\begin{description}
+\item[Plan View]: This requests a view of the Plan which can be
+generated in several different formats:
+\begin{itemize}
+\item Text to screen: the plan will appear in the PlanWorld Viewer window.
+\item Text to file: the plan will be sent to a user named file.
+\item Print Graph: the plan can be sent to an appropriate print device.
+\end{itemize}
+
+\item[World View]:This requests a view of the World at a particular
+point in the plan and can be generated in several different formats:
+\begin{itemize}
+\item Text to screen: the description will appear in the PlanWorld
+Viewer window. 
+\item Text to file: the description will be sent to a user named file.
+\end{itemize}
+
+\item[Set Modes]:
+This allows the user to change the mode of {\em three} types of choice
+in the planner. The modes can be set to either {\tt ask} or {\tt auto}
+and can be changed by clicking on the option with the mouse. The modes
+are as follows:
+
+\begin{description}
+\item[Binding mode] deals with the binding of specific values to
+variables in the plan state.
+\item[Schema selection mode] deals with the choice of schema for an
+expansion of a node.
+\item[Poison Handler mode] deals with the choice of an alternative
+plan state should the current one prove fruitless.
+\end{description}
+
+When the planner encounters a choice in a mode set to {\tt ask} it
+will prompt the user with an appropriate menu from which the user must
+choose. The user is free to change mode as often as desired during the
+planning process. 
+
+\item[Break in]: This requests the planner to allow the user access to
+the O-Plan system. When this option is chosen a window will appear as
+follows: ({\tt Planner User (KS-USER)}
+
+\begin{verbatim} 
+>>Break: User Intervention
+
+KS-USER-BREAK:
+:C  0: Return from Break
+    1: Return to pprocess scheduler
+
+->
+\end{verbatim}
+
+The user is allowed to type any Lisp expression which can be
+evaluated. The user must remember to return from the break by chosing
+the appropriate option from the menu\footnote{The option and number
+will vary according to the outcome of expressions typed by the user}.  
+
+\item[Poison]: This requests the planner to poison the current plan
+state and to provide the user with a list of alternative plan states
+from which the user must choose one. The planner will then continue
+the planning process from this new plan state. 
+\end{description}
+
+\opsection{O-Plan Processes and Internal Structure}
+Most of the time, users do not have to know anything about how O-Plan
+works internally.  However, a reasonably accurate model of how the
+system works may make it easier to understand its behaviour,
+especially when something goes wrong.  Since the processing model used
+in version 3.1 may not be familiar to all users, this section provides
+a brief description.  It also serves to explain the contents of the
+``run-lights'' window.
+
+An O-Plan agent, such as the planning or execution agents,
+contains a number of components (Database Manager, Agenda Manager,
+etc) that run in a semi-independent fashion and accomplish certain
+tasks by sending each other messages.
+
+O-Plan version 3.1 runs as a single invocation of Lisp as a single
+Unix process.  Version 1 ran as several separate invocations of Lisp
+which communicated via sockets.  Consequently, later versions are
+sometimes referred to as the ``single-process'' version.  This has
+lower communication overheads and is easier to manage, but the
+appearance of independent operation is sometimes less complete.
+
+In the single-process version of O-Plan, each component is
+implemented as a pseudo process or p-process.  They are pseudo
+because, unlike real processes, they don't represent an independent
+thread of control.  They are more like event handlers.  An agent's
+main loop calls each p-process in turn so long as there is a message
+for it to handle.  The p-process usually handles one message and then
+returns to the main loop.
+
+When O-Plan is started, a small one-line window will appear before
+all of the other windows.  This window is called the {\tt Running
+Processes} window.  It displays the names of the parts of O-Plan that
+are currently running or waiting for a running component to return a
+value.  The window has the title ``O-Plan Running Processes'' and is
+usually placed just below the Task Assignment window.
+
+Ordinarily, only one p-process is active at once and they run
+in turns in a round-robin fashion.  However, in some cases (such
+as {\sc dm} requests), one p-process calls another as a subroutine.
+In this case the calling p-process will be shown to the left of
+the one it calls.  For instance, if the DM is running in the
+ordinary way, a user will see:
+
+\begin{verbatim} 
+  +----------------------+
+  |:DM                   |
+  +----------------------+
+\end{verbatim}
+
+But if {\sc kp} calls the {\sc am} and the {\sc am} calls the {\sc dm}
+before returning, a user will see:
+
+\begin{verbatim} 
+  +----------------------+
+  |:KP :AM :DM           |
+  +----------------------+
+\end{verbatim}
+
+In this case, only the {\sc dm} is actually running.  The {\sc am} is
+waiting for the {\sc dm} to return some result, and {\sc kp} is
+waiting for the {\sc am}.
+
+Certain things cannot happen while the system is waiting for a
+p-process to return.  In particular, no other p-processes can run.  So
+if a button in pressed in the control panel, or an expression typed in
+the Lisp interaction window, or a ``Plan View'' or ``World View'' selected
+in the Task Assigner window, the requested effects may not happen
+immediately.
+
+Whenever O-Plan does not seem to be responding as expected when
+something has been typed or selected from a menu entry, user should
+look at the ``running processes'' to see what part of O-Plan is
+currently running.  It is possible that the user may have forgotten to
+answer a question or to select a menu entry, so that O-Plan is
+waiting for the user to do that before going on.
+
+\opsection{Typing Lisp Commands}
+When starting O-Plan, the window in which the {\tt oplan} command
+was typed does not return to the shell prompt.  Instead it functions
+as a read-eval-print loop in which a user can type Lisp commands.  It
+is also used for some low-level messages from O-Plan.  This window is
+called the ``Lisp interaction window''.  Most of the time, a user can
+ignore it, but may have to use it from time to time, e.g. to turn
+on some of the debugging tools.  Any Lisp expression can be typed as a
+command.
+
+It's possible to type commands because there's a (pseudo-)process that
+waits for input from this window and evaluates it when it comes.  When
+a command is typed, there may therefore be a delay, until the next
+time this pseudo-process gets to run, before the command is evaluated.
+
+Note that if the input typed into the interaction window doesn't
+amount to a complete Lisp expression, the whole system will eventually
+stop and wait for the expression to be completed.  In particular, this
+will happen if you {\tt <return>} is typed in the interaction window.
+A user can see this has happened by looking at the one-line ``Running
+processes'' window.  If nothing seems to be happening, but the
+:LISP-LISTENER process is running, it may be because the user has
+typed some incomplete input.
+
+The listening p-process prints {\tt form>} as a prompt, but the
+output that goes to the interaction window sometimes causes the prompt
+to go off the top of the screen.
+
+If a Lisp error occurs during the evaluation of a command that was
+typed into this window, it is possible to get out of the error {\em
+break loop}, and hence allow O-Plan to continue running, by using a
+{\em restart} that has been set up for this purpose.  Look for the
+option that says {\tt Return to O-Plan}.  A user can usually select
+this option by typing {\tt :a} or {\tt 1}.  An example will make this
+a bit clearer:
+
+\begin{verbatim} 
+   form> (not-a-function)
+   >>Error: The function NOT-A-FUNCTION is undefined
+
+   SYMBOL-FUNCTION:
+      Required arg 0 (S): NOT-A-FUNCTION
+   :C  0: Try evaluating #'NOT-A-FUNCTION again
+       1: Return to O-Plan
+       2: Return to pprocess scheduler
+
+   -> :1
+   Return to O-Plan
+   NIL
+   t
+   form>
+\end{verbatim}
+
+\opsection{Dealing with Lisp Errors}
+By ``a Lisp error'' we mean that O-Plan or the Lisp system invokes the
+Lisp error signalling mechanism rather than, say, just printing a
+message.  Unless the error is caused by an erroneous command typed
+into the Lisp interaction window, it is usually due to a bug in
+O-Plan and should be reported.
+
+Your options for dealing with the Lisp error depend on what O-Plan
+was doing when it occurred.
+
+When a Lisp error occurs in the {\sc tf} compiler, a menu will appear
+to make sure you notice the error.  There will be only one option,
+``ok''.  Select ``ok'' to continue.  The TF compiler will exit and report
+that the file contained an error.  That is, a Lisp error is treated as
+if it were a single syntax error that applied to the whole {\sc tf}
+file.
+
+When the error occurs in some other part of the planner, there is
+typically no neat way to recover from it, and a more complex menu
+appears.  It will look something like this:
+
+\begin{verbatim}
+   Lisp error in process <process-name>
+   ------------------------------------
+   Allow the error
+   Return to scheduler
+   Force global reset
+\end{verbatim}
+
+{\tt <Process-name>} will be replaced by the name of the process that was
+running when the error occurred: :AM, :DM, :KP, etc.  You should
+look in the window associated with that process to see the error
+message.  The meanings of the options are as follows:
+
+\begin{description}
+\item[Description] Allow Lisp to handle the error.  This will usually
+result in a ``break loop'' as described below.  Select this option if
+you plan to report the bug, because the bug report should include a
+``backtrace'' (also described below).
+
+\item[Return to scheduler] Exit the process in which the error
+occurred so that the system can continue running.  In most cases, this
+will not work very well, because the process in which the error
+occurred needed to finish some task that was interrupted by the error.
+This sort of recovery can also be attempted from a break loop, as
+described below (again).
+
+\item[Force global reset] Attempt to reinitialise O-Plan.  This will
+abandon the attempt to find a plan (or whatever O-Plan was doing) and
+start over as if you had selected the "Initialise planner" option in
+the TA.  It is equivalent to evaluating the Lisp expression
+(force-reset).
+\end{description}
+
+When the Lisp system handles an error, Lisp usually enters a ``break
+loop'' in one of the O-Plan windows.  Ordinarily, you will see a menu
+first, as described above.  In any case, you can tell that Lisp has
+entered a break by the following signs:
+
+\begin{enumerate}
+\item O-Plan will stop producing any output.
+\item The one-line ``running processes'' window will stop changing.
+\item There will be an error message in a window associated with
+the rightmost name in the ``running processes'' window.
+\item The window will be displaying the ``>'' prompt.
+\end{enumerate}
+
+The first two can also happen when O-Plan is merely taking a long
+time to do something; the others cannot.
+
+In a break loop, the normal ways of exiting O-Plan by using the
+control panel or the {\sc ta} menu will not work.  However, you can
+type Lisp debugger commands and Lisp expressions in the the window,
+after the ``$>$'' prompt.  Typing
+
+\begin{verbatim}
+  (exit-oplan)
+\end{verbatim}
+
+should cause O-Plan to exit.
+
+\begin{verbatim}
+  (force-reset)
+\end{verbatim}
+
+attempts to reset the system by wiping out all pending messages,
+sending itself an {\tt :INIT} message, and returning to the process
+scheduler.
+
+If you're planing to report a bug, you should get a ``backtrace''
+before exiting.  It shows the nested Lisp procedure calls that led up
+to the error.  Get a backtrace by typing ``::b'' after the ``$>$''
+prompt.  Grab the resulting output and the error message with the
+mouse and put them both in the bug report.
+
+In some cases you can (and may want to) get O-Plan to continue after
+an error.  This is most likely to be so when the error is in a
+relatively peripheral part of the planner, such as the {\sc pw}
+viewer, but it can happen in other cases too.
+
+In some cases, the Lisp system will offer you a reasonable way to
+continue from the error, so always look at the options that appear
+after the error message.
+
+Another form of recovery that sometimes makes sense is to get O-Plan
+to abandon its current activity and allow other parts of the system to
+run.  You can accomplish this by selecting ``Return to pprocess
+scheduler'' from the restart options presented after the Lisp error
+message.  (This is equivalent to choosing "Return to scheduler" from
+the menu appears when the error is first noticed.)
+
+This approach should be tried only when the error occurs during a
+relatively self-contained activity.  An example might be a Lisp error
+when the PlanWorld Viewer tried to display a plan.  By returning
+control the the scheduler, you could get the viewer to abandon this
+attempt This would work fairly well because nothing else in the system
+depends very strongly on the viewer succeeding.  On the other hand, it
+would not work very well if, for instance, the {\sc dm} ran into an
+error somewhere deep in the World State manager.  In such cases, you
+might try typing the command (force-reset) instead.
+
+\opsection{Control Panel and Trace Information within O-Plan}
+The control panel allows the developer to set the levels of diagnostic
+information and monitors within the system. Diagnostic levels can be
+set in a range of values from {\tt none} through to {\tt all} where
+all messages are printed. In most cases setting the level to {\tt
+emergency only} is usually sufficient. The control panel also allows
+the developer to place the system into single step mode in which the
+developer is prompted on each agenda cycle to choose the next agenda
+to be processed. A description of the single step mechanism is given
+in step 6, (Agenda Manager Processing Options) of Section~\ref{demos}
+which describes how to run an O-Plan demonstration.
+
+The running lights process shows the developer which component is
+currently running and in the case of a problem allows the developer to
+easily identify in which component a problem has occurred. The running
+lights window is controlled from a variable which allows the output to
+be turned on and off. This can be achieved as follows:
+
+To turn the running lights on (the default), have Lisp evaluate:
+
+\begin{verbatim} 
+  (run-lights-on)
+\end{verbatim}
+
+To turn the running lights off, have Lisp evaluate:
+
+\begin{verbatim} 
+  (run-lights-off)
+\end{verbatim}
+
+One way to get Lisp to evaluate these expressions is to type them in
+the Lisp interaction window; another is to put them in the user's
+``oplan-init'' file.  Note, however, that the oplan-init file is
+examined only when O-Plan first starts up.
+
+\opsection{\protect\label{demos} Example Demonstration}
+The demonstrations allow the user to gain a gentle introduction to the
+O-Plan systems through a series of simple worked examples. This
+section describes the basic steps involved in running any of the
+demonstrations.
+
+The O-Plan system is menu driven (via the Task Assignment Window) which
+allows the user to issue high level commands to the system. The Task
+Assignment Window contains the following menu items:
+
+\begin{verbatim}
+    Status: Version <no> <date> <status of the planner> either:
+            uninitialised, planner initialised, planning, 
+            replanning, executing, planner finished
+    Domain: one of none, <file> or <file> + <file>
+    Task  : one of none or <task name>
+    Authority: plan(all=inf), execute(all=no)
+
+    * 1) Initialise Planner
+      2) Input Task 
+      3) Set Task
+      4) Add to Task
+      5) Plan View
+      6) World View
+      7) Replan
+      8) Execute Plan
+    * 9) Quit
+
+    Please choose a number:- 
+\end{verbatim}
+
+In the Task Assignment Window items marked with a {\tt *} are the only
+ones available from the planner at any point. A demonstration can be
+broken down into ten distinct stages:
+
+\begin{enumerate}
+\item {\bf Initialising the System} \newline
+Initialises the system ready for a new {\sc tf} domain description to be
+accepted.
+
+In order to carry out this step the following should be used:
+
+\begin{quote} 
+Move the mouse to the Task Assignment Window and enable the window for
+keyboard input. Enter 1, (followed by carriage return) and this will
+initialise the planner ready for the demonstration. Wait until the
+planner initialised message appears in the {\tt Status} banner of the
+Task Assignment Window.  
+\end{quote}
+
+\item {\bf Specifying the Domain} \newline
+This part of the demonstration informs the planner of which domain is
+to be used, e.g.  block stacking, house building, etc. 
+
+In order to specify this information the following step should be
+used:
+
+\begin{quote}
+
+Enter 2 from the Task Assignment Window. This will cause a further menu 
+to appear which describes the problem domains available in the {\sc
+\$oplandir}/{\sc tf} directory. Use the mouse pointer to either:
+
+\begin{enumerate}
+\item choose the file which contains the domain description you wish
+to use.  
+\item choose the {\tt Change directory} option. The user will be
+presented with a menu listing the previous {\sc tf} directories
+visited (where appropriate) and an option to type in a new directory
+name. The user must either chose a directory from the menu or type the
+name of a new directory after the prompt in the Task Assignment window.
+The {\sc tf} files in the specified directory will now be displayed.
+\item choose the {\tt Enter filename} option and type the name
+of the file after the prompt in the Task Assignment window.
+\end{enumerate}
+
+Wait until the Task Assignment Window {\tt Status} banner displays the
+message that is has successfully set up for the chosen domain. 
+\end{quote}
+
+\item {\bf Specifying the Task} \newline
+This part of the demonstration informs the planner of the particular
+task to be carried out within the domain. For example, the order of the
+completed stack of blocks, the type of house, etc. 
+
+In order to specify this information the following step should be
+used:
+
+\begin{quote}
+Enter 3 from the Task Assignment Window. This will cause a new
+menu to appear which describes the particular tasks in the domain you
+may choose from (the list of task schemas in the {\sc tf} file). Use
+the mouse pointer to choose the task you wish the planner to solve.  
+\end{quote}
+
+\item {\bf Adding a New Action to the Plan} \newline
+This part of the demonstration informs the planner that the user
+wishes to add further requirements to the plan. These can be added
+once a plan has been generated and during the subsequent execution of
+the plan. 
+
+In order to specify this information the following step should be
+used:
+
+\begin{quote}
+Enter 4 from the Task Assignment Window. This will cause a new menu
+to appear which has a single option to ``Add an action''. Use the
+mouse pointer to choose the option. The Task Assignment Window will
+now be cleared to allow the input of the new action e.g. (evacuate
+Calypso 20), (install kitchen\_equipment), etc. 
+\end{quote}
+
+\item {\bf Running the Planner on the Task} \newline 
+This part of the demonstration usually involves little interaction
+from the user apart from watching the messages from various windows.
+However, the user is free to intervene as described in
+Section~\ref{intervention} should they wish to though it is not
+expected as part of a demonstration. As the planning processing moves
+forward text will appear in each of the interface manager, agenda
+manager, database manager and ks-platform windows respectively. The
+text gives a trace of the planner as it solves the problem. It is not
+necessary as part of the demonstration to understand the information
+as it is being displayed.
+
+
+\item  {\bf Messages and Diagnostics} \newline
+The level of messages will be the default (normally short one line
+messages). Greater or lesser levels of messages can be selected for
+O-Plan using the Interface Manager's Control Panel. 
+
+\item {\bf Agenda Manager Processing Options} \newline
+The user may also control the order in which outstanding tasks (agenda
+entries) are processed by the the O-Plan system. This is achieved by
+placing the O-Plan system into single step mode. This is achieved by
+chosing the {\tt Single Step} button from the Control Panel. This
+will result in the following menu being displayed in the Agenda
+Manager window.
+
+Agenda Manager Interrogator: \newline
+Stopped in cycle 61
+\begin{enumerate}
+\item {\tt Display the Agenda Table}: Display current list of
+outstanding tasks
+\item {\tt Display the Untriggered Agenda Table}: Display the current
+list of untriggered agenda entries. 
+\item {\tt Display the Alternatives Agenda Table}: Display the list of 
+alternative plan state to explore
+\item {\tt Process the top agenda entry}: Send the top entry for processing
+\item {\tt Process any agenda entry}: Send a specified entry for
+processing
+\item {\tt Schedule KS-USER}: This will schedule the {\sc ks-user}
+knowledge source to run on the next cycle of the planner. This will
+allow the user to choose options from the menu described in
+Section~\ref{intervention}.
+\item {\tt Break in}: This allows the user to interrogate the contents
+of particular datastructures within the {\sc lisp} code. You may
+resume O-Plan by typing {\tt 0} 
+
+\item {\tt Quit single step mode}
+\end{enumerate}
+
+\item {\bf Browsing on the Plan} \newline
+Once the plan has been generated (or while it is being generated) by
+the O-Plan system it can be viewed in a number of ways. In order to
+specify the display mode Enter 5 from the Task Assignment Window.
+This will invoke\footnote{Assuming the window is not already present}
+the PlanWorld window which will display information from the planner
+and allow the user to specify file names where necessary. 
+
+The user will now be presented with a menu showing the different
+viewing formats available. These are as follows:
+
+\begin{enumerate}
+\item {\tt Text to screen}: Send each node of the plan to the
+PlanWorld window in the following format:
+
+\begin{verbatim} 
+   Node Number: node-3-10-2
+      Begin_end Predecessors : (end_of node-3-9-1 begin_of node-3-10)
+      Begin_end Successors   : (end_of node-3-10-2)
+      End_end Predecessors   : (begin_of node-3-10-2)
+      End_end Successors     : (begin_of node-3-9-8 begin_of node-3-10-3)
+      Earliest_start_time    : 7~00:00:00
+      Latest_start_time      : infinity
+      Earliest_finish_time   : 9~00:00:00
+      Latest_finish_time     : infinity
+      Minimum_duration       : infinity
+      Maximum_duration       : infinity
+      Node_type              : action
+      Node_pattern           : "(pour basement floor)"
+\end{verbatim}
+
+In most cases the size of the plan will cause information to be lost
+off the top of the window and the user is advised to place the window
+in {\tt scroll mode} buy pressing the middle mouse button and the
+control key simultaneously and chosing the {\tt Enable Scrollbar}
+option from the menu which appears.  
+
+\item {\tt Text to File}: Send the plan to the file name specified by
+the user and place it in the directory specified in the environment
+variable {\sc \$oplantmpdir}. The user will be prompted for the file
+name via the PlanWorld window. The format of each node in the file is
+as follows:
+
+\begin{verbatim} 
+  node 
+    <node number>
+    (<begin end predecessors>)
+    (<begin end successors>)
+    (<end end predecessors>)
+    (<end end successors>)
+    (<earliest-start> <latest-start> <earliest-finish> <latest-finish> 
+          <min-duration> <max-duration>)
+    <node type>
+    <node pattern>
+  end_node
+\end{verbatim}
+
+An example of a node is as follows:
+
+\begin{verbatim} 
+  node
+    node-3-4-1-2                                  
+    (end_of node-3-4-1-1)                         
+    (end_of node-3-4-1-2 begin_of node-3-4-1-2-1)
+    (begin_of node-3-4-1-2 end_of node-3-4-1-2-1)
+    (begin_of node-3-4-1-3)
+    (0 1728000 172800 1900800 172800 1900800)
+    action
+    "(ground_move 107th_acr_%byair ft_meade_port andrews_afb_naf_afb)"
+  end_node
+\end{verbatim}
+
+\item {\tt PostScript Graph}: Send the plan to a Postscript printer
+for printing.  The user will be presented with a second menu from
+which they must chose:
+\begin{enumerate}
+\item {\tt Single page}: Send a copy of the plan (scaled
+to fit on a single sheet of A4) directly to a specified hardcopy
+device. 
+\item {\tt Multiple Pages}: Send a copy of the plan (split across
+multiple sheets of A4) directly to a specified hardcopy
+device. 
+\end{enumerate}
+
+Once the user has chosen their required output format a further menu
+will appear indicating the number of levels. The user can either chose
+to display the plan to a required level or display all nodes of the
+plan by chosing the {\tt all} option.
+\end{enumerate}
+
+\item {\bf Browsing on Plan State Information} \newline
+Further information concerning the effects asserted in the plan and
+the goals satisfied during the generation of the plan, etc  can be
+obtained through the Interface Manager's Control Panel. Two separate
+browsing menus are provided:  
+
+\paragraph{Interrogate the Contents of the DM}
+To view this information chose the {\bf DM Developers Menu} option from
+the Control Panel window. This will result in a new menu appearing in the
+Database Manager window. The options in the menu are as follows:
+
+\begin{enumerate}
+\item {\tt Display nodes}: Display the nodes of the plan together with
+their predecessors and successors.
+\item {\tt Display TOME}: Display the effects asserted in the plan.
+\item {\tt Display GOST}: Display the protected ranges over which
+preconditions must be preserved.
+\item {\tt Display PSV}: Display the plan state variables which are in
+the plan.
+\item {\tt Break in}: You may resume O-Plan by typing {\tt 0}.
+
+\item Quit interrogation. Quit this menu
+\end{enumerate}
+
+\item {\bf Browsing on the World State} \newline
+Information concerning the state of the world at a particular node in
+the plan graph can be obtained and viewed on the screen. In order to
+view this information Enter 6 from the Task Assignment Window. 
+This will invoke\footnote{Assuming the window is not already present}
+the PlanWorld window which will display information from the planner
+and allow the user to specify file names where necessary. 
+
+The user will be prompted for a node number by the phrase {\tt View at
+end\_of node-} appearing in the Task Assignment Window. The user may
+then select the plan node of interest. Following the choice of {\tt
+node\_end} the user will be presented with a menu showing the
+different viewing formats available. These are as follows:  
+ 
+\begin{enumerate}
+\item {\bf Text to Screen}: 
+The information concerning the specified node of the plan will appear
+in the {\tt PlanWorld} window as a set of triples of the form {\tt
+$<$pattern$>$ = $<$value$>$}. For example:  
+
+\begin{verbatim}
+  {on a b} = true
+  {clear a} = true
+  {clear b} = false
+\end{verbatim} 
+
+\item {\bf Text to File}: Send the world view to the file name
+specified by the user and place it in the directory specified in the
+environment variable {\sc \$oplantmpdir}. The user will be prompted
+for the file name via the PlanWorld window. 
+\end{enumerate}
+\end{enumerate}
+
+\end{document}
+.\" ------------------------- Change History--------------------------
+.\"
+.\" Modified to form part of the 2.2 Release: BD: June 29th 1994
+.\" Modified to form part of the 2.3 Release: BD: March 14th 1995
+.\" Modified to form part of the 3.1 Release: BD: Dec 11th 1996
+.\"
+.\" ------------------------------------------------------------------
+
+
+.\" Local Variables:
+.\" mode: latex
+.\" version-command: "\\lastaltered"
+.\" eval: (setq write-file-hooks (cons 'timestamp-for-latex write-file-hooks))
+.\" End:

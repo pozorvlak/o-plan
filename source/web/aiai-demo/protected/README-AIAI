@@ -1,0 +1,76 @@
+An example of password protection.
+
+Author: Jeff Dalton
+Updated: Wed Jun  2 16:47:37 1999 by Jeff Dalton
+
+The URL for this directory is: 
+
+http://www.aiai.ed.ac.uk/~oplan/password-example/
+
+The http server will require a user-name and password when it's asked
+to access something in a directory that contains an .htaccess file
+that contains certain "Auth" entries.  The protection also applies
+to subdirectories.
+
+The 1st time a user tries to access such a URL, the server will say
+something to the browser, and the browser will ask the user for a
+user-name and password.  The browser will then repeat the request,
+passing along this new information, and it will continue to supply the
+user-name and password on subsequent requests for things in the same
+directory.
+
+(Netscape 4, at least, seems to try the same user and password even
+for completely separate directories, but you can retry and enter a
+different user and password.)
+
+Here's the .htaccess file for this directory:
+
+
+AuthName secret
+AuthType Basic
+AuthUserFile /project/oplan/html/password-example/.htpasswd
+
+<limit GET>
+require user oplan
+</limit>
+
+
+It appears that more than one "require user" line may be specified
+in a "limit" block, and then all of those user names can be used.
+
+The password file, in this case called .htaccess, can also have
+passwords for more than one user.
+
+Here's the .htpasswd file:
+
+
+oplan:NEI/T9G7hfTZ6
+
+
+As you can see, the password is encrypted.
+
+To create such a file, add a user, or change a password, use the
+htpasswd program.  Unfortunately, it's in an obscure place.  I've
+put a link to it in /project/oplan/bin; and so you can use:
+
+/project/oplan/bin/htpasswd
+
+
+Example:
+
+todday$ /project/oplan/bin/htpasswd                   
+Usage: htpasswd [-c] passwordfile username
+The -c flag creates a new file.
+
+todday$ /project/oplan/bin/htpasswd -c .htpasswd oplan
+Adding password for oplan.
+New password:
+Re-type new password:
+
+
+Note how running it with no arguments produces a message saying
+what the arguments can be.  Omit the "-c" if the file already
+exists and you want to modify it.
+
+
+

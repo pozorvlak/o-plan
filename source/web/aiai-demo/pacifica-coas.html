@@ -1,0 +1,109 @@
+<title>Pacifica COA Demonstration</title>
+
+<!--
+  Updated: Sun Oct  5 21:32:42 1997 by Jeff Dalton
+  -->
+
+<center><h1>Pacifica COA Demonstration</h1></center>
+
+This demonstration allows you to construct an evaluation matrix
+for several different courses of action.
+
+This page can be used to define the initial conditions that apply
+to all COAs.
+
+<p>
+<hr>
+<form action="pacifica-coas.cgi"
+      method=post>
+
+
+<table>
+
+
+<tr>
+<th align=left>Weather
+
+<td>
+<select name="weather" size=1>
+<option selected>clear
+<option>rain
+<option>storm
+</select>
+
+
+<tr>
+<th align=left>Road status
+
+<tr>
+<td>Delta - Abyss
+<td>
+<select name="road-delta-abyss" size=1>
+<option selected>open
+<option>landslide
+<option>flooding
+</select>
+
+<td>Abyss - Barnacle
+<td>
+<select name="road-abyss-barnacle" size=1>
+<option selected>open
+<option>landslide
+<option>flooding
+</select>
+
+<tr>
+<td>Barnacle - Calypso
+<td>
+<select name="road-barnacle-calypso" size=1>
+<option selected>open
+<option>landslide
+<option>flooding
+</select>
+
+<td>Calypso - Delta
+<td>
+<select name="road-calypso-delta" size=1>
+<option selected>open
+<option>landslide
+<option>flooding
+</select>
+
+
+<tr>
+<th align=left>Resources at Delta
+
+<!-- Simplification: don't allow zero GTs or helicopters -->
+
+<tr>
+<td>Ground transports
+<td>
+<select name="n-gts" size=1>
+<option selected>1
+<option>2
+</select>
+
+<td>Helicopters
+<td>
+<select name="n-helicopters" size=1>
+<option selected>1
+<option>2
+</select>
+
+
+</table>
+
+
+<p>
+<input type="submit" value="Begin"> COA definition.
+
+<p>
+<input type="reset"> Undo all changes to the form.
+
+</form>
+
+<hr>
+
+<Address>
+<A HREF="http://www.aiai.ed.ac.uk/~jeff/">Jeff Dalton</A>
+</Address>

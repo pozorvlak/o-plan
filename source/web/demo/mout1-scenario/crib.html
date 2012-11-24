@@ -1,0 +1,100 @@
+<html>
+<head>
+<title>O-Plan MOUT Demonstration</title>
+</head>
+
+<body bgcolor="#ffffff">
+
+<p><a href="img/mout-col.gif">Initial situation:</a>&nbsp;&nbsp;the action
+takes place in the village of El McKenna. 17 Opposing Force (OPFOR) soldiers
+are holding the local population as hostages in the
+<a href="img/mout-col.gif">three central buildings</a> (32, 33 and 41).
+A Small Unit Operations Company is to be sent in helicopters
+to neutralise the OPFOR threat and free the civilians.
+
+<hr>
+
+<a href="img/mout-col.gif">Advance planning:</a>&nbsp;&nbsp;the 
+commander specifies the mission as three tasks to rescue the 
+hostages from the three buildings. In this scenario the commander 
+explores the use of different toehold buildings. The first COA is 
+set up as follows:
+
+<pre>
+platoon_1  building_34  building_33    
+platoon_2  building_21  building_32    
+platoon_4  building_46  building_41          
+</pre>
+
+This takes too long (4 hours 10 minutes) since building 21 is large and
+fortified.
+
+<p><a href="img/mout-col.gif">COA-2</a> uses building 31 instead of 21 
+as follows:
+
+<pre>
+platoon_1  building_34  building_33          
+platoon_2  building_31  building_32          
+platoon_4  building_46  building_41          
+</pre>
+
+This is fine: it takes 3 hours 35 minutes, leaving 25 minutes slack time
+in case things go wrong. The three platoons set off for the landing zone 
+in the helicopters.
+
+<hr>
+
+<a href="img/mout-col.gif">En-route replanning:</a>&nbsp;&nbsp;during
+the flight, the company commander is informed by the recon team
+on the ground that OPFOR have been preparing booby traps in building 46.
+The commander therefore generates a new COA to deal with this, using
+building 42 instead:
+
+<pre>
+platoon_1  building_34  building_33          
+platoon_2  building_31  building_32          
+platoon_4  building_42  building_41          
+</pre>
+
+Start execution, show world state and explain it comes from the SAS.
+Execute through to the point where they are all at their ORPs (at --:--).
+
+<hr>
+
+<a href="img/mout-col.gif">Unforseen obstacles:</a>&nbsp;&nbsp;at --:--,
+put an event before 
+<p>
+<font size="-2">
+<p>
+<font size="-1">(move_to_toehold platoon_4 orp_42 building_42) begins</font>
+<p>
+Pattern:<br>(obstacles_to platoon_4)
+<p>
+Effects:<br>(obstacles orp_42 building_42) = (minefield concertina_wire)
+<p>
+</font>
+Execute to the world event, show the world state,
+repair choosing go_around for the minefield and 
+cut_through for the wire. Cut_through is better since go_around is what OPFOR
+want you to do.
+<p>
+Execute through to the point where they are all in the toeholds (at --:--).
+
+<hr>
+
+<a href="img/mout-col.gif">Snipers:</a>&nbsp;&nbsp;at --:--, put an event 
+before
+<font size="-2">
+<p>
+<font size="-1">(move_to_target platoon_1 building_34 building_33) begins</font>
+<p>
+Pattern:<br>(snipers_fire_on platoon_1)
+<p>
+Effects:<br>(snipers building_34 building_33) = (building_46 building_32)
+<p>
+</font>
+Execute up to the world event, repair choosing AFSS for sniper in 46 and
+other_friendly_unit for sniper in 32. Execute to end. Show world state.
+
+</body>
+</html>

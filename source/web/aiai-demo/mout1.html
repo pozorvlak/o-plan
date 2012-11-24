@@ -1,0 +1,110 @@
+<title>SUO/PDA Project: O-Plan MOUT Demonstration</title>
+
+<!--
+  Updated: Mon Feb  7 01:38:45 2000 by Jeff Dalton
+  -->
+
+<body bgcolor=White>
+
+<p>
+<center><table><tr><td>
+<font size="+2"><b>SUO/PDA Project: O-Plan MOUT Demonstration</b></font>
+</td></tr></table></center>
+
+<!-- Button bar -->
+
+<table border=1 cellspacing=0 cellpadding=2 width=100%>
+<tr bgcolor="#cccccc">
+<td align=center valign=center>
+<small>
+<A HREF="demo/image/mout1-map.html"
+>Map</A>
+ | 
+<A HREF="demo/mout1-scenario"
+>Scenario</A>
+ |
+<A HREF="demo/mout1-scenario/scene0.html"
+>Demo Script</A>
+</small>
+</td>
+</tr>
+</table>
+
+<p>
+This demonstration allows you to run an O-Plan planning and execution
+agent and interact with it through a COA evaluation matrix. The main 
+features of the demonstration are summarized below. A password is required.
+
+<p>
+This is an initial demonstration of plan generation, execution monitoring
+and plan repair for Small Unit Operations (SUO) forces performing Military
+Operations in Urban Terrain (MOUT). The SUO forces are equipped with a
+Situation Awareness System (SAS) which includes a Planning and Decision Aid 
+(PDA) which is intended to assist them in generating, refining, selecting,
+communicating, executing and repairing plans across multiple echelons.
+
+<p>
+When you're ready to begin, press the "Begin" button below.  O-Plan
+will continue running until the Task Assigner selects "Exit" or
+"Restart" from the menu bar at the top of the main page or until
+there has been no interaction for too long a time.
+
+<!-- Now a form -->
+
+<p>
+<form
+ action="matrix-server.cgi/join/mout1"
+ method=post>
+
+<!-- TF file for any-tf startup -->
+<input type="hidden" name="tf-file" value="mout1">
+
+<table>
+
+<tr>
+<td>Session:</td> <td><input size=12 name="session"></td>
+<td>User role:
+  <select name="role" size=1>
+    <option>Task-Assigner
+    <option>Planner
+    <option selected>Both Task-Assigner and Planner
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type=password size=12 name="password"></td>
+<td><input type="submit" value="Begin">
+    <input type="reset" value="Undo changes"></td>
+</tr>
+
+</table>
+
+</form>
+
+<!-- What's Cool? -->
+
+This demonstration illustrates plan generation, execution monitoring
+and plan repair. It includes:
+
+<ul>
+<li> Generation of alternative COAs under different initial assumptions;
+<li> En route replanning to deal with dynamic situations;
+<li> Plan execution tracking to deal with failures or unexpected events;
+<li> Considered plan repair during the low tempo phase of the mission;
+<li> Fast plan repair during the high tempo phase of the mission;
+<li> Consideration of interfaces to target SUO/SAS environment.
+</ul>
+
+<!-- O-Plan's standard AIAI page foot -->
+
+<p>
+<hr>
+<A HREF="/">
+<img width=82 height=37 alt="AIAI"
+      align=right border=0 src="/img/logo/small.gif">
+</A>
+<Address><A HREF="/~oplan">O-Plan</A></Address>
+
+</body>

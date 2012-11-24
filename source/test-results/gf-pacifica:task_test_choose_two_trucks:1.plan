@@ -1,0 +1,210 @@
+
+;;; Statistics:
+(
+(:am-cycles . 23)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 4)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(load . 2)
+(move . 2)
+(task_simple_accumulation_test . 0)
+(task_test_choose_two_trucks . 0)
+(transport . 1)
+(unload . 2)
+)
+
+;;; Effect levels:
+(
+(capacity . 0)
+(evacuate_to . 0)
+(people_in . 2)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-4 :begin) (node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-4 :end) (node-3 :end))
+   nil
+   nil
+   nil
+   (34200 :inf 34200 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-4 :end))
+   ((node-2 :begin))
+   (0 :inf 32400 :inf)
+   action
+   (transport count 20 from calypso to delta)
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-3-2 :begin))
+   (0 :inf 14400 :inf)
+   action
+   (move vehicle truck_1 from delta to calypso)
+)
+(node-3-2
+   ((node-3-1 :end))
+   nil
+   nil
+   ((node-3-3 :begin))
+   (14400 :inf 16200 :inf)
+   action
+   (load count 20 into truck_1 at calypso)
+)
+(node-3-3
+   ((node-3-2 :end))
+   nil
+   nil
+   ((node-3-4 :begin))
+   (16200 :inf 30600 :inf)
+   action
+   (move vehicle truck_1 from calypso to delta)
+)
+(node-3-4
+   ((node-3-3 :end))
+   nil
+   nil
+   ((node-4-4 :begin) (node-3 :end))
+   (30600 :inf 32400 :inf)
+   action
+   (unload count 20 from truck_1 at delta)
+)
+(node-4
+   ((node-1 :end))
+   ((node-4-1 :begin))
+   ((node-4-4 :end))
+   ((node-2 :begin))
+   (0 :inf 34200 :inf)
+   action
+   (transport count 20 from exodus to delta)
+)
+(node-4-1
+   ((node-4 :begin))
+   nil
+   nil
+   ((node-4-2 :begin))
+   (0 :inf 14400 :inf)
+   action
+   (move vehicle truck_2 from delta to exodus)
+)
+(node-4-2
+   ((node-4-1 :end))
+   nil
+   nil
+   ((node-4-3 :begin))
+   (14400 :inf 16200 :inf)
+   action
+   (load count 20 into truck_2 at exodus)
+)
+(node-4-3
+   ((node-4-2 :end))
+   nil
+   nil
+   ((node-4-4 :begin))
+   (16200 :inf 30600 :inf)
+   action
+   (move vehicle truck_2 from exodus to delta)
+)
+(node-4-4
+   ((node-3-4 :end) (node-4-3 :end))
+   nil
+   nil
+   ((node-4 :end))
+   (32400 :inf 34200 :inf)
+   action
+   (unload count 20 from truck_2 at delta)
+)
+)
+
+;;; TOME:
+(
+((tome (capacity helicopter) :always) 25)
+((tome (capacity truck) :always) 35)
+((tome (evacuate_to delta) :always) true)
+((tome (people_in abyss) (node-1 :end)) 50)
+((tome (people_in barnacle) (node-1 :end)) 100)
+((tome (people_in calypso) (node-1 :end)) 20)
+((tome (people_in calypso) (node-3-2 :end)) 0)
+((tome (people_in delta) (node-1 :end)) 0)
+((tome (people_in delta) (node-3-4 :end)) 20)
+((tome (people_in delta) (node-4-4 :end)) 40)
+((tome (people_in exodus) (node-1 :end)) 20)
+((tome (people_in exodus) (node-4-2 :end)) 0)
+((tome (people_in heli_1) (node-1 :end)) 0)
+((tome (people_in truck_1) (node-1 :end)) 0)
+((tome (people_in truck_2) (node-1 :end)) 0)
+)
+
+;;; GOST:
+(
+((gost only_use_if (people_in calypso) 20 (node-3-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (people_in delta) 0 (node-3-4 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (people_in delta) 20 (node-4-4 :begin))
+   (((node-3-4 :end) . :already-satisfied))
+)
+((gost only_use_if (people_in exodus) 20 (node-4-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 vehicle truck_1 (psv-2) (truck_1))
+(psv-2 vehicle truck_2 (psv-1) (truck_2))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-1)
+(psv-2)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+((capacity helicopter) 25)
+((capacity truck) 35)
+((evacuate_to delta) true)
+)
+
+;;; World at end of node-2:
+(
+((capacity helicopter) 25)
+((capacity truck) 35)
+((evacuate_to delta) true)
+((people_in abyss) 50)
+((people_in barnacle) 100)
+((people_in calypso) 0)
+((people_in delta) 40)
+((people_in exodus) 0)
+((people_in heli_1) 0)
+((people_in truck_1) 0)
+((people_in truck_2) 0)
+)

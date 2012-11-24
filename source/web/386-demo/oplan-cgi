@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# This script is used to run O-Plan for non-interactive Web demos
+# It inserts some standard command-line arguments and can also set
+# a time limit.
+
+# Run-time limit
+
+ulimit -Ht 360  # hard limit: 6 minutes
+ulimit -St 300  # soft limit: 5 minutes
+
+# Real-time limit: 10 minutes, then SIGTERM; 20 seconds later, KILL.
+
+# (sleep 600; kill -TERM $$; sleep 20 kill -KILL $$)> /tmp/web-rt-limit-$$ &
+
+exec ./oplan-386 \
+	-not -interactive -noinit -no -windows -subr \
+	"$@"

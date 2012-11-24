@@ -1,0 +1,74 @@
+\contentsline {section}{\numberline {1}Introduction to Task Formalism}{6}
+\contentsline {section}{\numberline {2}Hierarchical AI Planning Systems}{7}
+\contentsline {section}{\numberline {3}Some Key Concepts}{9}
+\contentsline {subsection}{\numberline {3.1}Actions and Events}{9}
+\contentsline {subsection}{\numberline {3.2}Schemas}{9}
+\contentsline {subsection}{\numberline {3.3}Authority}{10}
+\contentsline {subsection}{\numberline {3.4}Effects and Conditions}{11}
+\contentsline {subsection}{\numberline {3.5}Resources}{12}
+\contentsline {subsection}{\numberline {3.6}Patterns}{13}
+\contentsline {subsection}{\numberline {3.7}{$\delimiter "426830A $pattern$\delimiter "526930B $} = {$\delimiter "426830A $value$\delimiter "526930B $}}{13}
+\contentsline {subsection}{\numberline {3.8}Min/Max Pairs for Time Windows and Resource Usage}{14}
+\contentsline {subsection}{\numberline {3.9}Notepad}{15}
+\contentsline {subsection}{\numberline {3.10}O-Plan External System Interface}{15}
+\contentsline {section}{\numberline {4}Commented Examples}{16}
+\contentsline {subsection}{\numberline {4.1}Blocks World}{16}
+\contentsline {subsection}{\numberline {4.2}House Building}{17}
+\contentsline {section}{\numberline {5}Conventions Used in the TF Description}{24}
+\contentsline {section}{\numberline {6}Component Definitions}{25}
+\contentsline {subsection}{\numberline {6.1}Basics}{25}
+\contentsline {subsection}{\numberline {6.2}Patterns, Values, Variables and Match Constraints}{26}
+\contentsline {subsection}{\numberline {6.3}Expressions}{27}
+\contentsline {subsection}{\numberline {6.4}Sets}{28}
+\contentsline {subsection}{\numberline {6.5}Nodes}{28}
+\contentsline {subsection}{\numberline {6.6}Specifications of Node Numbers, Node Ends and Time Points}{28}
+\contentsline {subsection}{\numberline {6.7}Numerical Bounds}{29}
+\contentsline {subsection}{\numberline {6.8}Time Specifications}{29}
+\contentsline {subsection}{\numberline {6.9}Resource Specifications}{30}
+\contentsline {subsection}{\numberline {6.10}Authority Statements}{32}
+\contentsline {section}{\numberline {7}TF Forms}{34}
+\contentsline {subsection}{\numberline {7.1}Documentary Information}{35}
+\contentsline {subsection}{\numberline {7.2}TF Compiler Defaults}{35}
+\contentsline {subsection}{\numberline {7.3}Including files}{36}
+\contentsline {subsection}{\numberline {7.4}User Interface Specification}{36}
+\contentsline {subsubsection}{\numberline {7.4.1}Plan View}{36}
+\contentsline {subsubsection}{\numberline {7.4.2}World View}{39}
+\contentsline {subsection}{\numberline {7.5}Plan Levels}{40}
+\contentsline {subsection}{\numberline {7.6}Preferences and Heuristic Information}{41}
+\contentsline {subsection}{\numberline {7.7}Resource Information}{42}
+\contentsline {subsection}{\numberline {7.8}Default Resource Information}{43}
+\contentsline {subsection}{\numberline {7.9}Calendar and Time Information}{44}
+\contentsline {subsection}{\numberline {7.10}Domain Constraints}{44}
+\contentsline {subsection}{\numberline {7.11}Compute Conditions}{45}
+\contentsline {subsection}{\numberline {7.12}Language Specific Code}{45}
+\contentsline {subsection}{\numberline {7.13}Object Types}{46}
+\contentsline {subsection}{\numberline {7.14}Global Data}{46}
+\contentsline {subsection}{\numberline {7.15}Actions and Schemas}{47}
+\contentsline {subsubsection}{\numberline {7.15.1}General Notes}{50}
+\contentsline {subsubsection}{\numberline {7.15.2}Schema}{50}
+\contentsline {subsubsection}{\numberline {7.15.3}Vars, Local\unhbox \voidb@x \kern .06em \vbox {\hrule width.3em}vars and Vars\unhbox \voidb@x \kern .06em \vbox {\hrule width.3em}relations}{50}
+\contentsline {subsubsection}{\numberline {7.15.4}Expands and Only\unhbox \voidb@x \kern .06em \vbox {\hrule width.3em}Use\unhbox \voidb@x \kern .06em \vbox {\hrule width.3em}For\unhbox \voidb@x \kern .06em \vbox {\hrule width.3em} ...}{51}
+\contentsline {subsubsection}{\numberline {7.15.5}Nodes, Orderings -- Expansions or Decompositions}{51}
+\contentsline {subsubsection}{\numberline {7.15.6}Conditions}{53}
+\contentsline {subsubsection}{\numberline {7.15.7}Conditions - Compute}{53}
+\contentsline {subsubsection}{\numberline {7.15.8}Notepad}{54}
+\contentsline {subsubsection}{\numberline {7.15.9}Authority}{54}
+\contentsline {subsubsection}{\numberline {7.15.10}Time Windows}{54}
+\contentsline {subsubsection}{\numberline {7.15.11}Other Constraints}{54}
+\contentsline {subsection}{\numberline {7.16}Primitive Actions}{55}
+\contentsline {subsection}{\numberline {7.17}Initial Information for Plan Generation}{55}
+\contentsline {subsection}{\numberline {7.18}Task Schemas}{56}
+\contentsline {section}{\numberline {8}TF Compiler}{58}
+\contentsline {section}{\numberline {9}O-Plan Commands}{59}
+\contentsline {section}{\numberline {10}Predefined Compute {$\delimiter "426830A $function names$\delimiter "526930B $}}{60}
+\contentsline {section}{\numberline {11}Guidelines for Writing TF}{61}
+\contentsline {subsection}{\numberline {11.1}Scope the Domain and Initial Analysis}{61}
+\contentsline {subsection}{\numberline {11.2}Action Expansion or ``Goal'' Achievement?}{61}
+\contentsline {subsection}{\numberline {11.3}Levels of Modelling}{61}
+\contentsline {subsection}{\numberline {11.4}Writing a Schema -- the Schema Envelope}{62}
+\contentsline {subsection}{\numberline {11.5}Help for the TF Writer}{63}
+\contentsline {subsection}{\numberline {11.6}Modelling Reusable Non-sharable Resources with Effects/Conditions}{63}
+\contentsline {section}{\numberline {12}Current Implementation}{65}
+\contentsline {subsection}{\numberline {12.1}Unsupported Features}{65}
+\contentsline {subsection}{\numberline {12.2}Features Anticipated}{66}
+\contentsline {subsection}{\numberline {12.3}Features Under Review}{68}

@@ -1,0 +1,305 @@
+<!DOCTYPE plan SYSTEM "http://localhost/~jeff/oplan-xml/plan.dtd">
+
+<plan domain="gpdt3-web-demo" task="do_all_task_types_rain">
+   
+   <node name="node-1" type="start">
+      <pattern></pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-1" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-14" end="begin"/>
+            <node-end-ref node="node-13" end="begin"/>
+            <node-end-ref node="node-12" end="begin"/>
+            <node-end-ref node="node-11" end="begin"/>
+            <node-end-ref node="node-10" end="begin"/>
+            <node-end-ref node="node-9" end="begin"/>
+            <node-end-ref node="node-8" end="begin"/>
+            <node-end-ref node="node-7" end="begin"/>
+            <node-end-ref node="node-6" end="begin"/>
+            <node-end-ref node="node-5" end="begin"/>
+            <node-end-ref node="node-4" end="begin"/>
+            <node-end-ref node="node-3" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-2" type="finish">
+      <pattern></pattern>
+      <node-end end="begin" est="72000" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-14" end="end"/>
+            <node-end-ref node="node-13" end="end"/>
+            <node-end-ref node="node-12" end="end"/>
+            <node-end-ref node="node-11" end="end"/>
+            <node-end-ref node="node-10" end="end"/>
+            <node-end-ref node="node-9" end="end"/>
+            <node-end-ref node="node-8" end="end"/>
+            <node-end-ref node="node-7" end="end"/>
+            <node-end-ref node="node-6" end="end"/>
+            <node-end-ref node="node-5" end="end"/>
+            <node-end-ref node="node-4" end="end"/>
+            <node-end-ref node="node-3" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="72000" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-2" end="begin"/>
+         </predecessors>
+         <successors>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-3" type="action">
+      <pattern>(evacuate_injured abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="14400" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-4" type="action">
+      <pattern>(evacuate_population abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-4" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="36000" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-4" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-5" type="action">
+      <pattern>(evacuate_with_medical_team abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-5" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="46800" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-5" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-6" type="action">
+      <pattern>(send_medical_supplies abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-6" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="21600" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-6" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-7" type="action">
+      <pattern>(send_emergency_food abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-7" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="32400" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-7" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-8" type="action">
+      <pattern>(send_medical_team abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-8" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="39600" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-8" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-9" type="action">
+      <pattern>(repair_gas_leak abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-9" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="54000" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-9" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-10" type="action">
+      <pattern>(defuse_terrorist_bomb abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-10" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="36000" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-10" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-11" type="action">
+      <pattern>(build_emergency_housing abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-11" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="72000" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-11" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-12" type="action">
+      <pattern>(repair_power_station_turbine abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-12" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="61200" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-12" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-13" type="action">
+      <pattern>(provide_immediate_assistance abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-13" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="54000" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-13" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-14" type="action">
+      <pattern>(shut_down_power_station abyss)</pattern>
+      <node-end end="begin" est="0" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-14" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="46800" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-14" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+</plan>

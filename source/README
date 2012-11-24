@@ -1,0 +1,110 @@
+                          O-Plan sources
+                          --------------
+
+This directory contains the program sources for O-Plan plus the
+scripts, configuration files, etc needed to build, install, and
+run O-Plan.
+
+The rest of this file provides some help in finding your way around.
+Lisp files are typically listed using their source names (.lsp) even
+if the object files would actually be used.
+
+
+Documentation
+-------------
+The "doc" subdirectory contains documentation on various aspects of
+O-Plan.  See especially
+
+  doc/ReadMe
+  doc/command-line-arguments
+  doc/parameters
+  doc/ta-interface
+  doc/ta-interface-quick-reference
+  doc/http-mode
+
+
+Compiling and system building
+-----------------------------
+For instructions on how to build and install O-Plan, see the file
+INSTALL in this directory.
+
+To see how the system is compiled or built, look first at:
+
+  Makefile
+  oplan.lsp
+  system-definitions.lsp
+
+The Makefile provides convenient ways to control the compilation of
+O-Plan source files and the building of an executable O-Plan image.
+It can also be used to make backups to compressed tar files or to
+floppy disks.
+
+When compiling the sources or building an image, the oplan.lsp file
+is always loaded first.  It performs some necessary "customization"
+of the host Common Lisp, defines the OPLAN package, and loads the
+following files:
+
+  oplan-release-date.lsp
+  support/lisp-prep.lsp
+  support/defpackage.lsp           [if necessary]
+  support/defsys.lsp
+  system-definitions.lsp
+
+Defsys.lsp provides the version of defsystem used to define the
+modules that make up O-Plan.  Defsys.lsp contains a description of
+this defsystem and the operations it provides.  The module definitions
+themselves are in the file system-definitions.lsp.
+
+O-Plan is then compiled by calling (compile-system 'everything)
+and built by:
+
+  (load-system 'oplan)
+  (oplan:save-oplan <image-name>)
+
+See the Makefile for the exact sequence of top-level commands for
+various cases.
+
+
+At run-time
+-----------
+Part of installation is to establish a command, "oplan", that can
+be used to run O-Plan.
+
+For the syntax of the oplan command, see doc/command-line-arguments.
+
+For a description of the "parameters" that can be set by command-line
+arguments or by the user's oplan-init file, see doc/command-line-arguments
+and doc/parameters.
+
+When an executable O-Plan image begins execution, the procedure that
+is called first is oplan-top-level in top/top-level.lsp.
+
+The sequence of events is then roughly as follows:
+
+  1. Initialization.
+     - Assign non-NIL defaults to the parameters that have them.
+     - Take parameter values from the corresponding Unix environment
+       variables, for those parameters that have corresponding env vars.
+     - Process the command-line arguments
+     - Load the oplan-init file, looking first in the current directory
+       then, if the file has not yet been found, in the user's home directory.
+     - Read the .config file.
+     - Load any files in the patch directory.
+
+  2. Create the component processes of the O-Plan agent.
+
+  3. Call pprocess-main-loop, which is defined in support/pseudo-process.lsp.
+
+After that, O-plan remains inside pprocess-main-loop which functions
+as a "round robin" scheduler for the component processes.  These processes
+include the Interface Manager (IM), the Controller / Agenda Manager (AM),
+the Database manager (DM), and a knowledge source platform (KP).
+
+The processes are sometimes called "pseudo-processes" (hence "pprocess"
+in "pprocess-main-loop") because they are not independent threads of control;
+and this version of the O-Plan architecture is sometimes called the "single
+process version", because there is only one Unix process per "agent".  (The
+planner is a single agent containing an IM, AM, etc.)
+
+For more information on these matters, see the Architecture Guide and
+the Implementation Guide.

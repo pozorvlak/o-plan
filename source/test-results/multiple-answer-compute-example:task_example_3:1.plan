@@ -1,0 +1,93 @@
+
+;;; Statistics:
+(
+(:am-cycles . 11)
+(:n-alts-chosen . 1)
+(:n-alts-remaining . 1)
+(:n-poisons . 1)
+)
+
+;;; Action levels:
+(
+(go_here_and_there . 1)
+(go_here_and_there2 . 1)
+(go_here_and_there3 . 1)
+(go_to . 2)
+(task_example_1 . 0)
+(task_example_2 . 0)
+(task_example_3 . 0)
+)
+
+;;; Effect levels:
+(
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-1 :end))
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (go_here_and_there3)
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (go_to newcastle)
+)
+)
+
+;;; TOME:
+(
+)
+
+;;; GOST:
+(
+)
+
+;;; PSV descriptions:
+(
+(psv-1 place newcastle nil (new_york london newcastle munich))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-1)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+)

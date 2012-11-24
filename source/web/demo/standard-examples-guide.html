@@ -1,0 +1,754 @@
+<TITLE>Standard O-Plan Demonstrations</TITLE>
+
+<!-- 
+
+  Updated: Fri Jan 28 02:20:40 2000 by Jeff Dalton
+
+  This HTML document is by Jeff Dalton (J.Dalton@ed.ac.uk) and
+  is based on the O-Plan Demonstration Guide by Brian Drabble.
+  It started as a more or less straight translation into HTML
+  (by hand) but has since been substantially modified.  It is
+  also much shorter with a number of details (especially about
+  Pacifica) deleted in order to make it easier to read.
+
+  This file can be viewed directly and as-is, but it's meant to be
+  processed to convert "DT" items that contain "domain=" or "task="
+  into hypertext links.  The domain links are to TF source files,
+  and the task links run O-Plan.  (Assuming that everything has been
+  set up correctly, of course.)
+
+  -->
+
+<H1>Standard O-Plan Demonstrations</H1>
+
+<H2>Introduction</H2>
+
+This document describes a set of demonstration applications which
+can be used as an introduction to the O-Plan system.  They range 
+in complexity from simple block stacking problems to such things
+as space station construction, satellite control, and island evacuations.
+The demonstrations show many aspects of planning problems, from
+simple action expansions to complex, goal-directed reasoning.
+
+<P>
+For each demonstration there are a number of hypertext links that,
+when selected, run O-Plan on a machine in Edinburgh using the
+World-Wide Web's <A HREF="http://hoohoo.ncsa.uiuc.edu/cgi/overview.html">
+Common Gateway Interface</A>.  This results in a document
+that describes a plan for whatever problem ("task") the link you
+selected represents.
+
+<P>
+Instead of saying "applications", we'll often talk of <i>domains</i>.
+Informally, a domain is just a planning application area such as
+house-building or block-stacking.  However, we'll also use "domain"
+in a narrower, technical sense to refer to a set of definitions 
+prepared for O-Plan.  Such domains are also called "domain descriptions",
+or "domain definitions" and are written in the Task Formalism (TF)
+language.  More than one set of definitions can be written for a given
+application area; the variations will depend on what application
+features are of interest and on how one choses to represent them in TF.
+So there can be several different house-building or block-stacking
+domains in the narrower sense of "domain".  Each one typically
+corresponds to a single TF source file, and these files / domains
+have names such as "blocks-1" or "house-4".
+
+<P>
+The hypertext links in this document that are used to run O-Plan
+look something like this:
+
+<DL>
+<DT>domain=get-to-work
+<DD><DL>
+    <DT>task=get_to_work_via_expansion
+    <DT>task=get_to_work_via_conditions
+    </DL>
+</DL>
+
+The links above will work; but you should read this before trying
+them.  The first line gives the domain, get-to-work.  Select that
+link to get the TF definition of the domain.  The "task" lines
+represent tasks or problems within the domain.  Select a task
+to cause O-Plan to run and produce a plan.
+
+<P>
+The get-to-work domain is a simple example designed to help explain
+how O-plan works.
+You may want to <A HREF="show-html/demo/output-formats.html">
+read that explanation</A>, at some point.
+
+It also describes the outputs that O-Plan produces.
+
+<P>
+Now, here's a preliminary description of the example domains.
+More complete descriptions, plus links for seeing the TF definitions
+and for running O-Plan, will follow.
+
+<DL>
+
+<DT><B>Block stacking</B>
+<DD>
+Some TF files deal with various block
+stacking problems such as the Sussman Anomaly.
+
+<DT><B>House Building</B>
+<DD>
+Several TF files define house building problems. The different files
+deal with time constraints, alternative building methods and
+contractors, etc.
+
+<DT><B>Missionaries and Cannibals</B>
+<DD>
+This is the standard missionaries and cannibals problem in which the
+task is to move three missionaries and three cannibals from the right
+bank of a river to the left bank using a single boat. The constraint is
+that the cannibals should <i>never</i> outnumber the missionaries on
+either bank (otherwise the cannibals will eat the missionaries!).
+
+<DT><B>Pacifica</B>
+<DD>
+Pacifica is an island state in the
+Pacific and the tasks consist of moving a number of evacuees from
+remote parts of the island to a central evacuation point and then
+flying them out. This example can be used to demonstrate the AutoCAD
+user interface to O-Plan (but not, unfortunately, on the Web).
+
+<DT><B>Satellite Control</B>
+<DD>
+A TF file for a satellite command and control problem. The satellite
+has various experiments whose data must be captured and transmitted to
+earth, taking into account time and resource constraints.
+
+<DT><B>Space Platform Construction</B>
+<DD>
+A TF file for a very simple space platform construction problem. This
+example can be used to demonstrate the AutoCAD user interface to
+O-Plan (though not via the Web).
+
+</DL>
+
+
+<H2>Block Stacking</H2>
+
+Block stacking puzzles are often used as a basic test domain for AI
+planning systems. In this particular demonstration the planner will be
+asked to solve the following type of problem:
+
+<PRE> 
+                                      _____
+                                     |     |
+                                     |  A  |
+         _____                       |_____|
+        |     |                      |     |
+        |  C  |                      |  B  |
+        |_____|   _____              |_____|
+        |     |  |     |             |     |             
+        |  A  |  |  B  |             |  C  |
+        |_____|  |_____|             |_____|
+ 
+         Initial State              Goal State
+        
+</PRE>
+
+The planner is to construct a plan to change the initial state 
+into the goal state. This is a simple problem because the
+planner has only a few simple plan operators which rely on the
+following assumptions:  
+
+<UL>
+<li> The table on which the blocks sit can have as many blocks on top
+     of it as desired.
+<LI> The hand which moves the blocks can only move one block at a time.
+<LI> A block can only be moved if it has a clear top i.e. no other
+     block is on top of it.
+<LI> Any block which is the destination of a move must have a clear
+     top beforehand.
+</UL>
+
+A full list of file names and task schema names are provided in the
+following two tables. The file <tt>blocks-1</tt> contains a single
+<tt>puton</tt> schema with which the  planner must construct a plan.
+The file <tt>blocks-2</tt> uses three schemas: a less capable
+<tt>puton</tt> and two others: <tt>makeon</tt> and <tt>makeclear</tt>.
+
+<DL>
+<DT>domain=blocks-1
+
+<DD>
+<DL>
+
+<DT>task=stack_abc
+<DD>
+<PRE>
+                A
+  C      --->   B        (The Sussman Anomaly problem)
+  A  B          C
+ ------       -----
+</PRE>
+
+<DT>task=stack_abc_2
+<DD>
+<PRE>
+                A
+  A      --->   B
+  B  C          C
+ ------       -----
+</PRE>
+
+<DT>task=stack_cba
+<DD>
+<PRE>
+                C
+  C      --->   B
+  A  B          A
+ ------       -----
+</PRE>
+
+<DT>task=stack_bac
+<DD>
+<PRE>
+                B
+  C      --->   A
+  A  B          C
+ ------       -----
+</PRE>
+
+</DL>
+
+<DT>domain=blocks-2
+
+<DD>
+The problems are the same as in blocks-1, but the operators
+used to solve them are different.
+
+
+<DL>
+
+<DT>task=stack_abc
+<DD>
+<PRE>
+                A
+  C      --->   B        (The Sussman Anomaly problem)
+  A  B          C
+ ------       -----
+</PRE>
+
+<DT>task=stack_abc_2
+<DD>
+<PRE>
+                A
+  A      --->   B
+  B  C          C
+ ------       -----
+</PRE>
+
+<DT>task=stack_cba
+<DD>
+<PRE>
+                C
+  C      --->   B
+  A  B          A
+ ------       -----
+</PRE>
+
+<DT>task=stack_bac
+<DD>
+<PRE>
+                B
+  C      --->   A
+  A  B          C
+ ------       -----
+</PRE>
+
+</DL>
+
+</DL>
+
+
+<H2>House Building</H2>
+
+This application shows the development of a plan for the construction
+of a typical family house. The plan is developed in a top-down manner
+with high level actions such as <tt>install_services</tt> and 
+<tt>decorate</tt> being inserted first and then expanded.
+This avoids the planner having to consider the detailed levels of the
+plan before the more important high level actions have been sketched
+out.  The different house building tasks show how time and resources
+can be modelled within the domain.
+
+<P>
+A full list of file names and task schema names are provided in the
+following table. 
+
+<DL>
+<DT>domain=house-1
+<DD>
+  <DL>
+  <DT>task=build_house
+  <DD>Builds a simple family house.
+  </DL>
+<DT>domain=house-2
+<DD>
+  <DL>
+  <DT>task=build_house
+  <DD>Contains TF which shows how interactions occur between schemas
+      and how schemas which provide alternate ways of achieving a task
+      can be specified. The interaction can be seen in the plan trace
+      as a failure to expand the first install-services schema chosen
+      and as a result taking the second install-services schema instead.
+  </DL>
+<DT>domain=house-3
+<DD>
+  <DL>
+  <DT>task=build_large_house
+  <DD>A larger house building example that in house-1 or house-2.
+      The plan constructed requires more condition satisfaction and 
+      interaction removal than in the previous house building problems.
+  </DL>
+<DT>domain=house-4
+<DD>A house building example similar to house-1 except that it includes
+    durations for actions and time windows in which specified actions
+    must take place.
+  <DL>
+  <DT>task=build_house
+  <DT>task=build_house_to_time_0
+  <DD>Build the house within a set time period on difficult ground,
+      with the time limits so tight that no solutuion is possible.
+  <DT>task=build_house_to_time_1
+  <DD>Build the house within a set time period on ready ground,
+      1 alternative possible (with standard kitchen).
+  <DT>task=build_house_to_time_2
+  <DD>Build the house within a set time period on ready ground,
+      2 alternatives possible (one with standard kitchen, one with
+      luxury kitchen).
+  </DL>
+</DL>
+
+<DL>
+<DT>domain=three-pigs
+<DD>House-building constrained by strictly-consumable resources.
+    The resources available are money, sticks, straw and bricks.
+    (Guess who lives in this house.)
+  <DL>
+  <DT>task=build_house
+  <DD>A simple family house with no restrictions on time and resources.
+  <DT>task=build_secure_house
+  <DD>Builds a family home for a cost between 0 and 2000 pounds which
+      is also proof against wolves.
+  <DT>task=build_cheap_house
+  <DD>Builds a home for a cost between 0 and 500 pounds.
+  <DT>task=build_cheap_secure_house
+  <DD>Builds a home for a cost between 0 and 500 pounds which is also
+      proof against wolves.  (This turns out to be impossible.)
+  </DL>
+</DL>
+
+
+<H2>Missionaries and Cannibals</H2>
+
+This is the standard missionaries and cannibals problem.  The
+definition shows some of the numerical reasoning capabilities of the
+O-Plan system.  The problem consists of moving 3 missionaries and 3
+cannibals from the right bank of a river to the left bank using a single
+canoe.  The constraint on the problem is that the cannibals must never
+outnumber the missionaries, for otherwise the missionaries will be
+eaten.
+
+<P>
+The problem is defined in several different ways, as listed below.
+All of them keep track of a "state" that lists the bank the boat is
+on and the numbers of missionaries and cannibals on each side.  All
+record when a state has already been visited as a way to avoid
+pointless journeys.  However, they differ in how arithmetic is
+performed or in the way they generate the sequence of moves.  Some 
+of the techniques developed for this problem have later been used 
+in other domains.
+
+<P>
+The starting state has three missionaries and three cannibals
+on the left back of the river along with the canoe.
+
+<DL>
+<DT>domain=mission
+<DD>
+
+The mathematics of calculating the number of missionaries and
+cannibals is carried out using successor arithmetic based on matching
+against patters that describe simple sums.  Another set of patterns
+describes the safe states.
+
+  <DL>
+  <DT>task=mc_problem
+  <DD>Gets everyone to the right bank.
+  </DL>
+
+<DT>domain=mission-with-only-compute
+<DD>
+
+The mathematics of calculating the number of missionaries and
+cannibals is carried out using <tt>compute</tt> conditions that
+call Common Lisp functions.  Safety is checked in a similar way.
+
+  <DL>
+  <DT>task=mc_problem
+  <DD>Gets everyone to the right bank.
+  </DL>
+
+<DT>domain=mission-forward-meta
+<DD>
+
+This is the last written and most radical of the three.
+
+  <DL>
+  <DT>task=mc_problem
+  <DD>Gets everyone to the right bank.
+  </DL>
+
+</DL>
+
+
+<H2>Pacifica</H2>
+
+<A HREF="http://www.aiai.ed.ac.uk/~oplan/IMG/pacifica-map.gif">
+<IMG SRC="http://www.aiai.ed.ac.uk/~oplan/IMG/pacifica-map-small.gif">
+</A>
+
+<P>
+This example develops plans for evacuations from a hypothetical
+island named Pacifica.
+
+<P>
+Pacifica is an island state located in the Pacific Ocean
+within long distance flying time of Honolulu, Hawaii. It has a very
+interesting coastline, but remains shrouded in mystery due to its
+inaccessibility over the centuries.  Only in the last century has it
+been inhabited, though some areas of the island remain largely
+unexplored and are unmapped.
+
+<H3>The story</H3>
+
+A number of people must be evacuated from the cities Abyss, Barnacle,
+and Calypso.  They will first be driven to the capital, Delta, then
+flown to Honolulu.  Initially, a C5, a B707, and some ground transports
+(GTs) are located in Honolulu.  From this initial situation, a plan is
+developed that moves the required transportation resources from
+Honolulu to Delta, uses the GTs to move the evacuees to Delta, and
+finally flies everything to Honolulu.
+
+<P>
+A list of file names and task schema names are provided in the
+following table.
+
+<DL>
+<DT>domain=pacifica
+<DD>
+  <DL>
+  <DT>task=operation_blue_lagoon
+  <DD>Two Ground Transports (GTs) are available.
+  </DL>
+</DL>
+
+
+<H2>Satellite Control</H2>
+
+This application shows the development of a plan for the control of a
+simple satellite we have called EUSAT (Edinburgh University
+Satellite). This satellite is based on the actual University of
+Surrey's successful UoSAT series of satellites. Earlier research into
+the application of task planning and scheduling at Edinburgh has
+included work on defining a task formalism description for O-Plan1 for
+a spacecraft similar to UoSAT-II but omitting confidential information
+(which we called BOGUSAT). This was further extended in the T-SCHED
+scheduling system, which took a scheduling perspective as opposed to
+the task planning view of O-Plan1, and generated actual on-board
+computer Diary commands.  The O-Plan project EUSAT model uses the
+same spacecraft model as BOGUSAT.
+
+<P>
+The experiments of the spacecraft include:
+
+<OL>
+<LI>Navigational Magnetometer (NAVMAG)
+<LI>Sun Sensor
+<LI>Horizon Sensor
+<LI>Space Dust Analyser
+<LI>Digital Voice Recording (DigiTalker)
+<LI>Charge Coupled Device (CCD)
+<LI>Particle Wave Experiment
+</OL>
+
+The experiments are connected via a series of <i>switches</i> to a tape
+recorder (DSR) and then to either a <tt>70cm</tt> or <tt>2m</tt>
+antenna for transmission to the ground. Alternatively some experiments
+can be connected <i>directly</i> to an antenna through <tt>line6</tt>
+instead of passing through the DSR. One of the experiments,
+called the DigiTalker, allows for a message to be loaded into a tape
+recorder (the DCE) from the ground and subsequently
+re-transmitted at a later time back to the ground.  As well as the
+series of experiments, the satellite must also send telemetry data to
+the ground.
+
+The movement of data from an experiment to an antenna is modelled as a
+set of switch settings. Each switch has a valid set of inputs and
+outputs, as follows:
+
+<PRE>
+Switch No   Inputs                           Outputs
+---------   ------                           -------
+1           line0 line1 line2 line3 line4    line5
+2           line5                            line6 line7
+3           line7 line8 line9                line10
+4           line6 line12 line13 line15       line 16
+5           line16                           antenna70cm antenna2m
+6           antenna70cm antenna2m            ground buffer
+</PRE>
+
+A task given to O-Plan describes the requirements for work in a
+typical day in the life of the spacecraft.
+
+<OL>
+<LI><b>monitor_spacecraft_health</b>: Send current telemetry data to ground.
+<LI><b>capture CCD</b>: Collect data from the CCD and send it
+    to the ground via the DSR.
+<LI><b>capture p_w</b>:  Collect data from the <b>particle wave
+    experiment</b> and send it to the <tt>2m</tt> antenna either 
+    directly or via the DSR.
+<LI><b>capture space_dust</b>: Collect data from the <b>space dust
+    analyser</b> and send it to the <tt>2m</tt> antenna either directly
+    or via the DSR.
+<LI><b>DCE_communicate</b>: Receive and re-send a message from and
+    back to ground.
+</OL>
+
+The task specifies the objectives of the mission. This is a series of
+experiments whose data must be collected and transmitted to a ground
+buffer via one of two antennas. O-Plan is able to generate a plan for
+such a mission and give output in a form that could be accepted by the
+normal diary based dispatch execution system on board a simple
+spacecraft.
+
+<P>
+The following table describes the files and task schemas which are
+available in this domain. 
+
+<DL>
+<DT>domain=eusat
+<DD>
+  <DL>
+  <DT>task=mission_objectives_1
+  <DD>Capture the data from a series of experiments and transmit it
+      to a ground buffer. The order of the data capture is specified
+      by the user and is sequential.
+  <DT>task=mission_objectives_2
+  <DD>Similar to the task above except that the order of data capture
+      is unspecified.
+  </DL>
+</DL>
+
+The O-Plan planning agent has been demonstrated generating a plan for
+such a task and passing it to an O-Plan architecture based execution
+system for simple dispatch and monitoring to take place.
+
+<P>
+Other related work at Edinburgh has led to the two planning systems
+for the European Space Agency.  The first was the Plan-ERS
+system which could generate mission plans for the European Space
+Agency's ERS-1 spacecraft.  This prototype was built in the KEE
+knowledge representation system and uses a simple plan representation.
+A second system, OPTIMUM-AIV, is able to generate and support the
+execution of plans for spacecraft assembly, integration and
+verification.  This second planner uses a Goal Structure based plan
+representation working alongside links to a traditional project
+management support system (ARTEMIS).
+
+
+
+<H2>Space Platform Construction</H2>
+
+<A HREF="http://www.aiai.ed.ac.uk/~oplan/IMG/screen-acad.gif">
+<IMG SRC="http://www.aiai.ed.ac.uk/~oplan/IMG/screen-acad-small.gif">
+</A>
+
+<P>
+This application shows the development of a plan for the construction
+of one of a number of different Space Platforms. Platforms are
+constructed from a series of joints, trusses, pressurised modules,
+solar panels, radiators and antennas. 
+
+<P>
+
+This domain is normally used to demonstrate the AutoCAD user interface
+that has been constructed for O-Plan.  AutoCAD can draw a PostScript
+picture (like <A HREF="/~jeff/oplan-pictures/space-platform-drawing.ps">
+this one</A>) of a platform at any point in its construction, based
+on information from a complete or developing plan.  A screen dump of
+the AutoCAD interface is shown above.  (Select the picture to see a
+larger version.)
+
+<P>
+The following list describes the files and task schemas which
+are available in this domain.
+
+<DL>
+<DT>domain=space-platform
+<DD>
+  <DL>
+  <DT>task=space_platform
+  <DD>Builds a medium sized space platform with 1 antenna, 4 solar panels,
+      2 radiators, 2 modules, 3 trusses and 3 joints.
+  <DT>task=small_space_platform
+  <DD>Builds a small sized space platform with 1 antenna, 2 solar panels,
+      1 radiator, 1 module and 1 joint.
+  <DT>task=large_space_platform
+  <DD>Builds a large sized space platform with 2 antenna, 6 solar panels,
+      2 radiators, 5 modules, 4 trusses, 3 tubes and 8 joints.
+  </DL>
+</DL>
+
+
+
+<H2>Creating and Running your own Applications</H2>
+
+<I>Unfortunately, you can't yet run your own applications over the Web,</I>
+but we hope to change that soon.
+
+<P>
+The TF language allows users to develop their own applications.
+Some of the demonstration applications could be used as starting
+points.  This section provides only a brief introduction and
+overview of what goes in a TF description file.
+
+<H3>Task Schemas</H3>
+
+The task schemas introduce the tasks the planner is asked to carry
+out. The first line of a task definition begins with <tt>task</tt>
+to indicate to the planner that it is a task schema.  Other schema
+definitions begin with <tt>schema</tt>.  Here's a sample task:
+
+<PRE>
+task build_stack_ABC;
+  nodes 1 start,
+        2 finish;
+  orderings 1 ---> 2;
+  conditions achieve {on a b} = true at 2,
+             achieve {on b c} = true at 2;
+end_task;
+</PRE>
+
+<P>
+This task schema provides an initial plan: start and finish nodes,
+which are always numbered 1 and 2 respectively.  The <tt>orderings</tt>
+clause says that the start (1) must be before the finish (2).
+The <tt>conditions</tt> clause indicates to the planner any conditions
+it must achieve.  In the example above there are two conditions to
+achieve by the finish of the plan (i.e., "at 2") which together represent
+a three-block tower: <tt>a b c</tt>.
+
+<P>
+A task schema can also be used to provide a high level action
+which the planning system must expand into progressively lower level
+actions until an executable plan is available. In the example below the
+action to be expanded is to build a house:
+
+<PRE> 
+task build_house;
+  nodes 1 start,
+        2 finish,
+        3 action {build house};
+  orderings 1 ---> 3, 3 ---> 2;
+end_task;
+</PRE> 
+
+<H3>Global Data and Object Types</H3>
+
+These data items specify the objects in the domain and the classes to
+which they belong.  They also declare specific statements which
+cannot be refuted by the effects of plan actions actions.  These are
+referred to as "<tt>always</tt> statements" or "<tt>always</tt> facts".
+In the block stacking domain the following global data
+could be specified:
+
+<PRE>
+always {cleartop table} = true;      ;;; the table is always a clear object
+
+types objects = (a b c table),       ;;; all objects in the domain
+      movable_objects = (a b c);     ;;; stop the planner trying to
+                                     ;;; move the table 
+</PRE>
+
+<H3>Application Schemas</H3>
+
+The application schemas provide the "actions" of the plan together
+with information concerning variables, resources, time windows and
+domain information to help in search control. The schema below defines
+an action which puts one object on top of another, i.e. 
+<tt>{puton ?x ?y}</tt>. Information concerning the variables
+<tt>?x</tt> and <tt>?y</tt> is given in two different places: 
+
+<DL>
+
+<DT><tt>vars</tt>
+<DD>
+This statement introduces the variables of the schema together with
+their types (if known) and other relationships.  The type is an
+enumerated set which allows the planner to determine all possible
+values the variable could take.
+
+<DT><tt>var_relations</tt>
+<DD>
+This statement introduces the equality and inequality relationships
+between variables in the schema. In the example below the <tt>/=</tt>
+(not-equal) relationship stops the planner binding the object being
+moved and the destination of the move to the same value. 
+
+</DL>
+
+<PRE> 
+schema puton;
+  vars ?x = ?{type movable_objects},
+       ?y = ?{type objects},
+       ?z = ?{type objects};
+  var_relations ?x /= ?y, ?x /= ?z, ?y /= ?z;
+  expands {puton ?x ?y};
+  only_use_for_effects
+          {on ?x ?y}    = true,
+          {cleartop ?y} = false,
+          {on ?x ?z}    = false,
+          {cleartop ?z} = true;
+  conditions only_use_if {cleartop ?x},
+             only_use_if {cleartop ?y},
+             only_use_for_query {on ?x ?z};
+end_schema;
+</PRE>
+
+The <tt>conditions</tt> statement specifies <i>condition types</i>
+that tell the planner how a particular condition should be satisfied.
+This also provides the planner with information as to the strength
+of commitment to maintaining the condition in a particular way.
+The names <tt>only_use_if</tt>, <tt>only_use_for_query</tt>, and
+(in one of the tasks above) <tt>achieve</tt> are all condition types.
+A complete list of condition types is described in the TF
+Manual. 
+
+<P>
+The <tt>only_use_for_effects</tt> and <tt>effects</tt> statements
+inform the planner of the effects the schema asserts.  The
+<tt>only_use_for_effects</tt> statement indicates the effects which
+the schema can be used to achieve, i.e. its primary effects. The 
+<tt>effects</tt> statement indicates the side effects of the action.
+The schema should not be chosen specifically to achieve them.
+
+<P> 
+The sections above give a brief overview.  Facilities such as
+resources and time windows have not been described but are fully
+documented in the TF Manual.
+
+<HR>
+
+<Address>
+<A HREF="mailto:oplan@ed.ac.uk">Jeff Dalton</A>
+</Address>
+
+<Address>
+<A HREF="mailto:oplan@ed.ac.uk">Brian Drabble</A>
+</Address>

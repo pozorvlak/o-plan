@@ -1,0 +1,39 @@
+<TITLE>Run O-Plan</TITLE>
+<H1>Run O-Plan</H1>
+
+Here is a form that lets you run O-Plan interactively via the Web.
+
+<P>
+<B>Due to some unresolved security issues and the potential load
+on the Web server, this demo is not yet usable.</B>
+
+<P>
+<HR>
+
+<FORM ACTION="http://www.aiai.ed.ac.uk/cgi-bin/oplan-demo/aiai-demo/run-oplan.cgi"
+      METHOD=GET>
+
+<P>
+Please edit the DISPLAY value, replacing "<TT>your.host</TT>" with
+the actual name of the machine on which you want windows to be
+displayed.
+
+<P>
+DISPLAY: <INPUT NAME="DISPLAY" VALUE="your.host:0.0" SIZE=30>
+
+<P>
+Options (not working yet):
+<DL>
+<DD><INPUT type="checkbox" CHECKED NAME="windows"> Windows
+<DD><INPUT type="checkbox" CHECKED NAME="output"> Output
+</DL>
+
+<P>
+<INPUT TYPE="reset">
+
+<P>
+<INPUT TYPE="submit" VALUE="Start O-Plan">
+
+</FORM>
+
+<HR>

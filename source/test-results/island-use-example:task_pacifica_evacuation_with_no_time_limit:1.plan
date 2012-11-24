@@ -1,0 +1,488 @@
+
+;;; Statistics:
+(
+(:am-cycles . 50)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 17)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(drive . 2)
+(fly_empty . 2)
+(fly_passengers . 2)
+(road_transport . 1)
+(safe_at . 1)
+(task_pacifica_evacuation . 0)
+(task_pacifica_evacuation_with_even_less_time . 0)
+(task_pacifica_evacuation_with_no_time_limit . 0)
+(task_pacifica_evacuation_with_too_little_time . 0)
+)
+
+;;; Effect levels:
+(
+(country . 0)
+(evac_point . 0)
+(evac_status . 1)
+(gt_capacity . 0)
+(in_use_for . 0)
+(safe_at . 1)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-12 :begin) (node-11 :begin) (node-10 :begin) (node-9 :begin) (node-8 :begin) (node-7 :begin) (node-6 :begin) (node-5 :begin) (node-4 :begin) (node-3 :begin) (node-2 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-6 :end) (node-5 :end) (node-4 :end) (node-3 :end) (node-1 :end))
+   nil
+   nil
+   nil
+   (54000 :inf 54000 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin) (node-3-2 :begin))
+   ((node-3-1 :end) (node-3-2 :end))
+   ((node-6 :begin) (node-2 :begin))
+   (0 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-5-1 :begin) (node-3 :end))
+   (0 :inf 10800 :inf)
+   action
+   (drive 20 in gt1 from abyss)
+)
+(node-3-2
+   ((node-7 :end) (node-3 :begin))
+   nil
+   nil
+   ((node-3 :end))
+   (54000 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-4
+   ((node-1 :end))
+   ((node-4-1 :begin) (node-4-2 :begin))
+   ((node-4-1 :end) (node-4-2 :end))
+   ((node-6 :begin) (node-2 :begin))
+   (0 :inf 43200 :inf)
+   dummy
+   nil
+)
+(node-4-1
+   ((node-4 :begin))
+   nil
+   nil
+   ((node-7-1 :begin) (node-4 :end))
+   (0 :inf 10800 :inf)
+   action
+   (drive 20 in gt2 from barnacle)
+)
+(node-4-2
+   ((node-8 :end) (node-4 :begin))
+   nil
+   nil
+   ((node-4 :end))
+   (43200 :inf 43200 :inf)
+   dummy
+   nil
+)
+(node-5
+   ((node-1 :end))
+   ((node-5-1 :begin) (node-5-2 :begin))
+   ((node-5-1 :end) (node-5-2 :end))
+   ((node-6 :begin) (node-2 :begin))
+   (0 :inf 21600 :inf)
+   dummy
+   nil
+)
+(node-5-1
+   ((node-3-1 :end) (node-5 :begin))
+   nil
+   nil
+   ((node-8-1 :begin) (node-5 :end))
+   (10800 :inf 21600 :inf)
+   action
+   (drive 20 in gt1 from calypso)
+)
+(node-5-2
+   ((node-5 :begin))
+   nil
+   nil
+   ((node-5 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-6
+   ((node-5 :end) (node-4 :end) (node-3 :end) (node-1 :end))
+   nil
+   nil
+   ((node-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (safe_at delta)
+)
+(node-7
+   ((node-1 :end))
+   ((node-7-1 :begin) (node-7-2 :begin))
+   ((node-7-1 :end) (node-7-2 :end))
+   ((node-3-2 :begin))
+   (0 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-7-1
+   ((node-4-1 :end) (node-7 :begin))
+   nil
+   nil
+   ((node-9-1 :begin) (node-7 :end))
+   (10800 :inf 21600 :inf)
+   action
+   (drive 20 in gt2 from abyss)
+)
+(node-7-2
+   ((node-9 :end) (node-7 :begin))
+   nil
+   nil
+   ((node-7 :end))
+   (54000 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-8
+   ((node-1 :end))
+   ((node-8-1 :begin) (node-8-2 :begin))
+   ((node-8-1 :end) (node-8-2 :end))
+   ((node-4-2 :begin))
+   (0 :inf 43200 :inf)
+   dummy
+   nil
+)
+(node-8-1
+   ((node-5-1 :end) (node-8 :begin))
+   nil
+   nil
+   ((node-10-1 :begin) (node-8 :end))
+   (21600 :inf 32400 :inf)
+   action
+   (drive 20 in gt1 from barnacle)
+)
+(node-8-2
+   ((node-10 :end) (node-8 :begin))
+   nil
+   nil
+   ((node-8 :end))
+   (43200 :inf 43200 :inf)
+   dummy
+   nil
+)
+(node-9
+   ((node-1 :end))
+   ((node-9-1 :begin) (node-9-2 :begin))
+   ((node-9-1 :end) (node-9-2 :end))
+   ((node-7-2 :begin))
+   (0 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-9-1
+   ((node-7-1 :end) (node-9 :begin))
+   nil
+   nil
+   ((node-11-1 :begin) (node-9 :end))
+   (21600 :inf 32400 :inf)
+   action
+   (drive 20 in gt2 from abyss)
+)
+(node-9-2
+   ((node-11 :end) (node-9 :begin))
+   nil
+   nil
+   ((node-9 :end))
+   (54000 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-10
+   ((node-1 :end))
+   ((node-10-1 :begin) (node-10-2 :begin))
+   ((node-10-1 :end) (node-10-2 :end))
+   ((node-8-2 :begin))
+   (0 :inf 43200 :inf)
+   dummy
+   nil
+)
+(node-10-1
+   ((node-8-1 :end) (node-10 :begin))
+   nil
+   nil
+   ((node-12-1 :begin) (node-10 :end))
+   (32400 :inf 43200 :inf)
+   action
+   (drive 10 in gt1 from barnacle)
+)
+(node-10-2
+   ((node-10 :begin))
+   nil
+   nil
+   ((node-10 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-11
+   ((node-1 :end))
+   ((node-11-1 :begin) (node-11-2 :begin))
+   ((node-11-1 :end) (node-11-2 :end))
+   ((node-9-2 :begin))
+   (0 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-11-1
+   ((node-9-1 :end) (node-11 :begin))
+   nil
+   nil
+   ((node-11 :end))
+   (32400 :inf 43200 :inf)
+   action
+   (drive 20 in gt2 from abyss)
+)
+(node-11-2
+   ((node-12 :end) (node-11 :begin))
+   nil
+   nil
+   ((node-11 :end))
+   (54000 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-12
+   ((node-1 :end))
+   ((node-12-1 :begin) (node-12-2 :begin))
+   ((node-12-1 :end) (node-12-2 :end))
+   ((node-11-2 :begin))
+   (0 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-12-1
+   ((node-10-1 :end) (node-12 :begin))
+   nil
+   nil
+   ((node-12 :end))
+   (43200 :inf 54000 :inf)
+   action
+   (drive 20 in gt1 from abyss)
+)
+(node-12-2
+   ((node-12 :begin))
+   nil
+   nil
+   ((node-12 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+)
+
+;;; TOME:
+(
+((tome (country abyss) :always) pacifica)
+((tome (country barnacle) :always) pacifica)
+((tome (country calypso) :always) pacifica)
+((tome (country delta) :always) pacifica)
+((tome (country honolulu) :always) hawaii_usa)
+((tome (evac_point delta) :always) true)
+((tome (evac_status abyss) (node-1 :end)) (100 0))
+((tome (evac_status abyss) (node-11 :end)) (60 40))
+((tome (evac_status abyss) (node-12 :end)) (80 20))
+((tome (evac_status abyss) (node-3 :end)) (0 100))
+((tome (evac_status abyss) (node-7 :end)) (20 80))
+((tome (evac_status abyss) (node-9 :end)) (40 60))
+((tome (evac_status barnacle) (node-1 :end)) (50 0))
+((tome (evac_status barnacle) (node-10 :end)) (40 10))
+((tome (evac_status barnacle) (node-4 :end)) (0 50))
+((tome (evac_status barnacle) (node-8 :end)) (20 30))
+((tome (evac_status calypso) (node-1 :end)) (20 0))
+((tome (evac_status calypso) (node-5 :end)) (0 20))
+((tome (gt_capacity 20) :always) true)
+((tome (in_use_for gt1) (node-1 :end)) available)
+((tome (in_use_for gt2) (node-1 :end)) available)
+((tome (safe_at delta) (node-6 :end)) true)
+)
+
+;;; GOST:
+(
+((gost achievable (evac_status abyss) (0 100) (node-2 :begin))
+   (((node-3 :end) . :expand))
+)
+((gost achievable (evac_status abyss) (20 80) (node-3-2 :begin))
+   (((node-7 :end) . :expand))
+)
+((gost achievable (evac_status abyss) (40 60) (node-7-2 :begin))
+   (((node-9 :end) . :expand))
+)
+((gost achievable (evac_status abyss) (60 40) (node-9-2 :begin))
+   (((node-11 :end) . :expand))
+)
+((gost achievable (evac_status abyss) (80 20) (node-11-2 :begin))
+   (((node-12 :end) . :expand))
+)
+((gost achievable (evac_status abyss) (100 0) (node-12-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (evac_status barnacle) (0 50) (node-2 :begin))
+   (((node-4 :end) . :expand))
+)
+((gost achievable (evac_status barnacle) (20 30) (node-4-2 :begin))
+   (((node-8 :end) . :expand))
+)
+((gost achievable (evac_status barnacle) (40 10) (node-8-2 :begin))
+   (((node-10 :end) . :expand))
+)
+((gost achievable (evac_status barnacle) (50 0) (node-10-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (evac_status calypso) (0 20) (node-2 :begin))
+   (((node-5 :end) . :expand))
+)
+((gost achievable (evac_status calypso) (20 0) (node-5-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (safe_at delta) true (node-2 :begin))
+   (((node-6 :end) . :expand))
+)
+((gost only_use_if (evac_point delta) true (node-10 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-11 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-12 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-3 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-4 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-5 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-7 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-8 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evac_point delta) true (node-9 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-10 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-11 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-12 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-3 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-4 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-5 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-7 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-8 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 20) true (node-9 :begin))
+   ((:always . :already-satisfied))
+)
+((gost unsupervised (evac_status abyss) (0 ??) (node-6 :begin))
+   (((node-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (evac_status barnacle) (0 ??) (node-6 :begin))
+   (((node-4 :end) . :link-no-bindings))
+)
+((gost unsupervised (evac_status calypso) (0 ??) (node-6 :begin))
+   (((node-5 :end) . :link-no-bindings))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 ground_transport gt1 (psv-8 psv-6 psv-4 psv-2) (gt1))
+(psv-2 ground_transport gt2 (psv-9 psv-7 psv-5 psv-3 psv-1) (gt2))
+(psv-3 ground_transport gt1 (psv-8 psv-6 psv-4 psv-2) (gt1))
+(psv-4 ground_transport gt2 (psv-9 psv-7 psv-5 psv-3 psv-1) (gt2))
+(psv-5 ground_transport gt1 (psv-8 psv-6 psv-4 psv-2) (gt1))
+(psv-6 ground_transport gt2 (psv-9 psv-7 psv-5 psv-3 psv-1) (gt2))
+(psv-7 ground_transport gt1 (psv-8 psv-6 psv-4 psv-2) (gt1))
+(psv-8 ground_transport gt2 (psv-9 psv-7 psv-5 psv-3 psv-1) (gt2))
+(psv-9 ground_transport gt1 (psv-8 psv-6 psv-4 psv-2) (gt1))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-2 psv-4 psv-6 psv-8)
+(psv-1 psv-3 psv-5 psv-7 psv-9)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+((country abyss) pacifica)
+((country barnacle) pacifica)
+((country calypso) pacifica)
+((country delta) pacifica)
+((country honolulu) hawaii_usa)
+((evac_point delta) true)
+((gt_capacity 20) true)
+)
+
+;;; World at end of node-2:
+(
+((country abyss) pacifica)
+((country barnacle) pacifica)
+((country calypso) pacifica)
+((country delta) pacifica)
+((country honolulu) hawaii_usa)
+((evac_point delta) true)
+((evac_status abyss) (0 100))
+((evac_status barnacle) (0 50))
+((evac_status calypso) (0 20))
+((gt_capacity 20) true)
+((in_use_for gt1) available)
+((in_use_for gt2) available)
+((safe_at delta) true)
+)

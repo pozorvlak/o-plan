@@ -1,0 +1,63 @@
+<!DOCTYPE plan SYSTEM "http://localhost/~jeff/oplan-xml/plan.dtd">
+
+<plan domain="get-to-work" task="get_to_work_via_expansion">
+   
+   <node name="node-1" type="start">
+      <pattern></pattern>
+      <node-end end="begin" est="28800" lst="28800">
+         <predecessors>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-1" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="28800" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-2" type="finish">
+      <pattern></pattern>
+      <node-end end="begin" est="30420" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="30420" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-2" end="begin"/>
+         </predecessors>
+         <successors>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-3" type="action">
+      <pattern>(get_to_work self)</pattern>
+      <node-end end="begin" est="28800" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="30420" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+</plan>

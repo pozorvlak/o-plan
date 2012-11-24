@@ -1,0 +1,67 @@
+<TITLE>Small Unit Operations (SUO) Demonstrations</TITLE>
+<H1>Small Unit Operations (SUO) Demonstrations</H1>
+
+<P>
+Select a domain to see the task and schema definitions
+for that domain.
+<P>
+Select a task to ask O-Plan to produce a plan
+for that task.
+<P>
+Domains and tasks:
+
+<UL>
+<LI>
+<A HREF="show-tf.cgi/suo-0.tf">
+SUO
+</A>
+<UL>
+<LI>
+<A HREF="plan-for-demo-tf.cgi/suo-0/task_Operation_San_Roberto">
+task_Operation_San_Roberto
+</A>
+</UL>
+</UL>
+
+<P>
+It is also possible to use the generic COA matrix server with
+the SUO TF file:
+
+<hr>
+<form
+ action="/cgi-bin/oplan-demo/386-demo/matrix-server.cgi/join/any-tf-matrix"
+ method=post>
+
+<table>
+
+<tr>
+<td>TF file:</td>
+<td colspan=2>
+  <select name="tf-file" size=1>
+    <option>SUO-0
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Session:</td> <td><input size=12 name="session"></td>
+<td>User role:
+  <select name="role" size=1>
+    <option>Task-Assigner
+    <option>Planner
+    <option selected>Both Task-Assigner and Planner
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type=password size=12 name="password" value="test"></td>
+<td><input type="submit" value="Begin">
+    <input type="reset" value="Undo changes"></td>
+</tr>
+
+</table>
+
+</form>
+<hr>

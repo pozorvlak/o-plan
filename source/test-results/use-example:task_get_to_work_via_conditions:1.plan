@@ -1,0 +1,155 @@
+
+;;; Statistics:
+(
+(:am-cycles . 16)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 5)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(eat_breakfast . 2)
+(get_dressed . 2)
+(get_to_work . 1)
+(go_to . 2)
+(make_tea . 2)
+(read_paper . 2)
+(task_get_to_work_via_conditions . 0)
+(task_get_to_work_via_expansion . 0)
+)
+
+;;; Effect levels:
+(
+(breakfast_eaten . 2)
+(dressed . 2)
+(location . 1)
+(paper_read . 2)
+(tea_made . 2)
+(walked . 2)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin) (node-2 :begin))
+   (28800 28800 28800 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end) (node-1 :end))
+   nil
+   nil
+   nil
+   (30420 :inf 30420 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-5 :end))
+   ((node-2 :begin))
+   (28800 :inf 30420 :inf)
+   dummy
+   nil
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-3-4 :begin) (node-3-3 :begin) (node-3-2 :begin))
+   (28800 :inf 29400 :inf)
+   action
+   (get_dressed)
+)
+(node-3-2
+   ((node-3-1 :end))
+   nil
+   nil
+   ((node-3-4 :begin) (node-3-5 :begin))
+   (29400 :inf 29460 :inf)
+   action
+   (read_paper)
+)
+(node-3-3
+   ((node-3-1 :end))
+   nil
+   nil
+   ((node-3-5 :begin))
+   (29400 :inf 29520 :inf)
+   action
+   (eat_breakfast)
+)
+(node-3-4
+   ((node-3-2 :end) (node-3-1 :end))
+   nil
+   nil
+   ((node-3-5 :begin))
+   (29460 :inf 29520 :inf)
+   action
+   (make_tea)
+)
+(node-3-5
+   ((node-3-4 :end) (node-3-3 :end) (node-3-2 :end))
+   nil
+   nil
+   ((node-3 :end))
+   (29520 :inf 30420 :inf)
+   action
+   (go_to work)
+)
+)
+
+;;; TOME:
+(
+((tome (breakfast_eaten) (node-3-3 :end)) true)
+((tome (dressed) (node-3-1 :end)) true)
+((tome (location self) (node-1 :end)) home)
+((tome (location self) (node-3 :end)) work)
+((tome (paper_read) (node-3-2 :end)) true)
+((tome (tea_made) (node-3-4 :end)) true)
+((tome (walked) (node-3-5 :end)) true)
+)
+
+;;; GOST:
+(
+((gost achievable (location self) work (node-2 :begin))
+   (((node-3 :end) . :expand))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 usable hands (psv-2) (hands))
+(psv-2 usable table (psv-3 psv-1) (table))
+(psv-3 usable hands (psv-2) (hands))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-2)
+(psv-1 psv-3)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((breakfast_eaten) true)
+((dressed) true)
+((location self) work)
+((paper_read) true)
+((tea_made) true)
+((walked) true)
+)

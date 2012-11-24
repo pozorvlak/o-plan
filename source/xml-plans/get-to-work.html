@@ -1,0 +1,103 @@
+<html><head><title>
+   Plan for get-to-work:get_to_work_via_expansion</title></head><body><h1>
+   Plan for get-to-work:get_to_work_via_expansion</h1><dl>
+   
+   <dt><b>node </b><i>node-1</i> <b>start</b> <i></i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-1</i></dt><dd><b>time window </b><i>28800..28800;</i></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-1</i></dt><dd><b>time window </b><i>28800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-2</i> <b>finish</b> <i></i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-2</i></dt><dd><b>time window </b><i>30420..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-2</i></dt><dd><b>time window </b><i>30420..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3</i> <b>action</b> <i>(get_to_work self)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3</i></dt><dd><b>time window </b><i>28800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3,</i></dd>
+            <dd><b>begin of </b><i>node-3-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3</i></dt><dd><b>time window </b><i>30420..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3,</i></dd>
+            <dd><b>end of </b><i>node-3-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-1</i> <b>action</b> <i>(get_dressed)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-1</i></dt><dd><b>time window </b><i>28800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-1</i></dt><dd><b>time window </b><i>29400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-3-3,</i></dd>
+            <dd><b>begin of </b><i>node-3-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-2</i> <b>action</b> <i>(read_paper)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-2</i></dt><dd><b>time window </b><i>29400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-2</i></dt><dd><b>time window </b><i>29460..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-3-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-3</i> <b>action</b> <i>(eat_breakfast)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-3</i></dt><dd><b>time window </b><i>29400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-3</i></dt><dd><b>time window </b><i>29520..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-3-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-4</i> <b>action</b> <i>(go_to work)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-4</i></dt><dd><b>time window </b><i>29520..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-3,</i></dd>
+            <dd><b>end of </b><i>node-3-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-4;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-4</i></dt><dd><b>time window </b><i>30420..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+</dl></body></html>

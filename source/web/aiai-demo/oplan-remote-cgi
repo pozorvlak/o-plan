@@ -1,0 +1,25 @@
+#!/bin/sh
+
+# /\/: Very bizarre QUERY_STRING values on the remote machine when METHOD=GET.
+
+base_dir=`pwd`
+
+remote_host=oplan
+# remote_host=gairsay
+# remote_host=bass
+
+# echo going remote to $remote_host ...
+
+allargs=""
+while [ $# -ne 0 ]; do allargs="$allargs '$1'"; shift; done
+
+/usr/ucb/rsh $remote_host \
+	cd $base_dir\; \
+	env REMOTE_HOST="$REMOTE_HOST" \
+	    REMOTE_ADDR="$REMOTE_ADDR" \
+	    SERVER_NAME="$SERVER_NAME" \
+	    REQUEST_METHOD="$REQUEST_METHOD" \
+	    CONTENT_LENGTH="$CONTENT_LENGTH" \
+	    QUERY_STRING="" \
+	    PATH_INFO="$PATH_INFO" \
+	web/aiai-demo/oplan-cgi $allargs

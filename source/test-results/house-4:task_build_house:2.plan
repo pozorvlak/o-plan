@@ -1,0 +1,479 @@
+
+;;; Statistics:
+(
+(:am-cycles . 40)
+(:n-alts-chosen . 1)
+(:n-alts-remaining . 1)
+(:n-poisons . 1)
+)
+
+;;; Action levels:
+(
+(build . 1)
+(decorate . 2)
+(erect . 2)
+(excavate . 2)
+(fasten . 3)
+(finish . 3)
+(install . 2)
+(lay . 3)
+(paint . 3)
+(pour . 3)
+(sand . 3)
+(task_build_house . 0)
+(task_build_house_to_time_0 . 0)
+(task_build_house_to_time_1 . 0)
+(task_build_house_to_time_2 . 0)
+)
+
+;;; Effect levels:
+(
+(air . 2)
+(basement . 3)
+(brickwork . 3)
+(carpentry . 3)
+(drains . 2)
+(electrical . 3)
+(flooring . 3)
+(floors . 3)
+(footers . 2)
+(foundations . 3)
+(frame . 2)
+(grading . 3)
+(ground_condition . 2)
+(gutters . 3)
+(installed . 2)
+(installed_level . 2)
+(kitchen . 2)
+(landscaping . 3)
+(painted . 3)
+(plastering . 3)
+(plumbing . 2)
+(roofing . 3)
+(rough . 2)
+(storm . 3)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end))
+   nil
+   nil
+   nil
+   (2592000 :inf 2592000 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin) (node-3-9 :begin) (node-3-10 :begin))
+   ((node-3-8 :end) (node-3-9 :end) (node-3-10 :end))
+   ((node-2 :begin))
+   (0 :inf 2592000 :inf)
+   action
+   (build house)
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-3-2 :begin))
+   (0 :inf 345600 :inf)
+   action
+   (excavate and pour footers)
+)
+(node-3-2
+   ((node-3-1 :end))
+   nil
+   nil
+   ((node-3-9-2 :begin) (node-3-9-1 :begin) (node-3-3 :begin))
+   (345600 :inf 518400 :inf)
+   action
+   (pour concrete foundations)
+)
+(node-3-3
+   ((node-3-2 :end))
+   nil
+   nil
+   ((node-3-9-8 :begin) (node-3-9-5 :begin) (node-3-4 :begin))
+   (518400 :inf 864000 :inf)
+   action
+   (erect frame and roof)
+)
+(node-3-4
+   ((node-3-3 :end))
+   nil
+   nil
+   ((node-3-5 :begin))
+   (864000 :inf 1468800 :inf)
+   action
+   (lay brickwork)
+)
+(node-3-5
+   ((node-3-4 :end))
+   nil
+   nil
+   ((node-3-6 :begin))
+   (1468800 :inf 1728000 :inf)
+   action
+   (finish roofing and flashing)
+)
+(node-3-6
+   ((node-3-5 :end))
+   nil
+   nil
+   ((node-3-7 :begin))
+   (1728000 :inf 1814400 :inf)
+   action
+   (fasten gutters and downspouts)
+)
+(node-3-7
+   ((node-3-9-2 :end) (node-3-6 :end))
+   nil
+   nil
+   ((node-3-8 :begin))
+   (1814400 :inf 1987200 :inf)
+   action
+   (finish grading)
+)
+(node-3-8
+   ((node-3-7 :end))
+   nil
+   nil
+   ((node-3 :end))
+   (1987200 :inf 2419200 :inf)
+   action
+   (pour walks and landscape)
+)
+(node-3-9
+   ((node-3 :begin))
+   ((node-3-9-1 :begin) (node-3-9-2 :begin) (node-3-9-5 :begin) (node-3-9-8 :begin))
+   ((node-3-9-2 :end) (node-3-9-4 :end) (node-3-9-6 :end) (node-3-9-7 :end) (node-3-9-8 :end))
+   ((node-3 :end))
+   (432000 :inf 2505600 :inf)
+   action
+   (install services)
+)
+(node-3-9-1
+   ((node-3-2 :end) (node-3-9 :begin))
+   nil
+   nil
+   ((node-3-10-2 :begin) (node-3-9-3 :begin))
+   (518400 :inf 604800 :inf)
+   action
+   (install drains)
+)
+(node-3-9-2
+   ((node-3-2 :end) (node-3-9 :begin))
+   nil
+   nil
+   ((node-3-7 :begin) (node-3-9 :end))
+   (518400 :inf 604800 :inf)
+   action
+   (lay storm drains)
+)
+(node-3-9-3
+   ((node-3-9-1 :end))
+   nil
+   nil
+   ((node-3-10-1 :begin) (node-3-9-7 :begin) (node-3-9-4 :begin))
+   (604800 :inf 691200 :inf)
+   action
+   (install rough plumbing)
+)
+(node-3-9-4
+   ((node-3-10-3 :end) (node-3-9-3 :end))
+   nil
+   nil
+   ((node-3-10-6 :begin) (node-3-9 :end))
+   (1987200 :inf 2160000 :inf)
+   action
+   (install finished plumbing)
+)
+(node-3-9-5
+   ((node-3-3 :end) (node-3-9 :begin))
+   nil
+   nil
+   ((node-3-10-1 :begin) (node-3-9-7 :begin) (node-3-9-6 :begin))
+   (864000 :inf 1036800 :inf)
+   action
+   (install rough wiring)
+)
+(node-3-9-6
+   ((node-3-10-6 :end) (node-3-9-5 :end))
+   nil
+   nil
+   ((node-3-9 :end))
+   (2419200 :inf 2505600 :inf)
+   action
+   (finish electrical work)
+)
+(node-3-9-7
+   ((node-3-10-3 :end) (node-3-9-5 :end) (node-3-9-3 :end))
+   nil
+   nil
+   ((node-3-10-6 :begin) (node-3-9 :end))
+   (1987200 :inf 2160000 :inf)
+   action
+   (install kitchen equipment)
+)
+(node-3-9-8
+   ((node-3-10-2 :end) (node-3-3 :end) (node-3-9 :begin))
+   nil
+   nil
+   ((node-3-10-1 :begin) (node-3-9 :end))
+   (864000 :inf 1123200 :inf)
+   action
+   (install air conditioning)
+)
+(node-3-10
+   ((node-3 :begin))
+   ((node-3-10-1 :begin) (node-3-10-2 :begin) (node-3-10-6 :begin))
+   ((node-3-10-5 :end))
+   ((node-3 :end))
+   (604800 :inf 2592000 :inf)
+   action
+   (decorate)
+)
+(node-3-10-1
+   ((node-3-9-8 :end) (node-3-9-5 :end) (node-3-9-3 :end) (node-3-10 :begin))
+   nil
+   nil
+   ((node-3-10-3 :begin))
+   (1123200 :inf 1728000 :inf)
+   action
+   (fasten plaster and plaster board)
+)
+(node-3-10-2
+   ((node-3-9-1 :end) (node-3-10 :begin))
+   nil
+   nil
+   ((node-3-9-8 :begin) (node-3-10-3 :begin))
+   (604800 :inf 777600 :inf)
+   action
+   (pour basement floor)
+)
+(node-3-10-3
+   ((node-3-10-1 :end) (node-3-10-2 :end))
+   nil
+   nil
+   ((node-3-9-7 :begin) (node-3-9-4 :begin) (node-3-10-4 :begin))
+   (1728000 :inf 1987200 :inf)
+   action
+   (lay finished flooring)
+)
+(node-3-10-4
+   ((node-3-10-3 :end))
+   nil
+   nil
+   ((node-3-10-5 :begin))
+   (1987200 :inf 2246400 :inf)
+   action
+   (finish carpentry)
+)
+(node-3-10-5
+   ((node-3-10-6 :end) (node-3-10-4 :end))
+   nil
+   nil
+   ((node-3-10 :end))
+   (2419200 :inf 2592000 :inf)
+   action
+   (sand and varnish floors)
+)
+(node-3-10-6
+   ((node-3-9-7 :end) (node-3-9-4 :end) (node-3-10 :begin))
+   nil
+   nil
+   ((node-3-9-6 :begin) (node-3-10-5 :begin))
+   (2160000 :inf 2419200 :inf)
+   action
+   (paint)
+)
+)
+
+;;; TOME:
+(
+((tome (air conditioning installed) (node-3-9-8 :end)) true)
+((tome (basement floor laid) (node-3-10-2 :end)) true)
+((tome (brickwork done) (node-3-4 :end)) true)
+((tome (carpentry finished) (node-3-10-4 :end)) true)
+((tome (drains installed) (node-3-9-1 :end)) true)
+((tome (electrical work finished) (node-3-9-6 :end)) true)
+((tome (flooring finished) (node-3-10-3 :end)) true)
+((tome (floors finished) (node-3-10-5 :end)) true)
+((tome (footers poured) (node-3-1 :end)) true)
+((tome (foundations laid) (node-3-2 :end)) true)
+((tome (frame and roof erected) (node-3-3 :end)) true)
+((tome (grading done) (node-3-7 :end)) true)
+((tome (ground_condition) (node-1 :end)) ready)
+((tome (gutters etc fastened) (node-3-6 :end)) true)
+((tome (installed services 1) (node-3-9 :end)) true)
+((tome (installed_level kitchen) (node-3-9-7 :end)) standard)
+((tome (kitchen equipment installed) (node-3-9-7 :end)) true)
+((tome (landscaping done) (node-3-8 :end)) true)
+((tome (painted) (node-3-10-6 :end)) true)
+((tome (plastering finished) (node-3-10-1 :end)) true)
+((tome (plumbing finished) (node-3-9-4 :end)) true)
+((tome (roofing finished) (node-3-5 :end)) true)
+((tome (rough plumbing installed) (node-3-9-3 :end)) true)
+((tome (rough wiring installed) (node-3-9-5 :end)) true)
+((tome (storm drains laid) (node-3-9-2 :end)) true)
+)
+
+;;; GOST:
+(
+((gost only_use_if (ground_condition) ready (node-3-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost supervised (basement floor laid) true (node-3-10-3 :begin))
+   (((node-3-10-2 :end) . :none))
+)
+((gost supervised (brickwork done) true (node-3-5 :begin))
+   (((node-3-4 :end) . :none))
+)
+((gost supervised (carpentry finished) true (node-3-10-5 :begin))
+   (((node-3-10-4 :end) . :none))
+)
+((gost supervised (drains installed) true (node-3-9-3 :begin))
+   (((node-3-9-1 :end) . :none))
+)
+((gost supervised (flooring finished) true (node-3-10-4 :begin))
+   (((node-3-10-3 :end) . :none))
+)
+((gost supervised (footers poured) true (node-3-2 :begin))
+   (((node-3-1 :end) . :none))
+)
+((gost supervised (foundations laid) true (node-3-3 :begin))
+   (((node-3-2 :end) . :none))
+)
+((gost supervised (frame and roof erected) true (node-3-4 :begin))
+   (((node-3-3 :end) . :none))
+)
+((gost supervised (grading done) true (node-3-8 :begin))
+   (((node-3-7 :end) . :none))
+)
+((gost supervised (gutters etc fastened) true (node-3-7 :begin))
+   (((node-3-6 :end) . :none))
+)
+((gost supervised (painted) true (node-3-10-5 :begin))
+   (((node-3-10-6 :end) . :none))
+)
+((gost supervised (plastering finished) true (node-3-10-3 :begin))
+   (((node-3-10-1 :end) . :none))
+)
+((gost supervised (roofing finished) true (node-3-6 :begin))
+   (((node-3-5 :end) . :none))
+)
+((gost supervised (rough plumbing installed) true (node-3-9-4 :begin))
+   (((node-3-9-3 :end) . :none))
+)
+((gost supervised (rough plumbing installed) true (node-3-9-7 :begin))
+   (((node-3-9-3 :end) . :none))
+)
+((gost supervised (rough wiring installed) true (node-3-9-6 :begin))
+   (((node-3-9-5 :end) . :none))
+)
+((gost supervised (rough wiring installed) true (node-3-9-7 :begin))
+   (((node-3-9-5 :end) . :none))
+)
+((gost unsupervised (air conditioning installed) true (node-3-10-1 :begin))
+   (((node-3-9-8 :end) . :link-no-bindings))
+)
+((gost unsupervised (basement floor laid) true (node-3-9-8 :begin))
+   (((node-3-10-2 :end) . :link-no-bindings))
+)
+((gost unsupervised (drains installed) true (node-3-10-2 :begin))
+   (((node-3-9-1 :end) . :link-no-bindings))
+)
+((gost unsupervised (flooring finished) true (node-3-9-4 :begin))
+   (((node-3-10-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (flooring finished) true (node-3-9-7 :begin))
+   (((node-3-10-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (foundations laid) true (node-3-9-1 :begin))
+   (((node-3-2 :end) . :link-no-bindings))
+)
+((gost unsupervised (foundations laid) true (node-3-9-2 :begin))
+   (((node-3-2 :end) . :link-no-bindings))
+)
+((gost unsupervised (frame and roof erected) true (node-3-9-5 :begin))
+   (((node-3-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (frame and roof erected) true (node-3-9-8 :begin))
+   (((node-3-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (kitchen equipment installed) true (node-3-10-6 :begin))
+   (((node-3-9-7 :end) . :link-no-bindings))
+)
+((gost unsupervised (painted) true (node-3-9-6 :begin))
+   (((node-3-10-6 :end) . :link-no-bindings))
+)
+((gost unsupervised (plumbing finished) true (node-3-10-6 :begin))
+   (((node-3-9-4 :end) . :link-no-bindings))
+)
+((gost unsupervised (rough plumbing installed) true (node-3-10-1 :begin))
+   (((node-3-9-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (rough wiring installed) true (node-3-10-1 :begin))
+   (((node-3-9-5 :end) . :link-no-bindings))
+)
+((gost unsupervised (storm drains laid) true (node-3-7 :begin))
+   (((node-3-9-2 :end) . :link-no-bindings))
+)
+)
+
+;;; PSV descriptions:
+(
+)
+
+;;; PSV equivalence classes:
+(
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((air conditioning installed) true)
+((basement floor laid) true)
+((brickwork done) true)
+((carpentry finished) true)
+((drains installed) true)
+((electrical work finished) true)
+((flooring finished) true)
+((floors finished) true)
+((footers poured) true)
+((foundations laid) true)
+((frame and roof erected) true)
+((grading done) true)
+((ground_condition) ready)
+((gutters etc fastened) true)
+((installed services 1) true)
+((installed_level kitchen) standard)
+((kitchen equipment installed) true)
+((landscaping done) true)
+((painted) true)
+((plastering finished) true)
+((plumbing finished) true)
+((roofing finished) true)
+((rough plumbing installed) true)
+((rough wiring installed) true)
+((storm drains laid) true)
+)

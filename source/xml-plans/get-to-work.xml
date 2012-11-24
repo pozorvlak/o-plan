@@ -1,0 +1,149 @@
+<!DOCTYPE plan SYSTEM "plan.dtd">
+
+<?xml-stylesheet type="text/xsl" href="plan-to-html.xsl"?>
+
+<plan domain="get-to-work" task="get_to_work_via_expansion">
+   
+   <node name="node-1" type="start">
+      <pattern></pattern>
+      <node-end end="begin" est="28800" lst="28800">
+         <predecessors>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-1" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="28800" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-2" type="finish">
+      <pattern></pattern>
+      <node-end end="begin" est="30420" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="30420" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-2" end="begin"/>
+         </predecessors>
+         <successors>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-3" type="action">
+      <pattern>(get_to_work self)</pattern>
+      <node-end end="begin" est="28800" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3" end="end"/>
+            <node-end-ref node="node-3-1" end="begin"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="30420" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3" end="begin"/>
+            <node-end-ref node="node-3-4" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-3-1" type="action">
+      <pattern>(get_dressed)</pattern>
+      <node-end end="begin" est="28800" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3-1" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="29400" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3-1" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3-3" end="begin"/>
+            <node-end-ref node="node-3-2" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-3-2" type="action">
+      <pattern>(read_paper)</pattern>
+      <node-end end="begin" est="29400" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3-2" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="29460" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3-2" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3-4" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-3-3" type="action">
+      <pattern>(eat_breakfast)</pattern>
+      <node-end end="begin" est="29400" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3-1" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3-3" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="29520" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3-3" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3-4" end="begin"/>
+         </successors>
+      </node-end>
+   </node>
+   
+   <node name="node-3-4" type="action">
+      <pattern>(go_to work)</pattern>
+      <node-end end="begin" est="29520" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3-3" end="end"/>
+            <node-end-ref node="node-3-2" end="end"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3-4" end="end"/>
+         </successors>
+      </node-end>
+      <node-end end="end" est="30420" lst="inf">
+         <predecessors>
+            <node-end-ref node="node-3-4" end="begin"/>
+         </predecessors>
+         <successors>
+            <node-end-ref node="node-3" end="end"/>
+         </successors>
+      </node-end>
+   </node>
+   
+</plan>

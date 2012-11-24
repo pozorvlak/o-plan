@@ -1,0 +1,438 @@
+<TITLE>A Simple O-Plan Time-Point Net (TPN) Demo</TITLE>
+<H1>A Simple O-Plan Time-Point Net (TPN) Demo</H1>
+
+<H2>*** Still under construction ***</H2>
+
+<H2>Contents</H2>
+
+<UL>
+<LI><A HREF="#tpn">The TPN</A>
+<LI><A HREF="#inputs">Demonstration inputs</A>
+<LI><A HREF="#outputs">Demonstration outputs</A>
+</UL>
+
+
+<H2><A NAME="tpn">The TPN</A></H2>
+
+
+<H2><A NAME="inputs">Demonstration inputs</A></H2>
+
+The input specifies points and constraints, with optional minimum
+and maximum values, plus default minimum and maximum values.
+
+
+<H3>Ranges</H3>
+
+A minimum value is a positive integer.
+A maximum value is a positive integer or the symbol "<B>inf</B>".
+A min and max together specify a <I>range</I> with lower and
+upper bounds.  An <B>inf</B> effectively means there is no upper bound.
+
+In point and constraint specifications, a range is written like this:
+
+<PRE>
+   <I>min</I> <I>max</I>
+</PRE>
+
+If only one value is given, it is taken as both the <I>min</I> and 
+the <I>max</I>.  If no value is given, the default <I>min</I> and
+<I>max</I> are used.
+
+
+<H3>Points</H3>
+
+A point is specified like this:
+
+<PRE>
+   <I>name</I> <I>min</I> <I>max</I>
+</PRE>
+
+The <I>min</I> and <I>max</I> give the initial range of the point;
+the point's range may become narrower when constraints are added
+to the net.
+
+<P>
+In the area for entering points, you can write a sequence of point
+specifications separated by commas.  The commas are optional.  A
+reasonable approach is to include the commas only when more than
+one point is described on the same line.  Here's an example:
+
+<PRE>
+   a 0 100
+   b, c
+</PRE>
+
+This gives <B>a</B> an initial range of 0 to 100.  The other points,
+<B>b</B> and <B>c</B>, get the default range.
+
+
+<H3>Constraints</H3>
+
+As with points, you can write a sequence of constraint specifications
+separated by commas, and the commas are optional.
+
+<P>
+Constraints can be specified in two ways.  The first is similar to
+the notation for points:
+
+<PRE>
+   <I>name1</I> <I>min</I> <I>max</I> <I>name2</I>
+</PRE>
+
+This says that the point <I>name1</I> must be before the point
+<I>name2</I> and specifies a minimum and maximum distance between
+them.
+
+<P>
+The second notation is more complex, but it makes it easy to
+specify common combinations of constraints.
+
+
+<H3>Formal syntax</H3>
+
+<H4>Bounds</H4>
+
+<BLOCKQUOTE>
+<PRE>
+<I>bounds</I> ::= <I>value</I> | <I>lower-bound</I> <I>upper-bound</I>
+<I>value</I> ::= <I>positive-integer</I>
+<I>lower-bound</I> ::= <I>positive-integer</I>
+<I>upper-bound</I> ::= <I>positive-integer</I> | inf
+</PRE>
+</BLOCKQUOTE>
+
+<H4>Points</H4>
+
+<BLOCKQUOTE>
+<PRE>
+<I>point</I> ::= <I>name</I> | <I>name</I> <I>bounds</I>
+</PRE>
+</BLOCKQUOTE>
+
+<H4>Constraints</H4>
+
+<BLOCKQUOTE>
+<PRE>
+<I>constraint</I>
+    ::= <I>sequence-constraint</I>
+     |  <I>parallel-constraint</I>
+     |  <I>simple-constraint</I>
+
+<I>simple-constraint</I>
+    ::= <I>name1</I> <I>name2</I>
+     |  <I>name1</I> <I>bounds</I> <I>name2</I>
+
+<I>sequence-constraint</I> ::= &lt; <I>seq</I> &gt;
+
+<I>seq</I> ::= <I>constr</I> 
+     |  <I>constr</I>, <I>seq</I>
+     |  <I>constr</I> <I>bounds</I> <I>seq</I>
+
+<I>parallel-constraint</I> ::= [ <I>par</I> ]
+
+<I>par</I> ::= <I>constr</I>
+     |  <I>constr</I>, <I>par</I>
+
+<I>constr</I> 
+    ::= <I>sequence-constraint</I>
+     |  <I>parallel-constraint</I>
+     |  <I>name</I>
+</PRE>
+</BLOCKQUOTE>
+
+
+<H2><A NAME="outputs">Demonstration outputs</A></H2>
+
+A number of different outputs are available:
+
+<UL>
+<LI><B>Description of the inputs</B>
+<LI><B>Graphs</B>
+    <UL>
+    <LI><A HREF="#tpn-graph">Graph with constraints shown as links</A>
+    <LI><A HREF="#con-graph">Graph with constraints shown as intermediate
+        nodes</A>
+    </UL>
+<LI><B>Tables</B>
+    <UL>
+    <LI><A HREF="#point-table">Table of initial and final point values</A>
+    <LI><A HREF="#points-in-context">Table of points in context</A>
+    </UL>
+</UL>
+
+We'll desribe the outputs with the aid of an example.
+
+It's the example that's already in the form when you first see it.
+So if you were to select "Go" without changing the form, the outputs
+below are what you'd get.  If you've forgotten what the form
+contained, don't worry: the inputs are reproduced in the first
+section of output.
+
+<P>
+All output is returned in an HTML document.  Some items appear directly
+in the document; others are reached via links.  The output begins
+with an identification of the O-Plan version:
+
+<PRE>
+O-Plan version 2.2+
+Release date: 19-Apr-95
+Build date:   19-Apr-95
+</PRE>
+
+The rest of the output matches the sequence of sections below.
+Buttons in the input form let you select which parts you wish
+to receive.
+
+<P>
+Note that in the output, min and max values are often written with
+two dots between them:
+<PRE>
+  <I>min</I><B>..</B><I>max</I>.
+</PRE>
+
+That is the notation normally used in O-Plan, but the dots are
+not used (and indeed are not allowed) in the demonstration input.
+Using spaces instead of dots should make the input easier to type.
+
+
+<H3>Description of the inputs</H3>
+
+<PRE>
+<B>Defaults:</B>
+Points: 0 to inf.
+Constraints: 10 to 20.
+
+<B>Point input:</B>
+a 0 100
+
+<B>Constraint input:</B>
+&lt;a,[b,c,d],e&gt;
+&lt;e,[f,g]&gt;
+
+<B>Points as parsed:</B>
+  (a 0 100)
+
+<B>Constraints as parsed:</B>
+  (:sequence a 10 20 (:parallel b c d) 10 20 e)
+  (:sequence e 10 20 (:parallel f g))
+
+<B>Expanded constraints:</B>
+  a 10..20 b
+  a 10..20 c
+  a 10..20 d
+  b 10..20 e
+  c 10..20 e
+  d 10..20 e
+  e 10..20 f
+  e 10..20 g
+
+<B>Success!</B>
+</PRE>
+
+<P>
+This section shows how the point and constraint descriptions are
+processed.  First, they're converted to lists by a simple 
+recursive-descent parser.  The parser also fills in default
+min and max values when no range has been supplied.  Next, the
+sequential / parallel constraint notation is expanded to produce
+a list of individual constraints, and any points that are mentioned
+only in the constraints are given the default min and max values.
+
+<P>
+The final step is to construct the TPN.  This is done by adding all
+the points and then adding constraints one at a time from the list
+of expanded constraints.  "<B>Success!</B>" indicates that all the
+constraints could be added.  If some constraint could not be added,
+a "<B>Failure</B>" message is printed instead.
+
+<P>
+For example, suppose we had the following constraints instead of the
+ones above:
+
+<PRE>
+<B>Constraint input:</B>
+&lt;a,b,a,c&gt;
+
+<B>Expanded constraints:</B>
+  a 10..20 b
+  b 10..20 a
+  a 10..20 c
+</PRE>
+
+Note that this says <B>a</B> must be before <B>b</B> and that <B>b</B>
+must be before <B>a</B>, an impossibility; so the second constraint
+cannot be added to the net:
+
+<PRE>
+<B>Failure:</B> cannot add constraint (b a 10 20).
+
+<B>Dropped constraints:</B>
+  b 10..20 a
+  a 10..20 c
+</PRE>
+
+Net constructions stops after the first failure.  There's no attempt
+to add later constructions, even if they could be added consistently.
+The TPN is managed in a way that would let us continue, if we wanted
+to, but the results may be easier to understand if we stop.  In any
+case, all of the requested outputs will still be produced, based on
+the net as built before the failure.
+
+
+<H3><A NAME="tpn-graph"> Graph with constraints shown as links</A></H3>
+
+<IMG SRC="image/tpn-graph.gif">
+
+<P>
+The boxes represent time-points.  Each box contains the name of the
+corresponding point and the final min and max values of that point.
+If the min and max values are the same, only one number is displayed.
+
+<P>
+The lines between boxes represent constraints.  Constraints "point"
+to the right, so boxes further to the right are later in time.
+
+
+<H3><A NAME="con-graph">
+    Graph with constraints shown as intermediate nodes</A>
+</H3>
+
+<IMG SRC="image/tpn-constraints.gif">
+
+<P>
+As in the previous graph, the boxes represent time-points, and each box
+contains the name of the corresponding point above the final min and max
+values of that point.  If the min and max values are the same, only
+one number is listed.  Points that are later in time are drawn
+further to the right.
+
+<P>
+Constraints are drawn as smaller boxes containing only min and max
+values.  As with points, when the min and max are equal, only one
+number is shown.  The box for a constraint between two points is 
+connected by lines to the two points.  For instance, there's a
+constraint that says <B>a</B> must be before <B>b</B>, with a
+distance of 10 to 20 units between them.  This is drawn as a small
+"<B>10 20</B>" box between the boxes for <B>a</B> and <B>b</B>.
+
+
+<H3><A NAME="point-table">Initial and final point values</A></H3>
+
+<PRE>
+   <B>Alphabetical order </B>    <B>Increasing final min time</B>
+
+   <B>a</B>   0..100   0..100    <B>a</B>   0..100        
+   <B>b</B>   0..inf  10..120    <B>b</B>  10..120        
+   <B>c</B>   0..inf  10..120    <B>c</B>  10..120        
+   <B>d</B>   0..inf  10..120    <B>d</B>  10..120        
+   <B>e</B>   0..inf  20..140    <B>e</B>  20..140        
+   <B>f</B>   0..inf  30..160    <B>f</B>  30..160        
+   <B>g</B>   0..inf  30..160    <B>g</B>  30..160        
+</PRE>
+
+This table is pretty much self-explanatory.  It shows the initial
+and final range for each point.
+
+
+<H3><A NAME="points-in-context">Points in context</A></H3>
+
+<PRE>
+                     <B>a= 0..100</B> 10.. 20 b=10..120
+                     <B>a= 0..100</B> 10.. 20 c=10..120
+                     <B>a= 0..100</B> 10.. 20 d=10..120
+
+   a= 0..100 10.. 20 <B>b=10..120</B> 10.. 20 e=20..140
+
+   a= 0..100 10.. 20 <B>c=10..120</B> 10.. 20 e=20..140
+
+   a= 0..100 10.. 20 <B>d=10..120</B> 10.. 20 e=20..140
+
+   b=10..120 10.. 20 <B>e=20..140</B> 10.. 20 f=30..160
+   c=10..120 10.. 20 <B>e=20..140</B> 10.. 20 g=30..160
+   d=10..120 10.. 20 <B>e=20..140</B>
+
+   e=20..140 10.. 20 <B>f=30..160</B>
+
+   e=20..140 10.. 20 <B>g=30..160</B>
+</PRE>
+
+This table is similar to a KWIC (Key Words In Context) index.
+Each point is shown together with the  constraints that directly
+affect it, with the aim of making it easy to see that all the
+constraints are satisfied.  In this table, points are always 
+shown together with their range, like this:
+
+<PRE>
+   <I>name</I>=<I>min</I>..<I>max</I>
+</PRE>
+
+A constraint range is shown as
+
+<PRE>
+   <I>min</I>..<I>max</I>
+</PRE>
+
+On a given line of the table, the point in bold is the one being
+shown "in context".  Constraints <I>from</I> earlier points are
+shown to the left, constraints <I>to</I> later points are shown
+to the right.  When both a <I>from</I> and a <I>to</I> constraint
+appear on the same line, it is not significant.  Constraints are 
+listed that way just to make the table more compact.
+
+<P>
+The remaining details are best explained by an example.  The point 
+<B>e</B> will show the most.  Remember that the constraints were 
+defined as follows, with a default range of 10 to 20:
+
+<PRE>
+   <B>Constraint input:</B>
+   &lt;a,[b,c,d],e&gt;
+   &lt;e,[f,g]&gt;
+</PRE>
+
+The constraints that directly involve <B>e</B> are therefore:
+
+<PRE>
+   b 10..20 e
+   c 10..20 e
+   d 10..20 e
+   e 10..20 f
+   e 10..20 g
+</PRE>
+
+The "points in context" table adds the ranges of all the points
+and neatly lines things up:
+
+<PRE>
+   b=10..120 10.. 20 <B>e=20..140</B> 10.. 20 f=30..160
+   c=10..120 10.. 20 <B>e=20..140</B> 10.. 20 g=30..160
+   d=10..120 10.. 20 <B>e=20..140</B>
+</PRE>
+
+The aim is to make it fairly easy to see that <B>e</B>'s range satisfies
+all of the constraints that involve <B>e</B>.  The rest of the table does
+the same for the other points.
+
+<P>
+Here's the sort of check we can make.
+Consider one constraint as it appears in the table:
+
+<PRE>
+   b=10..120 10.. 20 <B>e=20..140</B>
+</PRE>
+
+The constraint says that
+point <B>e</B> must be at least 10 and at most 20 after <B>b</B>.
+The earliest time for <B>b</B> is 10, so the earliest time for 
+<B>e</B> must be at least 10 greater.  The actual value for <B>e</B>,
+20, <I>is</I> at least 10 greater, so that part of the contraint is
+satisfied.  Now consider latest times and the maximum distance 
+allowed by the constraint.  The latest time for <B>b</B> is 120,
+and the latest time for <B>e</B> can be at most 20 greater.
+Again the actual value, 140, is ok.
+
+<HR>
+
+<Address>
+<A HREF="http://www.aiai.ed.ac.uk/~jeff/">Jeff Dalton</A>
+</Address>

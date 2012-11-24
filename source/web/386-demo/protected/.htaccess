@@ -1,0 +1,7 @@
+AuthName O-Plan Web Server
+AuthType Basic
+AuthUserFile /home/jeff/oplan/3.x/source/web/386-demo/protected/.htpasswd
+
+<limit GET>
+require user oplan
+</limit>

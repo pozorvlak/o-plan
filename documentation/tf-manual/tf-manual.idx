@@ -1,0 +1,607 @@
+\indexentry{{\bf schema}}{6}
+\indexentry{{\bf tasks}}{6}
+\indexentry{hierarchical planning}{7}
+\indexentry{actions}{9}
+\indexentry{events}{9}
+\indexentry{agents}{9}
+\indexentry{primitives}{9}
+\indexentry{schemas}{9}
+\indexentry{schemas, normal}{9}
+\indexentry{normal schemas}{9}
+\indexentry{schemas, action}{9}
+\indexentry{action schemas}{9}
+\indexentry{schemas, process}{9}
+\indexentry{process schemas}{9}
+\indexentry{schemas, meta}{9}
+\indexentry{meta-schemas}{9}
+\indexentry{authority}{10}
+\indexentry{plan, options}{10}
+\indexentry{options of plan}{10}
+\indexentry{plan, phases}{10}
+\indexentry{phases of plan}{10}
+\indexentry{plan, levels}{10}
+\indexentry{levels of plan}{10}
+\indexentry{effects}{11}
+\indexentry{conditions}{11}
+\indexentry{{\bf only\_use\_if}}{11}
+\indexentry{only\_use\_if condition}{11}
+\indexentry{conditions, only\_use\_if}{11}
+\indexentry{conditions, usewhen}{11}
+\indexentry{usewhen condition}{11}
+\indexentry{conditions, holds}{11}
+\indexentry{{\bf holds condition}}{11}
+\indexentry{{\bf only\_use\_for\_query}}{11}
+\indexentry{only\_use\_for\_query condition}{11}
+\indexentry{conditions, only\_use\_for\_query}{11}
+\indexentry{{\bf supervised}}{11}
+\indexentry{supervised condition}{11}
+\indexentry{conditions, supervised}{11}
+\indexentry{{\bf unsupervised}}{11}
+\indexentry{unsupervised condition}{11}
+\indexentry{conditions, unsupervised}{11}
+\indexentry{{\bf achieve}}{11}
+\indexentry{achieve condition}{11}
+\indexentry{conditions, achieve}{11}
+\indexentry{{\bf compute}}{11}
+\indexentry{compute condition}{11}
+\indexentry{conditions, compute}{11}
+\indexentry{resources}{12}
+\indexentry{resource types}{12}
+\indexentry{resource types, consumable\_strictly}{12}
+\indexentry{{\bf consumable\_strictly}}{12}
+\indexentry{resource types, consumable\_producible\_by\_agent}{12}
+\indexentry{{\bf consumable\_producible\_by\_agent}}{12}
+\indexentry{resource types, consumable\_producible\_outwith\_agent}{13}
+\indexentry{{\bf consumable\_producible\_outwith\_agent}}{13}
+\indexentry{resource types, consumable\_producible\_by\_and\_outwith\_agent}{13}
+\indexentry{{\bf consumable\_producible\_by\_and\_outwith\_agent}}{13}
+\indexentry{resource types, reusable\_non\_sharable}{13}
+\indexentry{{\bf reusable\_non\_sharable}}{13}
+\indexentry{resource types, reusable\_sharable\_independently}{13}
+\indexentry{{\bf reusable\_sharable\_independently}}{13}
+\indexentry{resource types, sharable\_synchronously}{13}
+\indexentry{{\bf sharable\_synchronously}}{13}
+\indexentry{patterns}{13}
+\indexentry{pattern specifications}{13}
+\indexentry{match constraints}{13}
+\indexentry{pattern = value}{13}
+\indexentry{P=V}{13}
+\indexentry{\M{pattern} = \M{value}}{13}
+\indexentry{time windows}{14}
+\indexentry{resource usage}{14}
+\indexentry{min/max pairs}{14}
+\indexentry{projected value}{14}
+\indexentry{notepad}{15}
+\indexentry{global information}{15}
+\indexentry{{\bf jotter}}{15}
+\indexentry{external system interface}{15}
+\indexentry{conditions, compute}{15}
+\indexentry{blocks world}{16}
+\indexentry{expands}{16}
+\indexentry{only\_use\_for\_effects}{16}
+\indexentry{only\_use\_for\_query}{16}
+\indexentry{{\bf schema variables}}{16}
+\indexentry{house building}{17}
+\indexentry{conventions used in {\sc tf} description}{24}
+\indexentry{TF, syntax conventions}{24}
+\indexentry{{\bf ::=}}{24}
+\indexentry{{\bf ;;;}}{24}
+\indexentry{\M{atom}}{25}
+\indexentry{\M{name}}{25}
+\indexentry{\M{text\_string}}{25}
+\indexentry{\M{number}}{25}
+\indexentry{{\bf inf}}{25}
+\indexentry{{\bf infinity}}{25}
+\indexentry{patterns}{26}
+\indexentry{values}{26}
+\indexentry{variables}{26}
+\indexentry{match constraints}{26}
+\indexentry{\M{function\_name}}{26}
+\indexentry{\M{predicate\_name}}{26}
+\indexentry{\M{other\_function\_argument}}{26}
+\indexentry{\M{other\_predicate\_argument}}{26}
+\indexentry{\M{function\_result}}{26}
+\indexentry{{\bf has}}{26}
+\indexentry{{\bf satisfies}}{26}
+\indexentry{\M{pattern\_component}}{26}
+\indexentry{\M{general\_pattern}}{26}
+\indexentry{\M{pattern}}{26}
+\indexentry{\M{value}}{26}
+\indexentry{\M{variable\_name}}{26}
+\indexentry{\M{variable\_restriction}}{26}
+\indexentry{\M{match\_constraint}}{26}
+\indexentry{\M{type\_name}}{26}
+\indexentry{{\bf undef}}{26}
+\indexentry{{\bf ??}}{26}
+\indexentry{{\bf ?\M{name}}}{26}
+\indexentry{{\bf bound}}{26}
+\indexentry{{\bf type}}{26}
+\indexentry{{\bf not}}{26}
+\indexentry{{\bf or}}{26}
+\indexentry{{\bf and}}{26}
+\indexentry{{\bf contains}}{26}
+\indexentry{{\bf ?}\{{\bf bound}\}}{26}
+\indexentry{{\bf ?}\{{\bf type \M{type\_name}}\}}{27}
+\indexentry{{\bf ?}\{{\bf not \M{parameter}}\}}{27}
+\indexentry{{\bf ?}\{{\bf or \M{parameter} ...}\}}{27}
+\indexentry{{\bf ?}\{{\bf and \M{parameter} ...}\}}{27}
+\indexentry{{\bf ?}\{{\bf contains \M{set}}\}}{27}
+\indexentry{{\bf ?}\{{\bf has \M{function\_name} ... \}}}{27}
+\indexentry{{\bf ?}\{{\bf satisfies \M{predicate\_name} ... \}}}{27}
+\indexentry{expressions}{27}
+\indexentry{\M{expression}}{28}
+\indexentry{\M{plus\_or\_minus}}{28}
+\indexentry{\M{operator}}{28}
+\indexentry{\M{operand}}{28}
+\indexentry{set}{28}
+\indexentry{\M{set}}{28}
+\indexentry{\M{name\_set}}{28}
+\indexentry{\M{general\_set}}{28}
+\indexentry{nodes}{28}
+\indexentry{{\bf action}}{28}
+\indexentry{{\bf event}}{28}
+\indexentry{{\bf dummy}}{28}
+\indexentry{{\bf start}}{28}
+\indexentry{{\bf finish}}{28}
+\indexentry{\M{dummy\_node\_type}}{28}
+\indexentry{\M{action\_or\_event}}{28}
+\indexentry{\M{node\_type}}{28}
+\indexentry{node numbers}{28}
+\indexentry{node ends}{28}
+\indexentry{time points}{28}
+\indexentry{\M{node\_number}}{28}
+\indexentry{\M{node\_end}}{28}
+\indexentry{{\bf begin\_of}}{28}
+\indexentry{{\bf end\_of}}{28}
+\indexentry{\M{end}}{28}
+\indexentry{\M{at\_spec}}{28}
+\indexentry{{\bf self}}{28}
+\indexentry{{\bf at} \M{node\_end}}{28}
+\indexentry{numerical bounds}{29}
+\indexentry{\M{min\_max\_spec}}{29}
+\indexentry{{\bf min}}{29}
+\indexentry{{\bf max}}{29}
+\indexentry{{\bf none}}{29}
+\indexentry{{\bf no}}{29}
+\indexentry{{\bf some}}{29}
+\indexentry{time specifications}{29}
+\indexentry{\M{time\_spec}}{30}
+\indexentry{\M{time\_units}}{30}
+\indexentry{\M{days}}{30}
+\indexentry{\M{time\_bounds\_spec}}{30}
+\indexentry{\M{time\_bounds\_pair}}{30}
+\indexentry{\M{time\_preference}}{30}
+\indexentry{{\bf ideal}}{30}
+\indexentry{{\bf after}}{30}
+\indexentry{{\bf before}}{30}
+\indexentry{{\bf et =}}{30}
+\indexentry{{\bf lt =}}{30}
+\indexentry{{\bf occurs\_at}}{30}
+\indexentry{{\bf between}}{30}
+\indexentry{{\bf inf}}{30}
+\indexentry{{\bf infinity}}{30}
+\indexentry{{\bf initial\_time}}{30}
+\indexentry{resource specifications}{30}
+\indexentry{\M{resource\_usage\_spec}}{31}
+\indexentry{\M{resource\_name}}{31}
+\indexentry{\M{resource\_qualifier}}{31}
+\indexentry{\M{resource\_range}}{31}
+\indexentry{\M{resource\_unit}}{31}
+\indexentry{\M{resource\_unit\_name}}{31}
+\indexentry{\M{resource\_unit\_synonym}}{31}
+\indexentry{\M{resource\_scope\_spec}}{31}
+\indexentry{\M{resource\_usage\_keyword}}{31}
+\indexentry{{\bf overall}}{31}
+\indexentry{{\bf unlimited}}{31}
+\indexentry{{\bf resource\_usage\_node\_end}}{31}
+\indexentry{{\bf sets}}{31}
+\indexentry{{\bf allocates}}{31}
+\indexentry{{\bf deallocates}}{31}
+\indexentry{{\bf produces}}{31}
+\indexentry{{\bf consumes}}{31}
+\indexentry{authority statements}{32}
+\indexentry{\M{authority\_statement}}{33}
+\indexentry{\M{individual\_authority}}{33}
+\indexentry{\M{provides\_or\_requires}}{33}
+\indexentry{\M{phase\_number}}{33}
+\indexentry{\M{level\_number}}{33}
+\indexentry{\M{yes\_or\_no}}{33}
+\indexentry{TF forms}{34}
+\indexentry{\M{tf\_file}}{34}
+\indexentry{\M{tf\_form\_keyword}}{34}
+\indexentry{\M{tf\_form\_major\_keyword}}{34}
+\indexentry{{\bf end\_\M{keyword}}}{34}
+\indexentry{\M{tf\_form}}{34}
+\indexentry{\M{minor\_keyword}}{34}
+\indexentry{\M{component}}{34}
+\indexentry{documentary information}{35}
+\indexentry{{\bf tf\_info}}{35}
+\indexentry{\M{info\_word}}{35}
+\indexentry{TF, compiler defaults}{35}
+\indexentry{{\bf new\_domain}}{35}
+\indexentry{{\bf defaults}}{35}
+\indexentry{{\bf value}}{35}
+\indexentry{{\bf variable\_restriction}}{35}
+\indexentry{{\bf condition\_at\_node\_end}}{35}
+\indexentry{{\bf condition\_\_contributor\_node\_end}}{35}
+\indexentry{{\bf achieve\_after\_point}}{35}
+\indexentry{{\bf effect\_at\_node\_end}}{35}
+\indexentry{{\bf resource\_usage\_\_node\_end}}{35}
+\indexentry{{\bf time\_window\_node\_end}}{35}
+\indexentry{{\bf link\_from\_node\_end}}{35}
+\indexentry{{\bf link\_to\_node\_end}}{35}
+\indexentry{{\bf resource\_overall}}{35}
+\indexentry{{\bf resource\_at\_node\_end}}{35}
+\indexentry{\M{default\_assignment}}{35}
+\indexentry{\M{default\_achieve\_after\_point}}{35}
+\indexentry{{\bf include}}{36}
+\indexentry{user interface specification}{36}
+\indexentry{plan view}{36}
+\indexentry{{\bf plan\_viewer}}{37}
+\indexentry{{\bf program}}{37}
+\indexentry{{\bf information}}{37}
+\indexentry{\M{plan\_viewer\_feature}}{37}
+\indexentry{\M{availability}}{37}
+\indexentry{\M{plan\_viewer\_parameter\_string}}{37}
+\indexentry{{\bf plan\_output}}{37}
+\indexentry{{\bf levels\_output}}{37}
+\indexentry{{\bf resource\_output}}{37}
+\indexentry{{\bf node\_selection}}{37}
+\indexentry{{\bf link\_selection}}{37}
+\indexentry{{\bf entity\_detail}}{37}
+\indexentry{{\bf tf\_input}}{37}
+\indexentry{{\bf plan}}{38}
+\indexentry{{\bf end\_plan}}{38}
+\indexentry{{\bf node}}{38}
+\indexentry{{\bf end\_node}}{38}
+\indexentry{plan output format}{38}
+\indexentry{O-Plan plan output format}{38}
+\indexentry{\M{node\_reference}}{38}
+\indexentry{\M{node\_label}}{38}
+\indexentry{\M{node\_time\_information}}{38}
+\indexentry{\M{earliest\_begin\_time}}{38}
+\indexentry{\M{latest\_begin\_time}}{38}
+\indexentry{\M{earliest\_end\_time}}{38}
+\indexentry{\M{minimum\_duration}}{38}
+\indexentry{\M{maximum\_duration}}{38}
+\indexentry{\M{drawing\_object\_name}}{39}
+\indexentry{\M{drawing\_pattern}}{39}
+\indexentry{\M{associated\_instructions\_or\_data}}{39}
+\indexentry{\M{fully\_instantiated\_pattern}}{39}
+\indexentry{\M{pattern\_with\_??}}{39}
+\indexentry{world view}{39}
+\indexentry{{\bf world\_viewer}}{39}
+\indexentry{{\bf program}}{39}
+\indexentry{{\bf information}}{39}
+\indexentry{\M{world\_viewer\_feature}}{39}
+\indexentry{\M{availability}}{39}
+\indexentry{\M{world\_viewer\_parameter\_string}}{39}
+\indexentry{{\bf snapshot}}{39}
+\indexentry{{\bf incremental}}{39}
+\indexentry{{\bf tf\_input}}{40}
+\indexentry{{\bf initially}}{40}
+\indexentry{{\bf always}}{40}
+\indexentry{{\bf world}}{40}
+\indexentry{{\bf end\_world}}{40}
+\indexentry{{\bf increment}}{40}
+\indexentry{\M{world\_view\_type}}{40}
+\indexentry{world output format}{40}
+\indexentry{O-Plan world output format}{40}
+\indexentry{\M{domain\_statement}}{40}
+\indexentry{\M{domain\_value}}{40}
+\indexentry{\M{associated\_instructions\_or\_data}}{40}
+\indexentry{plan levels}{40}
+\indexentry{preferences}{41}
+\indexentry{heuristic information}{41}
+\indexentry{{\bf preferences}}{41}
+\indexentry{{\bf prefer\_plans\_with}}{41}
+\indexentry{\M{preference\_word}}{41}
+\indexentry{\M{plan\_feature}}{41}
+\indexentry{{\bf prefer\_schemas}}{41}
+\indexentry{{\bf earliest\_finish\_of\_plan}}{41}
+\indexentry{{\bf latest\_finish\_of\_plan}}{41}
+\indexentry{{\bf number\_of\_nodes}}{41}
+\indexentry{resource information}{42}
+\indexentry{{\bf resource\_units}}{42}
+\indexentry{{\bf resource\_types}}{42}
+\indexentry{{\bf resource\_conversions}}{42}
+\indexentry{\M{resource\_unit\_class}}{43}
+\indexentry{\M{resource\_class}}{43}
+\indexentry{\M{resource\_qualifier\_spec}}{43}
+\indexentry{{\bf count}}{43}
+\indexentry{{\bf size}}{43}
+\indexentry{{\bf weight}}{43}
+\indexentry{{\bf set}}{43}
+\indexentry{{\bf initial\_resources}}{43}
+\indexentry{{\bf only\_use\_for\_resources}}{43}
+\indexentry{{\bf resources}}{43}
+\indexentry{default resource information}{43}
+\indexentry{resources, defaults}{43}
+\indexentry{{\bf default\_resources}}{44}
+\indexentry{{\bf overall}}{44}
+\indexentry{{\bf at begin\_of}}{44}
+\indexentry{{\bf at end\_of}}{44}
+\indexentry{calendar}{44}
+\indexentry{time information}{44}
+\indexentry{time units}{44}
+\indexentry{domain constraints}{44}
+\indexentry{{\bf domain\_rules}}{44}
+\indexentry{{\bf forall}}{44}
+\indexentry{{\bf $\Rightarrow$}}{44}
+\indexentry{{\bf domain\_rules}}{44}
+\indexentry{temporal coherence}{44}
+\indexentry{compute condition}{45}
+\indexentry{{\bf compute}}{45}
+\indexentry{{\bf depends\_on}}{45}
+\indexentry{{\bf compute\_condition}}{45}
+\indexentry{{\bf multiple\_answer}}{45}
+\indexentry{{\bf depends\_on}}{45}
+\indexentry{\M{compute\_function\_name}}{45}
+\indexentry{\M{compute\_dependency}}{45}
+\indexentry{conditions, compute dependency statement}{45}
+\indexentry{\M{compute\_dependency}}{45}
+\indexentry{{\bf fn\_}}{45}
+\indexentry{language specific code}{45}
+\indexentry{{\bf language}}{46}
+\indexentry{{\bf lisp}}{46}
+\indexentry{\M{language\_name}}{46}
+\indexentry{object types}{46}
+\indexentry{{\bf types}}{46}
+\indexentry{\M{type\_name}}{46}
+\indexentry{\M{integer\_range}}{46}
+\indexentry{type, integer range}{46}
+\indexentry{global data}{46}
+\indexentry{{\bf always}}{46}
+\indexentry{actions}{47}
+\indexentry{schemas}{47}
+\indexentry{{\bf --$ $}}{48}
+\indexentry{{\bf ---$>$}}{48}
+\indexentry{{\bf schema}}{48}
+\indexentry{{\bf meta\_schema}}{48}
+\indexentry{{\bf process\_schema}}{48}
+\indexentry{{\bf meta\_process\_schema}}{48}
+\indexentry{schemas, public information}{48}
+\indexentry{{\bf info}}{48}
+\indexentry{{\bf instance\_of}}{48}
+\indexentry{{\bf expands}}{48}
+\indexentry{{\bf only\_use\_for\_effects}}{48}
+\indexentry{{\bf only\_use\_for\_resources}}{48}
+\indexentry{{\bf only\_use\_for\_authority}}{48}
+\indexentry{{\bf vars}}{48}
+\indexentry{{\bf vars\_relationships}}{48}
+\indexentry{schemas, private information}{48}
+\indexentry{{\bf local\_vars}}{48}
+\indexentry{{\bf nodes}}{48}
+\indexentry{{\bf orderings}}{48}
+\indexentry{{\bf conditions}}{48}
+\indexentry{{\bf effects}}{48}
+\indexentry{{\bf resources}}{48}
+\indexentry{{\bf authority}}{48}
+\indexentry{{\bf time\_windows}}{48}
+\indexentry{\M{other\_constraint\_clause}}{48}
+\indexentry{{\bf iterate}}{49}
+\indexentry{{\bf foreach}}{49}
+\indexentry{{\bf sequential}}{49}
+\indexentry{{\bf parallel}}{49}
+\indexentry{{\bf duration}}{49}
+\indexentry{{\bf delay\_between}}{49}
+\indexentry{\M{node\_spec}}{49}
+\indexentry{\M{node\_form}}{49}
+\indexentry{\M{iterated\_node\_form}}{49}
+\indexentry{\M{iterated\_node\_type}}{49}
+\indexentry{\M{iterators}}{49}
+\indexentry{\M{iteration\_set}}{49}
+\indexentry{\M{ordering\_block}}{49}
+\indexentry{\M{effect\_point}}{49}
+\indexentry{\M{condition\_point}}{49}
+\indexentry{\M{delay\_spec}}{49}
+\indexentry{\M{time\_window\_spec}}{49}
+\indexentry{spatial constraints}{49}
+\indexentry{constraints, spatial}{49}
+\indexentry{\M{condition\_statement}}{50}
+\indexentry{\M{limited\_condition\_type}}{50}
+\indexentry{\M{contributor\_entry}}{50}
+\indexentry{\M{achieve\_after\_point}}{50}
+\indexentry{{\bf achieve}}{50}
+\indexentry{{\bf achieve ... after}}{50}
+\indexentry{{\bf achieve ... after ... start}}{50}
+\indexentry{{\bf achieve ... after ... self}}{50}
+\indexentry{{\bf after ... start}}{50}
+\indexentry{{\bf after ... self}}{50}
+\indexentry{{\bf supervised}}{50}
+\indexentry{{\bf unsupervised}}{50}
+\indexentry{{\bf only\_use\_if}}{50}
+\indexentry{{\bf only\_use\_for\_query}}{50}
+\indexentry{schema}{50}
+\indexentry{{\bf schema}}{50}
+\indexentry{{\bf meta\_schema}}{50}
+\indexentry{{\bf process\_schema}}{50}
+\indexentry{{\bf meta\_process\_schemas}}{50}
+\indexentry{schema, process}{50}
+\indexentry{schema, meta}{50}
+\indexentry{meta-schema}{50}
+\indexentry{process schema}{50}
+\indexentry{variables}{50}
+\indexentry{{\bf vars}}{50}
+\indexentry{{\bf local\_vars}}{50}
+\indexentry{{\bf undef}}{50}
+\indexentry{schemas, public information}{50}
+\indexentry{schemas, private information}{50}
+\indexentry{vars relations}{51}
+\indexentry{{\bf vars\_relations}}{51}
+\indexentry{{\bf $=$}}{51}
+\indexentry{{\bf $/=$}}{51}
+\indexentry{expands}{51}
+\indexentry{only\_use\_for\_effects}{51}
+\indexentry{{\bf expands}}{51}
+\indexentry{{\bf only\_use\_for\_effects}}{51}
+\indexentry{{\bf only\_use\_for\_effects}}{51}
+\indexentry{{\bf effects}}{51}
+\indexentry{{\bf only\_use\_for\_resources}}{51}
+\indexentry{{\bf only\_use\_for\_authority}}{51}
+\indexentry{nodes}{51}
+\indexentry{orderings}{51}
+\indexentry{expansion}{51}
+\indexentry{decomposition}{51}
+\indexentry{nodes}{51}
+\indexentry{{\bf nodes}}{51}
+\indexentry{{\bf start}}{51}
+\indexentry{{\bf finish}}{51}
+\indexentry{{\bf event}}{51}
+\indexentry{{\bf dummy}}{51}
+\indexentry{orderings}{51}
+\indexentry{{\bf orderings}}{51}
+\indexentry{delays}{51}
+\indexentry{time delays}{51}
+\indexentry{\M{delay\_spec}}{51}
+\indexentry{\M{order\_block}}{51}
+\indexentry{{\bf sequential}}{51}
+\indexentry{{\bf parallel}}{51}
+\indexentry{foreach}{51}
+\indexentry{iterate}{51}
+\indexentry{{\bf foreach}}{51}
+\indexentry{{\bf iterate}}{51}
+\indexentry{{\bf from}}{51}
+\indexentry{{\bf over}}{51}
+\indexentry{{\bf event}}{51}
+\indexentry{{\bf supervised}}{53}
+\indexentry{compute condition}{53}
+\indexentry{conditions, compute}{53}
+\indexentry{{\bf compute}}{53}
+\indexentry{{\bf depends\_on}}{53}
+\indexentry{{\bf from}}{53}
+\indexentry{{\bf always}}{53}
+\indexentry{{\bf notepad}}{54}
+\indexentry{{\bf at notepad}}{54}
+\indexentry{notepad}{54}
+\indexentry{notes}{54}
+\indexentry{authority}{54}
+\indexentry{{\bf authority}}{54}
+\indexentry{time windows}{54}
+\indexentry{{\bf time\_windows}}{54}
+\indexentry{{\bf duration}}{54}
+\indexentry{{\bf delay\_between}}{54}
+\indexentry{other constraints}{54}
+\indexentry{{\bf other\_constraints}}{54}
+\indexentry{notepad}{54}
+\indexentry{{\bf notepad}}{54}
+\indexentry{note}{54}
+\indexentry{note of other constraints}{54}
+\indexentry{\{\bf note}}{54}
+\indexentry{primitive actions}{55}
+\indexentry{actions, primitive}{55}
+\indexentry{schemas, primitive}{55}
+\indexentry{{\bf expands}}{55}
+\indexentry{{\bf nodes}}{55}
+\indexentry{{\bf orderings}}{55}
+\indexentry{initial information}{55}
+\indexentry{{\bf initially}}{55}
+\indexentry{{\bf initial\_resources}}{55}
+\indexentry{{\bf initial\_authority}}{55}
+\indexentry{{\bf initial\_time}}{55}
+\indexentry{task schemas}{56}
+\indexentry{schemas, task}{56}
+\indexentry{{\bf initially}}{56}
+\indexentry{{\bf initial\_resources}}{56}
+\indexentry{{\bf initial\_authority}}{56}
+\indexentry{{\bf initial\_time}}{56}
+\indexentry{{\bf task\_}}{57}
+\indexentry{{\bf start}}{57}
+\indexentry{{\bf finish}}{57}
+\indexentry{TF compiler}{58}
+\indexentry{{\bf initially}}{58}
+\indexentry{{\bf initial\_resources}}{58}
+\indexentry{{\bf initial\_time}}{58}
+\indexentry{{\bf defaults}}{58}
+\indexentry{{\bf new\_domain}}{58}
+\indexentry{commands}{59}
+\indexentry{{\bf oplan}}{59}
+\indexentry{{\bf new\_domain}}{59}
+\indexentry{{\bf tf \M{domain\_name}}}{59}
+\indexentry{{\bf plan \M{task\_schema\_name}}}{59}
+\indexentry{{\bf plan\_view}}{59}
+\indexentry{{\bf world\_view}}{59}
+\indexentry{{\bf replan}}{59}
+\indexentry{{\bf execute}}{59}
+\indexentry{{\bf quit}}{59}
+\indexentry{compute functions, predefined functions}{60}
+\indexentry{conditions, predefined compute functions}{60}
+\indexentry{{\bf fn\_}}{60}
+\indexentry{{\bf true}}{60}
+\indexentry{{\bf false}}{60}
+\indexentry{{\bf fn\_ask}}{60}
+\indexentry{{\bf fn\_cond}}{60}
+\indexentry{{\bf fn\_or}}{60}
+\indexentry{{\bf fn\_and}}{60}
+\indexentry{{\bf eq}}{60}
+\indexentry{{\bf fn\_eq}}{60}
+\indexentry{{\bf fn\_neq}}{60}
+\indexentry{{\bf fn\_leq}}{60}
+\indexentry{{\bf fn\_geq}}{60}
+\indexentry{{\bf compute\_conditions}}{60}
+\indexentry{{\bf bound}}{60}
+\indexentry{{\bf ?}\{{\bf bound}\}}{60}
+\indexentry{TF guidelines}{61}
+\indexentry{TFM (Task Formalism Method)}{61}
+\indexentry{Task Formalism Method ({\sc tfm})}{61}
+\indexentry{TF guidelines, scope the domain}{61}
+\indexentry{TF guidelines, initial analysis}{61}
+\indexentry{domain expert}{61}
+\indexentry{domain specialist}{61}
+\indexentry{TF guidelines, action expansion}{61}
+\indexentry{TF guidelines, goal achievement}{61}
+\indexentry{TF guidelines, levels of modelling}{61}
+\indexentry{TF guidelines, task formalism method}{61}
+\indexentry{hierarchical promiscuity}{61}
+\indexentry{level promiscuity}{61}
+\indexentry{TF guidelines, writing a schema}{62}
+\indexentry{TF guidelines, schema envelope}{62}
+\indexentry{envelope of schema}{62}
+\indexentry{schema envelope}{62}
+\indexentry{TF guidelines, writer help}{63}
+\indexentry{type, integer range}{63}
+\indexentry{current implementation}{65}
+\indexentry{unsupported features}{65}
+\indexentry{TF features, unsupported}{65}
+\indexentry{\M{expression}}{65}
+\indexentry{{\bf plan\_viewer}}{65}
+\indexentry{{\bf world\_viewer}}{65}
+\indexentry{{\bf preferences}}{65}
+\indexentry{{\bf prefer\_plans\_with}}{65}
+\indexentry{{\bf prefer\_schemas}}{65}
+\indexentry{{\bf consumable\_strictly}}{65}
+\indexentry{{\bf count}}{65}
+\indexentry{{\bf default\_resources}}{65}
+\indexentry{{\bf domain\_rule}}{65}
+\indexentry{{\bf plan\_levels}}{65}
+\indexentry{{\bf compute}}{65}
+\indexentry{{\bf compute\_condition}}{65}
+\indexentry{{\bf depends\_on}}{65}
+\indexentry{{\bf multiple\_answer}}{65}
+\indexentry{type, integer range}{65}
+\indexentry{{\bf process\_schemas}}{65}
+\indexentry{{\bf meta\_schemas}}{65}
+\indexentry{{\bf event}}{65}
+\indexentry{{\bf foreach}}{66}
+\indexentry{{\bf iterate}}{66}
+\indexentry{notepad}{66}
+\indexentry{{\bf notepad}}{66}
+\indexentry{notes}{66}
+\indexentry{\M{other\_constraint\_clause}}{66}
+\indexentry{{\bf task}}{66}
+\indexentry{{\bf initially}}{66}
+\indexentry{{\bf initial\_resources}}{66}
+\indexentry{{\bf initial\_authority}}{66}
+\indexentry{{\bf initial\_time}}{66}
+\indexentry{TF features, anticipated}{66}
+\indexentry{{\bf plan\_viewer}}{66}
+\indexentry{{\bf world\_viewer}}{66}
+\indexentry{{\bf initial\_resources}}{67}
+\indexentry{{\bf only\_use\_for\_resources}}{67}
+\indexentry{{\bf resources}}{67}
+\indexentry{{\bf produces}}{67}
+\indexentry{{\bf per}}{67}
+\indexentry{{\bf over\_period}}{67}
+\indexentry{{\bf query}}{68}
+\indexentry{TF features, under review}{68}
+\indexentry{TF, no warranty}{68}

@@ -1,0 +1,1207 @@
+
+;;; Statistics:
+(
+(:am-cycles . 305)
+(:n-alts-chosen . 20)
+(:n-alts-remaining . 81)
+(:n-poisons . 20)
+)
+
+;;; Action levels:
+(
+(air_transport . 2)
+(drive . 3)
+(evacuate . 1)
+(fly . 3)
+(fly_passengers . 1)
+(fly_to . 4)
+(land_at . 4)
+(load . 2)
+(refuel_transporter . 2)
+(road_transport . 2)
+(take_off_from . 4)
+(task_operation_columbus . 0)
+(task_operation_columbus_ground_transports_only . 0)
+(task_operation_columbus_helicopters_only . 0)
+(task_operation_columbus_mixed_transports . 0)
+(transport_fuel_reserves . 3)
+(transport_ground_transports . 1)
+(transport_helicopters . 1)
+(unload . 2)
+)
+
+;;; Effect levels:
+(
+(apportioned_forces . 0)
+(at . 3)
+(at_capacity . 0)
+(avgas_fuel_required . 0)
+(cargo_landed_at_airbase . 4)
+(country . 0)
+(diesel_fuel_required . 0)
+(evacuate_to . 0)
+(evac_status . 2)
+(gt_capacity . 0)
+(in_transit_to . 4)
+(in_use_for . 2)
+(loaded . 2)
+(location_at . 1)
+(location_gt . 1)
+(nationals . 1)
+(passenger_transporter_refuelled . 2)
+(runway_status_at . 3)
+(taken_off_from . 4)
+(transporter_refuelled . 2)
+(unloaded . 2)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-18 :begin) (node-17 :begin) (node-16 :begin) (node-15 :begin) (node-14 :begin) (node-13 :begin) (node-12 :begin) (node-11 :begin) (node-4 :begin) (node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-10 :end) (node-9 :end) (node-8 :end))
+   nil
+   nil
+   nil
+   (54000 :inf 54000 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-5 :end))
+   ((node-7 :begin) (node-6 :begin) (node-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (transport_ground_transports honolulu delta)
+)
+(node-3-1
+   ((node-3 :begin))
+   nil
+   nil
+   ((node-3-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (load ground_transports)
+)
+(node-3-2
+   ((node-14-3-3 :end) (node-14-1-1 :end) (node-4-2 :end) (node-3-1 :end))
+   nil
+   ((node-4-2 :end))
+   ((node-3-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (take_off_from honolulu)
+)
+(node-3-3
+   ((node-3-2 :end))
+   nil
+   nil
+   ((node-3-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fly_to delta)
+)
+(node-3-4
+   ((node-14-3-1 :end) (node-14-1-3 :end) (node-4-4 :end) (node-3-3 :end))
+   nil
+   ((node-4-4 :end))
+   ((node-3-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (land_at delta)
+)
+(node-3-5
+   ((node-3-4 :end))
+   nil
+   nil
+   ((node-18-1 :begin) (node-17-1 :begin) (node-16-1 :begin) (node-15-1 :begin) (node-13-1 :begin) (node-12-1 :begin) (node-11-1 :begin) (node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (unload ground_transports)
+)
+(node-4
+   ((node-1 :end))
+   ((node-4-1 :begin))
+   ((node-4-5 :end))
+   ((node-7 :begin) (node-6 :begin) (node-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (transport_helicopters honolulu delta)
+)
+(node-4-1
+   ((node-4 :begin))
+   nil
+   nil
+   ((node-4-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (load air_transports)
+)
+(node-4-2
+   ((node-14-3-3 :end) (node-14-1-1 :end) (node-4-1 :end))
+   nil
+   ((node-14-3-3 :end) (node-14-1-1 :end))
+   ((node-3-2 :end) (node-3-2 :begin) (node-4-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (take_off_from honolulu)
+)
+(node-4-3
+   ((node-4-2 :end))
+   nil
+   nil
+   ((node-4-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fly_to delta)
+)
+(node-4-4
+   ((node-14-3-1 :end) (node-14-1-3 :end) (node-4-3 :end))
+   nil
+   ((node-14-3-1 :end) (node-14-1-3 :end))
+   ((node-3-4 :end) (node-3-4 :begin) (node-4-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (land_at delta)
+)
+(node-4-5
+   ((node-4-4 :end))
+   nil
+   nil
+   ((node-4 :end))
+   (0 :inf 0 :inf)
+   action
+   (unload air_transports)
+)
+(node-5
+   ((node-11 :end) (node-4 :end) (node-3 :end))
+   nil
+   nil
+   ((node-10 :begin) (node-9 :begin) (node-8 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (evacuate abyss 50)
+)
+(node-6
+   ((node-12 :end) (node-4 :end) (node-3 :end))
+   nil
+   nil
+   ((node-10 :begin) (node-9 :begin) (node-8 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (evacuate barnacle 100)
+)
+(node-7
+   ((node-13 :end) (node-4 :end) (node-3 :end))
+   nil
+   nil
+   ((node-10 :begin) (node-9 :begin) (node-8 :begin))
+   (43200 :inf 43200 :inf)
+   action
+   (evacuate calypso 20)
+)
+(node-8
+   ((node-7 :end) (node-6 :end) (node-5 :end))
+   ((node-8-1 :begin))
+   ((node-8-5 :end))
+   ((node-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (fly_passengers delta honolulu)
+)
+(node-8-1
+   ((node-8 :begin))
+   nil
+   nil
+   ((node-8-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (load passengers)
+)
+(node-8-2
+   ((node-14 :end) (node-10-2 :end) (node-9-2 :end) (node-8-1 :end))
+   nil
+   ((node-9-2 :end))
+   ((node-8-3 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (take_off_from delta)
+)
+(node-8-3
+   ((node-8-2 :end))
+   nil
+   nil
+   ((node-8-4 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (fly_to honolulu)
+)
+(node-8-4
+   ((node-10-4 :end) (node-9-4 :end) (node-8-3 :end))
+   nil
+   ((node-9-4 :end))
+   ((node-8-5 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (land_at honolulu)
+)
+(node-8-5
+   ((node-8-4 :end))
+   nil
+   nil
+   ((node-8 :end))
+   (54000 :inf 54000 :inf)
+   action
+   (unload passengers)
+)
+(node-9
+   ((node-7 :end) (node-6 :end) (node-5 :end))
+   ((node-9-1 :begin))
+   ((node-9-5 :end))
+   ((node-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (transport_ground_transports delta honolulu)
+)
+(node-9-1
+   ((node-9 :begin))
+   nil
+   nil
+   ((node-9-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (load ground_transports)
+)
+(node-9-2
+   ((node-14-3-1 :end) (node-14-1-3 :end) (node-10-2 :end) (node-9-1 :end))
+   nil
+   ((node-10-2 :end))
+   ((node-8-2 :end) (node-8-2 :begin) (node-9-3 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (take_off_from delta)
+)
+(node-9-3
+   ((node-9-2 :end))
+   nil
+   nil
+   ((node-9-4 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (fly_to honolulu)
+)
+(node-9-4
+   ((node-14-3-3 :end) (node-14-1-1 :end) (node-10-4 :end) (node-9-3 :end))
+   nil
+   ((node-10-4 :end))
+   ((node-8-4 :end) (node-8-4 :begin) (node-9-5 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (land_at honolulu)
+)
+(node-9-5
+   ((node-9-4 :end))
+   nil
+   nil
+   ((node-9 :end))
+   (54000 :inf 54000 :inf)
+   action
+   (unload ground_transports)
+)
+(node-10
+   ((node-7 :end) (node-6 :end) (node-5 :end))
+   ((node-10-1 :begin))
+   ((node-10-5 :end))
+   ((node-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (transport_helicopters delta honolulu)
+)
+(node-10-1
+   ((node-10 :begin))
+   nil
+   nil
+   ((node-10-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (load air_transports)
+)
+(node-10-2
+   ((node-14-3-1 :end) (node-14-1-3 :end) (node-10-1 :end))
+   nil
+   ((node-14-3-1 :end) (node-14-1-3 :end))
+   ((node-9-2 :end) (node-8-2 :begin) (node-9-2 :begin) (node-10-3 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (take_off_from delta)
+)
+(node-10-3
+   ((node-10-2 :end))
+   nil
+   nil
+   ((node-10-4 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (fly_to honolulu)
+)
+(node-10-4
+   ((node-14-3-3 :end) (node-14-1-1 :end) (node-10-3 :end))
+   nil
+   ((node-14-3-3 :end) (node-14-1-1 :end))
+   ((node-9-4 :end) (node-8-4 :begin) (node-9-4 :begin) (node-10-5 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (land_at honolulu)
+)
+(node-10-5
+   ((node-10-4 :end))
+   nil
+   nil
+   ((node-10 :end))
+   (54000 :inf 54000 :inf)
+   action
+   (unload air_transports)
+)
+(node-11
+   ((node-1 :end))
+   ((node-11-1 :begin) (node-11-2 :begin))
+   ((node-11-1 :end) (node-11-2 :end))
+   ((node-5 :begin))
+   (0 :inf 54000 :inf)
+   dummy
+   nil
+)
+(node-11-1
+   ((node-18-1 :end) (node-18-1 :begin) (node-17-1 :end) (node-17-1 :begin) (node-16-1 :end) (node-16-1 :begin) (node-13-1 :end) (node-13-1 :end) (node-13-1 :begin) (node-3-5 :end) (node-11 :begin))
+   nil
+   ((node-13-1 :end))
+   ((node-11 :end))
+   (43200 :inf 54000 :inf)
+   action
+   (drive 25 in gt1 from abyss)
+)
+(node-11-2
+   ((node-15 :end) (node-11 :begin))
+   nil
+   nil
+   ((node-11 :end))
+   (10800 :inf 10800 :inf)
+   dummy
+   nil
+)
+(node-12
+   ((node-1 :end))
+   ((node-12-1 :begin) (node-12-2 :begin))
+   ((node-12-1 :end) (node-12-2 :end))
+   ((node-6 :begin))
+   (0 :inf 32400 :inf)
+   dummy
+   nil
+)
+(node-12-1
+   ((node-15-1 :end) (node-15-1 :end) (node-15-1 :begin) (node-3-5 :end) (node-12 :begin))
+   nil
+   ((node-15-1 :end))
+   ((node-12 :end))
+   (10800 :inf 21600 :inf)
+   action
+   (drive 25 in gt2 from barnacle)
+)
+(node-12-2
+   ((node-16 :end) (node-12 :begin))
+   nil
+   nil
+   ((node-12 :end))
+   (32400 :inf 32400 :inf)
+   dummy
+   nil
+)
+(node-13
+   ((node-1 :end))
+   ((node-13-1 :begin) (node-13-2 :begin))
+   ((node-13-1 :end) (node-13-2 :end))
+   ((node-7 :begin))
+   (0 :inf 43200 :inf)
+   dummy
+   nil
+)
+(node-13-1
+   ((node-18-1 :end) (node-18-1 :begin) (node-17-1 :end) (node-17-1 :begin) (node-16-1 :end) (node-16-1 :end) (node-16-1 :begin) (node-3-5 :end) (node-13 :begin))
+   ((node-11-1 :begin))
+   ((node-16-1 :end))
+   ((node-11-1 :begin) (node-11-1 :end) (node-11-1 :begin) (node-13 :end))
+   (32400 :inf 43200 :inf)
+   action
+   (drive 20 in gt1 from calypso)
+)
+(node-13-2
+   ((node-13 :begin))
+   nil
+   nil
+   ((node-13 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-14
+   ((node-1 :end))
+   ((node-14-1 :begin))
+   ((node-14-3 :end))
+   ((node-8-2 :begin))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-14-1
+   ((node-14 :begin))
+   ((node-14-1-1 :begin))
+   ((node-14-1-3 :end))
+   ((node-14-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (transport_fuel_reserves honolulu delta)
+)
+(node-14-1-1
+   ((node-14-1 :begin))
+   nil
+   nil
+   ((node-4-2 :end) (node-10-4 :end) (node-3-2 :begin) (node-4-2 :begin) (node-9-4 :begin) (node-10-4 :begin) (node-14-1-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (take_off_from honolulu)
+)
+(node-14-1-2
+   ((node-14-1-1 :end))
+   nil
+   nil
+   ((node-14-1-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fly_to delta)
+)
+(node-14-1-3
+   ((node-14-1-2 :end))
+   nil
+   nil
+   ((node-4-4 :end) (node-10-2 :end) (node-3-4 :begin) (node-4-4 :begin) (node-9-2 :begin) (node-10-2 :begin) (node-14-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (land_at delta)
+)
+(node-14-2
+   ((node-14-1 :end))
+   nil
+   nil
+   ((node-14-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (refuel_transporter)
+)
+(node-14-3
+   ((node-14-2 :end))
+   ((node-14-3-1 :begin))
+   ((node-14-3-3 :end))
+   ((node-14 :end))
+   (0 :inf 0 :inf)
+   action
+   (transport_fuel_reserves delta honolulu)
+)
+(node-14-3-1
+   ((node-14-3 :begin))
+   nil
+   nil
+   ((node-4-4 :end) (node-10-2 :end) (node-3-4 :begin) (node-4-4 :begin) (node-9-2 :begin) (node-10-2 :begin) (node-14-3-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (take_off_from delta)
+)
+(node-14-3-2
+   ((node-14-3-1 :end))
+   nil
+   nil
+   ((node-14-3-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fly_to honolulu)
+)
+(node-14-3-3
+   ((node-14-3-2 :end))
+   nil
+   nil
+   ((node-4-2 :end) (node-10-4 :end) (node-3-2 :begin) (node-4-2 :begin) (node-9-4 :begin) (node-10-4 :begin) (node-14-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (land_at honolulu)
+)
+(node-15
+   ((node-1 :end))
+   ((node-15-1 :begin) (node-15-2 :begin))
+   ((node-15-1 :end) (node-15-2 :end))
+   ((node-11-2 :begin))
+   (0 :inf 10800 :inf)
+   dummy
+   nil
+)
+(node-15-1
+   ((node-3-5 :end) (node-15 :begin))
+   ((node-12-1 :begin))
+   nil
+   ((node-12-1 :begin) (node-12-1 :end) (node-12-1 :begin) (node-15 :end))
+   (0 :inf 10800 :inf)
+   action
+   (drive 25 in gt2 from abyss)
+)
+(node-15-2
+   ((node-15 :begin))
+   nil
+   nil
+   ((node-15 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-16
+   ((node-1 :end))
+   ((node-16-1 :begin) (node-16-2 :begin))
+   ((node-16-1 :end) (node-16-2 :end))
+   ((node-12-2 :begin))
+   (0 :inf 32400 :inf)
+   dummy
+   nil
+)
+(node-16-1
+   ((node-18-1 :end) (node-17-1 :end) (node-3-5 :end) (node-16 :begin))
+   ((node-11-1 :begin) (node-13-1 :begin))
+   ((node-17-1 :end))
+   ((node-13-1 :begin) (node-13-1 :end) (node-11-1 :begin) (node-13-1 :begin) (node-16 :end))
+   (21600 :inf 32400 :inf)
+   action
+   (drive 25 in gt1 from barnacle)
+)
+(node-16-2
+   ((node-17 :end) (node-16 :begin))
+   nil
+   nil
+   ((node-16 :end))
+   (21600 :inf 21600 :inf)
+   dummy
+   nil
+)
+(node-17
+   ((node-1 :end))
+   ((node-17-1 :begin) (node-17-2 :begin))
+   ((node-17-1 :end) (node-17-2 :end))
+   ((node-16-2 :begin))
+   (0 :inf 21600 :inf)
+   dummy
+   nil
+)
+(node-17-1
+   ((node-18-1 :end) (node-3-5 :end) (node-17 :begin))
+   ((node-11-1 :begin) (node-13-1 :begin))
+   ((node-18-1 :end))
+   ((node-16-1 :end) (node-11-1 :begin) (node-13-1 :begin) (node-16-1 :begin) (node-17 :end))
+   (10800 :inf 21600 :inf)
+   action
+   (drive 25 in gt1 from barnacle)
+)
+(node-17-2
+   ((node-18 :end) (node-17 :begin))
+   nil
+   nil
+   ((node-17 :end))
+   (10800 :inf 10800 :inf)
+   dummy
+   nil
+)
+(node-18
+   ((node-1 :end))
+   ((node-18-1 :begin) (node-18-2 :begin))
+   ((node-18-1 :end) (node-18-2 :end))
+   ((node-17-2 :begin))
+   (0 :inf 10800 :inf)
+   dummy
+   nil
+)
+(node-18-1
+   ((node-3-5 :end) (node-18 :begin))
+   ((node-11-1 :begin) (node-13-1 :begin))
+   nil
+   ((node-17-1 :end) (node-11-1 :begin) (node-13-1 :begin) (node-16-1 :begin) (node-17-1 :begin) (node-18 :end))
+   (0 :inf 10800 :inf)
+   action
+   (drive 25 in gt1 from barnacle)
+)
+(node-18-2
+   ((node-18 :begin))
+   nil
+   nil
+   ((node-18 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+)
+
+;;; TOME:
+(
+((tome (apportioned_forces at) (node-1 :end)) true)
+((tome (apportioned_forces gt) (node-1 :end)) true)
+((tome (at b707) (node-1 :end)) delta)
+((tome (at b707) (node-8-5 :end)) honolulu)
+((tome (at c141) (node-1 :end)) honolulu)
+((tome (at c141) (node-10 :end)) honolulu)
+((tome (at c141) (node-4 :end)) delta)
+((tome (at c5) (node-1 :end)) honolulu)
+((tome (at c5) (node-3-5 :end)) delta)
+((tome (at c5) (node-9-5 :end)) honolulu)
+((tome (at kc10) (node-1 :end)) honolulu)
+((tome (at kc10) (node-14-1 :end)) delta)
+((tome (at kc10) (node-14-3 :end)) honolulu)
+((tome (at_capacity 35) (node-1 :end)) true)
+((tome (avgas_fuel_required abyss delta 140) :always) true)
+((tome (avgas_fuel_required barnacle delta 160) :always) true)
+((tome (avgas_fuel_required calypso delta 180) :always) true)
+((tome (cargo_landed_at_airbase delta) (node-14-1-3 :end)) true)
+((tome (cargo_landed_at_airbase delta) (node-3-4 :end)) true)
+((tome (cargo_landed_at_airbase delta) (node-4-4 :end)) true)
+((tome (cargo_landed_at_airbase honolulu) (node-10-4 :end)) true)
+((tome (cargo_landed_at_airbase honolulu) (node-14-3-3 :end)) true)
+((tome (cargo_landed_at_airbase honolulu) (node-8-4 :end)) true)
+((tome (cargo_landed_at_airbase honolulu) (node-9-4 :end)) true)
+((tome (country abyss) :always) pacifica)
+((tome (country barnacle) :always) pacifica)
+((tome (country calypso) :always) pacifica)
+((tome (country delta) :always) pacifica)
+((tome (country honolulu) :always) hawaii_usa)
+((tome (diesel_fuel_required abyss delta 40) :always) true)
+((tome (diesel_fuel_required barnacle delta 60) :always) true)
+((tome (diesel_fuel_required calypso delta 80) :always) true)
+((tome (evacuate_to delta) (node-1 :end)) true)
+((tome (evac_status abyss) (node-1 :end)) (50 0))
+((tome (evac_status abyss) (node-11 :end)) (0 50))
+((tome (evac_status abyss) (node-15 :end)) (25 25))
+((tome (evac_status barnacle) (node-1 :end)) (100 0))
+((tome (evac_status barnacle) (node-12 :end)) (0 100))
+((tome (evac_status barnacle) (node-16 :end)) (25 75))
+((tome (evac_status barnacle) (node-17 :end)) (50 50))
+((tome (evac_status barnacle) (node-18 :end)) (75 25))
+((tome (evac_status calypso) (node-1 :end)) (20 0))
+((tome (evac_status calypso) (node-13 :end)) (0 20))
+((tome (gt_capacity 25) (node-1 :end)) true)
+((tome (in_transit_to delta) (node-14-1-2 :end)) true)
+((tome (in_transit_to delta) (node-3-3 :end)) true)
+((tome (in_transit_to delta) (node-4-3 :end)) true)
+((tome (in_transit_to honolulu) (node-10-3 :end)) true)
+((tome (in_transit_to honolulu) (node-14-3-2 :end)) true)
+((tome (in_transit_to honolulu) (node-8-3 :end)) true)
+((tome (in_transit_to honolulu) (node-9-3 :end)) true)
+((tome (in_use_for at1) (node-1 :end)) in_transit)
+((tome (in_use_for at1) (node-10-5 :end)) available)
+((tome (in_use_for at1) (node-4-5 :end)) available)
+((tome (in_use_for gt1) (node-1 :end)) in_transit)
+((tome (in_use_for gt1) (node-11-1 :begin)) abyss)
+((tome (in_use_for gt1) (node-11-1 :end)) available)
+((tome (in_use_for gt1) (node-13-1 :begin)) calypso)
+((tome (in_use_for gt1) (node-13-1 :end)) available)
+((tome (in_use_for gt1) (node-16-1 :begin)) barnacle)
+((tome (in_use_for gt1) (node-16-1 :end)) available)
+((tome (in_use_for gt1) (node-17-1 :begin)) barnacle)
+((tome (in_use_for gt1) (node-17-1 :end)) available)
+((tome (in_use_for gt1) (node-18-1 :begin)) barnacle)
+((tome (in_use_for gt1) (node-18-1 :end)) available)
+((tome (in_use_for gt1) (node-3-5 :end)) available)
+((tome (in_use_for gt1) (node-9-5 :end)) available)
+((tome (in_use_for gt2) (node-1 :end)) in_transit)
+((tome (in_use_for gt2) (node-12-1 :begin)) barnacle)
+((tome (in_use_for gt2) (node-12-1 :end)) available)
+((tome (in_use_for gt2) (node-15-1 :begin)) abyss)
+((tome (in_use_for gt2) (node-15-1 :end)) available)
+((tome (in_use_for gt2) (node-3-5 :end)) available)
+((tome (in_use_for gt2) (node-9-5 :end)) available)
+((tome (loaded air_transports) (node-10-1 :end)) true)
+((tome (loaded air_transports) (node-4-1 :end)) true)
+((tome (loaded ground_transports) (node-3-1 :end)) true)
+((tome (loaded ground_transports) (node-9-1 :end)) true)
+((tome (loaded passengers) (node-8-1 :end)) true)
+((tome (location_at at1) (node-1 :end)) honolulu)
+((tome (location_at at1) (node-10-5 :end)) honolulu)
+((tome (location_at at1) (node-4-5 :end)) delta)
+((tome (location_gt gt1) (node-1 :end)) honolulu)
+((tome (location_gt gt1) (node-3-5 :end)) delta)
+((tome (location_gt gt1) (node-9-5 :end)) honolulu)
+((tome (location_gt gt2) (node-1 :end)) honolulu)
+((tome (location_gt gt2) (node-3-5 :end)) delta)
+((tome (location_gt gt2) (node-9-5 :end)) honolulu)
+((tome (nationals out) (node-8-5 :end)) true)
+((tome (passenger_transporter_refuelled) (node-14 :end)) true)
+((tome (runway_status_at delta) (node-1 :end)) clear)
+((tome (runway_status_at delta) (node-10-2 :begin)) in_use)
+((tome (runway_status_at delta) (node-10-2 :end)) clear)
+((tome (runway_status_at delta) (node-14-1-3 :begin)) in_use)
+((tome (runway_status_at delta) (node-14-1-3 :end)) clear)
+((tome (runway_status_at delta) (node-14-3-1 :begin)) in_use)
+((tome (runway_status_at delta) (node-14-3-1 :end)) clear)
+((tome (runway_status_at delta) (node-3-4 :begin)) in_use)
+((tome (runway_status_at delta) (node-3-4 :end)) clear)
+((tome (runway_status_at delta) (node-4-4 :begin)) in_use)
+((tome (runway_status_at delta) (node-4-4 :end)) clear)
+((tome (runway_status_at delta) (node-8-2 :begin)) in_use)
+((tome (runway_status_at delta) (node-8-2 :end)) clear)
+((tome (runway_status_at delta) (node-9-2 :begin)) in_use)
+((tome (runway_status_at delta) (node-9-2 :end)) clear)
+((tome (runway_status_at honolulu) (node-1 :end)) clear)
+((tome (runway_status_at honolulu) (node-10-4 :begin)) in_use)
+((tome (runway_status_at honolulu) (node-10-4 :end)) clear)
+((tome (runway_status_at honolulu) (node-14-1-1 :begin)) in_use)
+((tome (runway_status_at honolulu) (node-14-1-1 :end)) clear)
+((tome (runway_status_at honolulu) (node-14-3-3 :begin)) in_use)
+((tome (runway_status_at honolulu) (node-14-3-3 :end)) clear)
+((tome (runway_status_at honolulu) (node-3-2 :begin)) in_use)
+((tome (runway_status_at honolulu) (node-3-2 :end)) clear)
+((tome (runway_status_at honolulu) (node-4-2 :begin)) in_use)
+((tome (runway_status_at honolulu) (node-4-2 :end)) clear)
+((tome (runway_status_at honolulu) (node-8-4 :begin)) in_use)
+((tome (runway_status_at honolulu) (node-8-4 :end)) clear)
+((tome (runway_status_at honolulu) (node-9-4 :begin)) in_use)
+((tome (runway_status_at honolulu) (node-9-4 :end)) clear)
+((tome (taken_off_from delta) (node-10-2 :end)) true)
+((tome (taken_off_from delta) (node-14-3-1 :end)) true)
+((tome (taken_off_from delta) (node-8-2 :end)) true)
+((tome (taken_off_from delta) (node-9-2 :end)) true)
+((tome (taken_off_from honolulu) (node-14-1-1 :end)) true)
+((tome (taken_off_from honolulu) (node-3-2 :end)) true)
+((tome (taken_off_from honolulu) (node-4-2 :end)) true)
+((tome (transporter_refuelled) (node-14-2 :end)) true)
+((tome (unloaded air_transports) (node-10-5 :end)) true)
+((tome (unloaded air_transports) (node-4-5 :end)) true)
+((tome (unloaded ground_transports) (node-3-5 :end)) true)
+((tome (unloaded ground_transports) (node-9-5 :end)) true)
+((tome (unloaded passengers) (node-8-5 :end)) true)
+)
+
+;;; GOST:
+(
+((gost achievable (at c141) delta (node-10-1 :begin))
+   (((node-4 :end) . :already-satisfied))
+)
+((gost achievable (at c141) honolulu (node-4-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (at c5) delta (node-9-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost achievable (at c5) honolulu (node-3-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (at kc10) delta (node-14-3-1 :begin))
+   (((node-14-1 :end) . :already-satisfied))
+)
+((gost achievable (at kc10) honolulu (node-14-1-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (evac_status abyss) (0 50) (node-5 :begin))
+   (((node-11 :end) . :expand))
+)
+((gost achievable (evac_status abyss) (25 25) (node-11-2 :begin))
+   (((node-15 :end) . :expand))
+)
+((gost achievable (evac_status abyss) (50 0) (node-15-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (evac_status barnacle) (0 100) (node-6 :begin))
+   (((node-12 :end) . :expand))
+)
+((gost achievable (evac_status barnacle) (25 75) (node-12-2 :begin))
+   (((node-16 :end) . :expand))
+)
+((gost achievable (evac_status barnacle) (50 50) (node-16-2 :begin))
+   (((node-17 :end) . :expand))
+)
+((gost achievable (evac_status barnacle) (75 25) (node-17-2 :begin))
+   (((node-18 :end) . :expand))
+)
+((gost achievable (evac_status barnacle) (100 0) (node-18-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (evac_status calypso) (0 20) (node-7 :begin))
+   (((node-13 :end) . :expand))
+)
+((gost achievable (evac_status calypso) (20 0) (node-13-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (passenger_transporter_refuelled) true (node-8-2 :begin))
+   (((node-14 :end) . :expand))
+)
+((gost only_use_if (apportioned_forces gt) true (node-11 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (apportioned_forces gt) true (node-12 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (apportioned_forces gt) true (node-13 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (apportioned_forces gt) true (node-15 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (apportioned_forces gt) true (node-16 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (apportioned_forces gt) true (node-17 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (apportioned_forces gt) true (node-18 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (diesel_fuel_required abyss delta 40) true (node-11-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (diesel_fuel_required abyss delta 40) true (node-15-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (diesel_fuel_required barnacle delta 60) true (node-12-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (diesel_fuel_required barnacle delta 60) true (node-16-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (diesel_fuel_required barnacle delta 60) true (node-17-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (diesel_fuel_required barnacle delta 60) true (node-18-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (diesel_fuel_required calypso delta 80) true (node-13-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (evacuate_to delta) true (node-11 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (evacuate_to delta) true (node-12 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (evacuate_to delta) true (node-13 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (evacuate_to delta) true (node-15 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (evacuate_to delta) true (node-16 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (evacuate_to delta) true (node-17 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (evacuate_to delta) true (node-18 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 25) true (node-11 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 25) true (node-12 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 25) true (node-13 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 25) true (node-15 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 25) true (node-16 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 25) true (node-17 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (gt_capacity 25) true (node-18 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost supervised (in_use_for gt1) abyss (node-11-1 :end))
+   (((node-11-1 :begin) . :link-with-bindings))
+)
+((gost supervised (in_use_for gt1) barnacle (node-16-1 :end))
+   (((node-16-1 :begin) . :link-with-bindings))
+)
+((gost supervised (in_use_for gt1) barnacle (node-17-1 :end))
+   (((node-17-1 :begin) . :link-with-bindings))
+)
+((gost supervised (in_use_for gt1) barnacle (node-18-1 :end))
+   (((node-18-1 :begin) . :link-with-bindings))
+)
+((gost supervised (in_use_for gt1) calypso (node-13-1 :end))
+   (((node-13-1 :begin) . :link-with-bindings))
+)
+((gost supervised (in_use_for gt2) abyss (node-15-1 :end))
+   (((node-15-1 :begin) . :link-with-bindings))
+)
+((gost supervised (in_use_for gt2) barnacle (node-12-1 :end))
+   (((node-12-1 :begin) . :link-with-bindings))
+)
+((gost supervised (runway_status_at delta) in_use (node-10-2 :end))
+   (((node-10-2 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at delta) in_use (node-14-1-3 :end))
+   (((node-14-1-3 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at delta) in_use (node-14-3-1 :end))
+   (((node-14-3-1 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at delta) in_use (node-3-4 :end))
+   (((node-3-4 :begin) . :none))
+)
+((gost supervised (runway_status_at delta) in_use (node-4-4 :end))
+   (((node-4-4 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at delta) in_use (node-8-2 :end))
+   (((node-8-2 :begin) . :none))
+)
+((gost supervised (runway_status_at delta) in_use (node-9-2 :end))
+   (((node-9-2 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at honolulu) in_use (node-10-4 :end))
+   (((node-10-4 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at honolulu) in_use (node-14-1-1 :end))
+   (((node-14-1-1 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at honolulu) in_use (node-14-3-3 :end))
+   (((node-14-3-3 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at honolulu) in_use (node-3-2 :end))
+   (((node-3-2 :begin) . :none))
+)
+((gost supervised (runway_status_at honolulu) in_use (node-4-2 :end))
+   (((node-4-2 :begin) . :link-no-bindings))
+)
+((gost supervised (runway_status_at honolulu) in_use (node-8-4 :end))
+   (((node-8-4 :begin) . :none))
+)
+((gost supervised (runway_status_at honolulu) in_use (node-9-4 :end))
+   (((node-9-4 :begin) . :link-no-bindings))
+)
+((gost unsupervised (at b707) delta (node-8-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) available (node-11-1 :begin))
+   (((node-13-1 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) available (node-13-1 :begin))
+   (((node-16-1 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) available (node-16-1 :begin))
+   (((node-17-1 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) available (node-17-1 :begin))
+   (((node-18-1 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) available (node-18-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt2) available (node-12-1 :begin))
+   (((node-15-1 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt2) available (node-15-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_at at1) delta (node-10-1 :begin))
+   (((node-4-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_at at1) honolulu (node-4-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt1) delta (node-11-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt1) delta (node-13-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt1) delta (node-16-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt1) delta (node-17-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt1) delta (node-18-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt1) delta (node-9-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt1) honolulu (node-3-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt2) delta (node-12-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt2) delta (node-15-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt2) delta (node-9-1 :begin))
+   (((node-3-5 :end) . :already-satisfied))
+)
+((gost unsupervised (location_gt gt2) honolulu (node-3-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at delta) clear (node-10-2 :begin))
+   (((node-3-4 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at delta) clear (node-14-1-3 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at delta) clear (node-14-3-1 :begin))
+   (((node-14-1-3 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at delta) clear (node-3-4 :begin))
+   (((node-4-4 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at delta) clear (node-4-4 :begin))
+   (((node-14-3-1 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at delta) clear (node-8-2 :begin))
+   (((node-9-2 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at delta) clear (node-9-2 :begin))
+   (((node-10-2 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at honolulu) clear (node-10-4 :begin))
+   (((node-3-2 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at honolulu) clear (node-14-1-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at honolulu) clear (node-14-3-3 :begin))
+   (((node-14-1-1 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at honolulu) clear (node-3-2 :begin))
+   (((node-4-2 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at honolulu) clear (node-4-2 :begin))
+   (((node-14-3-3 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at honolulu) clear (node-8-4 :begin))
+   (((node-9-4 :end) . :already-satisfied))
+)
+((gost unsupervised (runway_status_at honolulu) clear (node-9-4 :begin))
+   (((node-10-4 :end) . :already-satisfied))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 ground_transport gt1 nil (gt1))
+(psv-2 ground_transport gt2 nil (gt2))
+(psv-3 ground_transport gt1 nil (gt1))
+(psv-4 ground_transport gt2 nil (gt2))
+(psv-5 ground_transport gt1 nil (gt1))
+(psv-6 ground_transport gt1 nil (gt1))
+(psv-7 ground_transport gt1 nil (gt1))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-1)
+(psv-2)
+(psv-3)
+(psv-4)
+(psv-5)
+(psv-6)
+(psv-7)
+)
+
+;;; Resource usage table:
+(
+(node (resource aviation_fuel_delta_tank1) 0 15000 nil nil)
+(node (resource aviation_fuel_kc10_tank1) 20000 30000 nil (node-8))
+(node (resource diesel_fuel_delta_tank2) 400 8000 nil (node-11 node-12 node-13 node-15 node-16 node-17 node-18))
+(node-11 (resource diesel_fuel_delta_tank2) 40 7640 node (node-11-1))
+(node-11-1 (resource diesel_fuel_delta_tank2) 40 40 node-11 nil)
+(node-12 (resource diesel_fuel_delta_tank2) 60 7660 node (node-12-1))
+(node-12-1 (resource diesel_fuel_delta_tank2) 60 60 node-12 nil)
+(node-13 (resource diesel_fuel_delta_tank2) 80 7680 node (node-13-1))
+(node-13-1 (resource diesel_fuel_delta_tank2) 80 80 node-13 nil)
+(node-15 (resource diesel_fuel_delta_tank2) 40 7640 node (node-15-1))
+(node-15-1 (resource diesel_fuel_delta_tank2) 40 40 node-15 nil)
+(node-16 (resource diesel_fuel_delta_tank2) 60 7660 node (node-16-1))
+(node-16-1 (resource diesel_fuel_delta_tank2) 60 60 node-16 nil)
+(node-17 (resource diesel_fuel_delta_tank2) 60 7660 node (node-17-1))
+(node-17-1 (resource diesel_fuel_delta_tank2) 60 60 node-17 nil)
+(node-18 (resource diesel_fuel_delta_tank2) 60 7660 node (node-18-1))
+(node-18-1 (resource diesel_fuel_delta_tank2) 60 60 node-18 nil)
+(node-8 (resource aviation_fuel_kc10_tank1) 20000 20000 node nil)
+)
+
+;;; World at end of node-1:
+(
+((avgas_fuel_required abyss delta 140) true)
+((avgas_fuel_required barnacle delta 160) true)
+((avgas_fuel_required calypso delta 180) true)
+((country abyss) pacifica)
+((country barnacle) pacifica)
+((country calypso) pacifica)
+((country delta) pacifica)
+((country honolulu) hawaii_usa)
+((diesel_fuel_required abyss delta 40) true)
+((diesel_fuel_required barnacle delta 60) true)
+((diesel_fuel_required calypso delta 80) true)
+)
+
+;;; World at end of node-2:
+(
+((apportioned_forces at) true)
+((apportioned_forces gt) true)
+((at b707) honolulu)
+((at c141) honolulu)
+((at c5) honolulu)
+((at kc10) honolulu)
+((at_capacity 35) true)
+((avgas_fuel_required abyss delta 140) true)
+((avgas_fuel_required barnacle delta 160) true)
+((avgas_fuel_required calypso delta 180) true)
+((cargo_landed_at_airbase delta) true)
+((cargo_landed_at_airbase honolulu) true)
+((country abyss) pacifica)
+((country barnacle) pacifica)
+((country calypso) pacifica)
+((country delta) pacifica)
+((country honolulu) hawaii_usa)
+((diesel_fuel_required abyss delta 40) true)
+((diesel_fuel_required barnacle delta 60) true)
+((diesel_fuel_required calypso delta 80) true)
+((evacuate_to delta) true)
+((evac_status abyss) (0 50))
+((evac_status barnacle) (0 100))
+((evac_status calypso) (0 20))
+((gt_capacity 25) true)
+((in_transit_to delta) true)
+((in_transit_to honolulu) true)
+((in_use_for at1) available)
+((in_use_for gt1) available)
+((in_use_for gt2) available)
+((loaded air_transports) true)
+((loaded ground_transports) true)
+((loaded passengers) true)
+((location_at at1) honolulu)
+((location_gt gt1) honolulu)
+((location_gt gt2) honolulu)
+((nationals out) true)
+((passenger_transporter_refuelled) true)
+((runway_status_at delta) clear)
+((runway_status_at honolulu) clear)
+((taken_off_from delta) true)
+((taken_off_from honolulu) true)
+((transporter_refuelled) true)
+((unloaded air_transports) true)
+((unloaded ground_transports) true)
+((unloaded passengers) true)
+)

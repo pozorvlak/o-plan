@@ -1,0 +1,57 @@
+<html>
+
+<head>
+<title>TF Syntax-Checker</title>
+</head>
+
+<body bgcolor="White">
+
+<h1>TF Syntax-Checker</h1>
+
+<hr>
+
+<form action="tf-checker.cgi" method=post>
+
+Enter an HTTP URL:
+
+<dl>
+
+<dt>Host:
+<dd><input name="host" size=70 value="localhost">
+
+<dt>Port:
+<dd><input name="port" size=70 value="80">
+
+<dt>Path:
+<dd><input name="path" size=70
+           value="/~jeff/oplan/web/386-demo/demo/standard-tf/house-4.tf">
+<dt>Options:
+<dd><input type="checkbox" name="levels" checked> Show
+    action and effect Levels
+<dd><input type="checkbox" name="effects" checked> Show
+    effects with actions
+<!--
+<dd><input type="checkbox" name="schemas" checked> Include
+    schema table
+-->
+
+<dd><input type="submit" value="Go">
+<dd><input type="reset"  value="Reset the form">
+
+</dl>
+
+</form>
+
+<!-- O-Plan's standard AIAI page foot -->
+
+<p>
+<hr>
+<a href="/">
+<img width=82 height=37 alt="AIAI"
+     align=right border=0 src="/img/logo/small.gif">
+</a>
+<address><a href="/~oplan">O-Plan</a></address>
+
+</body>
+
+</html>

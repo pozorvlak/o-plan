@@ -1,0 +1,46 @@
+#!/local/bin/perl -- -*-perl-*-
+#
+# Look for lines that begin like this:
+#
+#    <DT>domain=
+#    <DT>task=
+#
+# The "=" is followed by a domain or task name.
+# It's assumed that "task_" is omitted from task names.
+#
+# These lines are converted to contain hypertext links.
+# Other lines are printed as-is.
+#
+# For a domain D, the link is:
+#
+#    <a href="show-tf.cgi/D.tf">D</a>
+#
+# For a task T, the link is:
+#
+#    <a href="plan-for-demo-tf.cgi/D/task_T">task_T</a>
+# 
+# where D is the most recently encountered domain name.
+#
+
+$D="";
+$T="";
+
+$file_name_char="[a-zA-Z0-9_-]";  # allow "-" in names
+
+while (<>)
+{
+    if ( /^(\s*<DT>)domain=($file_name_char*)$/ )
+    {
+	$D=$2;
+	print "$1<a href=\"show-tf.cgi/$D.tf\">$D</a>\n";
+    }
+    elsif ( /^(\s*<DT>)task=(\w*)$/ )
+    {
+	$T=$2;
+	print "$1<a href=\"plan-for-demo-tf.cgi/$D/task_$T\">task_$T</a>\n";
+    }
+    else
+    {
+	print;
+    }
+}

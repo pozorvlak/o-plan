@@ -1,0 +1,64 @@
+<TITLE>O-Plan Time-Point Net (TPN) Demo</TITLE>
+<H1>O-Plan Time-Point Net (TPN) Demo</H1>
+
+This page lets you construct a network of time-points.  The text areas
+below can be used to enter descriptions of points and of constraints
+between points.  Click on the "Go" button to construct the net and
+see what it looks like.  Descriptions of 
+the <A HREF="#tpn">TPN</A>,
+the <A HREF="#inputs">input formats</A>, 
+and the <A HREF="#outputs">outputs</A>
+are available below.
+
+<P>
+<HR>
+
+<FORM ACTION="http://localhost/cgi-bin/oplan-demo/386-demo/simple-tpn.cgi"
+      METHOD=POST>
+
+<H2>Points:</H2>
+
+<INPUT NAME="pt-min"  VALUE="0"   SIZE=3 MAXLENGTH=3>
+<INPUT NAME="pt-max"  VALUE="inf" SIZE=3 MAXLENGTH=3>
+Default min and max values.
+
+<BR>
+<TEXTAREA NAME="points" ROWS=5 COLS=40>anchor 0
+</TEXTAREA>
+
+<H2>Constraints:</H2>
+
+<INPUT NAME="con-min" VALUE="10"  SIZE=3 MAXLENGTH=3>
+<INPUT NAME="con-max" VALUE="20"  SIZE=3 MAXLENGTH=3>
+Default min and max values.
+
+<BR>
+<TEXTAREA NAME="constraints" ROWS=5 COLS=40>&lt;anchor,
+ [&lt;a 10 b&gt;,
+  &lt;c 20 d&gt;]&gt;
+</TEXTAREA>
+
+<P>
+<INPUT TYPE="reset"> Undo all changes to the form.
+
+<P>
+<INPUT TYPE="submit" VALUE="Go"> Compute time bounds.
+
+</FORM>
+
+<HR>
+
+
+
+<H2><A NAME="tpn">The TPN</A></H2>
+
+
+<H2><A NAME="inputs">Input formats</A></H2>
+
+<H3>Points</H3>
+
+<H3>Constraints</H3>
+
+
+<H2><A NAME="outputs">Outputs</A></H2>
+

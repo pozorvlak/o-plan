@@ -1,0 +1,406 @@
+
+;;; Statistics:
+(
+(:am-cycles . 32)
+(:n-alts-chosen . 1)
+(:n-alts-remaining . 41)
+(:n-poisons . 1)
+)
+
+;;; Action levels:
+(
+(connect . 2)
+(take . 3)
+(task_base_problem . 0)
+(task_example_1 . 0)
+(task_example_2 . 0)
+(task_impossible_sequence . 0)
+(trip . 1)
+)
+
+;;; Effect levels:
+(
+(visited . 2)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-4 :begin) (node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-4 :end) (node-3 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-1 :end))
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (trip t1 (boston charleston atlanta))
+)
+(node-3-1
+   ((node-3 :begin))
+   ((node-3-2 :begin))
+   ((node-3-3 :end))
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-3-2
+   ((node-3-1 :begin))
+   ((node-3-2-1 :begin))
+   ((node-3-2-2 :end))
+   ((node-3-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (boston charleston))
+)
+(node-3-2-1
+   ((node-3-2 :begin))
+   ((node-3-2-1-1 :begin))
+   ((node-3-2-1-1 :end))
+   ((node-3-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (boston albany))
+)
+(node-3-2-1-1
+   ((node-3-2-1 :begin))
+   nil
+   nil
+   ((node-3-2-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t1 boston albany)
+)
+(node-3-2-2
+   ((node-3-2-1 :end))
+   ((node-3-2-2-1 :begin))
+   ((node-3-2-2-2 :end))
+   ((node-3-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (albany charleston))
+)
+(node-3-2-2-1
+   ((node-3-2-2 :begin))
+   ((node-3-2-2-1-1 :begin))
+   ((node-3-2-2-1-1 :end))
+   ((node-3-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (albany new_york))
+)
+(node-3-2-2-1-1
+   ((node-3-2-2-1 :begin))
+   nil
+   nil
+   ((node-3-2-2-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t1 albany new_york)
+)
+(node-3-2-2-2
+   ((node-3-2-2-1 :end))
+   ((node-3-2-2-2-1 :begin))
+   ((node-3-2-2-2-2 :end))
+   ((node-3-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (new_york charleston))
+)
+(node-3-2-2-2-1
+   ((node-3-2-2-2 :begin))
+   ((node-3-2-2-2-1-1 :begin))
+   ((node-3-2-2-2-1-1 :end))
+   ((node-3-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (new_york scranton))
+)
+(node-3-2-2-2-1-1
+   ((node-3-2-2-2-1 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t1 new_york scranton)
+)
+(node-3-2-2-2-2
+   ((node-3-2-2-2-1 :end))
+   ((node-3-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2 :end))
+   ((node-3-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (scranton charleston))
+)
+(node-3-2-2-2-2-1
+   ((node-3-2-2-2-2 :begin))
+   ((node-3-2-2-2-2-1-1 :begin))
+   ((node-3-2-2-2-2-1-1 :end))
+   ((node-3-2-2-2-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (scranton pittsburgh))
+)
+(node-3-2-2-2-2-1-1
+   ((node-3-2-2-2-2-1 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t1 scranton pittsburgh)
+)
+(node-3-2-2-2-2-2
+   ((node-3-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2-2-1 :begin))
+   ((node-3-2-2-2-2-2-1 :end))
+   ((node-3-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (pittsburgh charleston))
+)
+(node-3-2-2-2-2-2-1
+   ((node-3-2-2-2-2-2 :begin))
+   nil
+   nil
+   ((node-3-2-2-2-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t1 pittsburgh charleston)
+)
+(node-3-3
+   ((node-3-2 :end))
+   ((node-3-3-1 :begin))
+   ((node-3-3-2 :end))
+   ((node-3-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (charleston atlanta))
+)
+(node-3-3-1
+   ((node-3-3 :begin))
+   ((node-3-3-1-1 :begin))
+   ((node-3-3-1-1 :end))
+   ((node-3-3-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (charleston charlotte))
+)
+(node-3-3-1-1
+   ((node-3-3-1 :begin))
+   nil
+   nil
+   ((node-3-3-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t1 charleston charlotte)
+)
+(node-3-3-2
+   ((node-3-3-1 :end))
+   ((node-3-3-2-1 :begin))
+   ((node-3-3-2-1 :end))
+   ((node-3-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t1 (charlotte atlanta))
+)
+(node-3-3-2-1
+   ((node-3-3-2 :begin))
+   nil
+   nil
+   ((node-3-3-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t1 charlotte atlanta)
+)
+(node-4
+   ((node-1 :end))
+   ((node-4-1 :begin))
+   ((node-4-1 :end))
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (trip t2 (boston new_york))
+)
+(node-4-1
+   ((node-4 :begin))
+   ((node-4-2 :begin))
+   ((node-4-2 :end))
+   ((node-4 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+(node-4-2
+   ((node-4-1 :begin))
+   ((node-4-2-1 :begin))
+   ((node-4-2-2 :end))
+   ((node-4-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t2 (boston new_york))
+)
+(node-4-2-1
+   ((node-4-2 :begin))
+   ((node-4-2-1-1 :begin))
+   ((node-4-2-1-1 :end))
+   ((node-4-2-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (connect t2 (boston albany))
+)
+(node-4-2-1-1
+   ((node-4-2-1 :begin))
+   nil
+   nil
+   ((node-4-2-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t2 boston albany)
+)
+(node-4-2-2
+   ((node-4-2-1 :end))
+   ((node-4-2-2-1 :begin))
+   ((node-4-2-2-1 :end))
+   ((node-4-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (connect t2 (albany new_york))
+)
+(node-4-2-2-1
+   ((node-4-2-2 :begin))
+   nil
+   nil
+   ((node-4-2-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (take t2 albany new_york)
+)
+)
+
+;;; TOME:
+(
+((tome (visited ?? ??) (node-1 :end)) false)
+((tome (visited t1 albany) (node-3-2-1 :end)) true)
+((tome (visited t1 atlanta) (node-3-3-2 :end)) true)
+((tome (visited t1 boston) (node-3-1 :begin)) true)
+((tome (visited t1 charleston) (node-3-2-2-2-2-2 :end)) true)
+((tome (visited t1 charlotte) (node-3-3-1 :end)) true)
+((tome (visited t1 new_york) (node-3-2-2-1 :end)) true)
+((tome (visited t1 pittsburgh) (node-3-2-2-2-2-1 :end)) true)
+((tome (visited t1 scranton) (node-3-2-2-2-1 :end)) true)
+((tome (visited t2 albany) (node-4-2-1 :end)) true)
+((tome (visited t2 boston) (node-4-1 :begin)) true)
+((tome (visited t2 new_york) (node-4-2-2 :end)) true)
+)
+
+;;; GOST:
+(
+((gost only_use_if (visited t1 albany) false (node-3-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t1 albany) false (node-3-2-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t1 atlanta) false (node-3-3-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t1 charleston) false (node-3-2-2-2-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t1 charlotte) false (node-3-3 :begin))
+   (((node-1 :end) . :by-bindings))
+)
+((gost only_use_if (visited t1 charlotte) false (node-3-3-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t1 new_york) false (node-3-2-2 :begin))
+   (((node-1 :end) . :by-bindings))
+)
+((gost only_use_if (visited t1 new_york) false (node-3-2-2-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t1 pittsburgh) false (node-3-2-2-2-2 :begin))
+   (((node-1 :end) . :by-bindings))
+)
+((gost only_use_if (visited t1 pittsburgh) false (node-3-2-2-2-2-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t1 scranton) false (node-3-2-2-2 :begin))
+   (((node-1 :end) . :by-bindings))
+)
+((gost only_use_if (visited t1 scranton) false (node-3-2-2-2-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t2 albany) false (node-4-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t2 albany) false (node-4-2-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (visited t2 new_york) false (node-4-2-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 city albany nil (milwaukee chicago indianapolis detroit toledo columbus cincinnati lexington atlanta cleveland toronto buffalo pittsburgh charlotte syracuse scranton baltimore washington richmond raleigh montreal burlington albany new_york philadelphia))
+(psv-2 city charlotte nil (milwaukee chicago indianapolis detroit toledo columbus cincinnati lexington cleveland toronto buffalo pittsburgh charlotte syracuse scranton baltimore washington richmond raleigh montreal burlington albany new_york philadelphia))
+(psv-3 city albany nil (milwaukee chicago indianapolis detroit toledo columbus cincinnati lexington atlanta cleveland toronto buffalo pittsburgh charleston charlotte syracuse scranton baltimore washington richmond raleigh montreal burlington albany philadelphia))
+(psv-4 city new_york nil (milwaukee chicago indianapolis detroit toledo columbus cincinnati lexington atlanta cleveland toronto buffalo pittsburgh charlotte syracuse scranton baltimore washington richmond raleigh montreal burlington new_york philadelphia))
+(psv-5 city scranton nil (milwaukee chicago indianapolis detroit toledo columbus cincinnati lexington atlanta cleveland toronto buffalo pittsburgh charlotte syracuse scranton baltimore washington richmond raleigh montreal burlington philadelphia))
+(psv-6 city pittsburgh nil (milwaukee chicago indianapolis detroit toledo columbus cincinnati lexington atlanta cleveland toronto buffalo pittsburgh charlotte syracuse baltimore washington richmond raleigh montreal burlington philadelphia))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-1)
+(psv-2)
+(psv-3)
+(psv-4)
+(psv-5)
+(psv-6)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((visited t1 albany) true)
+((visited t1 atlanta) true)
+((visited t1 boston) true)
+((visited t1 charleston) true)
+((visited t1 charlotte) true)
+((visited t1 new_york) true)
+((visited t1 pittsburgh) true)
+((visited t1 scranton) true)
+((visited t2 albany) true)
+((visited t2 boston) true)
+((visited t2 new_york) true)
+)

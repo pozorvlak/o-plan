@@ -1,0 +1,206 @@
+This is TeX, Version 3.1415 (C version 6.1) (format=lplain 94.7.22)  31 JAN 1997 17:04
+**tf-manual
+(tf-manual.tex
+LaTeX Version 2.09 <25 March 1992>
+(/local/packages/TeX/lib/texmf/tex/latex/base/article.sty
+Standard Document Style `article' <14 Jan 92>.
+(/local/packages/TeX/lib/texmf/tex/latex/base/art11.sty)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+) (../oplan-doc.sty
+(../psbox.tex version: 1.31
+\pst@mpin=\read1
+\drawinght=\dimen99
+\drawingwd=\dimen100
+\psxoffset=\dimen101
+\psyoffset=\dimen102
+\drawingBox=\box25
+\PShelp=\toks11
+\xscale=\count87
+\yscale=\count88
+\pscm=\dimen103
+\d@mx=\dimen104
+\d@my=\dimen105
+\j@insplitin=\read2
+\j@insplitout=\write3
+\psbj@inaux=\write4
+\gridht=\dimen106
+\gridwd=\dimen107
+))
+\@indexfile=\write5
+
+Writing index file tf-manual.idx 
+(tf-manual.aux) [0
+
+] [1] [2] (tf-manual.toc [3] [4])
+\tf@toc=\write6
+ [5] [6] [7]
+(../shared/shared-fig-plan-expand.tex) [8]
+(../shared/shared-fig-schema-triangle.tex) [9
+
+] [10] [11]
+(../shared/shared-fig-resources.tex)
+Underfull \hbox (badness 5970) in paragraph at lines 412--415
+[] []\elvrm This re-source type is sim-i-lar to con-sum-
+
+\hbox(7.60416+2.12917)x424.31244, glue set 3.91075
+.\hbox(0.0+0.0)x0.0
+.\glue 0.0
+.\hbox(7.60416+2.12917)x189.16496
+..\glue -27.37506
+..\glue 0.0
+..\glue -5.475
+..\hbox(7.60416+2.12917)x216.54002
+...\glue 5.475
+...\elvbf c
+...\elvbf o
+...\elvbf n
+...\elvbf s
+...etc.
+..\glue 5.475
+.\penalty 0
+.\elvrm T
+.etc.
+
+[12] [13] [14]
+Underfull \hbox (badness 2435) in paragraph at lines 600--604
+[]\elvrm New user-provided com-pute func-tions can be de-clared to the plan-ner
+ via a \elvbf com-
+
+\hbox(7.60416+2.12917)x451.6875, glue set 2.9
+.\hbox(0.0+0.0)x0.0
+.\elvrm N
+.\elvrm e
+.\elvrm w
+.\glue 3.65 plus 1.825 minus 1.21666
+.etc.
+
+[15] [16] [17] [18] [19] [20] [21] [22] [23] [24] [25] [26] [27] [28] [29]
+[30]
+Underfull \hbox (badness 5091) in paragraph at lines 1552--1556
+[]\elvrm There are lim-i-ta-tions on the $\elvsy h$\elvrm resource[]usage[]keyw
+ords$\elvsy i$ \elvrm that may be given in a
+
+\hbox(8.2125+2.73749)x451.6875, glue set 3.70877
+.\hbox(0.0+0.0)x0.0
+.\elvrm T
+.\elvrm h
+.\elvrm e
+.\elvrm r
+.etc.
+
+[31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44] [45]
+[46] [47] [48] [49] [50] [51] [52] [53] [54] [55] [56] [57] [58] [59] [60]
+[61] [62] [63]
+Underfull \hbox (badness 10000) in paragraph at lines 3650--3650
+ [] []
+
+\hbox(0.0+0.0)x451.6875
+.\glue(\leftskip) 27.37506
+.\hbox(0.0+0.0)x0.0
+.\glue 0.0
+.\hbox(0.0+0.0)x0.0
+..\glue 0.0
+..\glue 0.0
+..\glue -5.475
+..\hbox(0.0+0.0)x0.0
+..\glue 5.475
+.\penalty 0
+.etc.
+
+[64] [65] [66]
+Underfull \hbox (badness 10000) in paragraph at lines 3849--3849
+ [] []
+
+\hbox(0.0+0.0)x451.6875
+.\glue(\leftskip) 27.37506
+.\hbox(0.0+0.0)x0.0
+.\glue 0.0
+.\hbox(0.0+0.0)x0.0
+..\glue 0.0
+..\glue 0.0
+..\glue -5.475
+..\hbox(0.0+0.0)x0.0
+..\glue 5.475
+.\penalty 0
+.etc.
+
+[67] [68] (tf-manual.ind [69
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 117--118
+[]| \elvrm con-sum-
+
+\hbox(4.71457+0.0)x208.34375
+.\hbox(0.0+0.0)x0.0
+.\rule(*+*)x0.0
+.\penalty 10000
+.\glue 20.0
+.\glue 0.0
+.etc.
+
+
+Overfull \hbox (12.90938pt too wide) in paragraph at lines 117--118
+\elvrm able[]producible[]by[]and[]outwith[]agent
+
+\hbox(7.60416+2.12917)x168.34375
+.\elvrm a
+.\elvrm b
+.\elvrm l
+.\elvrm e
+.\kern 0.65697
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 118--119
+[]| \elvrm con-sum-able[]producible[]outwith[]agent
+
+\hbox(7.60416+2.12917)x208.34375
+.\hbox(0.0+0.0)x0.0
+.\rule(*+*)x0.0
+.\penalty 10000
+.\glue 20.0
+.\glue 0.0
+.etc.
+
+[70]
+Overfull \hbox (41.69478pt too wide) in paragraph at lines 243--244
+[]\elvbf consumable[]producible[]by[]and[]outwith[]agent
+
+\hbox(7.60416+2.12917)x208.34375
+.\hbox(0.0+0.0)x0.0
+.\elvbf c
+.\elvbf o
+.\elvbf n
+.\elvbf s
+.etc.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 244--245
+[]\elvbf consumable[]producible[]outwith[]agent
+
+\hbox(7.60416+2.12917)x208.34375
+.\hbox(0.0+0.0)x0.0
+.\elvbf c
+.\elvbf o
+.\elvbf n
+.\elvbf s
+.etc.
+
+[71] [72] [73] [74]) (tf-manual.aux) ) 
+Here is how much of TeX's memory you used:
+ 343 strings out of 11977
+ 3444 string characters out of 87084
+ 51497 words of memory out of 262141
+ 2263 multiletter control sequences out of 9500
+ 19598 words of font info for 74 fonts, out of 100000 for 255
+ 14 hyphenation exceptions out of 607
+ 15i,8n,15p,318b,276s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on tf-manual.dvi (75 pages, 222392 bytes).

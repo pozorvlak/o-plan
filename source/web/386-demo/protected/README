@@ -1,0 +1,26 @@
+An example of password protection.
+
+The server will require a user-name and password when it's asked
+to access something in a directory that contains an .htaccess file
+(including in subdirectories).  The 1st time this happens for a
+given directory, the server will say something to the browser,
+and the browser will ask the user for a user-name and password.
+The browser will then repeat the request, passing along this new
+information, and it will continue to supply the user-name and
+password on subsequent requests for things in the same directory.
+
+spottisvax$ more .htaccess 
+AuthName secret
+AuthType Basic
+AuthUserFile /home/richard/public_html/secret/.htpasswd
+
+<limit GET>
+require user richard
+</limit>
+
+spottisvax$ cat .htpasswd 
+richard:JEfMPO3.s5fWw
+
+spottisvax$ htpasswd
+Usage: htpasswd [-c] passwordfile username
+The -c flag creates a new file.

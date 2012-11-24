@@ -1,0 +1,505 @@
+\begin{theindex}
+\item achieve condition 11
+\item actions 9, 47
+  \subitem  primitive 55
+\item action schemas 9
+\item agents 9
+\item authority 10, 54
+\item authority statements 32
+\indexspace
+\item blocks world 16
+\indexspace
+\item calendar 44
+\item commands 59
+\item compute condition 11, 45, 53
+\item compute functions 
+  \subitem  predefined functions 60
+\item conditions 11
+  \subitem  achieve 11
+  \subitem  compute 11, 15, 53
+  \subitem  compute dependency statement 45
+  \subitem  holds 11
+  \subitem  only\_use\_for\_query 11
+  \subitem  only\_use\_if 11
+  \subitem  predefined compute functions 60
+  \subitem  supervised 11
+  \subitem  unsupervised 11
+  \subitem  usewhen 11
+\item constraints 
+  \subitem  spatial 49
+\item conventions used in {\sc tf} description 24
+\item current implementation 65
+\indexspace
+\item decomposition 51
+\item default resource information 43
+\item delays 51
+\item documentary information 35
+\item domain constraints 44
+\item domain expert 61
+\item domain specialist 61
+\indexspace
+\item effects 11
+\item envelope of schema 62
+\item events 9
+\item expands 16, 51
+\item expansion 51
+\item expressions 27
+\item external system interface 15
+\indexspace
+\item foreach 51
+\indexspace
+\item global data 46
+\item global information 15
+\indexspace
+\item heuristic information 41
+\item hierarchical planning 7
+\item hierarchical promiscuity 61
+\item house building 17
+\indexspace
+\item initial information 55
+\item iterate 51
+\indexspace
+\item language specific code 45
+\item level promiscuity 61
+\item levels of plan 10
+\indexspace
+\item match constraints 13, 26
+\item meta-schema 50
+\item meta-schemas 9
+\item min/max pairs 14
+\indexspace
+\item node ends 28
+\item node numbers 28
+\item nodes 28, 51
+\item normal schemas 9
+\item note 54
+\item note of other constraints 54
+\item notepad 15, 54, 66
+\item notes 54, 66
+\item numerical bounds 29
+\indexspace
+\item O-Plan plan output format 38
+\item O-Plan world output format 40
+\item object types 46
+\item only\_use\_for\_effects 16, 51
+\item only\_use\_for\_query 16
+\item only\_use\_for\_query condition 11
+\item only\_use\_if condition 11
+\item options of plan 10
+\item orderings 51
+\item other constraints 54
+\indexspace
+\item P=V 13
+\item pattern = value 13
+\item patterns 13, 26
+\item pattern specifications 13
+\item phases of plan 10
+\item plan 
+  \subitem  levels 10
+  \subitem  options 10
+  \subitem  phases 10
+\item plan levels 40
+\item plan output format 38
+\item plan view 36
+\item preferences 41
+\item primitive actions 55
+\item primitives 9
+\item process schema 50
+\item process schemas 9
+\item projected value 14
+\indexspace
+\item resource information 42
+\item resources 12
+  \subitem  defaults 43
+\item resource specifications 30
+\item resource types 12
+  \subitem  consumable\_producible\_by\_agent 12
+  \subitem  consumable\_producible\_by\_and\_outwith\_agent 13
+  \subitem  consumable\_producible\_outwith\_agent 13
+  \subitem  consumable\_strictly 12
+  \subitem  reusable\_non\_sharable 13
+  \subitem  reusable\_sharable\_independently 13
+  \subitem  sharable\_synchronously 13
+\item resource usage 14
+\indexspace
+\item schema 50
+  \subitem  meta 50
+  \subitem  process 50
+\item schema envelope 62
+\item schemas 9, 47
+  \subitem  action 9
+  \subitem  meta 9
+  \subitem  normal 9
+  \subitem  primitive 55
+  \subitem  private information 48, 50
+  \subitem  process 9
+  \subitem  public information 48, 50
+  \subitem  task 56
+\item set 28
+\item spatial constraints 49
+\item supervised condition 11
+\indexspace
+\item Task Formalism Method ({\sc tfm}) 61
+\item task schemas 56
+\item temporal coherence 44
+\item TF 
+  \subitem  compiler defaults 35
+  \subitem  no warranty 68
+  \subitem  syntax conventions 24
+\item TF compiler 58
+\item TF features 
+  \subitem  anticipated 66
+  \subitem  under review 68
+  \subitem  unsupported 65
+\item TF forms 34
+\item TF guidelines 61
+  \subitem  action expansion 61
+  \subitem  goal achievement 61
+  \subitem  initial analysis 61
+  \subitem  levels of modelling 61
+  \subitem  schema envelope 62
+  \subitem  scope the domain 61
+  \subitem  task formalism method 61
+  \subitem  writer help 63
+  \subitem  writing a schema 62
+\item TFM (Task Formalism Method) 61
+\item time delays 51
+\item time information 44
+\item time points 28
+\item time specifications 29
+\item time units 44
+\item time windows 14, 54
+\item type 
+  \subitem  integer range 46, 63, 65
+\indexspace
+\item unsupervised condition 11
+\item unsupported features 65
+\item user interface specification 36
+\item usewhen condition 11
+\indexspace
+\item values 26
+\item variables 26, 50
+\item vars relations 51
+\indexspace
+\item world output format 40
+\item world view 39
+\item {\bf $\Rightarrow$} 44
+\item {\bf $/=$} 51
+\item {\bf $=$} 51
+\item {\bf --$ $} 48
+\item {\bf ---$>$} 48
+\item {\bf ::=} 24
+\item {\bf ;;;} 24
+\item {\bf ??} 26
+\item {\bf ?\M{name}} 26
+\item {\bf ?}{{\bf and \M{parameter} ...}} 27
+\item {\bf ?}{{\bf bound}} 26, 60
+\item {\bf ?}{{\bf contains \M{set}}} 27
+\item {\bf ?}{{\bf has \M{function\_name} ... }} 27
+\item {\bf ?}{{\bf not \M{parameter}}} 27
+\item {\bf ?}{{\bf or \M{parameter} ...}} 27
+\item {\bf ?}{{\bf satisfies \M{predicate\_name} ... }} 27
+\item {\bf ?}{{\bf type \M{type\_name}}} 27
+\item {\bf achieve ... after ... self} 50
+\item {\bf achieve ... after ... start} 50
+\item {\bf achieve ... after} 50
+\item {\bf achieve\_after\_point} 35
+\item \M{achieve\_after\_point} 50
+\item {\bf achieve} 11, 50
+\item \M{action\_or\_event} 28
+\item {\bf action} 28
+\item {\bf after ... self} 50
+\item {\bf after ... start} 50
+\item {\bf after} 30
+\item {\bf allocates} 31
+\item {\bf always} 40, 46, 53
+\item {\bf and} 26
+\item \M{associated\_instructions\_or\_data} 39, 40
+\item {\bf at begin\_of} 44
+\item {\bf at end\_of} 44
+\item {\bf at notepad} 54
+\item \M{atom} 25
+\item \M{at\_spec} 28
+\item {\bf at} \M{node\_end} 28
+\item \M{authority\_statement} 33
+\item {\bf authority} 48, 54
+\item \M{availability} 37, 39
+\item {\bf before} 30
+\item {\bf begin\_of} 28
+\item {\bf between} 30
+\item {\bf bound} 26, 60
+\item \M{component} 34
+\item {\bf compute\_conditions} 60
+\item {\bf compute\_condition} 45, 65
+\item \M{compute\_dependency} 45
+\item \M{compute\_function\_name} 45
+\item {\bf compute} 11, 45, 53, 65
+\item {\bf condition\_at\_node\_end} 35
+\item {\bf condition\_\_contributor\_node\_end} 35
+\item \M{condition\_point} 49
+\item \M{condition\_statement} 50
+\item {\bf conditions} 48
+\item {\bf consumable\_producible\_by\_agent} 12
+\item {\bf consumable\_producible\_by\_and\_outwith\_agent} 13
+\item {\bf consumable\_producible\_outwith\_agent} 13
+\item {\bf consumable\_strictly} 12, 65
+\item {\bf consumes} 31
+\item {\bf contains} 26
+\item \M{contributor\_entry} 50
+\item {\bf count} 43, 65
+\item \M{days} 30
+\item {\bf deallocates} 31
+\item \M{default\_achieve\_after\_point} 35
+\item \M{default\_assignment} 35
+\item {\bf default\_resources} 44, 65
+\item {\bf defaults} 35, 58
+\item {\bf delay\_between} 49, 54
+\item \M{delay\_spec} 49, 51
+\item {\bf depends\_on} 45, 53, 65
+\item {\bf domain\_rules} 44
+\item {\bf domain\_rule} 65
+\item \M{domain\_statement} 40
+\item \M{domain\_value} 40
+\item \M{drawing\_object\_name} 39
+\item \M{drawing\_pattern} 39
+\item \M{dummy\_node\_type} 28
+\item {\bf dummy} 28, 51
+\item {\bf duration} 49, 54
+\item \M{earliest\_begin\_time} 38
+\item \M{earliest\_end\_time} 38
+\item {\bf earliest\_finish\_of\_plan} 41
+\item {\bf effect\_at\_node\_end} 35
+\item \M{effect\_point} 49
+\item {\bf effects} 48, 51
+\item {\bf end\_node} 38
+\item {\bf end\_of} 28
+\item {\bf end\_plan} 38
+\item {\bf end\_world} 40
+\item {\bf end\_\M{keyword}} 34
+\item \M{end} 28
+\item {\bf entity\_detail} 37
+\item {\bf eq} 60
+\item {\bf et =} 30
+\item {\bf event} 28, 51, 65
+\item {\bf execute} 59
+\item {\bf expands} 48, 51, 55
+\item \M{expression} 28, 65
+\item {\bf false} 60
+\item {\bf finish} 28, 51, 57
+\item {\bf fn\_and} 60
+\item {\bf fn\_ask} 60
+\item {\bf fn\_cond} 60
+\item {\bf fn\_eq} 60
+\item {\bf fn\_geq} 60
+\item {\bf fn\_leq} 60
+\item {\bf fn\_neq} 60
+\item {\bf fn\_or} 60
+\item {\bf fn\_} 45, 60
+\item {\bf forall} 44
+\item {\bf foreach} 49, 51, 66
+\item {\bf from} 51, 53
+\item \M{fully\_instantiated\_pattern} 39
+\item \M{function\_name} 26
+\item \M{function\_result} 26
+\item \M{general\_pattern} 26
+\item \M{general\_set} 28
+\item {\bf has} 26
+\item {\bf holds condition} 11
+\item {\bf ideal} 30
+\item {\bf include} 36
+\item {\bf incremental} 39
+\item {\bf increment} 40
+\item \M{individual\_authority} 33
+\item {\bf infinity} 25, 30
+\item {\bf information} 37, 39
+\item \M{info\_word} 35
+\item {\bf info} 48
+\item {\bf inf} 25, 30
+\item {\bf initial\_authority} 55, 56, 66
+\item {\bf initially} 40, 55, 56, 58, 66
+\item {\bf initial\_resources} 43, 55, 56, 58, 66, 67
+\item {\bf initial\_time} 30, 55, 56, 58, 66
+\item {\bf instance\_of} 48
+\item \M{integer\_range} 46
+\item \M{iterated\_node\_form} 49
+\item \M{iterated\_node\_type} 49
+\item {\bf iterate} 49, 51, 66
+\item \M{iteration\_set} 49
+\item \M{iterators} 49
+\item {\bf jotter} 15
+\item \M{language\_name} 46
+\item {\bf language} 46
+\item \M{latest\_begin\_time} 38
+\item {\bf latest\_finish\_of\_plan} 41
+\item \M{level\_number} 33
+\item {\bf levels\_output} 37
+\item \M{limited\_condition\_type} 50
+\item {\bf link\_from\_node\_end} 35
+\item {\bf link\_selection} 37
+\item {\bf link\_to\_node\_end} 35
+\item {\bf lisp} 46
+\item {\bf local\_vars} 48, 50
+\item {\bf lt =} 30
+\item \M{match\_constraint} 26
+\item \M{maximum\_duration} 38
+\item {\bf max} 29
+\item {\bf meta\_process\_schemas} 50
+\item {\bf meta\_process\_schema} 48
+\item {\bf meta\_schemas} 65
+\item {\bf meta\_schema} 48, 50
+\item \M{minimum\_duration} 38
+\item \M{min\_max\_spec} 29
+\item \M{minor\_keyword} 34
+\item {\bf min} 29
+\item {\bf multiple\_answer} 45, 65
+\item \M{name\_set} 28
+\item \M{name} 25
+\item {\bf new\_domain} 35, 58, 59
+\item \M{node\_end} 28
+\item \M{node\_form} 49
+\item \M{node\_label} 38
+\item \M{node\_number} 28
+\item \M{node\_reference} 38
+\item {\bf node\_selection} 37
+\item \M{node\_spec} 49
+\item {\bf nodes} 48, 51, 55
+\item \M{node\_time\_information} 38
+\item \M{node\_type} 28
+\item {\bf node} 38
+\item {\bf none} 29
+\item {\bf notepad} 54, 66
+\item {\bf note} 54
+\item {\bf not} 26
+\item {\bf no} 29
+\item {\bf number\_of\_nodes} 41
+\item \M{number} 25
+\item {\bf occurs\_at} 30
+\item {\bf only\_use\_for\_authority} 48, 51
+\item {\bf only\_use\_for\_effects} 48, 51
+\item {\bf only\_use\_for\_query} 11, 50
+\item {\bf only\_use\_for\_resources} 43, 48, 51, 67
+\item {\bf only\_use\_if} 11, 50
+\item \M{operand} 28
+\item \M{operator} 28
+\item {\bf oplan} 59
+\item \M{order\_block} 51
+\item \M{ordering\_block} 49
+\item {\bf orderings} 48, 51, 55
+\item {\bf or} 26
+\item \M{other\_constraint\_clause} 48, 66
+\item {\bf other\_constraints} 54
+\item \M{other\_function\_argument} 26
+\item \M{other\_predicate\_argument} 26
+\item {\bf overall} 31, 44
+\item {\bf over\_period} 67
+\item {\bf over} 51
+\item {\bf parallel} 49, 51
+\item \M{pattern\_component} 26
+\item \M{pattern\_with\_??} 39
+\item \M{pattern} 26
+\item \M{pattern} = \M{value} 13
+\item {\bf per} 67
+\item \M{phase\_number} 33
+\item \M{plan\_feature} 41
+\item {\bf plan\_levels} 65
+\item {\bf plan\_output} 37
+\item \M{plan\_viewer\_feature} 37
+\item \M{plan\_viewer\_parameter\_string} 37
+\item {\bf plan\_viewer} 37, 65, 66
+\item {\bf plan\_view} 59
+\item {\bf plan \M{task\_schema\_name}} 59
+\item {\bf plan} 38
+\item \M{plus\_or\_minus} 28
+\item \M{predicate\_name} 26
+\item {\bf preferences} 41, 65
+\item \M{preference\_word} 41
+\item {\bf prefer\_plans\_with} 41, 65
+\item {\bf prefer\_schemas} 41, 65
+\item {\bf process\_schemas} 65
+\item {\bf process\_schema} 48, 50
+\item {\bf produces} 31, 67
+\item {\bf program} 37, 39
+\item \M{provides\_or\_requires} 33
+\item {\bf query} 68
+\item {\bf quit} 59
+\item {\bf replan} 59
+\item {\bf resource\_at\_node\_end} 35
+\item \M{resource\_class} 43
+\item {\bf resource\_conversions} 42
+\item \M{resource\_name} 31
+\item {\bf resource\_output} 37
+\item {\bf resource\_overall} 35
+\item \M{resource\_qualifier\_spec} 43
+\item \M{resource\_qualifier} 31
+\item \M{resource\_range} 31
+\item \M{resource\_scope\_spec} 31
+\item {\bf resources} 43, 48, 67
+\item {\bf resource\_types} 42
+\item \M{resource\_unit\_class} 43
+\item \M{resource\_unit\_name} 31
+\item \M{resource\_unit\_synonym} 31
+\item {\bf resource\_units} 42
+\item \M{resource\_unit} 31
+\item \M{resource\_usage\_keyword} 31
+\item {\bf resource\_usage\_node\_end} 31
+\item {\bf resource\_usage\_\_node\_end} 35
+\item \M{resource\_usage\_spec} 31
+\item {\bf reusable\_non\_sharable} 13
+\item {\bf reusable\_sharable\_independently} 13
+\item {\bf satisfies} 26
+\item {\bf schema variables} 16
+\item {\bf schema} 6, 48, 50
+\item {\bf self} 28
+\item {\bf sequential} 49, 51
+\item {\bf sets} 31
+\item {\bf set} 43
+\item \M{set} 28
+\item {\bf sharable\_synchronously} 13
+\item {\bf size} 43
+\item {\bf snapshot} 39
+\item {\bf some} 29
+\item {\bf start} 28, 51, 57
+\item {\bf supervised} 11, 50, 53
+\item {\bf tasks} 6
+\item {\bf task} 66
+\item {\bf task\_} 57
+\item \M{text\_string} 25
+\item \M{tf\_file} 34
+\item \M{tf\_form\_keyword} 34
+\item \M{tf\_form\_major\_keyword} 34
+\item \M{tf\_form} 34
+\item {\bf tf\_info} 35
+\item {\bf tf\_input} 37, 40
+\item {\bf tf \M{domain\_name}} 59
+\item \M{time\_bounds\_pair} 30
+\item \M{time\_bounds\_spec} 30
+\item \M{time\_preference} 30
+\item \M{time\_spec} 30
+\item \M{time\_units} 30
+\item {\bf time\_window\_node\_end} 35
+\item \M{time\_window\_spec} 49
+\item {\bf time\_windows} 48, 54
+\item {\bf true} 60
+\item \M{type\_name} 26, 46
+\item {\bf types} 46
+\item {\bf type} 26
+\item {\bf undef} 26, 50
+\item {\bf unlimited} 31
+\item {\bf unsupervised} 11, 50
+\item \M{value} 26
+\item {\bf value} 35
+\item \M{variable\_name} 26
+\item \M{variable\_restriction} 26
+\item {\bf variable\_restriction} 35
+\item {\bf vars\_relationships} 48
+\item {\bf vars\_relations} 51
+\item {\bf vars} 48, 50
+\item {\bf weight} 43
+\item \M{world\_viewer\_feature} 39
+\item \M{world\_viewer\_parameter\_string} 39
+\item {\bf world\_viewer} 39, 65, 66
+\item \M{world\_view\_type} 40
+\item {\bf world\_view} 59
+\item {\bf world} 40
+\item \M{yes\_or\_no} 33
+\end{theindex}

@@ -1,0 +1,10 @@
+
+              O-Plan "source/web" directectory
+              --------------------------------
+
+This directory contains files used when O-Plan is run via the
+World-Wide Web's Common Gateway Interface (CGI).
+
+The file web/support/cgi-env.lsp describes the main 
+conventions used in O-plan Web demos.  
+

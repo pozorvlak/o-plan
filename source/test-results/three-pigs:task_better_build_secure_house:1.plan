@@ -1,0 +1,197 @@
+
+;;; Statistics:
+(
+(:am-cycles . 13)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 3)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(build . 1)
+(build_house_of . 2)
+(build_walls . 3)
+(check . 1)
+(install . 3)
+(make_walls_from . 4)
+(purchase . 4)
+(task_better_build_secure_house . 0)
+(task_build_cheap_house . 0)
+(task_build_cheap_secure_house . 0)
+(task_build_house . 0)
+(task_build_secure_house . 0)
+)
+
+;;; Effect levels:
+(
+(door . 3)
+(have . 4)
+(material . 4)
+(proof_against . 0)
+(walls . 4)
+(windows . 3)
+(wolf_proof . 3)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-4 :end))
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (build secure house)
+)
+(node-3-1
+   ((node-3 :begin))
+   ((node-3-1-1 :begin))
+   ((node-3-1-2 :end))
+   ((node-3-3 :begin) (node-3-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (build_walls bricks)
+)
+(node-3-1-1
+   ((node-3-1 :begin))
+   nil
+   nil
+   ((node-3-1-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (purchase bricks)
+)
+(node-3-1-2
+   ((node-3-1-1 :end))
+   nil
+   nil
+   ((node-3-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (make_walls_from bricks)
+)
+(node-3-2
+   ((node-3-1 :end))
+   nil
+   nil
+   ((node-3-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (install door)
+)
+(node-3-3
+   ((node-3-1 :end))
+   nil
+   nil
+   ((node-3-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (install windows)
+)
+(node-3-4
+   ((node-3-3 :end) (node-3-2 :end))
+   nil
+   nil
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   dummy
+   nil
+)
+)
+
+;;; TOME:
+(
+((tome (door installed) (node-3-2 :end)) true)
+((tome (have bricks) (node-3-1-1 :end)) true)
+((tome (material wall) (node-3-1-2 :end)) bricks)
+((tome (proof_against wolf bricks) :always) true)
+((tome (walls built) (node-3-1-2 :end)) true)
+((tome (windows installed) (node-3-3 :end)) true)
+((tome (wolf_proof door) (node-3-2 :end)) true)
+((tome (wolf_proof windows) (node-3-3 :end)) true)
+)
+
+;;; GOST:
+(
+((gost only_use_if (proof_against wolf bricks) true (node-3-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost supervised (have bricks) true (node-3-1-2 :begin))
+   (((node-3-1-1 :end) . :none))
+)
+((gost supervised (material wall) bricks (node-3-4 :begin))
+   (((node-3-1 :end) . :none))
+)
+((gost supervised (walls built) true (node-3-2 :begin))
+   (((node-3-1 :end) . :none))
+)
+((gost supervised (walls built) true (node-3-3 :begin))
+   (((node-3-1 :end) . :none))
+)
+((gost unsupervised (wolf_proof door) true (node-3-4 :begin))
+   (((node-3-2 :end) . :already-satisfied))
+)
+((gost unsupervised (wolf_proof windows) true (node-3-4 :begin))
+   (((node-3-3 :end) . :already-satisfied))
+)
+)
+
+;;; PSV descriptions:
+(
+)
+
+;;; PSV equivalence classes:
+(
+)
+
+;;; Resource usage table:
+(
+(node (resource bricks) 1000 :inf nil (node-3))
+(node (resource money) 1700 2000 nil (node-3))
+(node-3 (resource bricks) 1000 :inf node (node-3-1))
+(node-3 (resource money) 1700 2000 node (node-3-2 node-3-3 node-3-1))
+(node-3-1 (resource bricks) 1000 :inf node-3 (node-3-1-1))
+(node-3-1 (resource money) 1500 1800 node-3 (node-3-1-1 node-3-1-2))
+(node-3-1-1 (resource bricks) 1000 1000 node-3-1 nil)
+(node-3-1-1 (resource money) 1000 1000 node-3-1 nil)
+(node-3-1-2 (resource money) 500 500 node-3-1 nil)
+(node-3-2 (resource money) 100 100 node-3 nil)
+(node-3-3 (resource money) 100 100 node-3 nil)
+)
+
+;;; World at end of node-1:
+(
+((proof_against wolf bricks) true)
+)
+
+;;; World at end of node-2:
+(
+((door installed) true)
+((have bricks) true)
+((material wall) bricks)
+((proof_against wolf bricks) true)
+((walls built) true)
+((windows installed) true)
+((wolf_proof door) true)
+((wolf_proof windows) true)
+)

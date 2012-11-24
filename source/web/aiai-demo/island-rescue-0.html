@@ -1,0 +1,60 @@
+<TITLE>O-Plan Island-Rescue Demo</TITLE>
+<H1>O-Plan Island-Rescue Demo</H1>
+
+This is a sample demonstration in a Pacifica domain.  Below the line
+is a form that lets you specify various parameters.  When you click on
+the "Plan" button, the parameters are used to construct a task
+definition which is then submitted to O-Plan.
+
+A <A HREF="http://www.aiai.ed.ac.uk/~oplan/gif/pacifica-map.gif">
+  map of Pacifica</A>
+is available.
+
+<P>
+<HR>
+
+<FORM ACTION="island-rescue.cgi"
+      METHOD=GET>
+
+<P>
+Number to evacuate from
+Abyss:    <INPUT NAME="N-Abyss"    VALUE="100" SIZE=3 MAXLENGTH=3>,
+Barnacle: <INPUT NAME="N-Barnacle" VALUE="50"  SIZE=3 MAXLENGTH=3>,
+Calypso:  <INPUT NAME="N-Calypso"  VALUE="20"  SIZE=3 MAXLENGTH=3>.
+
+<P>
+Number of GTs at Delta: <INPUT NAME="N-GTs" VALUE=2 SIZE=3 MAXLENGTH=3>,
+GT capacity: <INPUT NAME="GT-capacity" VALUE="20" SIZE=3 MAXLENGTH=3>.
+
+<P>
+Evacuate to (one of):
+<SELECT NAME="evac-to" SIZE=2>
+<OPTION SELECTED> Delta
+<OPTION> Hawaii
+</SELECT>
+
+in at most
+<INPUT NAME="Max-Days" VALUE="3" SIZE=2 MAXLENGTH=2> days,
+<INPUT NAME="Max-Hrs"  VALUE="0" SIZE=2 MAXLENGTH=2> hours.
+
+<P>
+Output required:
+<SELECT NAME="output" MULTIPLE>
+<OPTION SELECTED> PostScript graph
+<OPTION SELECTED> Narrative
+<OPTION> KP trace
+<OPTION> World-1
+<OPTION> World-2
+</SELECT>
+
+(Use <EM>Control</EM> to select or deselect disjoint items.)
+
+<P>
+<INPUT TYPE="reset"> will restore the default values of all parameters.
+
+<P>
+<INPUT TYPE="submit" VALUE="Plan"> will run O-Plan.
+
+</FORM>
+
+<HR>

@@ -1,0 +1,69 @@
+<TITLE>O-Plan Island-Rescue Demo</TITLE>
+<H1>O-Plan Island-Rescue Demo</H1>
+
+This is a sample demonstration in a Pacifica domain.  Below the line
+is a form that lets you specify various parameters.  When you click on
+the "Plan" button, the parameters are used to construct a task
+definition which is then submitted to O-Plan.
+
+<P>
+<HR>
+
+<FORM ACTION="http://localhost/cgi-bin/oplan-demo/386-demo/island-rescue.cgi"
+      METHOD=GET>
+
+<P>
+Number to evacuate from
+Abyss:    <INPUT NAME="N-Abyss"    VALUE="100" SIZE=3 MAXLENGTH=3>,
+Barnacle: <INPUT NAME="N-Barnacle" VALUE="50"  SIZE=3 MAXLENGTH=3>,
+Calypso:  <INPUT NAME="N-Calypso"  VALUE="20"  SIZE=3 MAXLENGTH=3>.
+
+<P>
+Number of GTs at Delta: <INPUT NAME="N-GTs" VALUE=2 SIZE=3 MAXLENGTH=3>,
+GT capacity: <INPUT NAME="GT-capacity" VALUE="20" SIZE=3 MAXLENGTH=3>.
+
+<P>
+Evacuate to:
+<SELECT NAME="evac-to" SIZE=1>
+<OPTION SELECTED> Delta
+<OPTION> Hawaii
+</SELECT>
+
+in at most
+<INPUT NAME="Max-Days" VALUE="3" SIZE=2 MAXLENGTH=2> days,
+<INPUT NAME="Max-Hrs"  VALUE="0" SIZE=2 MAXLENGTH=2> hours.
+
+<DL>
+
+<DT>Output required:
+
+<DD><INPUT TYPE="checkbox" NAME="psgraph" CHECKED> PostScript graph
+<DD><INPUT TYPE="checkbox" NAME="narrative" CHECKED> Plan narrative
+<DD><INPUT TYPE="checkbox" NAME="kp-trace"> KP trace output
+<DD><INPUT TYPE="checkbox" NAME="world-1"> World state when the plan starts
+<DD><INPUT TYPE="checkbox" NAME="world-2"> World state when the plan finishes
+
+<DT>Options:
+
+<DD><INPUT TYPE="checkbox" CHECKED NAME="feasibility"> Feasibility filter.
+
+<DD><INPUT TYPE="checkbox" NAME="use-constraints"> "use" constraints.
+
+</DL>
+
+<P>
+<INPUT TYPE="reset"> will restore the default values of all parameters.
+
+<P>
+<INPUT TYPE="submit" VALUE="Plan">
+will run O-Plan with a planning time limit of
+<INPUT NAME="Timeout" VALUE="120" SIZE=3 MAXLENGTH=3>
+seconds (real time).
+
+</FORM>
+
+<HR>
+
+<Address>
+<A HREF="http://www.aiai.ed.ac.uk/~jeff/">Jeff Dalton</A>
+</Address>

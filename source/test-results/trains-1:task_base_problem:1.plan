@@ -1,0 +1,76 @@
+
+;;; Statistics:
+(
+(:am-cycles . 5)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 1)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(connect . 2)
+(take . 3)
+(task_base_problem . 0)
+(task_example_1 . 0)
+(task_example_2 . 0)
+(task_impossible_sequence . 0)
+(trip . 1)
+)
+
+;;; Effect levels:
+(
+(visited . 2)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-1 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+)
+
+;;; TOME:
+(
+((tome (visited ?? ??) (node-1 :end)) false)
+)
+
+;;; GOST:
+(
+)
+
+;;; PSV descriptions:
+(
+)
+
+;;; PSV equivalence classes:
+(
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((visited ?? ??) false)
+)

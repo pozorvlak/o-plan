@@ -1,0 +1,247 @@
+%** File: documentation/oplan-doc.sty
+%** Contains: Style file for the O-Plan Project Documentation
+%** Author: Brian Drabble (bd@rousay)
+%** Created: Fri Feb 28 10:28:35 1992 by: Brian Drabble
+%** Updated: Fri Jan 31 16:57:41 1997 by Jeff Dalton
+
+\input{../psbox.tex}
+
+\newcommand{\projectdocument}[2]{
+    \newcommand{\DocumentVersion}{#1}
+    \newcommand{\DocumentTitle}{#2}}
+
+\newcommand{\created}[2]{
+    \newcommand{\Creator}{#1}
+    \newcommand{\CreationDate}{#2}}
+
+\newcommand{\lastaltered}[3]{
+    \newcommand{\AlteredBy}{#1}
+    \newcommand{\AlteredDate}{#2}
+    \newcommand{\AlteredTime}{#3}}
+
+\newcommand{\DocumentStatus}{{\bf Released Version}}
+
+\newcommand{\status}[1]{
+    \renewcommand{\DocumentStatus}{#1}}
+
+% Registered Mark Symbol
+
+\newcommand{\registered}{$^{\ooalign
+        {\hfil\raise.07ex\hbox{\sc r}\hfil\crcr\mathhexbox20D}}$}
+
+% Commands for BNF, etc.
+
+\newcommand{\var}[1]{\mbox{\em #1\/}}
+\newcommand{\meta}[1]{{$\langle$\var{#1}$\rangle$}}
+\newcommand{\arbno}[1]{#1{$\;\ldots$}} % ie, zero or more
+\newcommand{\optional}[1]{{\rm [}#1{\rm ]}}
+\newcommand{\evalsto}{{$\Rightarrow\;$}}
+\newcommand{\equivto}{{$\equiv\;\,$}}
+\newcommand{\expandsto}{{$\Longrightarrow\;$}}
+\newcommand{\MapsTo}{{$\rightarrow\;\,$}}
+\newcommand{\BNFdef}{{\rm ::=\ }}
+\newcommand{\ordef}{$\;\mid\;$}
+\newcommand{\pr}{{\sc prec}i{\sc s\ }}
+
+\newcommand{\bool}{{\it true\/} {\rm or} {\it false}}
+
+% The @{} in the "cols" of the tabular env eliminates the extra space
+% before the first column and after the last.  (See LaTeX section C.9.2)
+
+\newenvironment{syntaxtable}{
+   \begin{tt}
+   \begin{trivlist}
+           \item[]
+   \begin{tabular}{@{}lll@{}}
+ }{\end{tabular}
+   \end{trivlist}
+   \end{tt}}
+
+\newcommand{\TitlePage}{
+\begin{titlepage}
+\noindent
+\begin{flushright}
+{\LARGE\bf O-Plan} \\
+\vspace{-0.5cm}
+\end{flushright}
+\rule{15.85cm}{0.5mm}
+
+\begin{flushright}
+{\LARGE\bf \DocumentTitle} \\
+\end{flushright}
+\vspace{2cm}
+
+\vfill
+\noindent
+\rule{15.85cm}{0.5mm}
+
+\noindent
+\begin{minipage}[t]{3.5in}
+\flushleft
+Artificial Intelligence Applications Institute \\
+University of Edinburgh \\
+80 South Bridge \\
+Edinburgh EH1 1HN \\
+United Kingdom
+\end{minipage}
+\hspace{\fill}
+\begin{minipage}[t]{2.0in}
+\flushright
+\today
+\vspace{1.15cm}
+\flushright
+Version \DocumentVersion
+\end{minipage}
+
+\newpage
+
+\pagestyle{empty}
+
+{\footnotesize
+
+\begin{flushleft}
+{\bf Acknowledgements}
+\end{flushleft}
+\vspace{-0.5cm}
+
+The O-Plan project began in 1984.  Since that time the following
+people have participated: Colin Bell, Ken Currie, Jeff Dalton, Roberto
+Desimone, Brian Drabble, Mark Drummond, Anja Haman, Ken Johnson,
+Richard Kirby, Glen Reece, Arthur Seaton, Judith Secker, Austin Tate
+and Richard Tobin.
+
+Prior to 1984, work on Interplan (1972--4) and Nonlin (1975--6) was
+funded by the {\sc uk} Science and Engineering Research Council and
+provided technical input to the design of O-Plan.
+
+From 1984 to 1988, the O-Plan project was funded by the {\sc uk}
+Science and Engineering Research Council on grant numbers {\sc
+gr/c/}59178 and {\sc gr/d/}58987 ({\sc uk} Alvey Programme project
+number {\sc ikbs}/151).  The work was also supported by a fellowship
+from {\sc sd}-Scicon for Austin Tate from 1984 to 1985.
+
+From 1989 to 1992, the O-Plan project was supported by the {\sc us}
+Air Force Rome Laboratory through the Air Force Office of Scientific
+Research ({\sc afosr}) and their European Office of Aerospace Research
+and Development by contract number F49620-89-C-0081 ({\sc
+eoard}/88-0044) monitored by Northrup Fowler {\sc iii} at the {\sc
+usaf} Rome Laboratory.
+
+From 1992 to 1995, the O-Plan project was supported by the {\sc
+arpa}/Rome Laboratory Knowledge Based Planning and Scheduling
+Initiative through the {\sc us} Air Force Rome Laboratory through the
+Air Force Office of Scientific Research ({\sc afosr}) and their
+European Office of Aerospace Research and Development by contract
+number F49620-92-C-0042 ({\sc eoard}/92-0001) monitored by Northrup
+Fowler {\sc iii} at the {\sc usaf} Rome Laboratory.
+
+From 1995 to 1998, the O-Plan project was sponsored by the Defense Advanced
+Research Projects Agency ({\sc darpa}) and Rome Laboratory, Air Force
+Materiel Command, {\sc usaf}, under grant number {\sc f30602-95-1-0022}.
+
+Additional resources for the O-Plan and O-Plan projects have been
+provided by the Artificial Intelligence Applications Institute through
+the {\sc europa} (Edinburgh University Research on Planning
+Architectures) institute development project.
+
+From 1989 to 1993, research on scheduling applications of the O-Plan
+architecture was funded by Hitachi Europe Ltd.  From 1989 to 1992, the
+{\sc uk} Science and Engineering Research Council (grant number {\sc
+gr/f}36545 -- {\sc uk} Information Engineering Directorate project
+number {\sc ied} 4/1/1320) funded a collaborative project with {\sc
+icl}, Imperial College and other partners in which the O-Plan
+architecture was used to guide the design and development of a planner
+with a flexible temporal logic representation of the plan state.  A
+number of other research and development contracts placed with {\sc
+aiai} have led to research progress on the O-Plan prototype.
+
+The {\sc u.s.}
+Government is authorised to reproduce and distribute reprints for
+Governmental purposes notwithstanding any copyright annotation hereon.
+The views and conclusions contained herein are those of the authors and
+should not be interpreted as necessarily representing official
+policies or endorsements, either express or implied, of {\sc darpa},
+Rome Laboratory or the {\sc u.s.} Government.
+
+O-Plan is a valuable asset of the Artificial Intelligence Applications
+Institute and must not be used without the prior permission of a
+rights holder. Please contact {\sc aiai} for more information.
+
+\begin{flushleft}
+{\bf Contact Information}
+\end{flushleft}
+
+\vspace{-0.5cm}
+
+The O-Plan project team can be contacted as follows:
+
+\noindent
+\begin{minipage}[t]{3.5in}
+\flushleft
+O-Plan Team \\
+Artificial Intelligence Applications Institute \\
+The University of Edinburgh \\
+80, South Bridge \\
+Edinburgh EH1 1HN \\
+United Kingdom
+\end{minipage}
+\hspace{\fill}
+\begin{minipage}[t]{2.5in}
+\flushright
+Tel: (+44) 131 650 2732 \\
+Fax: (+44) 131 650 6513
+
+Email: oplan@ed.ac.uk \\
+WWW:  http://www.aiai.ed.ac.uk/~oplan/
+\end{minipage}
+ 
+\vfill 
+
+\hspace{-0.35cm}
+\begin{tabular}{ll}
+Created:        & \CreationDate\ by \Creator \\
+Last Modified:  & \AlteredDate\ (\AlteredTime) by \AlteredBy \\
+Printed:        & \today
+\end{tabular}
+
+\vspace{-0.5cm}
+\begin{flushleft}
+\copyright 1997, The University of Edinburgh
+\end{flushleft}
+This material may be reproduced by or for the U.S. Government pursuant to the
+copyright license under the clause at DFARS 252.227-7032 (June 1975) --
+Rights in Technical Data and Computer Software (Foreign).
+}
+
+\end{titlepage}}
+
+\pagestyle{myheadings}
+
+\newcommand{\Headers}{
+  \pagestyle{myheadings}
+  \markboth{\DocumentTitle}{\DocumentTitle}
+}
+
+\newcommand{\opsection}[1]{
+   \newpage
+   \markboth{}{}
+   \begin{flushright}
+   \section{#1}
+   \vspace{-0.75cm}
+   \noindent
+   \rule{15.85cm}{0.5mm}
+   \end{flushright}
+   \markboth{\DocumentTitle}{#1}
+}
+
+\setlength{\parindent}{0in}
+\marginparwidth 0.5in
+\marginparsep 0pt
+\topmargin 0pt
+\textwidth 6.25in
+\textheight 8.5in
+\oddsidemargin 0.25in
+\evensidemargin 0.25in
+
+\sloppy
+

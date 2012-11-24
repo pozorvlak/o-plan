@@ -1,0 +1,274 @@
+
+;;; Statistics:
+(
+(:am-cycles . 19)
+(:n-alts-chosen . 1)
+(:n-alts-remaining . 11)
+(:n-poisons . 1)
+)
+
+;;; Action levels:
+(
+(move . 1)
+(task_mc_problem . 0)
+)
+
+;;; Effect levels:
+(
+(state . 1)
+(tried . 1)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-13 :begin) (node-12 :begin) (node-11 :begin) (node-10 :begin) (node-9 :begin) (node-8 :begin) (node-7 :begin) (node-6 :begin) (node-5 :begin) (node-4 :begin) (node-3 :begin) (node-2 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end) (node-1 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-4 :end) (node-1 :end))
+   nil
+   nil
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 2 c r)
+)
+(node-4
+   ((node-5 :end) (node-1 :end))
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 c l)
+)
+(node-5
+   ((node-6 :end) (node-1 :end))
+   nil
+   nil
+   ((node-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 2 c r)
+)
+(node-6
+   ((node-7 :end) (node-1 :end))
+   nil
+   nil
+   ((node-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 c l)
+)
+(node-7
+   ((node-8 :end) (node-1 :end))
+   nil
+   nil
+   ((node-6 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 2 m r)
+)
+(node-8
+   ((node-9 :end) (node-1 :end))
+   nil
+   nil
+   ((node-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 m 1 c l)
+)
+(node-9
+   ((node-10 :end) (node-1 :end))
+   nil
+   nil
+   ((node-8 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 2 m r)
+)
+(node-10
+   ((node-11 :end) (node-1 :end))
+   nil
+   nil
+   ((node-9 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 c l)
+)
+(node-11
+   ((node-12 :end) (node-1 :end))
+   nil
+   nil
+   ((node-10 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 2 c r)
+)
+(node-12
+   ((node-13 :end) (node-1 :end))
+   nil
+   nil
+   ((node-11 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 m l)
+)
+(node-13
+   ((node-1 :end))
+   nil
+   nil
+   ((node-12 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move 1 m 1 c r)
+)
+)
+
+;;; TOME:
+(
+((tome (state) (node-1 :end)) (left 3 3 0 0))
+((tome (state) (node-10 :end)) (left 3 1 0 2))
+((tome (state) (node-11 :end)) (right 3 0 0 3))
+((tome (state) (node-12 :end)) (left 3 2 0 1))
+((tome (state) (node-13 :end)) (right 2 2 1 1))
+((tome (state) (node-3 :end)) (right 0 0 3 3))
+((tome (state) (node-4 :end)) (left 0 2 3 1))
+((tome (state) (node-5 :end)) (right 0 1 3 2))
+((tome (state) (node-6 :end)) (left 0 3 3 0))
+((tome (state) (node-7 :end)) (right 0 2 3 1))
+((tome (state) (node-8 :end)) (left 2 2 1 1))
+((tome (state) (node-9 :end)) (right 1 1 2 2))
+((tome (tried ?? ?? ?? ?? ??) (node-1 :end)) false)
+((tome (tried left 0 2 3 1) (node-3 :end)) true)
+((tome (tried left 0 3 3 0) (node-5 :end)) true)
+((tome (tried left 2 2 1 1) (node-7 :end)) true)
+((tome (tried left 3 1 0 2) (node-9 :end)) true)
+((tome (tried left 3 2 0 1) (node-11 :end)) true)
+((tome (tried left 3 3 0 0) (node-13 :end)) true)
+((tome (tried right 0 1 3 2) (node-4 :end)) true)
+((tome (tried right 0 2 3 1) (node-6 :end)) true)
+((tome (tried right 1 1 2 2) (node-8 :end)) true)
+((tome (tried right 2 2 1 1) (node-12 :end)) true)
+((tome (tried right 3 0 0 3) (node-10 :end)) true)
+)
+
+;;; GOST:
+(
+((gost achievable (state) (left 0 2 3 1) (node-3 :begin))
+   (((node-4 :end) . :expand))
+)
+((gost achievable (state) (left 0 3 3 0) (node-5 :begin))
+   (((node-6 :end) . :expand))
+)
+((gost achievable (state) (left 2 2 1 1) (node-7 :begin))
+   (((node-8 :end) . :expand))
+)
+((gost achievable (state) (left 3 1 0 2) (node-9 :begin))
+   (((node-10 :end) . :expand))
+)
+((gost achievable (state) (left 3 2 0 1) (node-11 :begin))
+   (((node-12 :end) . :expand))
+)
+((gost achievable (state) (left 3 3 0 0) (node-13 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost achievable (state) (right 0 0 3 3) (node-2 :begin))
+   (((node-3 :end) . :expand))
+)
+((gost achievable (state) (right 0 1 3 2) (node-4 :begin))
+   (((node-5 :end) . :expand))
+)
+((gost achievable (state) (right 0 2 3 1) (node-6 :begin))
+   (((node-7 :end) . :expand))
+)
+((gost achievable (state) (right 1 1 2 2) (node-8 :begin))
+   (((node-9 :end) . :expand))
+)
+((gost achievable (state) (right 2 2 1 1) (node-12 :begin))
+   (((node-13 :end) . :expand))
+)
+((gost achievable (state) (right 3 0 0 3) (node-10 :begin))
+   (((node-11 :end) . :expand))
+)
+((gost only_use_if (tried left 0 2 3 1) false (node-3 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried left 0 3 3 0) false (node-5 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried left 2 2 1 1) false (node-7 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried left 3 1 0 2) false (node-9 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried left 3 2 0 1) false (node-11 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried left 3 3 0 0) false (node-13 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried right 0 1 3 2) false (node-4 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried right 0 2 3 1) false (node-6 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried right 1 1 2 2) false (node-8 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried right 2 2 1 1) false (node-12 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (tried right 3 0 0 3) false (node-10 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+)
+
+;;; PSV descriptions:
+(
+)
+
+;;; PSV equivalence classes:
+(
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((state) (right 0 0 3 3))
+((tried left 0 2 3 1) true)
+((tried left 0 3 3 0) true)
+((tried left 2 2 1 1) true)
+((tried left 3 1 0 2) true)
+((tried left 3 2 0 1) true)
+((tried left 3 3 0 0) true)
+((tried right 0 1 3 2) true)
+((tried right 0 2 3 1) true)
+((tried right 1 1 2 2) true)
+((tried right 2 2 1 1) true)
+((tried right 3 0 0 3) true)
+)

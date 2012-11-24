@@ -1,0 +1,76 @@
+<title>Any-TF Matrix Server</title>
+
+<!--
+  Updated: Sat Sep  4 19:33:45 1999 by Jeff Dalton
+  -->
+
+<body bgcolor=White>
+
+<h1>Any-TF Matrix Server</h1>
+
+<!-- Now a form -->
+
+<p>
+<form
+ action="matrix-server.cgi/join/any-tf-matrix"
+ method=post>
+
+<table>
+
+<tr>
+<td>TF file:</td>
+<td colspan=2>
+  <select name="tf-file" size=1>
+    <option>Eusat
+    <option>Gpdt3-web-demo
+    <option>House-1
+    <option selected>House-4
+    <option>House-4_
+    <option>Island-rescue-web-demo
+    <option>Mission
+    <option>Mission-forward-meta
+    <option>MOUT1
+    <option>Pacifica-3
+    <option>SUO-0
+    <option>San-Roberto-Thread-2
+    <option>Space-platform
+    <option>Space-platform-2
+    <option>Trains-1
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Session:</td> <td><input size=12 name="session"></td>
+<td>User role:
+  <select name="role" size=1>
+    <option>Task-Assigner
+    <option>Planner
+    <option selected>Both Task-Assigner and Planner
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type=password size=12 name="password" value="test"></td>
+<td><input type="submit" value="Begin">
+    <input type="reset" value="Undo changes"></td>
+</tr>
+
+</table>
+
+</form>
+
+
+<!-- O-Plan's standard AIAI page foot -->
+
+<p>
+<hr>
+<A HREF="/">
+<img width=82 height=37 alt="AIAI"
+      align=right border=0 src="/img/logo/small.gif">
+</A>
+<Address><A HREF="/~oplan">O-Plan</A></Address>
+
+</body>

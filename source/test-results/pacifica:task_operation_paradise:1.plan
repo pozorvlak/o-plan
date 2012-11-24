@@ -1,0 +1,444 @@
+
+;;; Statistics:
+(
+(:am-cycles . 85)
+(:n-alts-chosen . 2)
+(:n-alts-remaining . 10)
+(:n-poisons . 2)
+)
+
+;;; Action levels:
+(
+(drive . 2)
+(fly_passengers . 1)
+(fly_transport . 1)
+(load . 2)
+(task_operation_blue_lagoon . 0)
+(task_operation_castaway . 0)
+(task_operation_paradise . 0)
+(transport . 1)
+(unload . 2)
+)
+
+;;; Effect levels:
+(
+(at . 2)
+(country . 0)
+(in_use_for . 2)
+(nationals . 1)
+(people_at_poe_from . 1)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-8 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   nil
+   nil
+   ((node-6 :begin) (node-5 :begin) (node-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fly_transport honolulu delta)
+)
+(node-4
+   ((node-3 :end))
+   ((node-4-1 :begin))
+   ((node-4-4 :end))
+   ((node-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (transport abyss delta)
+)
+(node-4-1
+   ((node-6-4 :end) (node-6-4 :begin) (node-6-1 :begin) (node-4 :begin))
+   nil
+   nil
+   ((node-4-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (drive gt1 abyss)
+)
+(node-4-2
+   ((node-4-1 :end))
+   nil
+   nil
+   ((node-4-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (load gt1 abyss)
+)
+(node-4-3
+   ((node-4-2 :end))
+   nil
+   nil
+   ((node-4-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (drive gt1 delta)
+)
+(node-4-4
+   ((node-4-3 :end))
+   nil
+   nil
+   ((node-4 :end))
+   (0 :inf 0 :inf)
+   action
+   (unload gt1 delta)
+)
+(node-5
+   ((node-3 :end))
+   ((node-5-1 :begin))
+   ((node-5-4 :end))
+   ((node-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (transport barnacle delta)
+)
+(node-5-1
+   ((node-5 :begin))
+   nil
+   nil
+   ((node-5-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (drive gt2 barnacle)
+)
+(node-5-2
+   ((node-5-1 :end))
+   nil
+   nil
+   ((node-5-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (load gt2 barnacle)
+)
+(node-5-3
+   ((node-5-2 :end))
+   nil
+   nil
+   ((node-5-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (drive gt2 delta)
+)
+(node-5-4
+   ((node-5-3 :end))
+   nil
+   nil
+   ((node-5 :end))
+   (0 :inf 0 :inf)
+   action
+   (unload gt2 delta)
+)
+(node-6
+   ((node-3 :end))
+   ((node-6-1 :begin))
+   ((node-6-4 :end))
+   ((node-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (transport calypso delta)
+)
+(node-6-1
+   ((node-6 :begin))
+   ((node-4-1 :begin))
+   nil
+   ((node-6-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (drive gt1 calypso)
+)
+(node-6-2
+   ((node-6-1 :end))
+   nil
+   nil
+   ((node-6-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (load gt1 calypso)
+)
+(node-6-3
+   ((node-6-2 :end))
+   nil
+   nil
+   ((node-6-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (drive gt1 delta)
+)
+(node-6-4
+   ((node-6-3 :end))
+   ((node-4-1 :begin))
+   nil
+   ((node-4-1 :begin) (node-6 :end))
+   (0 :inf 0 :inf)
+   action
+   (unload gt1 delta)
+)
+(node-7
+   ((node-6 :end) (node-5 :end) (node-4 :end))
+   nil
+   nil
+   ((node-8 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fly_passengers delta honolulu)
+)
+(node-8
+   ((node-7 :end))
+   nil
+   nil
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fly_transport delta honolulu)
+)
+)
+
+;;; TOME:
+(
+((tome (at b707) (node-1 :end)) delta)
+((tome (at b707) (node-7 :end)) honolulu)
+((tome (at c5) (node-1 :end)) honolulu)
+((tome (at c5) (node-3 :end)) delta)
+((tome (at c5) (node-8 :end)) honolulu)
+((tome (at gt1) (node-1 :end)) honolulu)
+((tome (at gt1) (node-3 :end)) delta)
+((tome (at gt1) (node-4-1 :end)) abyss)
+((tome (at gt1) (node-4-3 :end)) delta)
+((tome (at gt1) (node-6-1 :end)) calypso)
+((tome (at gt1) (node-6-3 :end)) delta)
+((tome (at gt1) (node-8 :end)) honolulu)
+((tome (at gt2) (node-1 :end)) honolulu)
+((tome (at gt2) (node-3 :end)) delta)
+((tome (at gt2) (node-5-1 :end)) barnacle)
+((tome (at gt2) (node-5-3 :end)) delta)
+((tome (at gt2) (node-8 :end)) honolulu)
+((tome (at gt3) (node-1 :end)) delta)
+((tome (country abyss) :always) pacifica)
+((tome (country barnacle) :always) pacifica)
+((tome (country calypso) :always) pacifica)
+((tome (country delta) :always) pacifica)
+((tome (country honolulu) :always) hawaii_usa)
+((tome (in_use_for gt1) (node-1 :end)) in_transit)
+((tome (in_use_for gt1) (node-3 :begin)) in_transit)
+((tome (in_use_for gt1) (node-3 :end)) available)
+((tome (in_use_for gt1) (node-4-1 :begin)) abyss)
+((tome (in_use_for gt1) (node-4-4 :end)) available)
+((tome (in_use_for gt1) (node-6-1 :begin)) calypso)
+((tome (in_use_for gt1) (node-6-4 :end)) available)
+((tome (in_use_for gt1) (node-8 :begin)) in_transit)
+((tome (in_use_for gt1) (node-8 :end)) available)
+((tome (in_use_for gt2) (node-1 :end)) in_transit)
+((tome (in_use_for gt2) (node-3 :begin)) in_transit)
+((tome (in_use_for gt2) (node-3 :end)) available)
+((tome (in_use_for gt2) (node-5-1 :begin)) barnacle)
+((tome (in_use_for gt2) (node-5-4 :end)) available)
+((tome (in_use_for gt2) (node-8 :begin)) in_transit)
+((tome (in_use_for gt2) (node-8 :end)) available)
+((tome (in_use_for gt3) (node-1 :end)) available)
+((tome (nationals out) (node-7 :end)) true)
+((tome (people_at_poe_from abyss) (node-1 :end)) 0)
+((tome (people_at_poe_from abyss) (node-4-4 :end)) 50)
+((tome (people_at_poe_from abyss) (node-7 :end)) 0)
+((tome (people_at_poe_from barnacle) (node-1 :end)) 0)
+((tome (people_at_poe_from barnacle) (node-5-4 :end)) 50)
+((tome (people_at_poe_from barnacle) (node-7 :end)) 0)
+((tome (people_at_poe_from calypso) (node-1 :end)) 0)
+((tome (people_at_poe_from calypso) (node-6-4 :end)) 50)
+((tome (people_at_poe_from calypso) (node-7 :end)) 0)
+)
+
+;;; GOST:
+(
+((gost achievable (at c5) delta (node-8 :begin))
+   (((node-3 :end) . :already-satisfied))
+)
+((gost achievable (at c5) honolulu (node-3 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost only_use_if (country abyss) pacifica (node-4 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (country barnacle) pacifica (node-5 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (country calypso) pacifica (node-6 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (country delta) pacifica (node-4 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (country delta) pacifica (node-5 :begin))
+   ((:always . :already-satisfied))
+)
+((gost only_use_if (country delta) pacifica (node-6 :begin))
+   ((:always . :already-satisfied))
+)
+((gost supervised (in_use_for gt1) abyss (node-4-4 :begin))
+   (((node-4-1 :begin) . :none))
+)
+((gost supervised (in_use_for gt1) calypso (node-6-4 :begin))
+   (((node-6-1 :begin) . :link-with-bindings))
+)
+((gost supervised (in_use_for gt2) barnacle (node-5-4 :begin))
+   (((node-5-1 :begin) . :link-with-bindings))
+)
+((gost unsupervised (at gt1) abyss (node-4-2 :begin))
+   (((node-4-1 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt1) calypso (node-6-2 :begin))
+   (((node-6-1 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt1) delta (node-4-1 :begin))
+   (((node-6-3 :end) . :by-bindings))
+)
+((gost unsupervised (at gt1) delta (node-4-4 :begin))
+   (((node-4-3 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt1) delta (node-6-1 :begin))
+   (((node-3 :end) . :by-bindings))
+)
+((gost unsupervised (at gt1) delta (node-6-4 :begin))
+   (((node-6-3 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt1) delta (node-8 :begin))
+   (((node-4-3 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt1) honolulu (node-3 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt2) barnacle (node-5-2 :begin))
+   (((node-5-1 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt2) delta (node-5-1 :begin))
+   (((node-3 :end) . :by-bindings))
+)
+((gost unsupervised (at gt2) delta (node-5-4 :begin))
+   (((node-5-3 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt2) delta (node-8 :begin))
+   (((node-5-3 :end) . :already-satisfied))
+)
+((gost unsupervised (at gt2) honolulu (node-3 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (country delta) pacifica (node-4-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost unsupervised (country delta) pacifica (node-5-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost unsupervised (country delta) pacifica (node-6-1 :begin))
+   ((:always . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) abyss (node-4-2 :begin))
+   (((node-4-1 :begin) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) available (node-4-1 :begin))
+   (((node-6-4 :end) . :by-bindings))
+)
+((gost unsupervised (in_use_for gt1) available (node-6-1 :begin))
+   (((node-3 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) available (node-8 :begin))
+   (((node-4-4 :end) . :by-bindings))
+)
+((gost unsupervised (in_use_for gt1) calypso (node-6-2 :begin))
+   (((node-6-1 :begin) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt1) in_transit (node-3 :begin))
+   (((node-1 :end) . :by-bindings))
+)
+((gost unsupervised (in_use_for gt2) available (node-5-1 :begin))
+   (((node-3 :end) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt2) available (node-8 :begin))
+   (((node-5-4 :end) . :by-bindings))
+)
+((gost unsupervised (in_use_for gt2) barnacle (node-5-2 :begin))
+   (((node-5-1 :begin) . :already-satisfied))
+)
+((gost unsupervised (in_use_for gt2) in_transit (node-3 :begin))
+   (((node-1 :end) . :by-bindings))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 transport_use in_transit nil (in_transit available))
+(psv-2 transport_use in_transit nil (in_transit available))
+(psv-3 air_base delta nil (delta honolulu))
+(psv-4 ground_transport gt1 (psv-6) (gt1))
+(psv-5 air_base delta nil (delta honolulu))
+(psv-6 ground_transport gt2 (psv-8 psv-4) (gt2))
+(psv-7 air_base delta nil (delta honolulu))
+(psv-8 ground_transport gt1 (psv-6) (gt1))
+(psv-9 transport_use available nil (in_transit available))
+(psv-10 transport_use available nil (in_transit available))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-1)
+(psv-2)
+(psv-3)
+(psv-5)
+(psv-6)
+(psv-7)
+(psv-4 psv-8)
+(psv-9)
+(psv-10)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+((country abyss) pacifica)
+((country barnacle) pacifica)
+((country calypso) pacifica)
+((country delta) pacifica)
+((country honolulu) hawaii_usa)
+)
+
+;;; World at end of node-2:
+(
+((at b707) honolulu)
+((at c5) honolulu)
+((at gt1) honolulu)
+((at gt2) honolulu)
+((at gt3) delta)
+((country abyss) pacifica)
+((country barnacle) pacifica)
+((country calypso) pacifica)
+((country delta) pacifica)
+((country honolulu) hawaii_usa)
+((in_use_for gt1) available)
+((in_use_for gt2) available)
+((in_use_for gt3) available)
+((nationals out) true)
+((people_at_poe_from abyss) 0)
+((people_at_poe_from barnacle) 0)
+((people_at_poe_from calypso) 0)
+)

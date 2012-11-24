@@ -1,0 +1,81 @@
+plan
+
+  node
+    node-1 
+    nil 
+    (end_of node-1) 
+    (begin_of node-1) 
+    (begin_of node-3) 
+    (28800 28800 28800 :inf 0 :inf) 
+    start 
+    "" 
+  end_node
+
+  node
+    node-2 
+    (end_of node-3) 
+    (end_of node-2) 
+    (begin_of node-2) 
+    nil 
+    (30420 :inf 30420 :inf 0 :inf) 
+    finish 
+    "" 
+  end_node
+
+  node
+    node-3 
+    (end_of node-1) 
+    (end_of node-3 begin_of node-3-1) 
+    (begin_of node-3 end_of node-3-4) 
+    (begin_of node-2) 
+    (28800 :inf 30420 :inf 0 :inf) 
+    action 
+    "(get_to_work self)" 
+  end_node
+
+  node
+    node-3-1 
+    (begin_of node-3) 
+    (end_of node-3-1) 
+    (begin_of node-3-1) 
+    (begin_of node-3-3 begin_of node-3-2) 
+    (28800 :inf 29400 :inf 0 :inf) 
+    action 
+    "(get_dressed)" 
+  end_node
+
+  node
+    node-3-2 
+    (end_of node-3-1) 
+    (end_of node-3-2) 
+    (begin_of node-3-2) 
+    (begin_of node-3-4) 
+    (29400 :inf 29460 :inf 0 :inf) 
+    action 
+    "(read_paper)" 
+  end_node
+
+  node
+    node-3-3 
+    (end_of node-3-1) 
+    (end_of node-3-3) 
+    (begin_of node-3-3) 
+    (begin_of node-3-4) 
+    (29400 :inf 29520 :inf 0 :inf) 
+    action 
+    "(eat_breakfast)" 
+  end_node
+
+  node
+    node-3-4 
+    (end_of node-3-3 end_of node-3-2) 
+    (end_of node-3-4) 
+    (begin_of node-3-4) 
+    (end_of node-3) 
+    (29520 :inf 30420 :inf 0 :inf) 
+    action 
+    "(go_to work)" 
+  end_node
+
+end_plan
+

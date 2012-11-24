@@ -1,0 +1,857 @@
+<html><head><title>
+   Plan for gpdt3-web-demo:do_all_task_types_rain</title></head><body><h1>
+   Plan for gpdt3-web-demo:do_all_task_types_rain</h1><dl>
+   
+   <dt><b>node </b><i>node-1</i> <b>start</b> <i></i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-1</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-1</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-14,</i></dd>
+            <dd><b>begin of </b><i>node-13,</i></dd>
+            <dd><b>begin of </b><i>node-12,</i></dd>
+            <dd><b>begin of </b><i>node-11,</i></dd>
+            <dd><b>begin of </b><i>node-10,</i></dd>
+            <dd><b>begin of </b><i>node-9,</i></dd>
+            <dd><b>begin of </b><i>node-8,</i></dd>
+            <dd><b>begin of </b><i>node-7,</i></dd>
+            <dd><b>begin of </b><i>node-6,</i></dd>
+            <dd><b>begin of </b><i>node-5,</i></dd>
+            <dd><b>begin of </b><i>node-4,</i></dd>
+            <dd><b>begin of </b><i>node-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-2</i> <b>finish</b> <i></i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-2</i></dt><dd><b>time window </b><i>72000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-14,</i></dd>
+            <dd><b>end of </b><i>node-13,</i></dd>
+            <dd><b>end of </b><i>node-12,</i></dd>
+            <dd><b>end of </b><i>node-11,</i></dd>
+            <dd><b>end of </b><i>node-10,</i></dd>
+            <dd><b>end of </b><i>node-9,</i></dd>
+            <dd><b>end of </b><i>node-8,</i></dd>
+            <dd><b>end of </b><i>node-7,</i></dd>
+            <dd><b>end of </b><i>node-6,</i></dd>
+            <dd><b>end of </b><i>node-5,</i></dd>
+            <dd><b>end of </b><i>node-4,</i></dd>
+            <dd><b>end of </b><i>node-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-2</i></dt><dd><b>time window </b><i>72000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3</i> <b>action</b> <i>(evacuate_injured abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3,</i></dd>
+            <dd><b>begin of </b><i>node-3-1,</i></dd>
+            <dd><b>begin of </b><i>node-3-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3</i></dt><dd><b>time window </b><i>14400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3,</i></dd>
+            <dd><b>end of </b><i>node-3-5;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-1</i> <b>action</b> <i>(transport_by_air h2 mt1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-1</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-1</i></dt><dd><b>time window </b><i>3600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-4-1,</i></dd>
+            <dd><b>begin of </b><i>node-3-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-2</i> <b>action</b> <i>(transport_by_air h1 me1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-2</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-2</i></dt><dd><b>time window </b><i>3600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-3-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-3</i> <b>action</b> <i>(deal_with_injured mt1 me1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-3</i></dt><dd><b>time window </b><i>3600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-2,</i></dd>
+            <dd><b>end of </b><i>node-3-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-3</i></dt><dd><b>time window </b><i>7200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-3-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-4</i> <b>action</b> <i>(load_injured mt1 h1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-4</i></dt><dd><b>time window </b><i>7200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-4;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-4</i></dt><dd><b>time window </b><i>10800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-3-5;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-3-5</i> <b>action</b> <i>(move_injured_by_air h1 abyss delta)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-3-5</i></dt><dd><b>time window </b><i>10800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-3-5;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-3-5</i></dt><dd><b>time window </b><i>14400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-3-5;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-5-1,</i></dd>
+            <dd><b>end of </b><i>node-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-4</i> <b>action</b> <i>(evacuate_population abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-4</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-4,</i></dd>
+            <dd><b>begin of </b><i>node-4-1,</i></dd>
+            <dd><b>begin of </b><i>node-4-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-4</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-4,</i></dd>
+            <dd><b>end of </b><i>node-4-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-4-1</i> <b>action</b> <i>(transport_by_air h2 et1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-4-1</i></dt><dd><b>time window </b><i>3600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-1,</i></dd>
+            <dd><b>begin of </b><i>node-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-4-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-4-1</i></dt><dd><b>time window </b><i>7200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-4-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-5-2,</i></dd>
+            <dd><b>begin of </b><i>node-4-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-4-2</i> <b>action</b> <i>(send_fleet_of_trucks ft2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-4-2</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-4-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-4-2</i></dt><dd><b>time window </b><i>14400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-4-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-4-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-4-3</i> <b>action</b> <i>(load_population et1 ft2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-4-3</i></dt><dd><b>time window </b><i>14400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-4-2,</i></dd>
+            <dd><b>end of </b><i>node-4-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-4-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-4-3</i></dt><dd><b>time window </b><i>21600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-4-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-4-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-4-4</i> <b>action</b> <i>(move_population ft2 abyss delta)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-4-4</i></dt><dd><b>time window </b><i>21600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-4-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-4-4;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-4-4</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-4-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-11-3,</i></dd>
+            <dd><b>end of </b><i>node-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5</i> <b>action</b> <i>(evacuate_with_medical_team abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5,</i></dd>
+            <dd><b>begin of </b><i>node-5-1,</i></dd>
+            <dd><b>begin of </b><i>node-5-2,</i></dd>
+            <dd><b>begin of </b><i>node-5-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5</i></dt><dd><b>time window </b><i>46800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5,</i></dd>
+            <dd><b>end of </b><i>node-5-7,</i></dd>
+            <dd><b>end of </b><i>node-5-8;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-1</i> <b>action</b> <i>(transport_by_air h1 mt2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-1</i></dt><dd><b>time window </b><i>14400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-3-5,</i></dd>
+            <dd><b>begin of </b><i>node-5;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-1</i></dt><dd><b>time window </b><i>18000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-6-1,</i></dd>
+            <dd><b>begin of </b><i>node-5-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-2</i> <b>action</b> <i>(transport_by_air h2 me2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-2</i></dt><dd><b>time window </b><i>7200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-4-1,</i></dd>
+            <dd><b>begin of </b><i>node-5;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-2</i></dt><dd><b>time window </b><i>10800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-5-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-3</i> <b>action</b> <i>(send_fleet_of_trucks ft1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-3</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-3</i></dt><dd><b>time window </b><i>14400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-5-6;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-4</i> <b>action</b> <i>(deal_with_injured mt2 me2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-4</i></dt><dd><b>time window </b><i>18000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-5-2,</i></dd>
+            <dd><b>end of </b><i>node-5-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-4;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-4</i></dt><dd><b>time window </b><i>21600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-5-5;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-5</i> <b>action</b> <i>(load_injured mt2 h2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-5</i></dt><dd><b>time window </b><i>21600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-5-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-5;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-5</i></dt><dd><b>time window </b><i>25200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-5;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-5-7,</i></dd>
+            <dd><b>begin of </b><i>node-5-6;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-6</i> <b>action</b> <i>(load_population mt2 ft1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-6</i></dt><dd><b>time window </b><i>25200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-5-5,</i></dd>
+            <dd><b>end of </b><i>node-5-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-6;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-6</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-6;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-5-8;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-7</i> <b>action</b> <i>(move_injured_by_air h2 abyss delta)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-7</i></dt><dd><b>time window </b><i>25200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-5-5;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-7;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-7</i></dt><dd><b>time window </b><i>28800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-7;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-7-1,</i></dd>
+            <dd><b>end of </b><i>node-5;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-5-8</i> <b>action</b> <i>(move_population ft1 abyss delta)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-5-8</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-5-6;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5-8;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-5-8</i></dt><dd><b>time window </b><i>46800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-5-8;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-5;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-6</i> <b>action</b> <i>(send_medical_supplies abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-6</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-6,</i></dd>
+            <dd><b>begin of </b><i>node-6-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-6</i></dt><dd><b>time window </b><i>21600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-6,</i></dd>
+            <dd><b>end of </b><i>node-6-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-6-1</i> <b>action</b> <i>(transport_by_air h1 ms1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-6-1</i></dt><dd><b>time window </b><i>18000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-5-1,</i></dd>
+            <dd><b>begin of </b><i>node-6;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-6-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-6-1</i></dt><dd><b>time window </b><i>21600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-6-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-8-1,</i></dd>
+            <dd><b>end of </b><i>node-6;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-7</i> <b>action</b> <i>(send_emergency_food abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-7</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-7,</i></dd>
+            <dd><b>begin of </b><i>node-7-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-7</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-7,</i></dd>
+            <dd><b>end of </b><i>node-7-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-7-1</i> <b>action</b> <i>(transport_by_air h2 ef1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-7-1</i></dt><dd><b>time window </b><i>28800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-5-7,</i></dd>
+            <dd><b>begin of </b><i>node-7;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-7-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-7-1</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-7-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-8-2,</i></dd>
+            <dd><b>end of </b><i>node-7;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-8</i> <b>action</b> <i>(send_medical_team abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-8</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-8,</i></dd>
+            <dd><b>begin of </b><i>node-8-1,</i></dd>
+            <dd><b>begin of </b><i>node-8-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-8</i></dt><dd><b>time window </b><i>39600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-8,</i></dd>
+            <dd><b>end of </b><i>node-8-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-8-1</i> <b>action</b> <i>(transport_by_air h1 mt3 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-8-1</i></dt><dd><b>time window </b><i>21600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-6-1,</i></dd>
+            <dd><b>begin of </b><i>node-8;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-8-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-8-1</i></dt><dd><b>time window </b><i>25200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-8-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-9-1,</i></dd>
+            <dd><b>begin of </b><i>node-8-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-8-2</i> <b>action</b> <i>(transport_by_air h2 me3 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-8-2</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-7-1,</i></dd>
+            <dd><b>begin of </b><i>node-8;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-8-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-8-2</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-8-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-9-2,</i></dd>
+            <dd><b>begin of </b><i>node-8-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-8-3</i> <b>action</b> <i>(deal_with_injured mt3 me3 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-8-3</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-8-2,</i></dd>
+            <dd><b>end of </b><i>node-8-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-8-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-8-3</i></dt><dd><b>time window </b><i>39600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-8-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-8;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-9</i> <b>action</b> <i>(repair_gas_leak abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-9</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-9,</i></dd>
+            <dd><b>begin of </b><i>node-9-1,</i></dd>
+            <dd><b>begin of </b><i>node-9-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-9</i></dt><dd><b>time window </b><i>54000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-9,</i></dd>
+            <dd><b>end of </b><i>node-9-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-9-1</i> <b>action</b> <i>(transport_by_air h1 rt1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-9-1</i></dt><dd><b>time window </b><i>25200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-8-1,</i></dd>
+            <dd><b>begin of </b><i>node-9;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-9-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-9-1</i></dt><dd><b>time window </b><i>28800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-9-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-10-1,</i></dd>
+            <dd><b>begin of </b><i>node-9-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-9-2</i> <b>action</b> <i>(transport_by_air h2 re1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-9-2</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-8-2,</i></dd>
+            <dd><b>begin of </b><i>node-9;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-9-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-9-2</i></dt><dd><b>time window </b><i>39600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-9-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-11-1,</i></dd>
+            <dd><b>begin of </b><i>node-9-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-9-3</i> <b>action</b> <i>(fix_gas_leak rt1 re1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-9-3</i></dt><dd><b>time window </b><i>39600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-9-2,</i></dd>
+            <dd><b>end of </b><i>node-9-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-9-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-9-3</i></dt><dd><b>time window </b><i>50400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-9-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-9-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-9-4</i> <b>action</b> <i>(restart_power_station rt1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-9-4</i></dt><dd><b>time window </b><i>50400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-9-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-9-4;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-9-4</i></dt><dd><b>time window </b><i>54000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-9-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-9;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-10</i> <b>action</b> <i>(defuse_terrorist_bomb abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-10</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-10,</i></dd>
+            <dd><b>begin of </b><i>node-10-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-10</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-10,</i></dd>
+            <dd><b>end of </b><i>node-10-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-10-1</i> <b>action</b> <i>(transport_by_air h1 bs1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-10-1</i></dt><dd><b>time window </b><i>28800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-9-1,</i></dd>
+            <dd><b>begin of </b><i>node-10;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-10-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-10-1</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-10-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-11-2,</i></dd>
+            <dd><b>begin of </b><i>node-10-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-10-2</i> <b>action</b> <i>(defuse_bomb bs1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-10-2</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-10-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-10-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-10-2</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-10-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-10;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-11</i> <b>action</b> <i>(build_emergency_housing abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-11</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-11,</i></dd>
+            <dd><b>begin of </b><i>node-11-1,</i></dd>
+            <dd><b>begin of </b><i>node-11-2,</i></dd>
+            <dd><b>begin of </b><i>node-11-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-11</i></dt><dd><b>time window </b><i>72000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-11,</i></dd>
+            <dd><b>end of </b><i>node-11-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-11-1</i> <b>action</b> <i>(transport_by_air h2 bt1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-11-1</i></dt><dd><b>time window </b><i>39600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-9-2,</i></dd>
+            <dd><b>begin of </b><i>node-11;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-11-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-11-1</i></dt><dd><b>time window </b><i>43200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-11-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-12-1,</i></dd>
+            <dd><b>begin of </b><i>node-11-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-11-2</i> <b>action</b> <i>(transport_by_air h1 be1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-11-2</i></dt><dd><b>time window </b><i>32400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-10-1,</i></dd>
+            <dd><b>begin of </b><i>node-11;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-11-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-11-2</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-11-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-12-2,</i></dd>
+            <dd><b>begin of </b><i>node-11-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-11-3</i> <b>action</b> <i>(transport_in_trucks ft2 hk1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-11-3</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-4-4,</i></dd>
+            <dd><b>begin of </b><i>node-11;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-11-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-11-3</i></dt><dd><b>time window </b><i>50400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-11-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-11-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-11-4</i> <b>action</b> <i>(build_houses bt1 be1 hk1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-11-4</i></dt><dd><b>time window </b><i>50400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-11-3,</i></dd>
+            <dd><b>end of </b><i>node-11-2,</i></dd>
+            <dd><b>end of </b><i>node-11-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-11-4;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-11-4</i></dt><dd><b>time window </b><i>72000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-11-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-11;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-12</i> <b>action</b> <i>(repair_power_station_turbine abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-12</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-12,</i></dd>
+            <dd><b>begin of </b><i>node-12-1,</i></dd>
+            <dd><b>begin of </b><i>node-12-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-12</i></dt><dd><b>time window </b><i>61200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-12,</i></dd>
+            <dd><b>end of </b><i>node-12-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-12-1</i> <b>action</b> <i>(transport_by_air h2 rt2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-12-1</i></dt><dd><b>time window </b><i>43200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-11-1,</i></dd>
+            <dd><b>begin of </b><i>node-12;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-12-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-12-1</i></dt><dd><b>time window </b><i>46800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-12-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-13-1,</i></dd>
+            <dd><b>begin of </b><i>node-12-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-12-2</i> <b>action</b> <i>(transport_by_air h1 re2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-12-2</i></dt><dd><b>time window </b><i>36000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-11-2,</i></dd>
+            <dd><b>begin of </b><i>node-12;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-12-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-12-2</i></dt><dd><b>time window </b><i>39600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-12-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-14-1,</i></dd>
+            <dd><b>begin of </b><i>node-12-3;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-12-3</i> <b>action</b> <i>(fix_turbine rt2 re2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-12-3</i></dt><dd><b>time window </b><i>46800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-12-2,</i></dd>
+            <dd><b>end of </b><i>node-12-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-12-3;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-12-3</i></dt><dd><b>time window </b><i>57600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-12-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-12-4;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-12-4</i> <b>action</b> <i>(restart_power_station rt2 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-12-4</i></dt><dd><b>time window </b><i>57600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-12-3;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-12-4;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-12-4</i></dt><dd><b>time window </b><i>61200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-12-4;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-12;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-13</i> <b>action</b> <i>(provide_immediate_assistance abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-13</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-13,</i></dd>
+            <dd><b>begin of </b><i>node-13-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-13</i></dt><dd><b>time window </b><i>54000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-13,</i></dd>
+            <dd><b>end of </b><i>node-13-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-13-1</i> <b>action</b> <i>(transport_by_air h2 cdr1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-13-1</i></dt><dd><b>time window </b><i>46800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-12-1,</i></dd>
+            <dd><b>begin of </b><i>node-13;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-13-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-13-1</i></dt><dd><b>time window </b><i>50400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-13-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-13-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-13-2</i> <b>action</b> <i>(deal_with_crisis cdr1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-13-2</i></dt><dd><b>time window </b><i>50400..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-13-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-13-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-13-2</i></dt><dd><b>time window </b><i>54000..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-13-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-13;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-14</i> <b>action</b> <i>(shut_down_power_station abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-14</i></dt><dd><b>time window </b><i>0..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-14,</i></dd>
+            <dd><b>begin of </b><i>node-14-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-14</i></dt><dd><b>time window </b><i>46800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-14,</i></dd>
+            <dd><b>end of </b><i>node-14-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-14-1</i> <b>action</b> <i>(transport_by_air h1 eng1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-14-1</i></dt><dd><b>time window </b><i>39600..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-12-2,</i></dd>
+            <dd><b>begin of </b><i>node-14;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-14-1;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-14-1</i></dt><dd><b>time window </b><i>43200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-14-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>begin of </b><i>node-14-2;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+   <dt><b>node </b><i>node-14-2</i> <b>action</b> <i>(shut_down_power eng1 abyss)</i></dt><dd>
+      
+      <dl><dt><b>begin of </b><i>node-14-2</i></dt><dd><b>time window </b><i>43200..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>end of </b><i>node-14-1;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-14-2;</i></dd>
+         </dl></dd></dl>
+      <dl><dt><b>end of </b><i>node-14-2</i></dt><dd><b>time window </b><i>46800..inf;</i></dd><dd><b>after</b><dl>
+            <dd><b>begin of </b><i>node-14-2;</i></dd>
+         </dl></dd><dd><b>before</b><dl>
+            <dd><b>end of </b><i>node-14;</i></dd>
+         </dl></dd></dl>
+   </dd>
+   
+</dl></body></html>

@@ -1,0 +1,7 @@
+       INCLUDES = -I$(TOP)
+        DEPLIBS = XawClientDepLibs
+LOCAL_LIBRARIES = XawClientLibs
+           SRCS = xuim.c
+           OBJS = xuim.o
+
+SimpleProgramTarget(xuim)

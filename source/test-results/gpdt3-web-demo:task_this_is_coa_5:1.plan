@@ -1,0 +1,1734 @@
+
+;;; Statistics:
+(
+(:am-cycles . 227)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 48)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(assess_situation . 3)
+(brief_driver . 3)
+(brief_drivers . 3)
+(brief_pilot . 3)
+(build_emergency_housing . 1)
+(build_houses . 2)
+(check_for_further_casualties . 3)
+(check_gas_system . 3)
+(check_injured_are_ok . 3)
+(check_injured_in_transit . 3)
+(check_item . 3)
+(check_people_in_transit . 3)
+(check_seal . 3)
+(check_turbines . 3)
+(check_vehicle . 3)
+(contact_local_forces . 3)
+(deal_with_crisis . 2)
+(deal_with_injured . 2)
+(defuse_bomb . 2)
+(defuse_terrorist_bomb . 1)
+(evacuate_injured . 1)
+(evacuate_population . 1)
+(evacuate_with_medical_team . 1)
+(fast_transport . 2)
+(fix_gas_leak . 2)
+(fix_turbine . 2)
+(fix_turbine_problem . 3)
+(flush_gas_system . 3)
+(fuel_vehicle . 3)
+(give_first_aid . 3)
+(group_people_for_evacuation . 3)
+(lay_foundations . 3)
+(load_groups_onto_trucks . 3)
+(load_injured . 2)
+(load_injured_onto_stretchers . 3)
+(load_item . 3)
+(load_population . 2)
+(load_stretchers_into_vehicle . 3)
+(locate_bomb . 3)
+(locate_leaks . 3)
+(locate_turbine_problem . 3)
+(move_injured_by_air . 2)
+(move_injured_by_road . 2)
+(move_item . 3)
+(move_population . 2)
+(move_to_item . 3)
+(move_vehicle . 3)
+(move_vehicles . 3)
+(pack_equipment . 3)
+(prepare_house_kits . 3)
+(prepare_new_pipe . 3)
+(prepare_sealant . 3)
+(prepare_site_for_repair . 3)
+(prepare_stretchers . 3)
+(provide_immediate_assistance . 1)
+(put_doors_in . 3)
+(put_roof_on . 3)
+(put_walls_up . 3)
+(put_windows_in . 3)
+(radio_back_to_base . 3)
+(remove_other_detonators . 3)
+(remove_primary_detonator . 3)
+(repair_gas_leak . 1)
+(repair_power_station_turbine . 1)
+(restart_controller . 3)
+(restart_power_station . 2)
+(restart_turbine . 3)
+(seal_leak_in_pipe . 3)
+(send_emergency_food . 1)
+(send_fleet_of_trucks . 2)
+(send_medical_supplies . 1)
+(send_medical_team . 1)
+(shut_down_controller . 3)
+(shut_down_power . 2)
+(shut_down_power_station . 1)
+(shut_down_turbines . 3)
+(slow_transport . 2)
+(task_do_all_task_types_clear . 0)
+(task_do_all_task_types_rain . 0)
+(task_do_all_task_types_storm . 0)
+(task_effects_dummy . 0)
+(task_test_move_injured_by_road . 0)
+(task_this_is_coa_2 . 0)
+(task_this_is_coa_2_2 . 0)
+(task_this_is_coa_3 . 0)
+(task_this_is_coa_4 . 0)
+(task_this_is_coa_5 . 0)
+(task_this_is_coa_5_clear . 0)
+(transport_by_air . 2)
+(transport_in_trucks . 2)
+(unload_item . 3)
+)
+
+;;; Effect levels:
+(
+(available . 1)
+(empty_vehicle . 2)
+(location . 2)
+(road_status . 0)
+(weather . 0)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-8 :begin) (node-7 :begin) (node-6 :begin) (node-5 :begin) (node-4 :begin) (node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-8 :end) (node-7 :end) (node-6 :end) (node-5 :end) (node-4 :end) (node-3 :end))
+   nil
+   nil
+   nil
+   (75600 :inf 75600 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin) (node-3-2 :begin))
+   ((node-3-3 :end))
+   ((node-2 :begin))
+   (0 :inf 10800 :inf)
+   action
+   (send_medical_team abyss)
+)
+(node-3-1
+   ((node-3 :begin))
+   ((node-3-1-1 :begin) (node-3-1-2 :begin) (node-3-1-3 :begin))
+   ((node-3-1-8 :end) (node-3-1-9 :end))
+   ((node-4-1 :begin) (node-3-3 :begin))
+   (0 :inf 7200 :inf)
+   action
+   (fast_transport gt1 mt1 abyss)
+)
+(node-3-1-1
+   ((node-3-1 :begin))
+   nil
+   nil
+   ((node-3-1-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fuel_vehicle gt1)
+)
+(node-3-1-2
+   ((node-3-1 :begin))
+   nil
+   nil
+   ((node-3-1-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (check_vehicle gt1)
+)
+(node-3-1-3
+   ((node-3-1 :begin))
+   nil
+   nil
+   ((node-3-1-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (brief_driver gt1)
+)
+(node-3-1-4
+   ((node-3-1-3 :end) (node-3-1-2 :end) (node-3-1-1 :end))
+   nil
+   nil
+   ((node-3-1-6 :begin) (node-3-1-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move_to_item gt1 mt1)
+)
+(node-3-1-5
+   ((node-3-1-4 :end))
+   nil
+   nil
+   ((node-3-1-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (load_item gt1 mt1)
+)
+(node-3-1-6
+   ((node-3-1-4 :end))
+   nil
+   nil
+   ((node-3-1-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (check_item mt1)
+)
+(node-3-1-7
+   ((node-3-1-6 :end) (node-3-1-5 :end))
+   nil
+   nil
+   ((node-3-1-9 :begin) (node-3-1-8 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move_item gt1 mt1 abyss)
+)
+(node-3-1-8
+   ((node-3-1-7 :end))
+   nil
+   nil
+   ((node-3-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (unload_item gt1 mt1 abyss)
+)
+(node-3-1-9
+   ((node-3-1-7 :end))
+   nil
+   nil
+   ((node-3-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (check_item mt1)
+)
+(node-3-2
+   ((node-3 :begin))
+   ((node-3-2-1 :begin) (node-3-2-2 :begin) (node-3-2-3 :begin))
+   ((node-3-2-8 :end) (node-3-2-9 :end))
+   ((node-4-2 :begin) (node-3-3 :begin))
+   (0 :inf 7200 :inf)
+   action
+   (fast_transport gt2 me1 abyss)
+)
+(node-3-2-1
+   ((node-3-2 :begin))
+   nil
+   nil
+   ((node-3-2-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fuel_vehicle gt2)
+)
+(node-3-2-2
+   ((node-3-2 :begin))
+   nil
+   nil
+   ((node-3-2-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (check_vehicle gt2)
+)
+(node-3-2-3
+   ((node-3-2 :begin))
+   nil
+   nil
+   ((node-3-2-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (brief_driver gt2)
+)
+(node-3-2-4
+   ((node-3-2-3 :end) (node-3-2-2 :end) (node-3-2-1 :end))
+   nil
+   nil
+   ((node-3-2-6 :begin) (node-3-2-5 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move_to_item gt2 me1)
+)
+(node-3-2-5
+   ((node-3-2-4 :end))
+   nil
+   nil
+   ((node-3-2-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (load_item gt2 me1)
+)
+(node-3-2-6
+   ((node-3-2-4 :end))
+   nil
+   nil
+   ((node-3-2-7 :begin))
+   (0 :inf 0 :inf)
+   action
+   (check_item me1)
+)
+(node-3-2-7
+   ((node-3-2-6 :end) (node-3-2-5 :end))
+   nil
+   nil
+   ((node-3-2-9 :begin) (node-3-2-8 :begin))
+   (0 :inf 0 :inf)
+   action
+   (move_item gt2 me1 abyss)
+)
+(node-3-2-8
+   ((node-3-2-7 :end))
+   nil
+   nil
+   ((node-3-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (unload_item gt2 me1 abyss)
+)
+(node-3-2-9
+   ((node-3-2-7 :end))
+   nil
+   nil
+   ((node-3-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (check_item me1)
+)
+(node-3-3
+   ((node-3-2 :end) (node-3-1 :end))
+   ((node-3-3-1 :begin) (node-3-3-2 :begin) (node-3-3-3 :begin))
+   ((node-3-3-1 :end) (node-3-3-2 :end) (node-3-3-3 :end))
+   ((node-3 :end))
+   (7200 :inf 10800 :inf)
+   action
+   (deal_with_injured mt1 me1 abyss)
+)
+(node-3-3-1
+   ((node-3-3 :begin))
+   nil
+   nil
+   ((node-3-3 :end))
+   (7200 :inf 7200 :inf)
+   action
+   (give_first_aid mt1)
+)
+(node-3-3-2
+   ((node-3-3 :begin))
+   nil
+   nil
+   ((node-3-3 :end))
+   (7200 :inf 7200 :inf)
+   action
+   (prepare_stretchers mt1)
+)
+(node-3-3-3
+   ((node-3-3 :begin))
+   nil
+   nil
+   ((node-3-3 :end))
+   (7200 :inf 7200 :inf)
+   action
+   (check_for_further_casualties mt1)
+)
+(node-4
+   ((node-1 :end))
+   ((node-4-1 :begin) (node-4-2 :begin))
+   ((node-4-5 :end))
+   ((node-2 :begin))
+   (0 :inf 32400 :inf)
+   action
+   (evacuate_injured barnacle)
+)
+(node-4-1
+   ((node-3-1 :end) (node-4 :begin))
+   ((node-4-1-1 :begin) (node-4-1-2 :begin) (node-4-1-3 :begin))
+   ((node-4-1-8 :end) (node-4-1-9 :end))
+   ((node-5-1 :begin) (node-4-3 :begin))
+   (7200 :inf 14400 :inf)
+   action
+   (fast_transport gt1 mt2 barnacle)
+)
+(node-4-1-1
+   ((node-4-1 :begin))
+   nil
+   nil
+   ((node-4-1-4 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (fuel_vehicle gt1)
+)
+(node-4-1-2
+   ((node-4-1 :begin))
+   nil
+   nil
+   ((node-4-1-4 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (check_vehicle gt1)
+)
+(node-4-1-3
+   ((node-4-1 :begin))
+   nil
+   nil
+   ((node-4-1-4 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (brief_driver gt1)
+)
+(node-4-1-4
+   ((node-4-1-3 :end) (node-4-1-2 :end) (node-4-1-1 :end))
+   nil
+   nil
+   ((node-4-1-6 :begin) (node-4-1-5 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (move_to_item gt1 mt2)
+)
+(node-4-1-5
+   ((node-4-1-4 :end))
+   nil
+   nil
+   ((node-4-1-7 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (load_item gt1 mt2)
+)
+(node-4-1-6
+   ((node-4-1-4 :end))
+   nil
+   nil
+   ((node-4-1-7 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (check_item mt2)
+)
+(node-4-1-7
+   ((node-4-1-6 :end) (node-4-1-5 :end))
+   nil
+   nil
+   ((node-4-1-9 :begin) (node-4-1-8 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (move_item gt1 mt2 barnacle)
+)
+(node-4-1-8
+   ((node-4-1-7 :end))
+   nil
+   nil
+   ((node-4-1 :end))
+   (7200 :inf 7200 :inf)
+   action
+   (unload_item gt1 mt2 barnacle)
+)
+(node-4-1-9
+   ((node-4-1-7 :end))
+   nil
+   nil
+   ((node-4-1 :end))
+   (7200 :inf 7200 :inf)
+   action
+   (check_item mt2)
+)
+(node-4-2
+   ((node-3-2 :end) (node-4 :begin))
+   ((node-4-2-1 :begin) (node-4-2-2 :begin) (node-4-2-3 :begin))
+   ((node-4-2-8 :end) (node-4-2-9 :end))
+   ((node-4-3 :begin))
+   (7200 :inf 14400 :inf)
+   action
+   (fast_transport gt2 me2 barnacle)
+)
+(node-4-2-1
+   ((node-4-2 :begin))
+   nil
+   nil
+   ((node-4-2-4 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (fuel_vehicle gt2)
+)
+(node-4-2-2
+   ((node-4-2 :begin))
+   nil
+   nil
+   ((node-4-2-4 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (check_vehicle gt2)
+)
+(node-4-2-3
+   ((node-4-2 :begin))
+   nil
+   nil
+   ((node-4-2-4 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (brief_driver gt2)
+)
+(node-4-2-4
+   ((node-4-2-3 :end) (node-4-2-2 :end) (node-4-2-1 :end))
+   nil
+   nil
+   ((node-4-2-6 :begin) (node-4-2-5 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (move_to_item gt2 me2)
+)
+(node-4-2-5
+   ((node-4-2-4 :end))
+   nil
+   nil
+   ((node-4-2-7 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (load_item gt2 me2)
+)
+(node-4-2-6
+   ((node-4-2-4 :end))
+   nil
+   nil
+   ((node-4-2-7 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (check_item me2)
+)
+(node-4-2-7
+   ((node-4-2-6 :end) (node-4-2-5 :end))
+   nil
+   nil
+   ((node-4-2-9 :begin) (node-4-2-8 :begin))
+   (7200 :inf 7200 :inf)
+   action
+   (move_item gt2 me2 barnacle)
+)
+(node-4-2-8
+   ((node-4-2-7 :end))
+   nil
+   nil
+   ((node-4-2 :end))
+   (7200 :inf 7200 :inf)
+   action
+   (unload_item gt2 me2 barnacle)
+)
+(node-4-2-9
+   ((node-4-2-7 :end))
+   nil
+   nil
+   ((node-4-2 :end))
+   (7200 :inf 7200 :inf)
+   action
+   (check_item me2)
+)
+(node-4-3
+   ((node-4-2 :end) (node-4-1 :end))
+   ((node-4-3-1 :begin) (node-4-3-2 :begin) (node-4-3-3 :begin))
+   ((node-4-3-1 :end) (node-4-3-2 :end) (node-4-3-3 :end))
+   ((node-4-4 :begin))
+   (14400 :inf 18000 :inf)
+   action
+   (deal_with_injured mt2 me2 barnacle)
+)
+(node-4-3-1
+   ((node-4-3 :begin))
+   nil
+   nil
+   ((node-4-3 :end))
+   (14400 :inf 14400 :inf)
+   action
+   (give_first_aid mt2)
+)
+(node-4-3-2
+   ((node-4-3 :begin))
+   nil
+   nil
+   ((node-4-3 :end))
+   (14400 :inf 14400 :inf)
+   action
+   (prepare_stretchers mt2)
+)
+(node-4-3-3
+   ((node-4-3 :begin))
+   nil
+   nil
+   ((node-4-3 :end))
+   (14400 :inf 14400 :inf)
+   action
+   (check_for_further_casualties mt2)
+)
+(node-4-4
+   ((node-4-3 :end))
+   ((node-4-4-1 :begin) (node-4-4-3 :begin))
+   ((node-4-4-4 :end))
+   ((node-4-5 :begin))
+   (18000 :inf 21600 :inf)
+   action
+   (load_injured mt2 gt2 barnacle)
+)
+(node-4-4-1
+   ((node-4-4 :begin))
+   nil
+   nil
+   ((node-4-4-2 :begin))
+   (18000 :inf 18000 :inf)
+   action
+   (load_injured_onto_stretchers mt2)
+)
+(node-4-4-2
+   ((node-4-4-1 :end))
+   nil
+   nil
+   ((node-4-4-4 :begin))
+   (18000 :inf 18000 :inf)
+   action
+   (load_stretchers_into_vehicle mt2 gt2)
+)
+(node-4-4-3
+   ((node-4-4 :begin))
+   nil
+   nil
+   ((node-4-4-4 :begin))
+   (18000 :inf 18000 :inf)
+   action
+   (check_injured_are_ok mt2)
+)
+(node-4-4-4
+   ((node-4-4-3 :end) (node-4-4-2 :end))
+   nil
+   nil
+   ((node-4-4 :end))
+   (18000 :inf 18000 :inf)
+   action
+   (radio_back_to_base mt2 delta)
+)
+(node-4-5
+   ((node-4-4 :end))
+   ((node-4-5-1 :begin) (node-4-5-2 :begin))
+   ((node-4-5-1 :end) (node-4-5-2 :end))
+   ((node-5-2 :begin) (node-4 :end))
+   (21600 :inf 32400 :inf)
+   action
+   (move_injured_by_road gt2 barnacle delta)
+)
+(node-4-5-1
+   ((node-4-5 :begin))
+   nil
+   nil
+   ((node-4-5 :end))
+   (21600 :inf 21600 :inf)
+   action
+   (move_vehicle gt2 delta)
+)
+(node-4-5-2
+   ((node-4-5 :begin))
+   nil
+   nil
+   ((node-4-5 :end))
+   (21600 :inf 21600 :inf)
+   action
+   (check_injured_in_transit gt2)
+)
+(node-5
+   ((node-1 :end))
+   ((node-5-1 :begin) (node-5-2 :begin))
+   ((node-5-3 :end))
+   ((node-2 :begin))
+   (0 :inf 43200 :inf)
+   action
+   (send_medical_team calypso)
+)
+(node-5-1
+   ((node-4-1 :end) (node-5 :begin))
+   ((node-5-1-1 :begin) (node-5-1-2 :begin) (node-5-1-3 :begin))
+   ((node-5-1-8 :end) (node-5-1-9 :end))
+   ((node-6-1 :begin) (node-5-3 :begin))
+   (14400 :inf 21600 :inf)
+   action
+   (fast_transport gt1 mt3 calypso)
+)
+(node-5-1-1
+   ((node-5-1 :begin))
+   nil
+   nil
+   ((node-5-1-4 :begin))
+   (14400 :inf 14400 :inf)
+   action
+   (fuel_vehicle gt1)
+)
+(node-5-1-2
+   ((node-5-1 :begin))
+   nil
+   nil
+   ((node-5-1-4 :begin))
+   (14400 :inf 14400 :inf)
+   action
+   (check_vehicle gt1)
+)
+(node-5-1-3
+   ((node-5-1 :begin))
+   nil
+   nil
+   ((node-5-1-4 :begin))
+   (14400 :inf 14400 :inf)
+   action
+   (brief_driver gt1)
+)
+(node-5-1-4
+   ((node-5-1-3 :end) (node-5-1-2 :end) (node-5-1-1 :end))
+   nil
+   nil
+   ((node-5-1-6 :begin) (node-5-1-5 :begin))
+   (14400 :inf 14400 :inf)
+   action
+   (move_to_item gt1 mt3)
+)
+(node-5-1-5
+   ((node-5-1-4 :end))
+   nil
+   nil
+   ((node-5-1-7 :begin))
+   (14400 :inf 14400 :inf)
+   action
+   (load_item gt1 mt3)
+)
+(node-5-1-6
+   ((node-5-1-4 :end))
+   nil
+   nil
+   ((node-5-1-7 :begin))
+   (14400 :inf 14400 :inf)
+   action
+   (check_item mt3)
+)
+(node-5-1-7
+   ((node-5-1-6 :end) (node-5-1-5 :end))
+   nil
+   nil
+   ((node-5-1-9 :begin) (node-5-1-8 :begin))
+   (14400 :inf 14400 :inf)
+   action
+   (move_item gt1 mt3 calypso)
+)
+(node-5-1-8
+   ((node-5-1-7 :end))
+   nil
+   nil
+   ((node-5-1 :end))
+   (14400 :inf 14400 :inf)
+   action
+   (unload_item gt1 mt3 calypso)
+)
+(node-5-1-9
+   ((node-5-1-7 :end))
+   nil
+   nil
+   ((node-5-1 :end))
+   (14400 :inf 14400 :inf)
+   action
+   (check_item mt3)
+)
+(node-5-2
+   ((node-4-5 :end) (node-5 :begin))
+   ((node-5-2-1 :begin) (node-5-2-2 :begin) (node-5-2-3 :begin))
+   ((node-5-2-8 :end) (node-5-2-9 :end))
+   ((node-6-2 :begin) (node-5-3 :begin))
+   (32400 :inf 39600 :inf)
+   action
+   (fast_transport gt2 me3 calypso)
+)
+(node-5-2-1
+   ((node-5-2 :begin))
+   nil
+   nil
+   ((node-5-2-4 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (fuel_vehicle gt2)
+)
+(node-5-2-2
+   ((node-5-2 :begin))
+   nil
+   nil
+   ((node-5-2-4 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (check_vehicle gt2)
+)
+(node-5-2-3
+   ((node-5-2 :begin))
+   nil
+   nil
+   ((node-5-2-4 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (brief_driver gt2)
+)
+(node-5-2-4
+   ((node-5-2-3 :end) (node-5-2-2 :end) (node-5-2-1 :end))
+   nil
+   nil
+   ((node-5-2-6 :begin) (node-5-2-5 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (move_to_item gt2 me3)
+)
+(node-5-2-5
+   ((node-5-2-4 :end))
+   nil
+   nil
+   ((node-5-2-7 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (load_item gt2 me3)
+)
+(node-5-2-6
+   ((node-5-2-4 :end))
+   nil
+   nil
+   ((node-5-2-7 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (check_item me3)
+)
+(node-5-2-7
+   ((node-5-2-6 :end) (node-5-2-5 :end))
+   nil
+   nil
+   ((node-5-2-9 :begin) (node-5-2-8 :begin))
+   (32400 :inf 32400 :inf)
+   action
+   (move_item gt2 me3 calypso)
+)
+(node-5-2-8
+   ((node-5-2-7 :end))
+   nil
+   nil
+   ((node-5-2 :end))
+   (32400 :inf 32400 :inf)
+   action
+   (unload_item gt2 me3 calypso)
+)
+(node-5-2-9
+   ((node-5-2-7 :end))
+   nil
+   nil
+   ((node-5-2 :end))
+   (32400 :inf 32400 :inf)
+   action
+   (check_item me3)
+)
+(node-5-3
+   ((node-5-2 :end) (node-5-1 :end))
+   ((node-5-3-1 :begin) (node-5-3-2 :begin) (node-5-3-3 :begin))
+   ((node-5-3-1 :end) (node-5-3-2 :end) (node-5-3-3 :end))
+   ((node-5 :end))
+   (39600 :inf 43200 :inf)
+   action
+   (deal_with_injured mt3 me3 calypso)
+)
+(node-5-3-1
+   ((node-5-3 :begin))
+   nil
+   nil
+   ((node-5-3 :end))
+   (39600 :inf 39600 :inf)
+   action
+   (give_first_aid mt3)
+)
+(node-5-3-2
+   ((node-5-3 :begin))
+   nil
+   nil
+   ((node-5-3 :end))
+   (39600 :inf 39600 :inf)
+   action
+   (prepare_stretchers mt3)
+)
+(node-5-3-3
+   ((node-5-3 :begin))
+   nil
+   nil
+   ((node-5-3 :end))
+   (39600 :inf 39600 :inf)
+   action
+   (check_for_further_casualties mt3)
+)
+(node-6
+   ((node-1 :end))
+   ((node-6-1 :begin) (node-6-2 :begin))
+   ((node-6-4 :end))
+   ((node-2 :begin))
+   (0 :inf 61200 :inf)
+   action
+   (repair_gas_leak barnacle)
+)
+(node-6-1
+   ((node-5-1 :end) (node-6 :begin))
+   ((node-6-1-1 :begin) (node-6-1-2 :begin) (node-6-1-3 :begin))
+   ((node-6-1-8 :end) (node-6-1-9 :end))
+   ((node-7-1 :begin) (node-6-3 :begin))
+   (21600 :inf 28800 :inf)
+   action
+   (fast_transport gt1 rt1 barnacle)
+)
+(node-6-1-1
+   ((node-6-1 :begin))
+   nil
+   nil
+   ((node-6-1-4 :begin))
+   (21600 :inf 21600 :inf)
+   action
+   (fuel_vehicle gt1)
+)
+(node-6-1-2
+   ((node-6-1 :begin))
+   nil
+   nil
+   ((node-6-1-4 :begin))
+   (21600 :inf 21600 :inf)
+   action
+   (check_vehicle gt1)
+)
+(node-6-1-3
+   ((node-6-1 :begin))
+   nil
+   nil
+   ((node-6-1-4 :begin))
+   (21600 :inf 21600 :inf)
+   action
+   (brief_driver gt1)
+)
+(node-6-1-4
+   ((node-6-1-3 :end) (node-6-1-2 :end) (node-6-1-1 :end))
+   nil
+   nil
+   ((node-6-1-6 :begin) (node-6-1-5 :begin))
+   (21600 :inf 21600 :inf)
+   action
+   (move_to_item gt1 rt1)
+)
+(node-6-1-5
+   ((node-6-1-4 :end))
+   nil
+   nil
+   ((node-6-1-7 :begin))
+   (21600 :inf 21600 :inf)
+   action
+   (load_item gt1 rt1)
+)
+(node-6-1-6
+   ((node-6-1-4 :end))
+   nil
+   nil
+   ((node-6-1-7 :begin))
+   (21600 :inf 21600 :inf)
+   action
+   (check_item rt1)
+)
+(node-6-1-7
+   ((node-6-1-6 :end) (node-6-1-5 :end))
+   nil
+   nil
+   ((node-6-1-9 :begin) (node-6-1-8 :begin))
+   (21600 :inf 21600 :inf)
+   action
+   (move_item gt1 rt1 barnacle)
+)
+(node-6-1-8
+   ((node-6-1-7 :end))
+   nil
+   nil
+   ((node-6-1 :end))
+   (21600 :inf 21600 :inf)
+   action
+   (unload_item gt1 rt1 barnacle)
+)
+(node-6-1-9
+   ((node-6-1-7 :end))
+   nil
+   nil
+   ((node-6-1 :end))
+   (21600 :inf 21600 :inf)
+   action
+   (check_item rt1)
+)
+(node-6-2
+   ((node-5-2 :end) (node-6 :begin))
+   ((node-6-2-1 :begin) (node-6-2-2 :begin) (node-6-2-3 :begin))
+   ((node-6-2-8 :end) (node-6-2-9 :end))
+   ((node-8-1 :begin) (node-6-3 :begin))
+   (39600 :inf 46800 :inf)
+   action
+   (fast_transport gt2 re1 barnacle)
+)
+(node-6-2-1
+   ((node-6-2 :begin))
+   nil
+   nil
+   ((node-6-2-4 :begin))
+   (39600 :inf 39600 :inf)
+   action
+   (fuel_vehicle gt2)
+)
+(node-6-2-2
+   ((node-6-2 :begin))
+   nil
+   nil
+   ((node-6-2-4 :begin))
+   (39600 :inf 39600 :inf)
+   action
+   (check_vehicle gt2)
+)
+(node-6-2-3
+   ((node-6-2 :begin))
+   nil
+   nil
+   ((node-6-2-4 :begin))
+   (39600 :inf 39600 :inf)
+   action
+   (brief_driver gt2)
+)
+(node-6-2-4
+   ((node-6-2-3 :end) (node-6-2-2 :end) (node-6-2-1 :end))
+   nil
+   nil
+   ((node-6-2-6 :begin) (node-6-2-5 :begin))
+   (39600 :inf 39600 :inf)
+   action
+   (move_to_item gt2 re1)
+)
+(node-6-2-5
+   ((node-6-2-4 :end))
+   nil
+   nil
+   ((node-6-2-7 :begin))
+   (39600 :inf 39600 :inf)
+   action
+   (load_item gt2 re1)
+)
+(node-6-2-6
+   ((node-6-2-4 :end))
+   nil
+   nil
+   ((node-6-2-7 :begin))
+   (39600 :inf 39600 :inf)
+   action
+   (check_item re1)
+)
+(node-6-2-7
+   ((node-6-2-6 :end) (node-6-2-5 :end))
+   nil
+   nil
+   ((node-6-2-9 :begin) (node-6-2-8 :begin))
+   (39600 :inf 39600 :inf)
+   action
+   (move_item gt2 re1 barnacle)
+)
+(node-6-2-8
+   ((node-6-2-7 :end))
+   nil
+   nil
+   ((node-6-2 :end))
+   (39600 :inf 39600 :inf)
+   action
+   (unload_item gt2 re1 barnacle)
+)
+(node-6-2-9
+   ((node-6-2-7 :end))
+   nil
+   nil
+   ((node-6-2 :end))
+   (39600 :inf 39600 :inf)
+   action
+   (check_item re1)
+)
+(node-6-3
+   ((node-6-2 :end) (node-6-1 :end))
+   ((node-6-3-1 :begin) (node-6-3-2 :begin))
+   ((node-6-3-6 :end) (node-6-3-7 :end))
+   ((node-6-4 :begin))
+   (46800 :inf 57600 :inf)
+   action
+   (fix_gas_leak rt1 re1 barnacle)
+)
+(node-6-3-1
+   ((node-6-3 :begin))
+   nil
+   nil
+   ((node-6-3-3 :begin) (node-6-3-4 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (locate_leaks rt1)
+)
+(node-6-3-2
+   ((node-6-3 :begin))
+   nil
+   nil
+   ((node-6-3-5 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (prepare_sealant rt1)
+)
+(node-6-3-3
+   ((node-6-3-1 :end))
+   nil
+   nil
+   ((node-6-3-5 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (prepare_new_pipe rt1)
+)
+(node-6-3-4
+   ((node-6-3-1 :end))
+   nil
+   nil
+   ((node-6-3-5 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (prepare_site_for_repair rt1)
+)
+(node-6-3-5
+   ((node-6-3-2 :end) (node-6-3-3 :end) (node-6-3-4 :end))
+   nil
+   nil
+   ((node-6-3-7 :begin) (node-6-3-6 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (seal_leak_in_pipe rt1)
+)
+(node-6-3-6
+   ((node-6-3-5 :end))
+   nil
+   nil
+   ((node-6-3 :end))
+   (46800 :inf 46800 :inf)
+   action
+   (check_seal rt1)
+)
+(node-6-3-7
+   ((node-6-3-5 :end))
+   nil
+   nil
+   ((node-6-3 :end))
+   (46800 :inf 46800 :inf)
+   action
+   (pack_equipment rt1 re1)
+)
+(node-6-4
+   ((node-6-3 :end))
+   ((node-6-4-1 :begin) (node-6-4-2 :begin))
+   ((node-6-4-3 :end))
+   ((node-6 :end))
+   (57600 :inf 61200 :inf)
+   action
+   (restart_power_station rt1 barnacle)
+)
+(node-6-4-1
+   ((node-6-4 :begin))
+   nil
+   nil
+   ((node-6-4-3 :begin))
+   (57600 :inf 57600 :inf)
+   action
+   (check_gas_system rt1)
+)
+(node-6-4-2
+   ((node-6-4 :begin))
+   nil
+   nil
+   ((node-6-4-3 :begin))
+   (57600 :inf 57600 :inf)
+   action
+   (check_turbines rt1)
+)
+(node-6-4-3
+   ((node-6-4-2 :end) (node-6-4-1 :end))
+   nil
+   nil
+   ((node-6-4 :end))
+   (57600 :inf 57600 :inf)
+   action
+   (restart_controller rt1)
+)
+(node-7
+   ((node-1 :end))
+   ((node-7-1 :begin))
+   ((node-7-2 :end))
+   ((node-2 :begin))
+   (0 :inf 39600 :inf)
+   action
+   (defuse_terrorist_bomb barnacle)
+)
+(node-7-1
+   ((node-6-1 :end) (node-7 :begin))
+   ((node-7-1-1 :begin) (node-7-1-2 :begin) (node-7-1-3 :begin))
+   ((node-7-1-8 :end) (node-7-1-9 :end))
+   ((node-7-2 :begin))
+   (28800 :inf 36000 :inf)
+   action
+   (fast_transport gt1 bs1 barnacle)
+)
+(node-7-1-1
+   ((node-7-1 :begin))
+   nil
+   nil
+   ((node-7-1-4 :begin))
+   (28800 :inf 28800 :inf)
+   action
+   (fuel_vehicle gt1)
+)
+(node-7-1-2
+   ((node-7-1 :begin))
+   nil
+   nil
+   ((node-7-1-4 :begin))
+   (28800 :inf 28800 :inf)
+   action
+   (check_vehicle gt1)
+)
+(node-7-1-3
+   ((node-7-1 :begin))
+   nil
+   nil
+   ((node-7-1-4 :begin))
+   (28800 :inf 28800 :inf)
+   action
+   (brief_driver gt1)
+)
+(node-7-1-4
+   ((node-7-1-3 :end) (node-7-1-2 :end) (node-7-1-1 :end))
+   nil
+   nil
+   ((node-7-1-6 :begin) (node-7-1-5 :begin))
+   (28800 :inf 28800 :inf)
+   action
+   (move_to_item gt1 bs1)
+)
+(node-7-1-5
+   ((node-7-1-4 :end))
+   nil
+   nil
+   ((node-7-1-7 :begin))
+   (28800 :inf 28800 :inf)
+   action
+   (load_item gt1 bs1)
+)
+(node-7-1-6
+   ((node-7-1-4 :end))
+   nil
+   nil
+   ((node-7-1-7 :begin))
+   (28800 :inf 28800 :inf)
+   action
+   (check_item bs1)
+)
+(node-7-1-7
+   ((node-7-1-6 :end) (node-7-1-5 :end))
+   nil
+   nil
+   ((node-7-1-9 :begin) (node-7-1-8 :begin))
+   (28800 :inf 28800 :inf)
+   action
+   (move_item gt1 bs1 barnacle)
+)
+(node-7-1-8
+   ((node-7-1-7 :end))
+   nil
+   nil
+   ((node-7-1 :end))
+   (28800 :inf 28800 :inf)
+   action
+   (unload_item gt1 bs1 barnacle)
+)
+(node-7-1-9
+   ((node-7-1-7 :end))
+   nil
+   nil
+   ((node-7-1 :end))
+   (28800 :inf 28800 :inf)
+   action
+   (check_item bs1)
+)
+(node-7-2
+   ((node-7-1 :end))
+   ((node-7-2-1 :begin))
+   ((node-7-2-2 :end) (node-7-2-3 :end))
+   ((node-7 :end))
+   (36000 :inf 39600 :inf)
+   action
+   (defuse_bomb bs1 barnacle)
+)
+(node-7-2-1
+   ((node-7-2 :begin))
+   nil
+   nil
+   ((node-7-2-3 :begin) (node-7-2-2 :begin))
+   (36000 :inf 36000 :inf)
+   action
+   (locate_bomb bs1 barnacle)
+)
+(node-7-2-2
+   ((node-7-2-1 :end))
+   nil
+   nil
+   ((node-7-2 :end))
+   (36000 :inf 36000 :inf)
+   action
+   (remove_primary_detonator bs1)
+)
+(node-7-2-3
+   ((node-7-2-1 :end))
+   nil
+   nil
+   ((node-7-2 :end))
+   (36000 :inf 36000 :inf)
+   action
+   (remove_other_detonators bs1)
+)
+(node-8
+   ((node-1 :end))
+   ((node-8-1 :begin) (node-8-2 :begin))
+   ((node-8-4 :end))
+   ((node-2 :begin))
+   (0 :inf 75600 :inf)
+   action
+   (evacuate_population barnacle)
+)
+(node-8-1
+   ((node-6-2 :end) (node-8 :begin))
+   ((node-8-1-1 :begin) (node-8-1-2 :begin) (node-8-1-3 :begin))
+   ((node-8-1-8 :end) (node-8-1-9 :end))
+   ((node-8-3 :begin))
+   (46800 :inf 54000 :inf)
+   action
+   (fast_transport gt2 et1 barnacle)
+)
+(node-8-1-1
+   ((node-8-1 :begin))
+   nil
+   nil
+   ((node-8-1-4 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (fuel_vehicle gt2)
+)
+(node-8-1-2
+   ((node-8-1 :begin))
+   nil
+   nil
+   ((node-8-1-4 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (check_vehicle gt2)
+)
+(node-8-1-3
+   ((node-8-1 :begin))
+   nil
+   nil
+   ((node-8-1-4 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (brief_driver gt2)
+)
+(node-8-1-4
+   ((node-8-1-3 :end) (node-8-1-2 :end) (node-8-1-1 :end))
+   nil
+   nil
+   ((node-8-1-6 :begin) (node-8-1-5 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (move_to_item gt2 et1)
+)
+(node-8-1-5
+   ((node-8-1-4 :end))
+   nil
+   nil
+   ((node-8-1-7 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (load_item gt2 et1)
+)
+(node-8-1-6
+   ((node-8-1-4 :end))
+   nil
+   nil
+   ((node-8-1-7 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (check_item et1)
+)
+(node-8-1-7
+   ((node-8-1-6 :end) (node-8-1-5 :end))
+   nil
+   nil
+   ((node-8-1-9 :begin) (node-8-1-8 :begin))
+   (46800 :inf 46800 :inf)
+   action
+   (move_item gt2 et1 barnacle)
+)
+(node-8-1-8
+   ((node-8-1-7 :end))
+   nil
+   nil
+   ((node-8-1 :end))
+   (46800 :inf 46800 :inf)
+   action
+   (unload_item gt2 et1 barnacle)
+)
+(node-8-1-9
+   ((node-8-1-7 :end))
+   nil
+   nil
+   ((node-8-1 :end))
+   (46800 :inf 46800 :inf)
+   action
+   (check_item et1)
+)
+(node-8-2
+   ((node-8 :begin))
+   ((node-8-2-1 :begin) (node-8-2-2 :begin) (node-8-2-3 :begin))
+   ((node-8-2-4 :end))
+   ((node-8-3 :begin))
+   (0 :inf 14400 :inf)
+   action
+   (send_fleet_of_trucks ft1 barnacle)
+)
+(node-8-2-1
+   ((node-8-2 :begin))
+   nil
+   nil
+   ((node-8-2-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (fuel_vehicle ft1)
+)
+(node-8-2-2
+   ((node-8-2 :begin))
+   nil
+   nil
+   ((node-8-2-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (check_vehicle ft1)
+)
+(node-8-2-3
+   ((node-8-2 :begin))
+   nil
+   nil
+   ((node-8-2-4 :begin))
+   (0 :inf 0 :inf)
+   action
+   (brief_drivers ft1)
+)
+(node-8-2-4
+   ((node-8-2-3 :end) (node-8-2-2 :end) (node-8-2-1 :end))
+   nil
+   nil
+   ((node-8-2 :end))
+   (0 :inf 0 :inf)
+   action
+   (move_vehicle ft1 barnacle)
+)
+(node-8-3
+   ((node-8-2 :end) (node-8-1 :end))
+   ((node-8-3-1 :begin))
+   ((node-8-3-3 :end))
+   ((node-8-4 :begin))
+   (54000 :inf 61200 :inf)
+   action
+   (load_population et1 ft1 barnacle)
+)
+(node-8-3-1
+   ((node-8-3 :begin))
+   nil
+   nil
+   ((node-8-3-2 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (group_people_for_evacuation et1)
+)
+(node-8-3-2
+   ((node-8-3-1 :end))
+   nil
+   nil
+   ((node-8-3-3 :begin))
+   (54000 :inf 54000 :inf)
+   action
+   (load_groups_onto_trucks et1 ft1)
+)
+(node-8-3-3
+   ((node-8-3-2 :end))
+   nil
+   nil
+   ((node-8-3 :end))
+   (54000 :inf 54000 :inf)
+   action
+   (radio_back_to_base et1 delta)
+)
+(node-8-4
+   ((node-8-3 :end))
+   ((node-8-4-1 :begin) (node-8-4-2 :begin))
+   ((node-8-4-1 :end) (node-8-4-2 :end))
+   ((node-8 :end))
+   (61200 :inf 75600 :inf)
+   action
+   (move_population ft1 barnacle delta)
+)
+(node-8-4-1
+   ((node-8-4 :begin))
+   nil
+   nil
+   ((node-8-4 :end))
+   (61200 :inf 61200 :inf)
+   action
+   (move_vehicles ft1 delta)
+)
+(node-8-4-2
+   ((node-8-4 :begin))
+   nil
+   nil
+   ((node-8-4 :end))
+   (61200 :inf 61200 :inf)
+   action
+   (check_people_in_transit ft1)
+)
+)
+
+;;; TOME:
+(
+((tome (available ??) (node-1 :end)) true)
+((tome (empty_vehicle ??) (node-1 :end)) true)
+((tome (empty_vehicle ft1) (node-8-3 :begin)) false)
+((tome (empty_vehicle ft1) (node-8-4 :end)) true)
+((tome (empty_vehicle gt2) (node-4-4 :begin)) false)
+((tome (empty_vehicle gt2) (node-4-5 :end)) true)
+((tome (location ??) (node-1 :end)) delta)
+((tome (location bs1) (node-7-1 :end)) barnacle)
+((tome (location et1) (node-8-1 :end)) barnacle)
+((tome (location ft1) (node-8-2 :end)) barnacle)
+((tome (location ft1) (node-8-4 :end)) delta)
+((tome (location gt1) (node-3-1 :end)) abyss)
+((tome (location gt1) (node-4-1 :end)) barnacle)
+((tome (location gt1) (node-5-1 :end)) calypso)
+((tome (location gt1) (node-6-1 :end)) barnacle)
+((tome (location gt1) (node-7-1 :end)) barnacle)
+((tome (location gt2) (node-3-2 :end)) abyss)
+((tome (location gt2) (node-4-2 :end)) barnacle)
+((tome (location gt2) (node-4-5 :end)) delta)
+((tome (location gt2) (node-5-2 :end)) calypso)
+((tome (location gt2) (node-6-2 :end)) barnacle)
+((tome (location gt2) (node-8-1 :end)) barnacle)
+((tome (location me1) (node-3-2 :end)) abyss)
+((tome (location me2) (node-4-2 :end)) barnacle)
+((tome (location me3) (node-5-2 :end)) calypso)
+((tome (location mt1) (node-3-1 :end)) abyss)
+((tome (location mt2) (node-4-1 :end)) barnacle)
+((tome (location mt3) (node-5-1 :end)) calypso)
+((tome (location re1) (node-6-2 :end)) barnacle)
+((tome (location rt1) (node-6-1 :end)) barnacle)
+((tome (road_status abyss_barnacle) (node-1 :end)) open)
+((tome (road_status abyss_exodus) (node-1 :end)) open)
+((tome (road_status barnacle_calypso) (node-1 :end)) open)
+((tome (road_status calypso_delta) (node-1 :end)) open)
+((tome (road_status delta_abyss) (node-1 :end)) open)
+((tome (weather) (node-1 :end)) storm)
+)
+
+;;; GOST:
+(
+((gost unsupervised (empty_vehicle ft1) false (node-8-4 :begin))
+   (((node-8-3 :begin) . :by-bindings))
+)
+((gost unsupervised (empty_vehicle ft1) true (node-8-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle ft1) true (node-8-3 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt1) true (node-3-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt1) true (node-4-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt1) true (node-5-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt1) true (node-6-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt1) true (node-7-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt2) false (node-4-5 :begin))
+   (((node-4-4 :begin) . :by-bindings))
+)
+((gost unsupervised (empty_vehicle gt2) true (node-3-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt2) true (node-4-2 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt2) true (node-4-4 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (empty_vehicle gt2) true (node-5-2 :begin))
+   (((node-4-5 :end) . :by-bindings))
+)
+((gost unsupervised (empty_vehicle gt2) true (node-6-2 :begin))
+   (((node-4-5 :end) . :by-bindings))
+)
+((gost unsupervised (empty_vehicle gt2) true (node-8-1 :begin))
+   (((node-4-5 :end) . :by-bindings))
+)
+((gost unsupervised (location bs1) barnacle (node-7-2 :begin))
+   (((node-7-1 :end) . :already-satisfied))
+)
+((gost unsupervised (location et1) barnacle (node-8-3 :begin))
+   (((node-8-1 :end) . :by-bindings))
+)
+((gost unsupervised (location ft1) barnacle (node-8-3 :begin))
+   (((node-8-2 :end) . :by-bindings))
+)
+((gost unsupervised (location ft1) barnacle (node-8-4 :begin))
+   (((node-8-2 :end) . :by-bindings))
+)
+((gost unsupervised (location gt2) barnacle (node-4-4 :begin))
+   (((node-4-2 :end) . :by-bindings))
+)
+((gost unsupervised (location gt2) barnacle (node-4-5 :begin))
+   (((node-4-2 :end) . :by-bindings))
+)
+((gost unsupervised (location me1) abyss (node-3-3 :begin))
+   (((node-3-2 :end) . :by-bindings))
+)
+((gost unsupervised (location me2) barnacle (node-4-3 :begin))
+   (((node-4-2 :end) . :by-bindings))
+)
+((gost unsupervised (location me3) calypso (node-5-3 :begin))
+   (((node-5-2 :end) . :by-bindings))
+)
+((gost unsupervised (location mt1) abyss (node-3-3 :begin))
+   (((node-3-1 :end) . :by-bindings))
+)
+((gost unsupervised (location mt2) barnacle (node-4-3 :begin))
+   (((node-4-1 :end) . :by-bindings))
+)
+((gost unsupervised (location mt2) barnacle (node-4-4 :begin))
+   (((node-4-1 :end) . :by-bindings))
+)
+((gost unsupervised (location mt3) calypso (node-5-3 :begin))
+   (((node-5-1 :end) . :by-bindings))
+)
+((gost unsupervised (location re1) barnacle (node-6-3 :begin))
+   (((node-6-2 :end) . :by-bindings))
+)
+((gost unsupervised (location rt1) barnacle (node-6-3 :begin))
+   (((node-6-1 :end) . :by-bindings))
+)
+((gost unsupervised (location rt1) barnacle (node-6-4 :begin))
+   (((node-6-1 :end) . :by-bindings))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 fast_vehicle gt1 (psv-19 psv-14 psv-10 psv-6 psv-2) (gt1))
+(psv-2 fast_vehicle gt2 (psv-17 psv-13 psv-9 psv-5 psv-1) (gt2))
+(psv-3 medical_team mt1 (psv-11 psv-7) (mt1))
+(psv-4 medical_equipment me1 (psv-12 psv-8) (me1))
+(psv-5 fast_vehicle gt1 (psv-19 psv-14 psv-10 psv-6 psv-2) (gt1))
+(psv-6 fast_vehicle gt2 (psv-17 psv-13 psv-9 psv-5 psv-1) (gt2))
+(psv-7 medical_team mt2 (psv-11 psv-3) (mt2))
+(psv-8 medical_equipment me2 (psv-12 psv-4) (me2))
+(psv-9 fast_vehicle gt1 (psv-19 psv-14 psv-10 psv-6 psv-2) (gt1))
+(psv-10 fast_vehicle gt2 (psv-17 psv-13 psv-9 psv-5 psv-1) (gt2))
+(psv-11 medical_team mt3 (psv-3 psv-7) (mt3))
+(psv-12 medical_equipment me3 (psv-4 psv-8) (me3))
+(psv-13 fast_vehicle gt1 (psv-19 psv-14 psv-10 psv-6 psv-2) (gt1))
+(psv-14 fast_vehicle gt2 (psv-17 psv-13 psv-9 psv-5 psv-1) (gt2))
+(psv-15 repair_team rt1 nil (rt1 rt2))
+(psv-16 repair_equipment re1 nil (re1 re2))
+(psv-17 fast_vehicle gt1 (psv-19 psv-14 psv-10 psv-6 psv-2) (gt1))
+(psv-18 bomb_squad bs1 nil (bs1))
+(psv-19 fast_vehicle gt2 (psv-17 psv-13 psv-9 psv-5 psv-1) (gt2))
+(psv-20 fleet_of_trucks ft1 nil (ft1 ft2))
+(psv-21 evacuation_team et1 nil (et1 et2))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-3)
+(psv-4)
+(psv-7)
+(psv-8)
+(psv-11)
+(psv-12)
+(psv-15)
+(psv-16)
+(psv-1 psv-5 psv-9 psv-13 psv-17)
+(psv-18)
+(psv-2 psv-6 psv-10 psv-14 psv-19)
+(psv-20)
+(psv-21)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((available ??) true)
+((empty_vehicle ??) true)
+((empty_vehicle ft1) true)
+((empty_vehicle gt2) true)
+((location bs1) barnacle)
+((location et1) barnacle)
+((location ft1) delta)
+((location gt1) barnacle)
+((location gt2) barnacle)
+((location me1) abyss)
+((location me2) barnacle)
+((location me3) calypso)
+((location mt1) abyss)
+((location mt2) barnacle)
+((location mt3) calypso)
+((location re1) barnacle)
+((location rt1) barnacle)
+((road_status abyss_barnacle) open)
+((road_status abyss_exodus) open)
+((road_status barnacle_calypso) open)
+((road_status calypso_delta) open)
+((road_status delta_abyss) open)
+((weather) storm)
+)

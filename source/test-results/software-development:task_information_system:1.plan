@@ -1,0 +1,652 @@
+
+;;; Statistics:
+(
+(:am-cycles . 161)
+(:n-alts-chosen . 12)
+(:n-alts-remaining . 45)
+(:n-poisons . 12)
+)
+
+;;; Action levels:
+(
+(assemble_training_material . 2)
+(billing_system . 1)
+(build_common_data_dictionary_system . 1)
+(carry_out_programming_and_unit_tests_part_1 . 2)
+(carry_out_programming_and_unit_tests_part_2 . 2)
+(carry_out_subsystem_acceptance_and_tests . 2)
+(client_accounting_system . 1)
+(convert_data_files . 1)
+(develop_screen_menu_instructions_for_terminal_operators . 2)
+(disbursements_system . 1)
+(document_computer_operations_instructions_and_jcl . 2)
+(hardware_system . 1)
+(install_computer . 2)
+(integration_tests . 2)
+(make_system_live . 1)
+(management_reports_system . 1)
+(master_information_maintenance_system . 1)
+(nominal_and_private_ledger_system . 1)
+(perform_final_acceptance_tests . 1)
+(perform_user_and_clerical_procedures . 2)
+(prepare_computer_room . 2)
+(present_user_training . 1)
+(purchase_ledger_system . 1)
+(pw_system_testing . 1)
+(run_in_parrallel . 1)
+(specify_conversion_procedures . 1)
+(specify_program . 2)
+(task_information_system . 0)
+(time_system . 1)
+(user_system . 1)
+)
+
+;;; Effect levels:
+(
+(billing_system . 1)
+(client_accounting_system . 1)
+(common_data_dictionary_system . 1)
+(conversion_of_data_files . 1)
+(disbursements_system . 1)
+(documentation_for_computer_operations_instructions_and_jcl . 2)
+(final_acceptance_tests . 1)
+(information_system_completed . 0)
+(installation_of_computer . 2)
+(integrated_tests . 2)
+(management_reports_system . 1)
+(master_information_maintenance_system . 1)
+(nominal_and_private_ledger_system . 1)
+(parallel_running . 1)
+(preparation_computer_room . 2)
+(programming_and_unit_tests_part_1 . 2)
+(programming_and_unit_tests_part_2 . 2)
+(program_specification . 2)
+(purchase_ledger_system . 1)
+(pw_system_tests . 1)
+(screen_menu_instructions_for_terminal_operators . 2)
+(specification_of_conversion_procedures . 1)
+(status . 1)
+(subsystem_acceptance_tests . 2)
+(system_live . 1)
+(time_system . 1)
+(training_material . 2)
+(user_and_clerical_procedures . 2)
+(user_system . 1)
+(user_training . 1)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-9 :begin) (node-8 :begin) (node-7 :begin) (node-6 :begin) (node-5 :begin) (node-4 :begin) (node-3 :begin))
+   (32400 32400 32400 378000)
+   start
+   nil
+)
+(node-2
+   ((node-9 :end) (node-8 :end) (node-7 :end) (node-6 :end) (node-5 :end) (node-4 :end) (node-3 :end))
+   nil
+   nil
+   nil
+   (2278800 2624400 2624400 2624400)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   nil
+   nil
+   ((node-8-1 :begin) (node-7-1 :begin) (node-4-2 :begin) (node-2 :begin))
+   (32400 378000 205200 550800)
+   action
+   (build_common_data_dictionary_system)
+)
+(node-4
+   ((node-1 :end))
+   ((node-4-1 :begin))
+   ((node-4-4 :end) (node-4-5 :end))
+   ((node-2 :begin))
+   (1414800 1760400 2278800 2624400)
+   action
+   (master_information_maintenance_system)
+)
+(node-4-1
+   ((node-8-5 :end) (node-8-1 :begin) (node-6-5 :end) (node-6-5 :end) (node-6-1 :begin) (node-4 :begin))
+   nil
+   nil
+   ((node-4-2 :begin))
+   (1587600 1933200 1674000 2019600)
+   action
+   (specify_program mim)
+)
+(node-4-2
+   ((node-3 :end) (node-4-1 :end))
+   nil
+   nil
+   ((node-4-4 :begin) (node-4-3 :begin))
+   (1674000 2019600 1846800 2192400)
+   action
+   (carry_out_programming_and_unit_tests_part_1 mim)
+)
+(node-4-3
+   ((node-4-2 :end))
+   nil
+   nil
+   ((node-4-5 :begin))
+   (1846800 2192400 2019600 2365200)
+   action
+   (carry_out_programming_and_unit_tests_part_2 mim)
+)
+(node-4-4
+   ((node-4-2 :end))
+   nil
+   nil
+   ((node-4 :end))
+   (1846800 2451600 2019600 2624400)
+   action
+   (integration_tests mim)
+)
+(node-4-5
+   ((node-4-3 :end))
+   nil
+   ((node-6-5 :end))
+   ((node-4 :end))
+   (2019600 2365200 2278800 2624400)
+   action
+   (carry_out_subsystem_acceptance_and_tests mim)
+)
+(node-5
+   ((node-1 :end))
+   ((node-5-1 :begin))
+   ((node-5-4 :end) (node-5-5 :end))
+   ((node-2 :begin))
+   (1328400 1760400 2192400 2624400)
+   action
+   (nominal_and_private_ledger_system)
+)
+(node-5-1
+   ((node-9-4 :end) (node-9-1 :begin) (node-7-5 :end) (node-7-5 :end) (node-7-1 :begin) (node-5 :begin))
+   nil
+   nil
+   ((node-5-2 :begin))
+   (1501200 1933200 1587600 2019600)
+   action
+   (specify_program npl)
+)
+(node-5-2
+   ((node-5-1 :end))
+   nil
+   nil
+   ((node-5-4 :begin) (node-5-3 :begin))
+   (1587600 2019600 1760400 2192400)
+   action
+   (carry_out_programming_and_unit_tests_part_1 npl)
+)
+(node-5-3
+   ((node-5-2 :end))
+   nil
+   nil
+   ((node-5-5 :begin))
+   (1760400 2192400 1933200 2365200)
+   action
+   (carry_out_programming_and_unit_tests_part_2 npl)
+)
+(node-5-4
+   ((node-5-2 :end))
+   nil
+   nil
+   ((node-5 :end))
+   (1760400 2451600 1933200 2624400)
+   action
+   (integration_tests npl)
+)
+(node-5-5
+   ((node-5-3 :end))
+   nil
+   ((node-7-5 :end))
+   ((node-5 :end))
+   (1933200 2365200 2192400 2624400)
+   action
+   (carry_out_subsystem_acceptance_and_tests npl)
+)
+(node-6
+   ((node-1 :end))
+   ((node-6-1 :begin))
+   ((node-6-4 :end) (node-6-5 :end))
+   ((node-2 :begin))
+   (723600 1242000 1587600 2106000)
+   action
+   (time_system)
+)
+(node-6-1
+   ((node-8-5 :end) (node-8-5 :end) (node-8-1 :begin) (node-6 :begin))
+   ((node-4-1 :begin))
+   nil
+   ((node-6-2 :begin))
+   (896400 1242000 982800 1328400)
+   action
+   (specify_program time)
+)
+(node-6-2
+   ((node-6-1 :end))
+   nil
+   nil
+   ((node-6-4 :begin) (node-6-3 :begin))
+   (982800 1328400 1155600 1501200)
+   action
+   (carry_out_programming_and_unit_tests_part_1 time)
+)
+(node-6-3
+   ((node-6-2 :end))
+   nil
+   nil
+   ((node-6-5 :begin))
+   (1155600 1501200 1328400 1674000)
+   action
+   (carry_out_programming_and_unit_tests_part_2 time)
+)
+(node-6-4
+   ((node-6-2 :end))
+   nil
+   nil
+   ((node-6 :end))
+   (1155600 1933200 1328400 2106000)
+   action
+   (integration_tests time)
+)
+(node-6-5
+   ((node-6-3 :end))
+   nil
+   ((node-8-5 :end))
+   ((node-4-1 :begin) (node-4-5 :end) (node-4-1 :begin) (node-6 :end))
+   (1328400 1674000 1587600 1933200)
+   action
+   (carry_out_subsystem_acceptance_and_tests time)
+)
+(node-7
+   ((node-1 :end))
+   ((node-7-1 :begin))
+   ((node-7-4 :end) (node-7-5 :end))
+   ((node-2 :begin))
+   (637200 1242000 1501200 2106000)
+   action
+   (client_accounting_system)
+)
+(node-7-1
+   ((node-3 :end) (node-9-4 :end) (node-9-4 :end) (node-9-1 :begin) (node-7 :begin))
+   ((node-5-1 :begin))
+   nil
+   ((node-7-2 :begin))
+   (810000 1242000 896400 1328400)
+   action
+   (specify_program ca)
+)
+(node-7-2
+   ((node-7-1 :end))
+   nil
+   nil
+   ((node-7-4 :begin) (node-7-3 :begin))
+   (896400 1328400 1069200 1501200)
+   action
+   (carry_out_programming_and_unit_tests_part_1 ca)
+)
+(node-7-3
+   ((node-7-2 :end))
+   nil
+   nil
+   ((node-7-5 :begin))
+   (1069200 1501200 1242000 1674000)
+   action
+   (carry_out_programming_and_unit_tests_part_2 ca)
+)
+(node-7-4
+   ((node-7-2 :end))
+   nil
+   nil
+   ((node-7 :end))
+   (1069200 1933200 1242000 2106000)
+   action
+   (integration_tests ca)
+)
+(node-7-5
+   ((node-7-3 :end))
+   nil
+   ((node-9-4 :end))
+   ((node-5-1 :begin) (node-5-5 :end) (node-5-1 :begin) (node-7 :end))
+   (1242000 1674000 1501200 1933200)
+   action
+   (carry_out_subsystem_acceptance_and_tests ca)
+)
+(node-8
+   ((node-1 :end))
+   ((node-8-1 :begin))
+   ((node-8-4 :end) (node-8-5 :end))
+   ((node-2 :begin))
+   (32400 550800 896400 1414800)
+   action
+   (management_reports_system)
+)
+(node-8-1
+   ((node-3 :end) (node-8 :begin))
+   ((node-4-1 :begin) (node-6-1 :begin))
+   nil
+   ((node-8-2 :begin))
+   (205200 550800 291600 637200)
+   action
+   (specify_program mr)
+)
+(node-8-2
+   ((node-8-1 :end))
+   nil
+   nil
+   ((node-8-4 :begin) (node-8-3 :begin))
+   (291600 637200 464400 810000)
+   action
+   (carry_out_programming_and_unit_tests_part_1 mr)
+)
+(node-8-3
+   ((node-8-2 :end))
+   nil
+   nil
+   ((node-8-5 :begin))
+   (464400 810000 637200 982800)
+   action
+   (carry_out_programming_and_unit_tests_part_2 mr)
+)
+(node-8-4
+   ((node-8-2 :end))
+   nil
+   nil
+   ((node-8 :end))
+   (464400 1242000 637200 1414800)
+   action
+   (integration_tests mr)
+)
+(node-8-5
+   ((node-8-3 :end))
+   nil
+   nil
+   ((node-6-1 :begin) (node-6-5 :end) (node-4-1 :begin) (node-6-1 :begin) (node-8 :end))
+   (637200 982800 896400 1242000)
+   action
+   (carry_out_subsystem_acceptance_and_tests mr)
+)
+(node-9
+   ((node-1 :end))
+   ((node-9-1 :begin) (node-9-2 :begin) (node-9-3 :begin) (node-9-4 :begin))
+   ((node-9-1 :end) (node-9-2 :end) (node-9-3 :end) (node-9-4 :end))
+   ((node-2 :begin))
+   (32400 464400 810000 1242000)
+   action
+   (user_system)
+)
+(node-9-1
+   ((node-9 :begin))
+   ((node-5-1 :begin) (node-7-1 :begin) (node-9-4 :end))
+   nil
+   ((node-9-2 :begin) (node-9 :end))
+   (32400 464400 118800 550800)
+   action
+   (perform_user_and_clerical_procedures)
+)
+(node-9-2
+   ((node-9-1 :end) (node-9 :begin))
+   nil
+   nil
+   ((node-9-3 :begin) (node-9 :end))
+   (118800 550800 378000 810000)
+   action
+   (assemble_training_material)
+)
+(node-9-3
+   ((node-9-2 :end) (node-9 :begin))
+   nil
+   nil
+   ((node-9-4 :begin) (node-9 :end))
+   (378000 810000 637200 1069200)
+   action
+   (develop_screen_menu_instructions_for_terminal_operators)
+)
+(node-9-4
+   ((node-9-3 :end) (node-9 :begin))
+   nil
+   ((node-9-1 :begin))
+   ((node-7-1 :begin) (node-7-5 :end) (node-5-1 :begin) (node-7-1 :begin) (node-9 :end))
+   (637200 1069200 810000 1242000)
+   action
+   (document_computer_operations_instructions_and_jcl)
+)
+)
+
+;;; TOME:
+(
+((tome (client_accounting_system) (node-7-5 :end)) completed)
+((tome (common_data_dictionary_system) (node-3 :end)) completed)
+((tome (documentation_for_computer_operations_instructions_and_jcl) (node-9-4 :end)) completed)
+((tome (information_system_completed) (node-2 :end)) true)
+((tome (integrated_tests ca) (node-7-4 :end)) completed)
+((tome (integrated_tests mim) (node-4-4 :end)) completed)
+((tome (integrated_tests mr) (node-8-4 :end)) completed)
+((tome (integrated_tests npl) (node-5-4 :end)) completed)
+((tome (integrated_tests time) (node-6-4 :end)) completed)
+((tome (management_reports_system) (node-8 :end)) completed)
+((tome (master_information_maintenance_system) (node-4-5 :end)) completed)
+((tome (nominal_and_private_ledger_system) (node-5-5 :end)) completed)
+((tome (programming_and_unit_tests_part_1 ca) (node-7-2 :end)) completed)
+((tome (programming_and_unit_tests_part_1 mim) (node-4-2 :end)) completed)
+((tome (programming_and_unit_tests_part_1 mr) (node-8-2 :end)) completed)
+((tome (programming_and_unit_tests_part_1 npl) (node-5-2 :end)) completed)
+((tome (programming_and_unit_tests_part_1 time) (node-6-2 :end)) completed)
+((tome (programming_and_unit_tests_part_2 ca) (node-7-3 :end)) completed)
+((tome (programming_and_unit_tests_part_2 mim) (node-4-3 :end)) completed)
+((tome (programming_and_unit_tests_part_2 mr) (node-8-3 :end)) completed)
+((tome (programming_and_unit_tests_part_2 npl) (node-5-3 :end)) completed)
+((tome (programming_and_unit_tests_part_2 time) (node-6-3 :end)) completed)
+((tome (program_specification ca) (node-7-1 :end)) completed)
+((tome (program_specification mim) (node-4-1 :end)) completed)
+((tome (program_specification mr) (node-8-1 :end)) completed)
+((tome (program_specification npl) (node-5-1 :end)) completed)
+((tome (program_specification time) (node-6-1 :end)) completed)
+((tome (screen_menu_instructions_for_terminal_operators) (node-9-3 :end)) completed)
+((tome (status installation_engineer engineer_a) (node-1 :end)) unallocated)
+((tome (status installation_engineer engineer_b) (node-1 :end)) unallocated)
+((tome (status programming_team team_a) (node-1 :end)) unallocated)
+((tome (status programming_team team_a) (node-5-1 :begin)) npl)
+((tome (status programming_team team_a) (node-5-5 :end)) unallocated)
+((tome (status programming_team team_a) (node-7-1 :begin)) ca)
+((tome (status programming_team team_a) (node-7-5 :end)) unallocated)
+((tome (status programming_team team_a) (node-9-1 :begin)) user_system)
+((tome (status programming_team team_a) (node-9-4 :end)) unallocated)
+((tome (status programming_team team_b) (node-1 :end)) unallocated)
+((tome (status programming_team team_b) (node-4-1 :begin)) mim)
+((tome (status programming_team team_b) (node-4-5 :end)) unallocated)
+((tome (status programming_team team_b) (node-6-1 :begin)) time)
+((tome (status programming_team team_b) (node-6-5 :end)) unallocated)
+((tome (status programming_team team_b) (node-8-1 :begin)) mr)
+((tome (status programming_team team_b) (node-8-5 :end)) unallocated)
+((tome (status programming_team team_c) (node-1 :end)) unallocated)
+((tome (subsystem_acceptance_tests ca) (node-7-5 :end)) completed)
+((tome (subsystem_acceptance_tests mim) (node-4-5 :end)) completed)
+((tome (subsystem_acceptance_tests mr) (node-8-5 :end)) completed)
+((tome (subsystem_acceptance_tests npl) (node-5-5 :end)) completed)
+((tome (subsystem_acceptance_tests time) (node-6-5 :end)) completed)
+((tome (time_system) (node-6-5 :end)) completed)
+((tome (training_material) (node-9-2 :end)) completed)
+((tome (user_and_clerical_procedures) (node-9-1 :end)) completed)
+((tome (user_system) (node-9 :end)) completed)
+)
+
+;;; GOST:
+(
+((gost supervised (programming_and_unit_tests_part_1 ca) completed (node-7-4 :begin))
+   (((node-7-2 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_1 mim) completed (node-4-4 :begin))
+   (((node-4-2 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_1 mr) completed (node-8-4 :begin))
+   (((node-8-2 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_1 npl) completed (node-5-4 :begin))
+   (((node-5-2 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_1 time) completed (node-6-4 :begin))
+   (((node-6-2 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_2 ca) completed (node-7-5 :begin))
+   (((node-7-3 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_2 mim) completed (node-4-5 :begin))
+   (((node-4-3 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_2 mr) completed (node-8-5 :begin))
+   (((node-8-3 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_2 npl) completed (node-5-5 :begin))
+   (((node-5-3 :end) . :none))
+)
+((gost supervised (programming_and_unit_tests_part_2 time) completed (node-6-5 :begin))
+   (((node-6-3 :end) . :none))
+)
+((gost supervised (program_specification ca) completed (node-7-2 :begin))
+   (((node-7-1 :end) . :none))
+)
+((gost supervised (program_specification mim) completed (node-4-2 :begin))
+   (((node-4-1 :end) . :none))
+)
+((gost supervised (program_specification mr) completed (node-8-2 :begin))
+   (((node-8-1 :end) . :none))
+)
+((gost supervised (program_specification npl) completed (node-5-2 :begin))
+   (((node-5-1 :end) . :none))
+)
+((gost supervised (program_specification time) completed (node-6-2 :begin))
+   (((node-6-1 :end) . :none))
+)
+((gost supervised (screen_menu_instructions_for_terminal_operators) completed (node-9-4 :begin))
+   (((node-9-3 :end) . :none))
+)
+((gost supervised (status programming_team team_a) ca (node-7-5 :end))
+   (((node-7-1 :begin) . :link-with-bindings))
+)
+((gost supervised (status programming_team team_a) npl (node-5-5 :end))
+   (((node-5-1 :begin) . :link-with-bindings))
+)
+((gost supervised (status programming_team team_a) user_system (node-9-4 :end))
+   (((node-9-1 :begin) . :link-with-bindings))
+)
+((gost supervised (status programming_team team_b) mim (node-4-5 :end))
+   (((node-4-1 :begin) . :none))
+)
+((gost supervised (status programming_team team_b) mr (node-8-5 :end))
+   (((node-8-1 :begin) . :link-with-bindings))
+)
+((gost supervised (status programming_team team_b) time (node-6-5 :end))
+   (((node-6-1 :begin) . :link-with-bindings))
+)
+((gost supervised (training_material) completed (node-9-3 :begin))
+   (((node-9-2 :end) . :none))
+)
+((gost supervised (user_and_clerical_procedures) completed (node-9-2 :begin))
+   (((node-9-1 :end) . :none))
+)
+((gost unsupervised (common_data_dictionary_system) completed (node-4-2 :begin))
+   (((node-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (common_data_dictionary_system) completed (node-7-1 :begin))
+   (((node-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (common_data_dictionary_system) completed (node-8-1 :begin))
+   (((node-3 :end) . :link-no-bindings))
+)
+((gost unsupervised (status programming_team team_a) unallocated (node-5-1 :begin))
+   (((node-7-5 :end) . :by-bindings))
+)
+((gost unsupervised (status programming_team team_a) unallocated (node-7-1 :begin))
+   (((node-9-4 :end) . :by-bindings))
+)
+((gost unsupervised (status programming_team team_a) unallocated (node-9-1 :begin))
+   (((node-1 :end) . :already-satisfied))
+)
+((gost unsupervised (status programming_team team_b) unallocated (node-4-1 :begin))
+   (((node-6-5 :end) . :by-bindings))
+)
+((gost unsupervised (status programming_team team_b) unallocated (node-6-1 :begin))
+   (((node-8-5 :end) . :by-bindings))
+)
+((gost unsupervised (status programming_team team_b) unallocated (node-8-1 :begin))
+   (((node-1 :end) . :by-bindings))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 programming_team team_b (psv-6 psv-2 psv-4) (team_b))
+(psv-2 programming_team team_a (psv-1 psv-3 psv-5) (team_a))
+(psv-3 programming_team team_b (psv-6 psv-2 psv-4) (team_b))
+(psv-4 programming_team team_a (psv-1 psv-3 psv-5) (team_a))
+(psv-5 programming_team team_b (psv-6 psv-2 psv-4) (team_b))
+(psv-6 programming_team team_a (psv-1 psv-3 psv-5) (team_a))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-1 psv-3 psv-5)
+(psv-2 psv-4 psv-6)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+)
+
+;;; World at end of node-2:
+(
+((client_accounting_system) completed)
+((common_data_dictionary_system) completed)
+((documentation_for_computer_operations_instructions_and_jcl) completed)
+((integrated_tests ca) completed)
+((integrated_tests mim) completed)
+((integrated_tests mr) completed)
+((integrated_tests npl) completed)
+((integrated_tests time) completed)
+((management_reports_system) completed)
+((master_information_maintenance_system) completed)
+((nominal_and_private_ledger_system) completed)
+((programming_and_unit_tests_part_1 ca) completed)
+((programming_and_unit_tests_part_1 mim) completed)
+((programming_and_unit_tests_part_1 mr) completed)
+((programming_and_unit_tests_part_1 npl) completed)
+((programming_and_unit_tests_part_1 time) completed)
+((programming_and_unit_tests_part_2 ca) completed)
+((programming_and_unit_tests_part_2 mim) completed)
+((programming_and_unit_tests_part_2 mr) completed)
+((programming_and_unit_tests_part_2 npl) completed)
+((programming_and_unit_tests_part_2 time) completed)
+((program_specification ca) completed)
+((program_specification mim) completed)
+((program_specification mr) completed)
+((program_specification npl) completed)
+((program_specification time) completed)
+((screen_menu_instructions_for_terminal_operators) completed)
+((status installation_engineer engineer_a) unallocated)
+((status installation_engineer engineer_b) unallocated)
+((status programming_team team_a) unallocated)
+((status programming_team team_b) unallocated)
+((status programming_team team_c) unallocated)
+((subsystem_acceptance_tests ca) completed)
+((subsystem_acceptance_tests mim) completed)
+((subsystem_acceptance_tests mr) completed)
+((subsystem_acceptance_tests npl) completed)
+((subsystem_acceptance_tests time) completed)
+((time_system) completed)
+((training_material) completed)
+((user_and_clerical_procedures) completed)
+((user_system) completed)
+)

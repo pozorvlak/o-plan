@@ -1,0 +1,187 @@
+
+;;; Statistics:
+(
+(:am-cycles . 12)
+(:n-alts-chosen . 0)
+(:n-alts-remaining . 4)
+(:n-poisons . 0)
+)
+
+;;; Action levels:
+(
+(build . 1)
+(build_house_of . 2)
+(build_walls . 3)
+(check . 1)
+(install . 3)
+(make_walls_from . 4)
+(purchase . 4)
+(task_better_build_secure_house . 0)
+(task_build_cheap_house . 0)
+(task_build_cheap_secure_house . 0)
+(task_build_house . 0)
+(task_build_secure_house . 0)
+)
+
+;;; Effect levels:
+(
+(door . 3)
+(have . 4)
+(material . 4)
+(proof_against . 0)
+(walls . 4)
+(windows . 3)
+(wolf_proof . 3)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-3 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-1 :end))
+   ((node-3-1 :begin))
+   ((node-3-1 :end))
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (build house)
+)
+(node-3-1
+   ((node-3 :begin))
+   ((node-3-1-1 :begin))
+   ((node-3-1-2 :end) (node-3-1-3 :end))
+   ((node-3 :end))
+   (0 :inf 0 :inf)
+   action
+   (build_house_of straw)
+)
+(node-3-1-1
+   ((node-3-1 :begin))
+   ((node-3-1-1-1 :begin))
+   ((node-3-1-1-2 :end))
+   ((node-3-1-3 :begin) (node-3-1-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (build_walls straw)
+)
+(node-3-1-1-1
+   ((node-3-1-1 :begin))
+   nil
+   nil
+   ((node-3-1-1-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (purchase straw)
+)
+(node-3-1-1-2
+   ((node-3-1-1-1 :end))
+   nil
+   nil
+   ((node-3-1-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (make_walls_from straw)
+)
+(node-3-1-2
+   ((node-3-1-1 :end))
+   nil
+   nil
+   ((node-3-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (install door)
+)
+(node-3-1-3
+   ((node-3-1-1 :end))
+   nil
+   nil
+   ((node-3-1 :end))
+   (0 :inf 0 :inf)
+   action
+   (install windows)
+)
+)
+
+;;; TOME:
+(
+((tome (door installed) (node-3-1-2 :end)) true)
+((tome (have straw) (node-3-1-1-1 :end)) true)
+((tome (material wall) (node-3-1-1-2 :end)) straw)
+((tome (proof_against wolf bricks) :always) true)
+((tome (walls built) (node-3-1-1-2 :end)) true)
+((tome (windows installed) (node-3-1-3 :end)) true)
+((tome (wolf_proof door) (node-3-1-2 :end)) true)
+((tome (wolf_proof windows) (node-3-1-3 :end)) true)
+)
+
+;;; GOST:
+(
+((gost supervised (have straw) true (node-3-1-1-2 :begin))
+   (((node-3-1-1-1 :end) . :none))
+)
+((gost supervised (walls built) true (node-3-1-2 :begin))
+   (((node-3-1-1 :end) . :none))
+)
+((gost supervised (walls built) true (node-3-1-3 :begin))
+   (((node-3-1-1 :end) . :none))
+)
+)
+
+;;; PSV descriptions:
+(
+)
+
+;;; PSV equivalence classes:
+(
+)
+
+;;; Resource usage table:
+(
+(node (resource money) 400 :inf nil (node-3))
+(node (resource straw) 1000 :inf nil (node-3))
+(node-3 (resource money) 400 :inf node (node-3-1))
+(node-3 (resource straw) 1000 :inf node (node-3-1))
+(node-3-1 (resource money) 400 :inf node-3 (node-3-1-2 node-3-1-3 node-3-1-1))
+(node-3-1 (resource straw) 1000 :inf node-3 (node-3-1-1))
+(node-3-1-1 (resource money) 200 :inf node-3-1 (node-3-1-1-1 node-3-1-1-2))
+(node-3-1-1 (resource straw) 1000 :inf node-3-1 (node-3-1-1-1))
+(node-3-1-1-1 (resource money) 100 100 node-3-1-1 nil)
+(node-3-1-1-1 (resource straw) 1000 1000 node-3-1-1 nil)
+(node-3-1-1-2 (resource money) 100 100 node-3-1-1 nil)
+(node-3-1-2 (resource money) 100 100 node-3-1 nil)
+(node-3-1-3 (resource money) 100 100 node-3-1 nil)
+)
+
+;;; World at end of node-1:
+(
+((proof_against wolf bricks) true)
+)
+
+;;; World at end of node-2:
+(
+((door installed) true)
+((have straw) true)
+((material wall) straw)
+((proof_against wolf bricks) true)
+((walls built) true)
+((windows installed) true)
+((wolf_proof door) true)
+((wolf_proof windows) true)
+)

@@ -1,0 +1,50 @@
+#!/bin/sh
+# File: oplan
+# Contains: Script for running O-Plan on a specified machine
+# Author: Jeff Dalton
+# Updated: Sun Apr 18 15:54:27 1999 by Jeff Dalton
+# Copyright: (c) 1992 - 1999, AIAI, University of Edinburgh
+
+# oplan-remote host [command] arg*
+
+# Runs O-Plan remotely, using the specified command (which can be
+# any executable, including another script).  The command defaults
+# to "oplan".
+
+# Note that there's a "cd" on the remote machine so that the current
+# working directory is carried across.
+
+default_command=oplan
+
+if [ "$#" -lt 1 ]
+then
+    echo usage: oplan-remote host [command] arg...
+    exit 1
+fi
+
+remote_host=$1
+shift
+
+if [ "$#" -ge 1 ]
+then
+    case $1 in
+        -*) command=$default_command;;
+         *) command=$1; shift;;
+    esac
+else
+    command=$default_command
+fi
+
+current_dir=`pwd`
+
+# Try to get the args separated correctly on the remote machine
+# by constructing a string in which each arg is in single quotes.
+# You might think "$@" would suffice, but it doesn't.
+allargs=""
+while [ $# -ne 0 ]; do allargs="$allargs '$1'"; shift; done
+
+# Here the only env var carried over is DISPLAY, but more can be added.
+
+/usr/ucb/rsh $remote_host \
+        cd $current_dir\; \
+	env DISPLAY="$DISPLAY" $command $allargs

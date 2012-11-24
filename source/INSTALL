@@ -1,0 +1,580 @@
+
+                 INSTALL for O-Plan version 3.3
+                 ------------------------------
+
+Contents
+--------
+  Suitable machines, Common Lisps, and operating systems
+  How to build and install O-Plan
+  Testing and using O-Plan
+  What if something goes wrong?
+  Testing xmenu and xuim
+  Building xmenu and xuim by hand  
+  Last resort for xmenu and xuim
+  Last resort for xterm
+  Checklist
+
+
+Suitable machines, Common Lisps, and operating systems
+------------------------------------------------------
+You will need a machine running a suitable version of Unix and a
+Common Lisp system for that machine.  Recent versions of O-Plan have
+been successfully used with the following combinations:
+
+  Machine      Operating system       Common Lisps
+  -------      ----------------       ------------
+  Sun SPARC    SunOS 4.1.3            Lucid 4.1,
+                                      Allegro 4.3,
+                                      GCL-1.1
+
+  Sun SPARC    SunOS 5.1.1 (Solaris)  Liquid 5.0.3,
+                                      Lucid 4.4.1,
+                                      Allegro 4.3 and 5.0,
+                                      GCL-2.2.2 and -2.3 (modified)
+
+  386 etc PC   FreeBSD                GCL-1.1, -2.2.2, and -2.3
+
+  386 etc PC   Linux Redhat 5.2       GCL-2.3 (modified)
+
+It is recommended that at least 40 megabytes of swap space be
+available.
+
+Unfortunately, we no longer have any Sun running 4.1.3 and so have
+not been able to test O-Plan 3.3 for that case, only earlier versions
+of O-Plan.
+
+There are several ways to set up Lucid Common Lisp (LCL) 4.1.  O-Plan
+has been tested only in the non-dbcs version, is incompatible with
+the ANSI-packages module, and may have clashes with other modules
+such a CLIM.  (Since we do not have CLIM for Lucid 4.1, we have not
+been able to test or debug that case.)  O-Plan requires CLOS.
+
+If Liquid Common Lisp is used, both ANSI-packages and CLOS are needed.
+Other optional submodules, such as CLIM, might again cause problems.  
+
+The "modified" in connection with GCL is because some additional
+routines must be linked in when GCL is built for certain operating
+systems.  For instructions on how to do this, mail to oplan@aiai.ed.ac.uk.
+
+The instructions in this file assume that you will be using Allegro
+Common Lisp.
+
+Instructions for using Lucid / Liquid CL or GCL will be provided
+on request from oplan@aiai.ed.ac.uk.  Other information may be
+available via the entry for O-Plan version 3.3 on:
+
+   http://www.aiai.ed.ac.uk/~oplan/release/
+
+Some pre-built versions of O-Plan are also available via that URL.
+They are especially useful if you do not have a suitable implementation
+of Common Lisp, or have trouble compiling and building O-Plan.
+
+
+How to build and install O-Plan
+-------------------------------
+The procedure for building and installing O-Plan is fairly simple,
+but it is not completely automatic.
+
+In outline, you will have to:
+
+  1. Make a directory.
+  2. Unpack a compressed tar file.
+  3. Edit one line in a makefile.
+  4. Edit two lines in a shell script.
+  5. Type "make all install".
+  6. Copy a script into a directory in your $PATH.
+
+These steps are explained in detail below.
+
+O-Plan is distributed as a compressed (gzipped) tar file.  In this
+document, we'll use the name "oplan.tar.gz" for this file, although
+it will actually have a different name such as "oplan.24oct94.tar.gz".
+Substitute the actual name for "oplan.tar.gz" in the commands described
+below.
+
+Step 1: Make a directory to contain the O-Plan files.
+
+Make a new, empty directory.  In this document, we'll assume the name
+is "/home/oplan/3.3", but you can use any name you'd like.
+
+Step 2: Unpack the distribution.
+
+Put the compressed tar file in the directory created in step 1
+and "cd" to that directory.  Unpack the tar file by typing:
+
+   zcat oplan.tar.gz | tar xpf -
+
+Most of the resulting files will be in subdirectories.  The most
+important subdirectory for the rest of this installation procedure
+is "source".  Everything needed to build O-Plan is in that
+subdirectory.
+
+Step 3: Edit source/Makefile.
+
+The makefile will use Allegro Common Lisp (ACL) to build O-Plan.
+However, the command that invokes ACL is different on different
+systems, so you have to edit the makefile to indicate what command
+to use.  Look for two lines near the beginning of source/Makefile
+that look like this:
+
+   # Edit the following line(s) to define commands for running Lisp.
+   Allegro = /usr/local/acl/5.0/lisp
+
+Suppose your command for running ACL is "lisp".  Edit the second of
+the two lines to be:
+
+   Allegro = lisp
+
+Step 4: Edit source/scripts/oplan.
+
+The "oplan" shell script will be used to run O-Plan.  It needs to
+set an environment variable, OPLANDIR, to be the name of the directory
+that contains the O-plan files.  This is the directory created in
+Step 1.  Look for lines near the beginning of source/scripts/oplan
+that look approximately like this:
+
+   # Edit the following line for your site:
+
+   base_dir=/projects/oplan/development/3.3
+
+   image_dir=$base_dir/lib
+
+   allegro=/usr/local/acl/5.0/lisp
+
+The "base_dir=" line in the distributed version of the oplan script
+may assign a different value than the one shown above; nonetheless,
+it is the line to edit.  Suppose you have placed the O-plan files in
+/home/oplan/3.3.  Edit the definition of "base_dir" to be:
+
+   base_dir=/home/oplan/3.3
+
+Since the "oplan" script is a "sh" script, the base_dir name cannot
+use the tilde-notation (as in "~oplan").  That's why it says "/home/oplan"
+and not "~oplan" above.  This is a change from some earlier versions.
+
+When using Allegro Common Lisp, you must also edit source/scripts/oplan
+to define a command for running Allegro Common Lisp.  That's done on the
+"allegro =" line indicated above.  Replace "/usr/local/acl/5.0/lisp"
+by whatever commmand is used to run Allegro at your site.
+
+Note that source/scripts/oplan will be copied to bin/oplan by the
+commands in Step 5.  You may want to check that bin/oplan is correct
+afterwards.
+
+Step 5: Build O-Plan.
+
+O-Plan is a Lisp program distributed as source.  Before O-plan
+can be used, it is necessary to compile the source files, load them
+into Lisp, and save an executable image.  It is also necessary to
+compile some separate C programs and to move some files from the
+"source" subdirectory to the "bin" and "lib" subdirectories.  
+All of this can be accomplished by typing:
+
+   cd source
+   make all install
+
+If an error occurs during "make", see the section on "What if
+something goes wrong?" below.
+
+If the "make all install" command completes successfully, type:
+
+   cd ..
+
+You should now be back in the main O-Plan directory.
+
+At this point, you should check that the following files exist and
+have execute permission:
+
+   bin/oplan
+   bin/xmenu
+   bin/xuim
+
+You should also check that the following files exist:
+
+   lib/allegro-image.dxl
+
+   lib/oplan-planner-default.config
+
+There may be some other ".config" files in "lib" as well as the 
+ones listed above.
+
+Remember that the "bin" and "lib" directories are in the main O-Plan
+directory, not in "source".
+
+If you want, you can now start O-Plan by typing
+
+   bin/oplan
+
+Step 6: Make O-Plan accessible to users.
+
+The goal is to establish a command, "oplan" that can be used to run
+O-Plan.  One way to do this is to put a copy of (or link to) bin/oplan
+in a directory that is in the $PATH of the users who will run O-Plan.  
+
+Remember that bin/oplan is a copy of source/scripts/oplan.  It
+should contain the modification made in Step 4.
+
+If you want to be able to use O-Plan in HTTP mode (see the file
+source/doc/http-mode), create a directory called "web-tmp" at the top
+level of the directory created in step 1, and make it writable by
+everyone who will be using O-Plan.  This directory is used for log
+files.  If you would like the directory to be in a different place,
+change the symbolic link source/web/demo/tmp.
+
+
+
+Testing and using O-Plan
+------------------------
+A minimal test is to start O-Plan and then exit.
+
+To run the minimal test, make sure you are in the main O-Plan directory
+(_not_ the "source" subdirectory) and type the shell command
+
+  bin/oplan
+
+A number of windows should appear, and the prompt "form> " will be
+printed in the window in which you typed bin/oplan.
+
+In the upper left of the screen there will be a window with the title
+"O-Plan Task Assignment".  In that window should be a textual menu
+with some numbered items followed by the prompt "Please choose a
+number:- ".  Item 1 should be labeled "Initialise Planner".  There
+will be an asterisk ("*") in front of the "1", but not in front of
+the "2" in the line below.
+
+Go to that window and type the character "1" followed by return.
+Small changes should happen in some of the windows and after that
+there will be a "*" in front of the "2" as well as the "1".
+
+Now exit O-Plan by clicking on the "QUIT" button in the control
+panel (which should be at the top center of the screen).  O-Plan
+should exit and all the windows it created should disappear.
+
+Further information on using O-Plan can be found in the "documentation"
+and "source/doc" subdirectories of the O-Plan release.  Note that O-Plan
+can operate in several different "modes".  Some are designed for cases
+where O-Plan is controlled by other software (see source/doc/ta-interface),
+while others are for interaction with a human user.  A recent addition
+is "HTTP mode" in which O-Plan provides an HTML-based interface suitable
+for use with a Web browser (see source/doc/http-mode).  O-Plan can also
+be run as a Task Formalism (TF) syntax-checker.  (see source/doc/
+tf-syntax-checking).  A manual for the TF language used to define
+planning problems can be found in documentation/tf-manual.
+
+The choice of mode is determined by command-line arguments when O-Plan
+is run.  (See source/doc/command-line-arguments and source/doc/parameters.)
+
+If there are some command-line arguments that you repeatedly use, a
+convenient solution is to create a short shell script that supplies
+them automatically while still allowing other parameters to be
+specified on the command line.  For example:
+
+#!/bin/sh
+exec oplan -http -browser netscape -domain house-4 "$@"
+
+The "$@" is used to pass along any command-line arguments given
+when the script is run.
+
+
+What if something goes wrong?
+-----------------------------
+There are enough differences among Unix and Lisp setups that there
+are many things that might conceivably go wrong.  It's impossible to
+cover them all here.  If something goes wrong, you don't understand
+it, and you're not an experienced Lisp or Unix programmer, you should
+try find someone who is reasonably familiar with Lisp and Unix,
+because they may be able to see immediately what is wrong.
+
+If you have a lot of trouble when trying to fix things or to figure out
+why they don't work, of if you merely wish to take a shortcut towards
+getting a working system, you can get a pre-built version of O-Plan,
+or of xmenu and xuim, from the version 3.3 entry on
+
+   http://www.aiai.ed.ac.uk/~oplan/release/
+
+There are pre-built versions for Sun Solaris and PC Linux.
+
+That page may also contain information about problems O-Plan
+users have encountered and advice on how to fix or work around
+them.
+
+You may also e-mail oplan@aiai.ed.ac.uk about any problems.
+
+The last section of this file is a "Checklist" that may help you
+narrow down what the problem is.  Before that are some sections
+that tell you how to test and how to do without the auxiliary
+programs used by O-Plan: xmenu, xuim, and xterm.
+
+If it looked like "make all install" completed successfully but
+there are problems when you try to run O-Plan, then you can test
+some parts of O-Plan separately.  See the "Checklist" section below.
+
+If an error occurred during the execution of "make all install",
+try to figure out how much was done before the error occurred.  For
+instance, did Lisp run and start compiling O-Plan, or did the error
+occur earlier when trying to make xmenu/xmenu or control-panel/xuim?
+
+If the problem occurred before the "install" part completed
+(check that "lib" and "bin" directories in the main O-Plan directory
+exist and contain at least the files listed in step 5 of the build
+procedure), then you will have to do the install steps by hand
+in addition to anything else you have to do.  In particular,
+create the "bin" and "lib" directories and copy the files from
+"source/scripts" to "bin" and from "source/config" to "lib".
+When you get xmenu and xuim to work, put them in "bin".  When
+you get a Lisp image (see later in this section), put it in "lib".
+
+If the problem occurred while compiling xmenu or xuim, try building
+them "by hand" as described below.  If you can't get them to work,
+you can try building the Lisp part of O-Plan on its own.  To do
+that, make sure you're in the "source" directory and type
+
+   make allegro-oplan
+
+This will run Allegro Common Lisp twice, once to compile all the Lisp
+source files, and then a second time to load the compiled files and
+save an executable image.  The image will be called "allegro-image.dxl"
+and will be in the "source" directory.  To make it easier to use
+the "oplan" script, move it to the "lib" subdirectory of the main
+O-Plan directory.  If you're currently in the "source" subdirectory
+(which you'd have to be for "make allegro-oplan" to work), move it by
+typing
+
+   mv allegro-image.dxl ../lib
+
+To run the image without needing xmenu or xuim, see the "Last resort
+for xmenu and xuim" section below.
+
+
+Testing xmenu and xuim
+----------------------
+For this section, make sure you're in the main O-Plan directory,
+not in the "source" subdirectory.
+
+Suppose you have a version of bin/xmenu or bin/xuim and you want to
+see if it works.  It turns out that you can run them without running
+O-Plan.
+
+Suppose you're testing bin/xmenu.  Type something like this to Unix:
+
+  bin/xmenu a b c
+
+A small menu containing options a, b, and c should appear.  Select
+one with the mouse.  The one you select should be printed on the
+screen and xmenu should then exit.
+
+Testing a version of the control panel is similar.  Suppose the
+one you want to test is bin/xuim.  Type:
+
+  bin/xuim
+
+A control panel should appear and the following message should
+be printed: 
+
+  (:XUIM :REGISTER (:XUIM))
+
+Click on some of the buttons on the control panel.  Messages should be
+printed on the screen.  For instance, if you click on "Single Step",
+you should see
+
+  (:XUIM :SINGLE-STEP (:AM T))
+
+If you click on "QUIT", the control panel should disappear after
+printing:
+
+  (:XUIM :DYING NIL)
+
+
+Building xmenu and xuim by hand
+---------------------------------
+The procedure is the same for both.
+
+Change to the source directory: source/xmenu or source/control-panel.
+
+Remake by typing the following commands:
+
+  make clean
+  xmkmf
+  make
+
+The result should be an executable "xmenu" or "xuim".  Test to see
+if it works.  The tests are described above.  Remember, though, that
+the xmenu or xterm you just built is not yet in the "bin" directory.
+To run it, use "./xmenu" or "./xuim" instead of "bin/xmenu" or
+"bin/xuim".
+
+If it works, put it in the "bin" directory.  Note that this directory
+is two levels back.  It's best to go back to the O-Plan root directory
+and then type
+
+  mv source/xmenu/xmenu bin
+
+  mv source/control-panel/xuim bin
+
+You should test them again once they're in the "bin" directory just 
+to make sure you've actually put the right versions there.
+
+If you have problems you don't know how to handle (e.g. errors
+during "make"), try to find someone who has some experience building
+and installing X software -- or at least Unix software.  There are
+lots of fixable problems that might occur -- too many to deal with
+here.
+
+One potential problem is using a release of X that was installed before 
+the current version of the operating system was installed.  "xmkmf"
+may then construct a Makefile that refers to the wrong files or has
+other defects.
+
+
+Last resort for xmenu and xuim
+------------------------------
+If you can't get them to work, you can tell O-Plan to do without
+them.  When you type the command to run O-Plan (still in the main
+O-Plan directory), add a command-line argument that tells it to 
+load help/no-x-programs.lsp, like this:
+
+   bin/oplan -load help/no-x-programs.lsp
+
+This takes care of both xmenu and xuim.  If you can get one of
+them to work but not the other, delete or comment out the parts
+of the no-x-programs.lsp file that deal with the one that works.
+
+help/no-x-programs.lsp contains instructions on how to use the
+interface it provides.  Be warned now that the interface is very 
+minimal and that you will probably not be able to use it without
+reading the instructions.
+
+Note that if the "make all install" of Step 5 (above) did not complete
+successfully, you may need to make the Lisp part of O-Plan "by hand"
+before you can try to run it without xmenu or xuim.  For instructions
+on how to do this, see the "What if something goes wrong?" section.
+
+
+Last resort for xterm
+---------------------
+The main O-Plan windows are created by running xterm.  It's possible
+that you will not be able to run xterm or that the xterms will behave
+strangely.  In such cases, you may want to try running without those
+windows.  To do this, when you type the command to run O-Plan, add
+a command-line argument that tells it to load help/no-xterms.lsp,
+like this:
+
+   bin/oplan -load help/no-xterms.lsp
+
+Note that you can load both no-xterms and no-x-programs.  This
+requires two command-line arguments, like this:
+
+   bin/oplan -load help/no-x-programs.lsp -load help/no-xterms.lsp
+
+help/no-xterms.lsp contains instructions on how to use the interface
+it provides.  Be warned now that if you fail to read these instructions
+you will not be able to figure it out.
+
+
+Checklist
+---------
+Here's a list of things you can check if O-Plan isn't working.
+
+
+  The operating system
+
+  []  Are you using one of the machine / operating systems / Lisp
+      implementation combinations listed near the start of this file?
+      On Unix machines, the command "uname -a" will typically tell you
+      what OS you are using.  E.g.:
+
+        ebay 64% uname -a
+        SunOS ebay 4.1.1 1 sun4c
+
+
+  Windows
+
+  []  Are you using X11 R5, or R6?  (R6 is best.)
+
+  []  Can you start an xterm by typing the Unix command "xterm"?
+
+      If not, check that xterm is in your path, that your DISPLAY
+      environment variable is right, that "xhost" says the machine
+      on which you're running O-Plan can display on the machine
+      on which you're displaying windows, etc.
+
+  []  Did you get check xmenu and xuim as described above and if
+      necessary either rebuild them by hand or get pre-built copies
+      from http://www.aiai.ed.ac.uk/~oplan/release/?
+
+  []  If xmenu and xuim don't work on their own, does O-Plan work
+      if you tell it to load the file help/no-x-programs.lsp?
+      Note that to test this you may have to build the Lisp part
+      of O-Plan by hand.  (See "What if something goes wrong?"
+      above.)
+
+
+  General
+
+  []  Did you edit bin/oplan to refer to the right base_dir?
+
+  []  Did you edit bin/oplan to have the correct allegro location?
+
+  []  Did you edit source/Makefile to refer to the correct allegro location?
+
+  []  Did "make all install" complete successfully?  If not, see
+      "What if something goes wrong?" above.
+
+  []  Can you run the Lisp image directly (i.e. without using a
+      shell script?  For Lucid / Liquid Common Lisp and for GCL,
+      the image is directly executable.  So you can just type
+      "lib/lucid-image" or "lib/kcl-image" as a command.  For Allegro,
+       you will have to type something like this:
+
+         ALLEGRO -I lib/allegro-image.dxl
+
+      with "ALLEGRO" replaced by the pathname used to run Allegro CL.
+      
+      It's likely that you'll get a message like this:
+
+        Environment variable OPLANDIR is not defined.
+        Please enter a value: 
+
+      You want this to be the main O-Plan directory, which should
+      be your current directory (check that it is).  So type a dot
+      (period) followed by return.  You may then see the message:
+
+        Environment variable OPLANTMPDIR is not defined.
+        Please enter a value:
+
+      Dot will work for this as well.
+
+      If you can run the image directly, it may be that the shell
+      script that's normally used to run O-Plan is at fault.  Try 
+      setting the required environment variables by hand.
+
+      If you can't run the lib/lucid-image, try running Lucid Common
+      Lisp without involving any O-Plan code, just to make sure it
+      still works.
+
+  []  Can you run using the "oplan" script but stopping before O-Plan
+      tries to do anything?  Use the "-break" command-line argument.
+      You should see something like this:
+
+	ebay 66% bin/oplan -break
+	Warning: No OPLANTMPDIR; using current directory.
+	>>Break: -BREAK
+
+	OPLAN-TOP-LEVEL:
+	:C  0: Return from Break
+
+	-> 
+
+      You can tell Lisp to continue by typing :c or 0.
+      You can tell Lisp to exit by typing (lcl:quit).
+
+If the lucid-image can run, the shell script is ok (or you can set 
+the env variables by hand), and xterm, xmenu, and xuim work on their
+own, but O-Plan still goes wrong later on, then it's likely that
+there's a bug in O-Plan.
+
+In this case, or in other cases where you need help, contact the
+O-Plan team at oplan@ed.ac.uk.
+
+
+

@@ -1,0 +1,110 @@
+O-Plan Distribution Read Me File
+Updated: Tue May 30 16:18:21 2000 by Jeff Dalton
+(c) Copyright 1997, 1998, 1999, 2000, AIAI, University of Edinburgh
+
+Version: O-Plan 3.3
+
+------------------------------------------------------------------------
+Documentation included with the Release
+
+Information on unpacking, installing and initial testing of O-Plan
+is provided the "INSTALL" file.
+
+The following documents are provided in the release iamge in
+PostScript form in subdirectories of the "documentation" directory
+
+  - User Guide
+  - TF Manual
+
+Additional documentation is included in the directory "source/doc".
+
+Information on interfacing other systems to O-Plan is provided in
+the following files:
+
+  source/doc/ta-interface
+  source/doc/ta-interface-quick-reference
+
+Information on using a Web browser to provide a "COA evaluation matrix"
+interface to O-Plan can be found in:
+
+  source/doc/http-mode
+
+------------------------------------------------------------------------
+Support Information and Materials
+
+Information and materials which support the release can be found at 
+http://www.aiai.ed.ac.uk/~oplan/release
+
+------------------------------------------------------------------------
+Documents Describing O-Plan
+
+Tate, A., Drabble, B. and Dalton, J. (1996)
+O-Plan: a Knowledge-Based Planner and its Application to Logistics
+- in Advanced Planning Technology, Morgan Kaufmann, (Tate, A. ed.),
+AAAI Press, May 1996.
+http://www.aiai.ed.ac.uk/~oplan/documents/1996/96-arpi-oplan-and-logistics.ps
+
+A collection of papers on the O-Plan system was provided in the
+following Technical Report.  These papers are all available via
+http://www.aiai.ed.ac.uk/~oplan/documents/index.html
+
+Tate, A., Drabble, B. and Dalton, J.  An Engineer's Approach to the
+Application of Knowledge Based Planning and Scheduling Techniques to
+Logistics, USAF Rome Laboratory Technical Report RL-TR-95-235,
+December 1995.
+
+Demonstration domain descriptions in O-Plan's Task Formalism (TF)
+can be found via http://www.aiai.ed.ac.uk/~oplan/release/tf
+
+PlanWorld Viewers based on AutoCAD as released with version 2.3 are
+provided in http://www.aiai.ed.ac.uk/~oplan/release/2.3/ac
+
+------------------------------------------------------------------------
+DARPA-Rome Laboratory Planning Initiative
+
+The O-Plan project is sponsored by the Defense Advanced Research
+Projects Agency (DARPA) and Rome Laboratory, Air Force Materiel
+Command, USAF, under grant number F30602-95-1-0022. The O-Plan project
+is monitored by Dr. Northrup Fowler III at the USAF Rome Laboratory.
+The US Government is authorised to reproduce and distribute reprints
+for Governmental purposes notwithstanding any copyright annotation
+hereon.  The views and conclusions contained herein are those of the
+authors and should not be interpreted as necessarily representing
+official policies or endorsements, either express or implied, of
+DARPA, Rome Laboratory or the US Government.
+
+For a description of work in the Planning Initiative see
+http://arpi.isx.com/ and the following book:
+
+Tate, A. (ed.) Advanced Planning Technology, Morgan Kaufmann, May 1996
+http://www.aaai.org/Publications/Press/Catalog/tate.html
+
+------------------------------------------------------------------------
+O-Plan 2.3
+
+O-Plan Release 2.3 (System Date: 12-Jul-95, Release Image Date:
+13-Jul-95) was a full demonstration system including a simple task
+assignment agent/menu interface, a planner agent and a demonstration
+of an execution agent. The release contained AutoCAD based PlanWorld
+Viewers for some domains. The system was released only for use within
+the DARPA/Rome Laboratory Planning Initiative.
+
+Release 2.3 materials have been placed at
+http://www.aiai.ed.ac.uk/~oplan/release/2.3 to allow future
+demonstration use and as an archive of previous demonstration material
+now removed from the later releases (version 3.1 onwards).  The O-Plan
+2.3 release is not supported in any way and no licence to use it is
+provided.
+
+------------------------------------------------------------------------
+Contacting the O-Plan Team
+
+Web page: http://www.aiai.ed.ac.uk/~oplan
+E-mail:   oplam@aiai.ed.ac.uk
+Address:  O-Plan Team
+          Artificial Intelligence Applications Institute
+          University of Edinburgh
+          80 South Bridge
+          Edinburgh EH1 1HN, UK
+Tel:      (Int. +44) 131 650 2732
+Fax:      (Int. +44) 131 650 6513

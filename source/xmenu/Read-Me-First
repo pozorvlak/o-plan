@@ -1,0 +1,5 @@
+To make xmenu, type:
+
+   xmkmf
+   make
+

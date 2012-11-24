@@ -1,0 +1,65 @@
+This is TeX, Version 3.1415 (C version 6.1) (format=lplain 94.7.22)  31 JAN 1997 17:20
+**user-guide
+(user-guide.tex
+LaTeX Version 2.09 <25 March 1992>
+(/local/packages/TeX/lib/texmf/tex/latex/base/article.sty
+Standard Document Style `article' <14 Jan 92>.
+(/local/packages/TeX/lib/texmf/tex/latex/base/art11.sty)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+) (../oplan-doc.sty
+(../psbox.tex version: 1.31
+\pst@mpin=\read1
+\drawinght=\dimen99
+\drawingwd=\dimen100
+\psxoffset=\dimen101
+\psyoffset=\dimen102
+\drawingBox=\box25
+\PShelp=\toks11
+\xscale=\count87
+\yscale=\count88
+\pscm=\dimen103
+\d@mx=\dimen104
+\d@my=\dimen105
+\j@insplitin=\read2
+\j@insplitout=\write3
+\psbj@inaux=\write4
+\gridht=\dimen106
+\gridwd=\dimen107
+)) (user-guide.aux
+LaTeX Warning: Label `intro' multiply defined on input line 14.
+LaTeX Warning: Label `interfaces' multiply defined on input line 17.
+LaTeX Warning: Label `variables' multiply defined on input line 20.
+LaTeX Warning: Label `scripts' multiply defined on input line 22.
+LaTeX Warning: Label `running' multiply defined on input line 24.
+LaTeX Warning: Label `cla' multiply defined on input line 26.
+LaTeX Warning: Label `major' multiply defined on input line 30.
+LaTeX Warning: Label `tfc' multiply defined on input line 34.
+LaTeX Warning: Label `sanity' multiply defined on input line 36.
+LaTeX Warning: Label `viewers' multiply defined on input line 38.
+LaTeX Warning: Label `intervention' multiply defined on input line 40.
+LaTeX Warning: Label `demos' multiply defined on input line 46.
+) [0
+
+] [1] (user-guide.toc)
+\tf@toc=\write5
+ [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12]
+[13] [14] [15] [16] [17] [18] [19] [20] [21] [22] [23] [24] (user-guide.aux)
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+ ) 
+Here is how much of TeX's memory you used:
+ 332 strings out of 11977
+ 3213 string characters out of 87084
+ 47356 words of memory out of 262141
+ 2270 multiletter control sequences out of 9500
+ 19598 words of font info for 74 fonts, out of 100000 for 255
+ 15 hyphenation exceptions out of 607
+ 12i,9n,15p,195b,329s stack positions out of 300i,40n,60p,3000b,4000s
+
+Output written on user-guide.dvi (25 pages, 64492 bytes).

@@ -1,0 +1,47 @@
+                  The O-Plan source/help/ directory
+
+The O-Plan source/help/ directory contains small "useful utilities" in
+the form of shell scripts and files than can be loaded into O-Plan to
+set O-Plan up in certain ways or to perform various tasks.
+
+
+O-Plan applications and setup
+
+  oplan-psgraph*
+
+    The example from source/doc/ta-interface.
+
+  draw-psgraph.lsp
+
+    Part of the same example from source/doc/ta-interface.
+
+  gpdt3-http-server-setup.lsp
+
+    Sets up a specialised "COA evaluation matrix" interface.
+    See source/doc/http-interface.
+
+  mout1-http-server-setup.lsp
+
+    Sets up a specialised "COA evaluation matrix" interface.
+    See source/doc/http-interface.
+
+  random-choices.lsp
+
+    Changes O-Plan to make certain choices randomly.
+
+Temporary problem fixes - see the "INSTALL" file
+
+  no-x-programs.lsp
+
+  no-xterms.lsp
+
+  text-menus.lsp
+
+
+For use when changing O-Plan or debugging
+
+  load-changed-files.lsp
+
+  compile-changed-files.lsp
+
+  pretend-web.lsp

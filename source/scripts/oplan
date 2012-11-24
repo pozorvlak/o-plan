@@ -1,0 +1,101 @@
+#!/bin/sh
+# File: oplan
+# Contains: Basic run script for the O-Plan system
+# Author: Jeff Dalton
+# Created: Mon Jul 16 11:39:20 1992
+# Updated: Wed Feb 23 19:58:29 2000 by Jeff Dalton
+# Copyright: (c) 1992 - 1999, AIAI, University of Edinburgh
+
+# Edit the following line for your site:
+
+base_dir=/project/oplan/development/jeff/3.x
+
+image_dir=$base_dir/lib
+
+allegro=/usr/local/acl/5.0/lisp
+
+# Command line arguments are normally passed to the Lisp image.  However,
+# if $1 does not begin with "-", it is interpreted instead as the name of
+# the Lisp image in $image_dir to use.
+
+# The image defaults to allegro-image.dxl
+
+image=allegro-image.dxl
+if [ "$#" -ge 1 ]
+then
+    case $1 in
+	-*) ;;
+	 *) image=$1; shift;;
+    esac
+fi
+
+# If the image name contains "/" then it is treated as a complete pathname;
+# otherwise, it is taken relative to $image_dir.
+
+case $image in
+    */*) lisp=$image;;
+      *) lisp=$image_dir/$image;;
+esac
+
+# For some Lisps, the Lisp image isn't executable, and so we have
+# to to prefix the name of an actual executable plus whatever
+# command-line argument is needed to tell it about the image.
+# We may also have to put something after the image name.
+
+# Allegro 5.0 args:
+#   -Q          -- quiet startup w/o .so, .ppll, and .dxl messages.
+#   -qq         -- do not read the siteinit or any clinit.cl files.
+#   -I image    -- specifies the image .dxl file.
+#   --          -- start of application command-line arguments.
+
+case $image in
+    *allegro*.dxl)
+        lisp="$allegro -I $lisp -qq -Q --";;
+esac
+
+export OPLANDIR OPLANTMPDIR OPLANTFDIR
+
+# Set OPLANDIR to the one true directory
+
+OPLANDIR=$base_dir
+
+# Check whether there is an OPLANTMPDIR.  If not, use the current
+# directory, but also warn the user.
+
+if [ -z "$OPLANTMPDIR" ]
+then
+    echo "Warning: No OPLANTMPDIR; using current directory."
+    OPLANTMPDIR=`pwd`
+fi
+
+# Check whether there is an LD_LIBRARY_PATH.  People set it for such
+# things as AutoCAD, which can stop other programs (in our case, xmenu)
+# from working.  So we unset it.  /\/
+
+if [ "$LD_LIBRARY_PATH" ]
+then
+    echo "Warning: You have LD_LIBRARY_PATH set."
+    echo "         It will be unset while running O-Plan."
+    echo "         If this is wrong, edit the oplan script."
+    unset LD_LIBRARY_PATH
+fi
+
+if [ "$OPLANKSDIR" ]
+then
+    echo "OPLANKSDIR should not be used with this version of O-Plan."
+    echo "Please unsetenv OPLANKSDIR"
+    exit 1
+fi
+
+OPLANTFDIR=${OPLANTFDIR:-$OPLANDIR/demo/tf}
+
+# Allegro must be told to use "sh" so that running xterms will work.
+
+export SHELL
+SHELL=/bin/sh
+
+# Run Lisp, passing all args in quotes to protect any included spaces.
+
+# N.B. Stays in the current directory.
+
+exec $lisp "$@"

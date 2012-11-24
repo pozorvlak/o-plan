@@ -1,0 +1,115 @@
+<TITLE>London underground</TITLE>
+<H1>London underground</H1>
+
+<HR>
+
+<FORM ACTION="/cgi-bin/oplan-demo/386-demo/london-underground.cgi"
+      METHOD=GET>
+
+<DL>
+
+<DT>Where are you now?
+<DD>
+<SELECT NAME="from" SIZE=8>
+<OPTION> Aldwych
+<OPTION> Baker_Street
+<OPTION SELECTED> Bank
+<OPTION> Bond_Street
+<OPTION> Cannon_Street
+<OPTION> Charing_Cross
+<OPTION> Earls_Court
+<OPTION> Elephant_And_Castle
+<OPTION> Embankment
+<OPTION> Euston
+<OPTION> Gatwick
+<OPTION> Gloucester_Road
+<OPTION> Green_Park
+<OPTION> Heathrow
+<OPTION> Holborn
+<OPTION> Kennington
+<OPTION> Kings_Cross
+<OPTION> Leicester_Square
+<OPTION> Liverpool_Street
+<OPTION> Marylebone
+<OPTION> Mile_End
+<OPTION> Monument
+<OPTION> Moorgate
+<OPTION> Neasden
+<OPTION> Notting_Hill_Gate
+<OPTION> Oxford_Circus
+<OPTION> Paddington
+<OPTION> Piccadilly_Circus
+<OPTION> South_Kensington
+<OPTION> Stratford
+<OPTION> Tottenham_Court_Road
+<OPTION> Tower_Hill
+<OPTION> Victoria
+<OPTION> Warren_Street
+<OPTION> Waterloo
+</SELECT>
+
+<DT>Destination:
+<DD>
+<SELECT NAME="to" SIZE=8>
+<OPTION> Aldwych
+<OPTION> Baker_Street
+<OPTION> Bank
+<OPTION> Bond_Street
+<OPTION> Cannon_Street
+<OPTION SELECTED> Charing_Cross
+<OPTION> Earls_Court
+<OPTION> Elephant_And_Castle
+<OPTION> Embankment
+<OPTION> Euston
+<OPTION> Gatwick
+<OPTION> Gloucester_Road
+<OPTION> Green_Park
+<OPTION> Heathrow
+<OPTION> Holborn
+<OPTION> Kennington
+<OPTION> Kings_Cross
+<OPTION> Leicester_Square
+<OPTION> Liverpool_Street
+<OPTION> Marylebone
+<OPTION> Mile_End
+<OPTION> Monument
+<OPTION> Moorgate
+<OPTION> Neasden
+<OPTION> Notting_Hill_Gate
+<OPTION> Oxford_Circus
+<OPTION> Paddington
+<OPTION> Piccadilly_Circus
+<OPTION> South_Kensington
+<OPTION> Stratford
+<OPTION> Tottenham_Court_Road
+<OPTION> Tower_Hill
+<OPTION> Victoria
+<OPTION> Warren_Street
+<OPTION> Waterloo
+</SELECT>
+
+<DT>Options:
+<DD><INPUT type="checkbox" CHECKED NAME="PostScript"> PostScript
+    <INPUT type="checkbox" CHECKED NAME="Narrative"> Narrative
+    <INPUT type="checkbox" NAME="kp-trace"> KP trace
+
+</DL>
+
+
+
+<P>
+<INPUT TYPE="reset"> will restore the default values of all parameters.
+
+<P>
+<INPUT TYPE="submit" VALUE="Plan">
+will run O-Plan with a planning time limit of
+<INPUT NAME="Timeout" VALUE="120" SIZE=3 MAXLENGTH=3>
+seconds (real time).
+
+</FORM>
+
+<HR>
+
+<Address>
+<A HREF="http://www.aiai.ed.ac.uk/~jeff/">Jeff Dalton</A>
+</Address>

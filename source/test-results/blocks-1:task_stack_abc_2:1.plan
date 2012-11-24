@@ -1,0 +1,174 @@
+
+;;; Statistics:
+(
+(:am-cycles . 81)
+(:n-alts-chosen . 9)
+(:n-alts-remaining . 5)
+(:n-poisons . 9)
+)
+
+;;; Action levels:
+(
+(puton . 1)
+(task_stack_abc . 0)
+(task_stack_abc_2 . 0)
+(task_stack_bac . 0)
+(task_stack_cba . 0)
+)
+
+;;; Effect levels:
+(
+(cleartop . 1)
+(on . 1)
+)
+
+;;; Nodes:
+(
+(node-1
+   nil
+   nil
+   nil
+   ((node-5 :begin) (node-4 :begin) (node-3 :begin) (node-2 :begin))
+   (0 :inf 0 :inf)
+   start
+   nil
+)
+(node-2
+   ((node-5 :end) (node-3 :end) (node-1 :end))
+   nil
+   nil
+   nil
+   (0 :inf 0 :inf)
+   finish
+   nil
+)
+(node-3
+   ((node-4 :end) (node-1 :end))
+   ((node-5 :begin))
+   nil
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (puton b c)
+)
+(node-4
+   ((node-1 :end))
+   ((node-5 :begin) (node-5 :begin))
+   nil
+   ((node-3 :begin))
+   (0 :inf 0 :inf)
+   action
+   (puton a table)
+)
+(node-5
+   ((node-3 :begin) (node-4 :begin) (node-4 :begin) (node-1 :end))
+   nil
+   nil
+   ((node-2 :begin))
+   (0 :inf 0 :inf)
+   action
+   (puton a b)
+)
+)
+
+;;; TOME:
+(
+((tome (cleartop a) (node-1 :begin)) true)
+((tome (cleartop b) (node-4 :begin)) true)
+((tome (cleartop b) (node-5 :begin)) false)
+((tome (cleartop c) (node-1 :begin)) true)
+((tome (cleartop c) (node-3 :begin)) false)
+((tome (cleartop table) :always) true)
+((tome (cleartop table) (node-3 :begin)) true)
+((tome (cleartop table) (node-4 :begin)) false)
+((tome (cleartop table) (node-5 :begin)) true)
+((tome (on a b) (node-1 :begin)) true)
+((tome (on a b) (node-4 :begin)) false)
+((tome (on a b) (node-5 :begin)) true)
+((tome (on a table) (node-4 :begin)) true)
+((tome (on a table) (node-5 :begin)) false)
+((tome (on b c) (node-3 :begin)) true)
+((tome (on b table) (node-1 :begin)) true)
+((tome (on b table) (node-3 :begin)) false)
+((tome (on c table) (node-1 :begin)) true)
+)
+
+;;; GOST:
+(
+((gost achievable (cleartop a) true (node-4 :begin))
+   (((node-1 :begin) . :already-satisfied))
+)
+((gost achievable (cleartop a) true (node-5 :begin))
+   (((node-1 :begin) . :already-satisfied))
+)
+((gost achievable (cleartop b) true (node-3 :begin))
+   (((node-4 :begin) . :expand))
+)
+((gost achievable (cleartop b) true (node-5 :begin))
+   (((node-4 :begin) . :already-satisfied))
+)
+((gost achievable (cleartop c) true (node-3 :begin))
+   (((node-1 :begin) . :by-bindings))
+)
+((gost achievable (cleartop table) true (node-4 :begin))
+   ((:always . :already-satisfied))
+)
+((gost achievable (on a b) true (node-2 :begin))
+   (((node-5 :begin) . :expand))
+)
+((gost achievable (on b c) true (node-2 :begin))
+   (((node-3 :begin) . :expand))
+)
+((gost only_use_for_query (on a b) true (node-4 :begin))
+   (((node-1 :begin) . :by-bindings))
+)
+((gost only_use_for_query (on a table) true (node-5 :begin))
+   (((node-4 :begin) . :link-with-bindings))
+)
+((gost only_use_for_query (on b table) true (node-3 :begin))
+   (((node-1 :begin) . :by-bindings))
+)
+)
+
+;;; PSV descriptions:
+(
+(psv-1 objects table nil (a table))
+(psv-2 movable_objects a (psv-3) (a c))
+(psv-3 objects table (psv-2) (table))
+(psv-4 objects table nil (c table))
+)
+
+;;; PSV equivalence classes:
+(
+(psv-1)
+(psv-2)
+(psv-3)
+(psv-4)
+)
+
+;;; Resource usage table:
+(
+)
+
+;;; World at end of node-1:
+(
+((cleartop a) true)
+((cleartop c) true)
+((cleartop table) true)
+((on a b) true)
+((on b table) true)
+((on c table) true)
+)
+
+;;; World at end of node-2:
+(
+((cleartop a) true)
+((cleartop b) false)
+((cleartop c) false)
+((cleartop table) true)
+((on a b) true)
+((on a table) false)
+((on b c) true)
+((on b table) false)
+((on c table) true)
+)

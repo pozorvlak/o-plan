@@ -1,0 +1,17 @@
+#!/bin/sh
+
+echo Content-type: text/html
+echo
+
+tmpfile=../web-tmp/run-oplan-$$
+
+# Run O-Plan in the background.
+# Note that we have to redirect output so Mosaic doesn't wait for
+# O-Plan to finish.
+
+# ./noplan -eval "(protect-terminal-io)" > $tmpfile &
+
+echo "<P>" Done!
+
+echo "<P> Ordinarily, a copy of O-Plan would now be running,"
+echo "but that's not working yet."

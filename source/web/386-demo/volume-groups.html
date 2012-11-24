@@ -1,0 +1,60 @@
+<TITLE>Volume groups example</TITLE>
+<H1>Volume groups example</H1>
+
+This example has O-Plan produce a shell script for removing a
+volume group.
+
+<P>
+To remove a volume group with the <TT>vgremove</TT> command, it is first
+necessary to remove all logical volumes from the group and all
+but one physical volume.  To remove a logical volume, it is
+necessary to unmount any file system on it.
+
+<P>
+The volume group in the example is named vg0.  The logical and
+physical volumes in the group have names lv1, lv2, ... and pv1, pv2,
+...  respectively.  File systems have names fs1, fs2, ..., and we
+assume that they are mounted on the corresponding logical volumes (fs1
+on lv1, fs2 on lv2, and so on).
+
+<P>
+<HR>
+
+<FORM ACTION="http:/cgi-bin/oplan-demo/386-demo/volume-groups.cgi"
+      METHOD=POST>
+
+The volume group contains:
+
+<BLOCKQUOTE>
+
+<SELECT NAME="n-logical-volumes" SIZE=1>
+<OPTION>0
+<OPTION>1
+<OPTION SELECTED>2
+<OPTION>3
+<OPTION>4
+</SELECT>logical volumes.
+
+<BR>
+<SELECT NAME="n-physical-volumes" SIZE=1>
+<OPTION>1
+<OPTION>2
+<OPTION SELECTED>3
+<OPTION>4
+</SELECT>physical volumes.
+
+</BLOCKQUOTE>
+
+<P>
+<INPUT TYPE="submit" VALUE="Plan"> Produce a plan to remove the volume group.
+
+<BR>
+<INPUT TYPE="reset"> Undo all changes to the form.
+
+</FORM>
+
+<HR>
+
+<Address>
+<A HREF="http://www.aiai.ed.ac.uk/~jeff/">Jeff Dalton</A>
+</Address>

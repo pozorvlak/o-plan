@@ -1,0 +1,73 @@
+<title>O-Plan Web Server with replan</title>
+
+<!--
+  Updated: Tue Aug 24 20:49:15 1999 by Jeff Dalton
+  -->
+
+<body bgcolor=White>
+
+<h1>O-Plan Web server with replan</h1>
+
+
+<i>This initial page can be used to present any information about
+this demonstration that we want to present at this point.</i>
+
+<p> 
+
+<i>It can also be used to ask for a password.  A password might
+be required to use the demo at all, or the password might just get
+longer time limits.</i>
+
+<p>
+Press the button below to start O-Plan.  O-Plan will continue
+running throughout the demonstration until you select "Exit"
+from the menu bar at the top of the main page or until there
+has been no interaction for too long a time.
+
+<p>
+At present the interaction time limit is somewhere between 5 minutes
+and an hour (inclusive).
+
+
+<!-- Now a form just to have a button that will set things going -->
+
+<p>
+<form action="matrix-server.cgi/join/gpdt3"
+      method=post>
+
+<table>
+
+<tr>
+<td>Session:</td> <td><input size=12 name="session"></td>
+<td>User role:
+  <select name="role" size=1>
+    <option>Task-Assigner
+    <option>Planner
+    <option selected>Both Task-Assigner and Planner
+  </select>
+</td>
+</tr>
+
+<tr>
+<td>Password:</td>
+<td><input type=password size=12 name="password" value="test"></td>
+<td><input type="submit" value="Begin">
+    <input type="reset" value="Undo changes"></td>
+</tr>
+
+</table>
+
+</form>
+
+
+<!-- O-Plan's standard AIAI page foot -->
+
+<p>
+<hr>
+<A HREF="/">
+<img width=82 height=37 alt="AIAI"
+      align=right border=0 src="/img/logo/small.gif">
+</A>
+<Address><A HREF="/~oplan">O-Plan</A></Address>
+
+</body>

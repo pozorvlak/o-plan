@@ -1,0 +1,10 @@
+                                Demo
+                                ----
+
+This directory contains the Demonstration files for the O-Plan2 system.
+The files are as follows:
+
+tf	   a directory of Task Formalism (TF) files for O-Plan2.
+
+ac	   a directory containing AutoCAD PlanWorld viewer files and
+           information.
