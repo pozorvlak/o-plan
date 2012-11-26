@@ -609,7 +609,7 @@
 
 ;;; STREAM-TYPE stream
 
-(defCfun "static object stream_type(Zstream) object Zstream;" 0
+(defCfun "static object stream_type(object Zstream)" 0
 %	Sobject str;				/* sigh */
 %	object result;
 
@@ -663,7 +663,7 @@
 
 ;;; STREAM-SYNONYM synonym-stream
 
-(defCfun "static object stream_synonym(Zstream) object Zstream;" 0
+(defCfun "static object stream_synonym(object Zstream)" 0
 %   Sobject str;
 %   object result;
 
