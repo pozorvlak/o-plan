@@ -8,7 +8,7 @@
 
 # Edit the following line for your site:
 
-base_dir=/project/oplan/development/jeff/3.x
+base_dir=/home/miles/src/oplan
 
 image_dir=$base_dir/lib
 
