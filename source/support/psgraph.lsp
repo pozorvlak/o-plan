@@ -38,7 +38,7 @@
 ;;; Feb 99    JDalton Converted to defpackage
 ;;; 
 
-(cl:defpackage :psgraph
+(defpackage :psgraph
   (:export #:*max-psnodes* #:*extra-x-spacing* #:*extra-y-spacing* 
 	   #:*fontname* #:*fontsize* #:*second-fontname* #:*second-fontsize*
 	   #:*title-fontname* #:*title-fontsize* 
