@@ -196,15 +196,13 @@
 (defvar *source-type* "lsp")		;could be part of system definitions
 
 (defvar *object-type*
-  (or #+kcl                 "o"
-      #+poplog              "null"
-      #+excl                "fasl"
-      #+(and :CMU :sparc)   "sparcf"
-      #+Liquid              "sbin"
-      #+(and Lucid solaris) "s2bin"
-      #+(and Lucid sparc)   "sbin"
-      #+:wcl                "o"
-      (error "No *object-type* defined.")))
+  (implementation-object-type))
+
+(defun implementation-object-type ()
+  (pathname-type
+    (compile-file-pathname
+      (merge-pathnames "TEST.LSP"
+                       (user-homedir-pathname)))))
 
 #+kcl
 (defmacro with-compilation-unit (options &body forms)

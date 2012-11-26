@@ -69,7 +69,7 @@
   (load "support/defpackage"))
 
 (unless (find-package "SIMPLE-DEFSYSTEM")
-  (load "support/defsys"))
+  (load "support/defsys.lsp"))
 
 (shadowing-import '(simple-defsystem:defsystem
 		    simple-defsystem:find-system
