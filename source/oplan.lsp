@@ -44,7 +44,7 @@
 
 #+ansi-cl (in-package :common-lisp-user)
 #-ansi-cl (in-package :user)
-
+(rename-package "COMMON-LISP-USER" "COMMON-LISP-USER" '("CL-USER" "USER"))
 
 (defvar user::*oplan-version* "3.3")
 
