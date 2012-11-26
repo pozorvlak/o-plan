@@ -1,0 +1,5 @@
+source/control-panel/Makefile
+source/control-panel/Makefile.bak
+source/control-panel/xuim
+source/xmenu/xmenu
+*.o
