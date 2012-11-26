@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Install prerequisites for building O-Plan on an Ubuntu box
+sudo apt-get install libxaw-headers gcl xutils-dev
