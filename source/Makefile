@@ -24,14 +24,16 @@ Allegro = /usr/local/acl/5.0/lisp
 Lucid   = lucid4.1+clos
 KCL     = gcl
 GCL     = gcl
+SBCL    = sbcl
 
 # This is the default lisp for the "generic" make targets:
-Lisp = ${GCL}
+Lisp = ${SBCL}
 
 # Here are some default image names:
 Lucid-image   = lucid-image
 KCL-image     = kcl-image
 Allegro-image = allegro-image.dxl
+SBCL-image    = sbcl-image
 
 # "make all" and "make install" assume Allegro Common Lisp.
 #
@@ -52,8 +54,8 @@ Base-dir  = ..
 Lib-dir   = ${Base-dir}/lib
 Bin-dir   = ${Base-dir}/bin
 
-Image = ${Allegro-image}
-Target = allegro-oplan
+Image = ${SBCL-image}
+Target = sbcl-oplan
 
 AuxProgs = xmenu/xmenu control-panel/xuim
 
@@ -107,6 +109,10 @@ kcl-oplan:
 allegro-oplan:
 	${MAKE} allegro-compile-everything
 	${MAKE} allegro-build
+
+sbcl-oplan:
+	${MAKE} sbcl-compile-everything
+	${MAKE} sbcl-build
 
 
 # Solaris 2 Lucid at AIAI
@@ -170,6 +176,9 @@ gcl-build:
 allegro-build:
 	${MAKE} Lisp=${Allegro} Image=${Allegro-image} generic-build
 
+sbcl-build:
+	${MAKE} Lisp=${SBCL} Image=${SBCL-image} generic-build
+
 generic-build:
 	echo "(load \"oplan.lsp\") \
 	      (load-system 'oplan) \
@@ -228,6 +237,12 @@ allegro-compile-everything:
 allegro-compile-warnings:
 	${MAKE} Lisp=${Allegro} generic-compile-warnings
 
+sbcl-compile-everything:
+	${MAKE} Lisp=${SBCL} generic-compile-everything
+
+sbcl-compile-warnings:
+	${MAKE} Lisp=${SBCL} generic-compile-warnings
+
 generic-compile-everything:
 	echo "(load \"oplan.lsp\") \
 	      (compile-system 'everything) \
@@ -258,6 +273,9 @@ kcl-clean:
 allegro-clean:
 	${MAKE} Lisp=${Allegro} generic-clean
 
+sbcl-clean:
+	${MAKE} Lisp=${SBCL} generic-clean
+
 generic-clean:
 	# Loads dependent-support to get util:exit-lisp.
 	echo "(load \"oplan.lsp\") \
@@ -268,7 +286,6 @@ generic-clean:
 
 clean-tilde-files:
 	find . -print | grep "~" | xargs rm
-
 
 # Auxiliary programs
 
