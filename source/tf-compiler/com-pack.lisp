@@ -1,4 +1,4 @@
-;;;; File: com-pack.lsp
+;;;; File: com-pack.lisp
 ;;; Contains: Package definition for the TF compiler implementation
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

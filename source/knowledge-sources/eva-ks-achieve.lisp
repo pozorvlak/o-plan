@@ -1,4 +1,4 @@
-;;;; File: KS-ACHIEVE.lsp
+;;;; File: KS-ACHIEVE.lisp
 ;;; Contains: Achieve a condition KS.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Wed Sep 26 11:02:42 1990

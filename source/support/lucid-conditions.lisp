@@ -1,11 +1,11 @@
-;;;; File: lucid-conditions.lsp
+;;;; File: lucid-conditions.lisp
 ;;; Contains: Exports for some Lucid's condition system
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1994
 ;;; Updated: Sun Nov 10 01:51:56 1996 by Jeff Dalton
 ;;; Copyright: (c) 1994, AIAI, University of Edinburgh
 
-;;; At present, the exports match those of support/kcl-conditions.lsp,
+;;; At present, the exports match those of support/kcl-conditions.lisp,
 ;;; but not all of the exported names have have been defined by LCL.
 
 (in-package :oplan-util)

@@ -1,4 +1,4 @@
-;;;; File: tgm-datastructures.lsp
+;;;; File: tgm-datastructures.lisp
 ;;;; Contains: TGM datastructures and associated functions.
 ;;;; Author: Richard Kirby (rbk)
 ;;;; Created: Thu Jun 18 11:26:11 1992

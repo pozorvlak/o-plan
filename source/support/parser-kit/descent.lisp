@@ -1,4 +1,4 @@
-;;;; File: descent.lsp
+;;;; File: descent.lisp
 ;;; Contains: Framework for recursive descent parsers
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

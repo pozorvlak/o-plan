@@ -1,4 +1,4 @@
-;;;; File: mout1-http-server-setup.lsp
+;;;; File: mout1-http-server-setup.lisp
 ;;; Contains: Support code for Mout-1 matrix http interface
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 2000

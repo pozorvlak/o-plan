@@ -1,4 +1,4 @@
-;;;; File: KS-OR.lsp
+;;;; File: KS-OR.lisp
 ;;; Contains: Handles AND/OR interaction tree.
 ;;; Author: Richard Kirby and Jeff Dalton
 ;;; Created: Wed Nov 27 15:56:27 1991

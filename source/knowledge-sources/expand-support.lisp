@@ -1,4 +1,4 @@
-;;;; File: expand-support.lsp
+;;;; File: expand-support.lisp
 ;;; Contains: KS support for expansion
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

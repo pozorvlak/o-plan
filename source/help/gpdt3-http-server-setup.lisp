@@ -1,4 +1,4 @@
-;;;; File: gpdt3-http-server-setup.lsp
+;;;; File: gpdt3-http-server-setup.lisp
 ;;; Contains: Support code for GPDT matrix http interface
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 2000

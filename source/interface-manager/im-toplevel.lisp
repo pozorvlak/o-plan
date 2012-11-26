@@ -1,4 +1,4 @@
-;;;; File: im-toplevel.lsp
+;;;; File: im-toplevel.lisp
 ;;; Contains: Top-level processing for the IM.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Thu Apr 12 11:38:24 1990

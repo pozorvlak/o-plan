@@ -1,4 +1,4 @@
-;;;; File: world-package.lsp
+;;;; File: world-package.lisp
 ;;; Contains: World package definition
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1994

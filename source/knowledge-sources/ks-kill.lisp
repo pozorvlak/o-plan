@@ -1,4 +1,4 @@
-;;;; File: KS-KILL.lsp
+;;;; File: KS-KILL.lisp
 ;;; Contains: Kills off the planner.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Fri Aug 10 15:58:46 1990

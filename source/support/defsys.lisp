@@ -1,4 +1,4 @@
-;;;; File: defsys.lsp
+;;;; File: defsys.lisp
 ;;; Contains: Simple defsystem
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

@@ -1,4 +1,4 @@
-;;;; File: sanity-checker.lsp
+;;;; File: sanity-checker.lisp
 ;;; Contains: Consistency and reasonableness checks.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Wed Jul 22 12:03:49 1992

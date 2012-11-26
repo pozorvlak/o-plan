@@ -1,4 +1,4 @@
-;;;; File: condition-support.lsp
+;;;; File: condition-support.lisp
 ;;; Contains: Support for ks-condition and for expansion
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

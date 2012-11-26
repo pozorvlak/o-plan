@@ -1,4 +1,4 @@
-;;;; File: options.lsp
+;;;; File: options.lisp
 ;;; Contains: The Controller side of the implementation of options
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

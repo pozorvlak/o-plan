@@ -1,4 +1,4 @@
-;;;; File: components.lsp
+;;;; File: components.lisp
 ;;; Contains: Definition of the component type
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993

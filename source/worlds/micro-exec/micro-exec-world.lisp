@@ -1,4 +1,4 @@
-;;;; File: micro-exec-world.lsp
+;;;; File: micro-exec-world.lisp
 ;;; Contains: The generic world-model used by the Micro-Exec.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1995

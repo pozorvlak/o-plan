@@ -82,15 +82,15 @@ ${Lib-dir}:
 # Release date
 #
 # Writes something like (defvar *oplan-release-date* "29-Oct-94")
-# to a new oplan-release-date.lsp.
+# to a new oplan-release-date.lisp.
 #
 # %h works for the month with both SunOS 4.1.3 and FreeBSD.
 #
 rdate:
-	rm -f oplan-release-date.lsp
-	echo '(in-package :user)' > oplan-release-date.lsp
+	rm -f oplan-release-date.lisp
+	echo '(in-package :user)' > oplan-release-date.lisp
 	echo '(defvar *oplan-release-date* "'`date +%d-%h-%y`'")' \
-		>> oplan-release-date.lsp
+		>> oplan-release-date.lisp
 
 
 # For gcc, when /tmp is too small, setenv TMPDIR = .
@@ -155,13 +155,13 @@ liquid-clean:
 # Image-building
 
 lucid-build:
-	${Lucid} -load oplan.lsp \
+	${Lucid} -load oplan.lisp \
 		 -eval "(load-system 'oplan)" \
 		 -eval "(oplan:save-oplan \"${Lucid-image}\")" \
 		 -quit
 
 kcl-build:
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (load-system 'oplan) \
 	      (oplan:save-oplan \"${KCL-image}\") \
 	      (bye)" \
@@ -180,7 +180,7 @@ sbcl-build:
 	${MAKE} Lisp=${SBCL} Image=${SBCL-image} generic-build
 
 generic-build:
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (load-system 'oplan) \
 	      (oplan:save-oplan \"${Image}\") \
 	      (oplan-util:exit-lisp)" \
@@ -190,36 +190,36 @@ generic-build:
 # Compilation
 
 lucid-compile:
-	${Lucid} -load oplan.lsp \
+	${Lucid} -load oplan.lisp \
 		 -eval "(compile-system 'oplan)" \
 		 -quit
 
 lucid-compile-everything:
-	${Lucid} -load oplan.lsp \
+	${Lucid} -load oplan.lisp \
 		 -eval "(compile-system 'everything)" \
 		 -quit
 
 lucid-compile-warnings:
-	${Lucid} -load oplan.lsp \
+	${Lucid} -load oplan.lisp \
 		 -eval "(setq *break-on-warnings* t)" \
 		 -eval "(compile-system 'everything)" \
 		 -quit
 
 lucid-compile-changed-files:
-	${Lucid} -load oplan.lsp \
+	${Lucid} -load oplan.lisp \
 		 -eval "(setq *break-on-warnings* t)" \
 		 -eval "(compile-system 'everything :ignore-depends t)" \
 		 -quit
 
 kcl-compile:
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (si:use-fast-links t) \
 	      (compile-system 'oplan) \
 	      (bye)" \
 	  | ${KCL}
 
 kcl-compile-everything:
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (si:use-fast-links t) \
 	      (compile-system 'everything) \
 	      (bye)" \
@@ -244,13 +244,13 @@ sbcl-compile-warnings:
 	${MAKE} Lisp=${SBCL} generic-compile-warnings
 
 generic-compile-everything:
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (compile-system 'everything) \
 	      (oplan-util:exit-lisp)" \
 	  | ${Lisp}
 
 generic-compile-warnings:
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (setq *break-on-warnings* t) \
 	      (compile-system 'everything) \
 	      (oplan-util:exit-lisp)" \
@@ -260,12 +260,12 @@ generic-compile-warnings:
 # Clean
 
 lucid-clean:
-	${Lucid} -load oplan.lsp \
+	${Lucid} -load oplan.lisp \
 		 -eval "(clean-system 'everything)" \
 		 -quit
 
 kcl-clean:
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (clean-system 'everything) \
 	      (bye)" \
 	  | ${KCL}
@@ -278,7 +278,7 @@ sbcl-clean:
 
 generic-clean:
 	# Loads dependent-support to get util:exit-lisp.
-	echo "(load \"oplan.lsp\") \
+	echo "(load \"oplan.lisp\") \
 	      (load-system 'dependent-support) \
 	      (clean-system 'everything) \
 	      (oplan-util:exit-lisp)" \
@@ -306,14 +306,14 @@ xmenu/xmenu:
 
 # Other useful things
 
-# BSD "make" handles "TAGS: *.lsp */*.lsp */*/*.lsp", but others may not.
+# BSD "make" handles "TAGS: *.lisp */*.lisp */*/*.lisp", but others may not.
 # In that case, use "make newTAGS".
 
-TAGS: *.lsp */*.lsp */*/*.lsp
-	etags *.lsp */*.lsp */*/*.lsp
+TAGS: *.lisp */*.lisp */*/*.lisp
+	etags *.lisp */*.lisp */*/*.lisp
 
 newTAGS:
-	etags *.lsp */*.lsp */*/*.lsp
+	etags *.lisp */*.lisp */*/*.lisp
 
 
 # Release preparation
@@ -454,13 +454,13 @@ file-backup:
 active-backup:
 	${MAKE} Exclude=${Exclude} exclude
 	${TAR} -zcvX ${Exclude} -f ../active.`date +%d%h%y`.tar.gz \
-		Makefile oplan-release-date.lsp \
+		Makefile oplan-release-date.lisp \
 		Notes/.log web
 	echo `date` active backup on `hostname` >> transfer-log
 
 # Once active:
 #		Makefile Notes/.log web support \
-#		system-definitions.lsp oplan.lsp \
+#		system-definitions.lisp oplan.lisp \
 #		random top Notes/old-coa-visibility
 
 386-backup:

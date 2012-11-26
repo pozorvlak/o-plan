@@ -1,4 +1,4 @@
-;;;; File: viewer-toplevel.lsp
+;;;; File: viewer-toplevel.lisp
 ;;; Contains: Plan / World viewer toplevel
 ;;; Authors: Jeff Dalton
 ;;; Created: Wed Mar  4 17:00:03 1992

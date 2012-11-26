@@ -1,4 +1,4 @@
-;;;; File: qa-all.lsp
+;;;; File: qa-all.lisp
 ;;; Contains: qa-all and associated routines
 ;;; Author: Jeff Dalton
 ;;; Created: November 1992
@@ -104,7 +104,7 @@
 
 ;;;; Utilities
 
-;;; /\/: TOME-GENERATOR should be in tgm.lsp.  In that file, VALUE,
+;;; /\/: TOME-GENERATOR should be in tgm.lisp.  In that file, VALUE,
 ;;; GENERATOR, and TRY-NEXT can be used w/o the package qualification.
 
 (defun tome-generator (&optional (p '??) (v '??))
@@ -122,7 +122,7 @@
 		  (t
 		   (return item))))))))
 
-;;; /\/: gen->list should be in obextra.lsp.
+;;; /\/: gen->list should be in obextra.lisp.
 
 (defun gen->list (g)
   (do ((item (oplan-obase:try-next g)

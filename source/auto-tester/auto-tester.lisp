@@ -1,4 +1,4 @@
-;;;; File: auto-tester.lsp
+;;;; File: auto-tester.lisp
 ;;; Contains: Controller, etc. for automatic testing.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 14 March 1993
@@ -15,7 +15,7 @@
 ;;; handling communication with the planner itself.  The TA is given
 ;;; a run-function that simply passes messages between the test
 ;;; controller and the planner.  The test controller is similar to
-;;; a finite state automaton (see fsa.lsp).  It manages the sequence
+;;; a finite state automaton (see fsa.lisp).  It manages the sequence
 ;;; of message exchanges required to get the planner to run a test,
 ;;; return a description of the plan, etc.
 
@@ -29,7 +29,7 @@
 ;;;   form> (atest:run-full-test-sequence)
 
 ;;; /\/: Some shortcuts for running the auto-tester are defined in
-;;; manual-interface.lsp.
+;;; manual-interface.lisp.
 
 (in-package :oplan-autotester :nicknames '(:atest))
 
@@ -186,7 +186,7 @@
 
 ;;; The test-controller pprocess type
 
-;;; See the support file fsa.lsp for a description the test-controller-fsa.
+;;; See the support file fsa.lisp for a description the test-controller-fsa.
 
 (defstruct (test-controller
 	     (:constructor %make-test-controller)

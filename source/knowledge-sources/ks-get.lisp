@@ -1,4 +1,4 @@
-;;;; File: ks-get.lsp
+;;;; File: ks-get.lisp
 ;;; Contains: KS the handles external requests for plan information
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1996

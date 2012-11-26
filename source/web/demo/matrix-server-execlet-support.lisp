@@ -1,4 +1,4 @@
-;;;; File: matrix-server-execlet-support.lsp
+;;;; File: matrix-server-execlet-support.lisp
 ;;; Contains: Support code for COA matrix Web demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1999

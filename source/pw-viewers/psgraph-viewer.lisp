@@ -1,4 +1,4 @@
-;;;; File: psgraph-viewer.lsp
+;;;; File: psgraph-viewer.lisp
 ;;; Contains: Plan / World viewer
 ;;; Authors: Jeff Dalton
 ;;; Created: Wed Mar  4 17:00:03 1992

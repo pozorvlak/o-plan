@@ -1,4 +1,4 @@
-;;;; File: obase.lsp
+;;;; File: obase.lisp
 ;;; Contains: Low-level database support
 ;;; Author: Jeff Dalton
 ;;; Created: Mon Jan 24, 1994 by Jeff Dalton

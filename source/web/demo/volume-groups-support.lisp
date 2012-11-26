@@ -1,4 +1,4 @@
-;;;; File: volume-groups-support.lsp
+;;;; File: volume-groups-support.lisp
 ;;; Contains: Support code for the volume groups Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1997

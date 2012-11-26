@@ -1,4 +1,4 @@
-;;;; File: kcl-util.lsp
+;;;; File: kcl-util.lisp
 ;;; Contains: AKCL-specific utilities
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993

@@ -1,4 +1,4 @@
-;;;; File: viewer-services.lsp
+;;;; File: viewer-services.lisp
 ;;; Contains: Plan / World viewer utilities
 ;;; Authors: Jeff Dalton and Brian Drabble
 ;;; Created: Wed Mar  4 17:00:03 1992

@@ -1,4 +1,4 @@
-;;;; File: coa-planning-support.lsp
+;;;; File: coa-planning-support.lisp
 ;;; Contains: Planning code for COA matrix Web demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1998

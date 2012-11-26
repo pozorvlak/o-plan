@@ -1,1 +1,37 @@
-../xml/plan.dtd
+<!-- Copyright (c) Richard Tobin 1999.
+     Richard Tobin has asserted the moral right to be identified as
+     the author of this document.
+     This document may be freely modified and redistributed provided 
+     that this comment appears on every copy. -->
+
+<!ELEMENT plan (node)+>
+<!ATTLIST plan domain CDATA #IMPLIED
+               task CDATA #IMPLIED>
+
+<!ENTITY % node-type "(start|finish|action|dummy)">
+
+<!ELEMENT node (pattern?,node-end,node-end)>
+<!ATTLIST node name ID #REQUIRED
+               parent IDREF #IMPLIED
+               children IDREFS #IMPLIED
+               type %node-type; #REQUIRED
+	       min-duration CDATA #IMPLIED
+               max-duration CDATA #IMPLIED>
+
+<!ELEMENT pattern (#PCDATA)>
+
+<!ENTITY % node-end "(begin|end)">
+
+<!ELEMENT node-end (predecessors,successors)>
+<!ATTLIST node-end end %node-end; #REQUIRED
+                   est CDATA #IMPLIED
+                   lst CDATA #IMPLIED>
+
+<!ELEMENT predecessors (node-end-ref)*>
+
+<!ELEMENT successors (node-end-ref)*>
+
+<!ELEMENT node-end-ref EMPTY>
+<!ATTLIST node-end-ref node IDREF #REQUIRED
+                       end %node-end; #REQUIRED>
+

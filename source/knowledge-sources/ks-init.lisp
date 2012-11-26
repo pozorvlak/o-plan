@@ -1,4 +1,4 @@
-;;;; File: KS-INIT.lsp
+;;;; File: KS-INIT.lisp
 ;;; Contains: Initialises the planner.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Tue Jul 10 17:13:35 1990

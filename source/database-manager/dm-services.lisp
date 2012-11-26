@@ -1,4 +1,4 @@
-;;;; File: dm-services.lsp
+;;;; File: dm-services.lisp
 ;;; Contains: Contains the functions which provide the interfaces to the DM
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Wed Oct 31 13:40:54 1990

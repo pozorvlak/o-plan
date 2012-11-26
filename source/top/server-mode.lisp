@@ -1,4 +1,4 @@
-;;;; File: server-mode.lsp
+;;;; File: server-mode.lisp
 ;;; Contains: Server mode code
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 16 May 1997

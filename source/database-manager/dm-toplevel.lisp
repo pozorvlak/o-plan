@@ -1,4 +1,4 @@
-;;;; File: dm-toplevel.lsp
+;;;; File: dm-toplevel.lisp
 ;;; Contains: Top-level processing for the DM.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Mon Apr 16 11:29:20 1990

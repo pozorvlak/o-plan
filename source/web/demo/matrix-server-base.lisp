@@ -1,4 +1,4 @@
-;;;; File: matrix-server-base.lsp
+;;;; File: matrix-server-base.lisp
 ;;; Contains: Support code for COA matrix Web demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1998
@@ -110,7 +110,7 @@
 	(user-focus-page-url u) url))
 
 
-;;;; Procedures required by join-server in http-server.lsp
+;;;; Procedures required by join-server in http-server.lisp
 
 (defun check-user-role (role)
   (ecase role ((:task-assigner :planner))))

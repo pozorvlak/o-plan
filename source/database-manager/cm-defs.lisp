@@ -1,4 +1,4 @@
-;;;; File: cm-defs.lsp
+;;;; File: cm-defs.lisp
 ;;; Contains: Classes and macros for defining constraint managers
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1996

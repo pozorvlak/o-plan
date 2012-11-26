@@ -1,4 +1,4 @@
-;;;; File: tpn.lsp
+;;;; File: tpn.lisp
 ;;; Contains: Time Point Network datastructures and related functions.
 ;;; Authors: Jeff Dalton <J.Dalton@ed.ac.uk> and Richard Kirby (rbk)
 ;;; Created: September 1992

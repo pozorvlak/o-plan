@@ -1,4 +1,4 @@
-;;;; File: other-constraint-cm.lsp
+;;;; File: other-constraint-cm.lisp
 ;;; Contains: The constraint manager for constraints w/o managers
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

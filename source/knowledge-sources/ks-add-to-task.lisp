@@ -1,4 +1,4 @@
-;;;; File: KS-ADD-TO-TASK.lsp
+;;;; File: KS-ADD-TO-TASK.lisp
 ;;; Contains: KS-ADD-TO-TASK
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 01 June 1995

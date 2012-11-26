@@ -1,4 +1,4 @@
-;;;; File: end-graph.lsp
+;;;; File: end-graph.lisp
 ;;; Contains: Operations on graphs of node-ends
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1994
@@ -89,7 +89,7 @@
 
 ;;; Make-node-index returns an EQ hash-table that maps a node-name
 ;;; to a cons (i . nd) where nd is a node-description struct (see
-;;; viewer-services.lsp) and i is the index of nd in the list of nodes.
+;;; viewer-services.lisp) and i is the index of nd in the list of nodes.
 
 (defun make-node-index (nodes) ; -> hash-table
   (let ((table (make-hash-table :test #'eq)))
@@ -221,7 +221,7 @@
 
 ;;;; Transitive closure of the enode successor (en-suc) relation
 
-;;; See support/psgraph.lsp for an explanation of the bit- routines.
+;;; See support/psgraph.lisp for an explanation of the bit- routines.
 
 (defun eg-ensure-suc* (eg)
   (unless (eg-suc* eg)

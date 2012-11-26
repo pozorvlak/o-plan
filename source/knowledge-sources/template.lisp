@@ -1,4 +1,4 @@
-;;;; File: template.lsp
+;;;; File: template.lisp
 ;;; Contains: The general Knowledge Source template.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Wed Sep 19 13:07:45 1990
@@ -6,9 +6,9 @@
 ;;; Copyright: (c) 1992, AIAI, University of Edinburgh
 
 ;;; The file is named the same as the knowledge source (in uppercase), with
-;;; the prefix "KS-", and either ".o" or ".lsp" as the suffix. In the file
+;;; the prefix "KS-", and either ".o" or ".lisp" as the suffix. In the file
 ;;; there must be atleast one function definition, which must have the same
-;;; name as the filename (without the ".o" or ".lsp" suffix).
+;;; name as the filename (without the ".o" or ".lisp" suffix).
 
 ;;; Below is the general template for a null KS.
 ;;; The one argument is set to the agenda record that caused this KS to be

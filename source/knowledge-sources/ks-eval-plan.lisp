@@ -1,4 +1,4 @@
-;;;; File: KS-EVAL-PLAN.lsp
+;;;; File: KS-EVAL-PLAN.lisp
 ;;; Contains: The KS for evaluating a plan
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1995

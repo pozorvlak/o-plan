@@ -1,4 +1,4 @@
-;;;; File: KS-BIND.lsp
+;;;; File: KS-BIND.lisp
 ;;; Contains: Bind up variables.
 ;;; Author: Jeff Dalton and Richard Kirby (rbk)
 ;;; Created: Mon Jul 22 16:25:23 1991

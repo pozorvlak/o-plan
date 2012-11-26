@@ -1,4 +1,4 @@
-;;;; File: cgi-env.lsp
+;;;; File: cgi-env.lisp
 ;;; Contains: Support for Web / CGI demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994
@@ -33,13 +33,13 @@
 ;;; the following files:
 ;;;   web/D.html           Introduction to the demo plus a FORM
 ;;;   web/D.cgi            Shell script that runs O-Plan with appropriate args
-;;;   web/D-support.lsp    Lisp routines that control the demo
+;;;   web/D-support.lisp    Lisp routines that control the demo
 ;;;
 ;;; These files may actually be in one or more subdirectories rather
 ;;; than directly in "web"; it depends on how much can be the same for
 ;;; the different hosts on which the demo runs.  For the details, see
 ;;; web/README and the routines below that construct URLs and file names.
-;;; Certain parameters are set by ../lib/web-config.lsp.
+;;; Certain parameters are set by ../lib/web-config.lisp.
 ;;;
 ;;; The FORM in D.html will have D.cgi as its ACTION.  How this is
 ;;; made to work depends on the httpd configuration.  (Perhaps there's
@@ -48,8 +48,8 @@
 ;;; more elaborate steps.)
 ;;;
 ;;; The D.cgi script will run O-Plan in "subr" mode without windows
-;;; and arrange for D-support.lsp to be loaded.  It will also cause a
-;;; procedure named D, usually defined in D-support.lsp, to be called.
+;;; and arrange for D-support.lisp to be loaded.  It will also cause a
+;;; procedure named D, usually defined in D-support.lisp, to be called.
 ;;; That procedure is responsible for getting O-Plan to do whatever
 ;;; the demo requires.  The definition will look something like this:
 ;;;
@@ -62,7 +62,7 @@
 ;;;        ...))
 ;;;
 ;;; D should print HTML to the stdout of the Lisp process.  The "html-"
-;;; procedures defined in html-output.lsp and below are a convenient
+;;; procedures defined in html-output.lisp and below are a convenient
 ;;; way to do this.  The HTML can contain hypertext links to any files
 ;;; produced by the demo (such as a PostScript graphs).  Such files
 ;;; are normally placed in a tmp directory as described in a later
@@ -88,7 +88,7 @@
 ;;; output.  For instance, it may print the TITLE.
 ;;;
 ;;; When the script does not output the content-type header, it is
-;;; up to D-support.lsp to do so.  It can do that by calling write-
+;;; up to D-support.lisp to do so.  It can do that by calling write-
 ;;; cgi-response-headers.  However, before that, it should as soon as
 ;;; possible (setq *cgi-content-type* nil).  That will allow the
 ;;; error-handling code to determine that the headers have not yet

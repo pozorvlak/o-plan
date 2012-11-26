@@ -1,4 +1,4 @@
-;;;; File: parser.lsp
+;;;; File: parser.lisp
 ;;; Contains: Parser for the TF compiler
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

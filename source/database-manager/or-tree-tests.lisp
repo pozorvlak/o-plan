@@ -1,4 +1,4 @@
-;;;; File: or-tree-tests.lsp
+;;;; File: or-tree-tests.lisp
 ;;; Contains: Tests of some or-tree algorithms
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

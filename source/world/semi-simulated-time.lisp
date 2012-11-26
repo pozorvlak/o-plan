@@ -1,4 +1,4 @@
-;;;; File: semi-simulated-time.lsp
+;;;; File: semi-simulated-time.lisp
 ;;; Contains: Alternative world event handler
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1995

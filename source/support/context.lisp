@@ -1,4 +1,4 @@
-;;;; File: context.lsp
+;;;; File: context.lisp
 ;;; Contains: A Context Mechanism
 ;;; Author: Jeff Dalton, based on a version by Ken Currie
 ;;; Created: Thu Jan 24 14:21:58 1991

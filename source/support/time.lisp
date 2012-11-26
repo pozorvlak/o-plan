@@ -1,4 +1,4 @@
-;;;; File: time.lsp
+;;;; File: time.lisp
 ;;; Contains: Time and date operations.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: August 1991

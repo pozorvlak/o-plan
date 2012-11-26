@@ -1,4 +1,4 @@
-;;;; File: KS-FIX.lsp
+;;;; File: KS-FIX.lisp
 ;;; Contains: KS that tries to fix an execution failure
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Wed 22 February 1995

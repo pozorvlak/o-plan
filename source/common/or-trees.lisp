@@ -1,4 +1,4 @@
-;;;; File: or-trees.lsp
+;;;; File: or-trees.lisp
 ;;; Contains: Definition of or-tree and or-branch structures
 ;;; Author: Jeff Dalton (retaining some of RBK's version)
 ;;; Created: Mon Dec  2 15:33:15 1991

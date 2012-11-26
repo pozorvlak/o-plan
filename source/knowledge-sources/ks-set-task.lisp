@@ -1,4 +1,4 @@
-;;;; File: KS-SET-TASK.lsp
+;;;; File: KS-SET-TASK.lisp
 ;;; Contains: Handles the initialisation of the plan state to a new task.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Thu Jul 12 11:02:41 1990

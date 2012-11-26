@@ -1,4 +1,4 @@
-;;;; File: gpdt3-matrix-support.lsp
+;;;; File: gpdt3-matrix-support.lisp
 ;;; Contains: Support code for a "go places and do things" Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: April 1998
@@ -98,7 +98,7 @@
 
 ;;;; Initialization
 
-; (load "random/eval-once.lsp")
+; (load "random/eval-once.lisp")
 
 (defun-for gpdt3-demo initialize-matrix-demo ()
   ; (eval-once gpdt3-ta-message-logging (web-note-ta-messages))

@@ -1,4 +1,4 @@
-;;;; File: clos-macros.lsp
+;;;; File: clos-macros.lisp
 ;;; Contains: Macros related to CLOS
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1996

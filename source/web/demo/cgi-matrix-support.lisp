@@ -1,4 +1,4 @@
-;;;; File: coa-matrix-support.lsp
+;;;; File: coa-matrix-support.lisp
 ;;; Contains: Support code for COA matrix Web demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1997

@@ -1,4 +1,4 @@
-;;;; File: KS-EXECUTION-SUCCESS.lsp
+;;;; File: KS-EXECUTION-SUCCESS.lisp
 ;;; Contains: KS that deal with successful execution of an end of an action
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Sat 18 February 1995

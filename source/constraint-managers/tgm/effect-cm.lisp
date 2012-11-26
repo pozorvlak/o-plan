@@ -1,4 +1,4 @@
-;;;; File: effect-cm.lsp
+;;;; File: effect-cm.lisp
 ;;; Contains: The CM interface to the TGM for effects
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

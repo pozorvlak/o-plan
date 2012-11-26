@@ -1,4 +1,4 @@
-;;;; File: kcl-fork.lsp
+;;;; File: kcl-fork.lisp
 ;;; Contains: KCL process forker
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1995

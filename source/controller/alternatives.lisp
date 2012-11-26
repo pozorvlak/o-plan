@@ -1,4 +1,4 @@
-;;;; File: alternatives.lsp
+;;;; File: alternatives.lisp
 ;;; Contains: "Alternative Manager"
 ;;; Author:  Jeff Dalton and Richard Kirby
 ;;; Created: Fri Nov  2 13:37:42 1990

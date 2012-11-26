@@ -1,4 +1,4 @@
-;;;; File: expansion-cost.lsp
+;;;; File: expansion-cost.lisp
 ;;; Contains: Further TF compiler domain analysis
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: July 1994

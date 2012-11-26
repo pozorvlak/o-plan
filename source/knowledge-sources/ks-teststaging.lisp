@@ -1,4 +1,4 @@
-;;;; File: KS-TESTSTAGING.lsp
+;;;; File: KS-TESTSTAGING.lisp
 ;;;; Version: %W%
 ;;;; Contains: Tests the staging code.
 ;;;; Author: Richard Kirby (rbk@ebay)

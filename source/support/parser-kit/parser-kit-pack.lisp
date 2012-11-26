@@ -1,4 +1,4 @@
-;;;; File: parser-kit-pack.lsp
+;;;; File: parser-kit-pack.lisp
 ;;; Contains: Package definition for a recursive-descent parser kit
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 27 March 1993

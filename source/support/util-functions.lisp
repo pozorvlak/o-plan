@@ -1,4 +1,4 @@
-;;;; File: util-functions.lsp
+;;;; File: util-functions.lisp
 ;;; Contains: Useful functions that don't belong anywhere else
 ;;; Author: Jeff Dalton
 ;;; Created: February 1993
@@ -39,7 +39,7 @@
 ;;;; Environment variable enquiries
 
 ;;; (getenv string) -> string or nil is defined in an implementation-
-;;; dependent manner.  See kcl-util.lsp, allegro-util.lsp, etc.
+;;; dependent manner.  See kcl-util.lisp, allegro-util.lisp, etc.
 
 (defun getenv-else (default string)
   (or (getenv string)

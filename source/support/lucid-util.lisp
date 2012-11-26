@@ -1,4 +1,4 @@
-;;;; File: lucid-util.lsp
+;;;; File: lucid-util.lisp
 ;;; Contains: Lucid-specific utilities
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993

@@ -1,4 +1,4 @@
-;;;; File: sim-clock.lsp
+;;;; File: sim-clock.lisp
 ;;; Contains: Simulated time clocks
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994

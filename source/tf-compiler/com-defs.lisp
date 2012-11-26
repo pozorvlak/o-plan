@@ -1,4 +1,4 @@
-;;;; File: com-defs.lsp
+;;;; File: com-defs.lisp
 ;;; Contains: Definitions for parser and compiler
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

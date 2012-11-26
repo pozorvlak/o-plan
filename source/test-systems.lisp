@@ -1,4 +1,4 @@
-;;;; File: test-systems.lsp
+;;;; File: test-systems.lisp
 ;;; Contains: O-Plan system definitions for test systems
 ;;; Author: Jeff Dalton
 ;;; Created: Sat Mar  5 13:22:55 1994 by Jeff Dalton

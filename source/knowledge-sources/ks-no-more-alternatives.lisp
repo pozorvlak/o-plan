@@ -1,4 +1,4 @@
-;;;; File: KS-NO-MORE-ALTERNATIVES.lsp
+;;;; File: KS-NO-MORE-ALTERNATIVES.lisp
 ;;; Contains: A special agenda entry to indicate that the planner has run
 ;;;   out of options.
 ;;; Author: Richard Kirby (rbk)

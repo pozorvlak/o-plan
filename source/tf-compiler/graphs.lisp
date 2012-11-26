@@ -1,4 +1,4 @@
-;;;; File: graphs.lsp
+;;;; File: graphs.lisp
 ;;; Contains: Graph algorithms
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Thu Sep 30 15:49:01 1993 by Jeff Dalton
@@ -10,7 +10,7 @@
 (in-package :oplan-tf-compiler)
 
 ;;; This file defines the routines exported from the oplan-graph-util
-;;; package -- see graphs-pack.lsp.
+;;; package -- see graphs-pack.lisp.
 
 
 ;;;; Strongly connected components

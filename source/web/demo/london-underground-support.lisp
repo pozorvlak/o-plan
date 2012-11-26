@@ -1,4 +1,4 @@
-;;;; File: london-underground-support.lsp
+;;;; File: london-underground-support.lisp
 ;;; Contains: Support code for the london underground Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1994

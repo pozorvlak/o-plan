@@ -1,4 +1,4 @@
-;;;; File: am-services.lsp
+;;;; File: am-services.lisp
 ;;; Contains: General code for the AM.
 ;;; Author: Jeff Dalton and Richard Kirby (rbk)
 ;;; Created: Fri Nov  2 13:37:42 1990

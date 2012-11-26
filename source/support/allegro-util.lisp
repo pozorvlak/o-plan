@@ -1,4 +1,4 @@
-;;;; File: allegro-util.lsp
+;;;; File: allegro-util.lisp
 ;;; Contains: Allegro-specific utilities
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: April 1994

@@ -1,4 +1,4 @@
-;;;; File: struct-macros.lsp
+;;;; File: struct-macros.lisp
 ;;; Contains: defstruct extensions
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1996, though the contents are older

@@ -1,7 +1,7 @@
-;;;; File: kcl-sockets-non-ansi.lsp
+;;;; File: kcl-sockets-non-ansi.lisp
 ;;; Contains: KCL socket code for losing C compilers
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
-;;; Created: Mon 8 Sep 1997 from kcl-sockets.lsp
+;;; Created: Mon 8 Sep 1997 from kcl-sockets.lisp
 ;;; Updated: Tue Jul 14 05:11:29 1998 by Jeff Dalton
 ;;; Copyright: (c) 1994, 1997, AIAI, University of Edinburgh
 
@@ -34,7 +34,7 @@
 
 
 
-;;; Our very own error routine, based on the one in xfork.lsp.
+;;; Our very own error routine, based on the one in xfork.lisp.
 ;;; We try to print the appropriate Unix error, if one exists.
 
 #+(and bsd sun) ; SunOS?

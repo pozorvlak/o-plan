@@ -1,4 +1,4 @@
-;;;; File: pseudo-process-test.lsp
+;;;; File: pseudo-process-test.lisp
 ;;; Contains: A mechanism for simulated multi-tasking
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993

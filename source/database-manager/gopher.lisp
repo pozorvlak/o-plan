@@ -1,4 +1,4 @@
-;;;; File: gopher.lsp
+;;;; File: gopher.lisp
 ;;; Contains: Graphical Operations Processor Handler of Entity Relations.
 ;;; Author: Jeff Dalton and Richard Kirby (rbk)
 ;;; Created: Fri Apr 20 10:35:06 1990

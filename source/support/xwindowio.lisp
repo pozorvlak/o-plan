@@ -1,4 +1,4 @@
-;;;; File: xwindowio.lsp
+;;;; File: xwindowio.lisp
 ;;; Contains: Code for using X windows for IO.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Fri Jan 12 17:25:00 1990

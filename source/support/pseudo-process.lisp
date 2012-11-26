@@ -1,4 +1,4 @@
-;;; File: pseudo-process.lsp
+;;; File: pseudo-process.lisp
 ;;; Contains: A mechanism for simulated multi-tasking
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993
@@ -9,8 +9,8 @@
 ;;; tools it uses, such a queues and "advice" functions (for a single-
 ;;; stepper).  It is self-contained and does not require any other parts
 ;;; of O-Plan (or indeed any other files).  There is an associated set
-;;; of tests (pseudo-process-tests.lsp) which requires O-Plan's test
-;;; framework.  The file ipc.lsp builds some additional mechanisms on
+;;; of tests (pseudo-process-tests.lisp) which requires O-Plan's test
+;;; framework.  The file ipc.lisp builds some additional mechanisms on
 ;;; top of the ones provided here.
 
 ;;; For more information see "doc/pseudo-processes" and "doc/ipc".

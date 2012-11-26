@@ -1,4 +1,4 @@
-;;;; File: complr.lsp
+;;;; File: complr.lisp
 ;;; Contains: Domain construction (after parsing) in the TF compiler
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

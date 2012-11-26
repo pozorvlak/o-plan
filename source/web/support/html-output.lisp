@@ -1,4 +1,4 @@
-;;;; File: html-output.lsp
+;;;; File: html-output.lisp
 ;;; Contains: HTML output support for Web / CGI demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994
