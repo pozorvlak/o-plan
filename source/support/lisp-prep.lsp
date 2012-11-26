@@ -2,7 +2,7 @@
 ;;; Contains: Lisp-implemmentation-specific prep code
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1994
-;;; Updated: Mon Jan 24 15:10:53 2000 by Jeff Dalton
+;;; Updated: Fri Feb  1 22:36:56 2008 by Jeff Dalton
 ;;; Copyright: (c) 1994, 1995, 1996 AIAI, University of Edinburgh
 
 
@@ -27,11 +27,18 @@
 #+:gcl-2
 (progn
 
+  (format t "~&GCL-2 init~%")
+
   (si:use-fast-links nil)
   (proclaim '(optimize (safety 0)))
   (setq si::*multiply-stacks* 4)
-  (setq *load-verbose* nil)
+  ; (setq *load-verbose* nil)
   ; (sys:catch-bad-signals)
+
+  (import 'defpackage:defpackage :lisp)
+  (export 'defpackage:defpackage :lisp)
+
+  (push :no-c-code *features*)
 
 ); end #+:gcl-2
 

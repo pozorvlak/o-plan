@@ -1,34 +1,21 @@
-<HTML>
+<html>
+<head>
+  <title>O-Plan Web Demonstrations</title>
+<style type="text/css">
+body { max-width: 90ex }
+body { margin-left: 1.2cm }
+body { background-color: white }
+</style>
+</head>
 
-<HEAD>
-<TITLE>O-Plan Web demonstrations</TITLE>
-</HEAD>
-
-<BODY BGCOLOR=White>
-
-<!--
-<P>
-<CENTER>
-<IMG SRC="demo/image/oplan-image.gif" ALIGN=bottom>
-</CENTER>
+<!--  Updated: Thu Jul 26 12:01:25 2012
+      by Austin Tate - removed "(Working)" title qualifier
+      Updated: Sun Sep 27 17:52:35 2009 by Jeff Dalton
 -->
 
-<CENTER><H1>O-Plan Web demonstrations</H1></CENTER>
+<body>
 
-<p>
-<table border=1 cellspacing=0 cellpadding=2 width=100%>
-<tr bgcolor="#ffeedd"  <!-- was #ffcc99 -->
-<td align=center valign=center>
-<small>
-   <a href="#demos">Demonstrations</a>
- | <a href="#instr">Instructions</a>
- | <a href="#docs">Documents</a>
-</small>
-</td>
-</tr>
-</table>
-
-<!-- used to have <a href="demo/whats-new.html">What's new</a> -->
+<h1>O-Plan Web Demonstrations</h1>
 
 
 <P>
@@ -37,16 +24,18 @@ By following links from this page, you can run O-Plan remotely over
 the Internet and have it produce plans for tasks (problems) in a
 number of different domains.  The resulting plans and other results
 then become available via further links.  In some cases the
-demonstrations allow you (and perhaps others concurrently)
-to interact in a mixed-initiative fashion with the system during plan
-development, and may support a simulation of plan execution and plan
-repair.
+demonstrations allow you to develop a number of alternative plans
+and compare them.
+
+<p>The <a href="demo/output-formats.html">Web demo outputs</a>
+page contains a brief introduction to O-Plan and an explanation
+of some of the output formats.
 
 <P>
 We hope that you will help us to improve this demonstration facility
 by telling us of any problems and suggesting anything you'd like to
 see added or done differently.  You will therefore be offered a number
-of opportunities to <A HREF="comment-form.html">mail a comment</A>.
+of opportunities to <A HREF="mailto:oplan@ed.ac.uk">mail a comment</A>.
 
 
 <A NAME="demos">
@@ -61,48 +50,23 @@ and lists of predefined tasks from which you select.
 
 <DL>
 
-<DT><A HREF="gpdt.cgi">Pacifica Disaster Relief</A>
+<DT><A HREF="gpdt.cgi" target="_blank">Pacifica Disaster Relief</A>
+    - Develop and Compare Multiple Options
 
-<DD>Lets you construct several options to offer disaster
+<DD><p>Lets you construct several options to offer disaster
     relief on Pacifica.  This is a simpler version of the
-    more interactive demonstration below and does not require a password.
+    more interactive demonstration below and does not require a
+    password.</p>
 
-<DT><a name="neo"></a>
-    <A HREF="gpdt3.html">Pacifica Non-combatant Evacuation Operations (NEO)</A>
-
-<DD>Planning for the evacuation of non-combatants from the Island of Pacifica.
-    Lets one or two users - in the roles of task-assigner
-    and/or planning expert - interact with the O-Plan planning agent
-    running as an HTTP server. Several alternative
-    Courses of Action (COAs) can be developed against a number of
-    evaluation criteria.  The demonstration
-    shows support for the coordination of the planning
-    process between several agents and users.
-    A password is required (available on request from
-    &lt;<a href="mailto:oplan@ed.ac.uk">oplan@ed.ac.uk</a>&gt;), but further
-    information on the demonstration is available without it.
- 
-<DT><a name="mout"></a>
-    <A HREF="mout1.html">US Army Small Unit Operations
-     Military Operations in Urban Terrain (SUO MOUT)</A>
-
-<DD>A demonstration of the development, execution and repair of plans
-    for US Army Small Unit Operations Military Operations in Urban
-    Terrain.  A password is required (available on request from
-    &lt;<a href="mailto:oplan@ed.ac.uk">oplan@ed.ac.uk</a>&gt;), but further
-    information on the demonstration is available without it.
-
-<DT><A HREF="any-tf-matrix.html">Generic COA Evaluation Matrix</A>
-
-<DD>This is a similar demonstration to that provided to support up to
-    two users in NEO planning.  However, it is designed to work on
-    any of a range of domains.
-    The generality of this version requires that it use
-    somewhat simpler interfaces than the more tailored NEO interfaces.
-    For instance, tasks are specified by selecting
-    from predefined task schemas.  A password is required (available
-    on request from
-    &lt;<a href="mailto:oplan@ed.ac.uk">oplan@ed.ac.uk</a>&gt;).
+<p>Demonstration Notes
+<ol>
+<li>The matrix interface actively manages the current "workflow fringe"
+across all options being developed.
+<li>Colour background rows are the activities you can step though.
+<li>White background rows provide information.
+<li>Anything with a hyperlink can be tried at any stage.
+</ol>
+</p>
 
 </DL>
 
@@ -120,14 +84,18 @@ and lists of predefined tasks from which you select.
     the number of ground transports (GTs) available, ground transport capacity,
     the destination, and a time limit.
 
-<DT>
-<A HREF="suo.html">US Army Small Unit Operations (SUO) Demonstrations</A>
-<DD>
-Examples of US Army Small Unit Operations planning.
-
+<!--
 <DT><A HREF="tf-checker.html">O-Plan TF Syntax-checker</A>
 <DD>Allows you to specify an arbitrary Task Formalism (TF) file
     by giving an HTTP URL.
+-->
+
+<DT><a href="web-service-demos/web-service-examples.html"
+       target="_blank">Web Service Composition</a> -
+    O-Plan and I-Plan
+<DD>A set of modifiable demonstrations that apply O-Plan and the
+<a href="http://www.aiai.ed.ac.uk/project/ix/">I-X</a> planner,
+ I-Plan, to web-service composition tasks.
 
 </DL>
 
@@ -142,6 +110,10 @@ and contains links that let you apply O-Plan to tasks in
 those domains.
 
 <DL>
+
+<DT><A HREF="demo/output-formats.html">Web demo outputs</A>
+<DD>A description of some of the output formats produced by the demos.
+It includes an introduction to O-Plan and a demonstration of its own.
 
 <DT>
 <A HREF="standard-examples-guide.cgi">
@@ -159,11 +131,6 @@ A similar set of domains and tasks, as a plain itemized list.
 Contains most of the example domains distributed with O-Plan.
 
 <DT>
-<A HREF="suo.html">Small Unit Operations (SUO) Demonstrations</A>
-<DD>
-Examples of US Army Small Unit Operations planning.
-
-<DT>
 <A HREF="IFD-5-examples.cgi">
 Air Campaign Planning - Workflow Planning Aid Demonstration
 </A>
@@ -178,79 +145,7 @@ Resource Demonstrations
 </DL>
 
 
-<A NAME="instr">
-<H2>Some things you should know before running a demonstration</H2>
-</A>
-
-<P>
-The primary aim of the demonstrations is to show (and test) various
-ways of using O-Plan on the Web.  You can't always use them to judge
-O-Plan's abilities as a planner.
-
-<P>
-Certain demonstrations assume that you're familiar with O-Plan and
-with the various demonstration domains that are part of the O-Plan
-distribution.  However, some on-line documentation is available
-(see below).
-
-<P>
-Each demo provides some way to run O-Plan; this instance of
-O-Plan will run on a server machine in Edinburgh.  Since O-Plan
-can place a fairly heavy load on that machine, a number of
-time limits (both real and CPU time) are in force.  It's therefore
-possible that a demo will fail because it exceeds one of these
-limits.  For some of the limits, you'll see a message saying that
-the limit was exceeded; in other cases, you'll see a blank or
-truncated result.  If either of these things happen, please
-<A HREF="comment-form.html">mail a comment</A> saying which
-demo you ran and what message, if any, you received.
-
-<P>
-Almost all of the demos take only a short time to run (a small
-number of seconds).  However, there may be delays on the net, or
-perhaps something on the server in Edinburgh, that causes a
-significantly longer time to pass.  The output of most demos
-will include a report that indicates how much time was spent
-actually producing the plan.
-
-<P>
-The use the demos effectively, you will need a Web browser that
-can handle HTML forms and is able to display PostScript files
-(probably via an external viewer).
-
-<P>
-Finally, please note that some pages are still under construction
-and so are incomplete in various ways.
-
-
-<A NAME="docs">
-<H2>Associated Documents</H2>
-</A>
-
-<UL>
-
-<LI>A description of the <A HREF="demo/output-formats.html">
-Web demo outputs</A> that includes an introduction to O-Plan and
-a demonstration of its own.
-
-<!--
-<LI>A general discussion of using
-<A HREF="demo/oplan-on-the-internet.html">O-Plan on the Internet</A>.
--->
-
-</UL>
-
-<P>
-<HR>
-<A HREF="http://www.aiai.ed.ac.uk/"><IMG width=82 height=37
-   alt="AIAI" align=right border=0
-   src="http://www.aiai.ed.ac.uk/img/logo/small.gif"></A>
-
-<font size="-2">
-Page maintained by <a href="mailto:oplan@ed.ac.uk">oplan@ed.ac.uk</a>,
-Last updated: Thu Jan 27 13:03:58 2000
-</font><p>
-
-</BODY>
-
-</HTML>
+<hr></hr>
+<small><address>Jeff Dalton &lt;J.Dalton@ed.ac.uk&gt;</address></small>
+</body>
+</html>

@@ -2,7 +2,7 @@
 ;;; Contains: Simple defsystem
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992
-;;; Updated: Sun Jun 20 19:17:08 1999 by Jeff Dalton
+;;; Updated: Tue Feb  5 16:44:06 2008 by Jeff Dalton
 ;;; Copyright: (c) 1991, 1992, 1993, 1994, 1995, 1995, 1996 AIAI,
 ;;;            University of Edinburgh
 
@@ -346,7 +346,7 @@
       (setf (system-directory sys)
 	    (directory-for-defsys directory)))
     ;; Optional systems are emptied if their directory doesn't exist.
-    (when (and optional (not (probe-file (system-directory sys))))
+    (when (and optional (not (directory-exists-p (system-directory sys))))
       (setf (system-required-systems sys) '()
 	    file-specs '()))
     ;; N.B. Must process files after setting directory.
@@ -726,7 +726,7 @@
 	      system sysdir)
       (let ((d (relative-merge sysdir basedir)))
 	(note "~&;;; Setting directory of ~S to ~S.~%" system d)
-	(unless (probe-file d)
+	(unless (directory-exists-p d)
 	  (warn "Directory ~S does not exist." d))
 	(unless *defsystem-test*
 	  (setf (system-directory system) d))
@@ -740,6 +740,10 @@
 	    (unless *defsystem-test*
 	      (setf (file-source-name file) source
 		    (file-object-name file) object))))))))
+
+(defun directory-exists-p (d)
+  #+gcl (si:stat d)
+  #-gcl (probe-file d))
 
 
 ;;; Topological sort and related routines.

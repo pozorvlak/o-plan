@@ -4,6 +4,7 @@
 ;;; BD   12-May-92: Validated as adhering to new TF syntax.
 ;;; BAT  27-Jul-92: Task schemas made regular.
 ;;; BAT  30-Apr-93: Comments added.
+;;; BAT  25-Jul-12: Typo on breadth corrected.
 ;;;
 
 ;;;
@@ -95,7 +96,7 @@ end_task;
 ;;;         TABLE
 ;;;
 ;;; This task performs poorly with a search alternatives selector
-;;; which is beadth orientated.  Try a depth orientated selector
+;;; which is breadth orientated.  Try a depth orientated selector
 ;;; by using the DM Developer's Menu Break-in option and typing in
 ;;; the following evaluation function (see O-Plan2 Demonstration Guide):
 ;;;        (defun atm-alt-rating-fn (alt) 100 )

@@ -2,7 +2,7 @@
 ;;; Contains: AKCL-specific utilities
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993
-;;; Updated: Sun Feb 28 20:51:00 1999 by Jeff Dalton
+;;; Updated: Fri Feb  1 23:58:46 2008 by Jeff Dalton
 ;;; Copyright: (c) 1992, 1993, AIAI, University of Edinburgh
 
 ;;; Some AKCL-specific utilities
@@ -27,6 +27,7 @@
       (exit status)
     (bye status)))
 
+#-no-c-code
 (eval-when (compile load)
   (defentry exit (int) (void exit)))
 
@@ -74,6 +75,7 @@
 
 (defvar *xmenu-pathname* nil)
 
+#-no-c-code
 (defun menu-request (xmenu-args &key (read-function #'read))
   (ensure-xmenu-pathname)
   (let ((process-stream (apply #'fork:process-receive
@@ -101,6 +103,7 @@
 ;;; General function for getting an i/o stream for communication with
 ;;; a Unix process.
 
+#-no-c-code
 (defun unix-process-io (program-name &rest args)
   (multiple-value-bind (pid read-stream write-stream error-stream)
       (values-list
@@ -117,6 +120,7 @@
 ;;; Unix-process-finish is called when a child process should have
 ;;; terminated.  In some Lisps, such as KCL, it calls wait.
 
+#-no-c-code
 (defun unix-process-finish (pid)
   (declare (ignore pid))
   (fork:wait))

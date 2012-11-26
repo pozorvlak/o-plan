@@ -1,6 +1,6 @@
-#!/local/bin/perl -- -*-perl-*-
+#!/usr/bin/perl -- -*-perl-*-
 
-# Updated: Thu Oct 30 01:36:13 1997 by Jeff Dalton
+# Updated: Sat Sep 26 18:28:50 2009 by Jeff Dalton
 
 # ------------------------------------------------------------
 # Form-mail.pl, by Reuven M. Lerner (reuven@the-tech.mit.edu).
