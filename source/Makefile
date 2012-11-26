@@ -23,7 +23,7 @@
 Allegro = /usr/local/acl/5.0/lisp
 Lucid   = lucid4.1+clos
 KCL     = gcl-1.1
-GCL     = gcl-2.2.2
+GCL     = gcl
 
 # This is the default lisp for the "generic" make targets:
 Lisp = ${GCL}
