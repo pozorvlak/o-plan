@@ -1,2 +1,2 @@
 Options ExecCGI FollowSymLinks Indexes
-AddType application/x-httpd-cgi .cgi
+#AddType application/x-httpd-cgi .cgi

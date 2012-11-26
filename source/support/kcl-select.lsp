@@ -28,11 +28,16 @@
 %	extern int errno, sys_nerr;
 )|#
 
+#+(and :gcl-2 :linux)
+(Clines
+%	#include <errno.h>
+)
+
 (Clines
 
 %	extern int errno;
 
-%	static Zerror(default_msg)
+%	/*static*/ Zerror(default_msg)
 %	char *default_msg;
 %	{
 %	    char *msg;
@@ -107,25 +112,25 @@
 %#	include <sys/time.h>
 %#	include <unistd.h>
 
-%	static fd_set fds;
+%	/*static*/ fd_set fds;
 
-%	static void clear_fds ()
+%	/*static*/ void clear_fds ()
 %	{
 %	    FD_ZERO(&fds);
 %	}
 
-%	static void set_fd (fd)
+%	/*static*/ void set_fd (fd)
 %	{
 %	    FD_SET(fd, &fds);
 %	}
 
-%	static int fd_set_p (fd)
+%	/*static*/ int fd_set_p (fd)
 %	int fd;
 %	{
 %	    return FD_ISSET(fd, &fds);
 %	}
 
-%	static int call_select (timeout)
+%	/*static*/ int call_select (timeout)
 %	int timeout;			/* seconds */
 %	{
 %	    int err;

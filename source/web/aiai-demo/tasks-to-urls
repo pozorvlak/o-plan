@@ -1,4 +1,4 @@
-#!/local/bin/perl -- -*-perl-*-
+#!/usr/bin/perl -- -*-perl-*-
 #
 # Look for lines that begin like this:
 #

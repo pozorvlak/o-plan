@@ -2,7 +2,7 @@
 ;;; Contains: O-Plan top-level 
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1993
-;;; Updated: Mon Jan 24 20:49:56 2000 by Jeff Dalton
+;;; Updated: Sat Feb  2 01:49:32 2008 by Jeff Dalton
 ;;; Copyright: (c) 1993 - 1997, AIAI, University of Edinburgh
 
 ;;; O-Plan's top-level / main program.
@@ -73,6 +73,7 @@
 		 (run))
 		(t
 		 (time (run))))
+        #-:no-c-code
 	(terminate-xterms-if-necessary))
       #+:allegro
       (progn (terpri) (force-output))))

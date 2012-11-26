@@ -2,7 +2,7 @@
 ;;; Contains: O-Plan system definitions
 ;;; Author: Jeff Dalton
 ;;; Created: February 1993
-;;; Updated: Wed Feb 23 20:07:00 2000 by Jeff Dalton
+;;; Updated: Fri Feb  1 23:53:58 2008 by Jeff Dalton
 ;;; Copyright: (c) 1993 -- 1999 AIAI, University of Edinburgh
 
 ;;; O-Plan system definitions
@@ -287,7 +287,7 @@
     :requires ("../support/run-lights"))
   ("../support/run-lights")
   (connect-mode)
-  #+kcl
+  #+(and :kcl (not :no-c-code))
   (server-mode
     :defines (:functions))
   #+kcl
@@ -874,7 +874,7 @@
   ;; No files
   ;; /\/: Ok, one file.  It can't be in dependent-support because it
   ;; needs pseudo-process.lsp.
-  #+kcl
+  #+(and :kcl (not :no-c-code))
   (kcl-select
     :defines (:functions)
     :compiler compile-with-C
@@ -908,6 +908,7 @@
 			      :required-systems
 			        (base-support
 				 external-support ;for XP
+                                 #-no-c-code
 				 kcl-unix-support))
   (kcl-clos
     :compiler nil)
@@ -919,6 +920,7 @@
   (kcl-util
     :defines (:functions)
     :requires (#+:undef xfork))		;it's in kcl-unix-support /\/
+  #-no-c-code
   (kcl-xwindowio
     :defines (:functions)
     :requires (#+:undef xfork)		;it's in kcl-unix-support /\/

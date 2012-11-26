@@ -2,7 +2,7 @@
 # Contains: Source code maintenance and development makefile
 # Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 # Created: 15 April 1993
-# Updated: Fri Apr 29 01:41:06 2000 by Jeff Dalton
+# Updated: Sat Feb  2 01:44:04 2008 by Jeff Dalton
 # Copyright: (c) 1993 - 1999, AIAI, University of Edinburgh
 
 # This Makefile can be used to perform various operations on the
@@ -22,8 +22,8 @@
 # Edit the following line(s) to define commands for running Lisp.
 Allegro = /usr/local/acl/5.0/lisp
 Lucid   = lucid4.1+clos
-KCL     = gcl-1.1
-GCL     = gcl-2.2.2
+KCL     = bin/gcl
+GCL     = bin/gcl
 
 # This is the default lisp for the "generic" make targets:
 Lisp = ${Allegro}
@@ -452,7 +452,7 @@ active-backup:
 
 nice-backup:
 	${MAKE} Exclude=${Exclude} exclude
-	${TAR} --block-compress -zcvX ${Exclude} -f ${TarFile} .
+	${TAR} -zcvX ${Exclude} -f ${TarFile} .
 
 exclude:
 	rm -f ${Exclude}

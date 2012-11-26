@@ -1,4 +1,4 @@
-#!/local/bin/bash
+#!/bin/bash
 
 # This script is used to run O-Plan for non-interactive Web demos
 # It inserts some standard command-line arguments and can also set
@@ -9,7 +9,9 @@
 # if the name isn't known; instead it's ignored and treated as
 # as one of the later arguments.)
 
-default_lisp=lucid-image
+# echo "Now in " `/bin/pwd`
+
+default_lisp=kcl-image
 
 if [ "$#" -ge 1 ]
 then
@@ -30,4 +32,6 @@ ulimit -St 180  # soft limit: 3 minutes
 # (sleep 120; kill -TERM $$; sleep 20 kill -KILL $$)> /tmp/web-rt-limit-$$ &
 
 exec ./noplan ../lib/$lisp \
-	-not -interactive -noinit -no -windows -subr "$@"
+     -eval '(setq *load-verbose* nil)' \
+     -load ../lib/web-config.lsp  \
+     -not -interactive -noinit -no -windows -subr "$@"
