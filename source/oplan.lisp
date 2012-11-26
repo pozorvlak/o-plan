@@ -66,7 +66,7 @@
       *print-pretty* t)
 
 (unless (fboundp (find-symbol "DEFPACKAGE"))
-  (load "support/defpackage"))
+  (load "support/defpackage.lsp"))
 
 (unless (find-package "SIMPLE-DEFSYSTEM")
   (load "support/defsys.lsp"))
@@ -91,7 +91,7 @@
 
 ;;; System definitions
 
-(load "system-definitions")
+(load "system-definitions.lsp")
 
 
 ;;; End
