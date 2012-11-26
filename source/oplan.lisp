@@ -66,10 +66,10 @@
       *print-pretty* t)
 
 (unless (fboundp (find-symbol "DEFPACKAGE"))
-  (load "support/defpackage.lsp"))
+  (load "support/defpackage.lisp"))
 
 (unless (find-package "SIMPLE-DEFSYSTEM")
-  (load "support/defsys.lsp"))
+  (load "support/defsys.lisp"))
 
 (shadowing-import '(simple-defsystem:defsystem
 		    simple-defsystem:find-system
@@ -91,7 +91,7 @@
 
 ;;; System definitions
 
-(load "system-definitions.lsp")
+(load "system-definitions.lisp")
 
 
 ;;; End
