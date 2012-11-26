@@ -1,6 +1,6 @@
 #ifndef lint
 static char rcsid[] = "$Header: xmenu.c 1.3 90/06/29 17:00:22 rlh2 Rel $";
-#endif !lint
+#endif /* !lint */
 
 /* 
  * Copyright 1990 Richard Hesketh / rlh2@ukc.ac.uk
@@ -69,6 +69,7 @@ static char rcsid[] = "$Header: xmenu.c 1.3 90/06/29 17:00:22 rlh2 Rel $";
 
 
 #include <stdio.h>
+#include <stdlib.h>
 #include <X11/Intrinsic.h>
 #include <X11/StringDefs.h>
 #include <X11/Xaw/SimpleMenu.h>
@@ -152,7 +153,7 @@ struct ret **values;
 	return (XtNewString(name));
 }
 
-
+int
 main(argc, argv)
 int argc;
 char *argv[];
