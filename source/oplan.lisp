@@ -44,7 +44,7 @@
 
 #+ansi-cl (in-package :common-lisp-user)
 #-ansi-cl (in-package :user)
-
+(rename-package "COMMON-LISP-USER" "COMMON-LISP-USER" '("CL-USER" "USER"))
 
 (defvar user::*oplan-version* "3.3")
 
@@ -66,10 +66,10 @@
       *print-pretty* t)
 
 (unless (fboundp (find-symbol "DEFPACKAGE"))
-  (load "support/defpackage"))
+  (load "support/defpackage.lsp"))
 
 (unless (find-package "SIMPLE-DEFSYSTEM")
-  (load "support/defsys"))
+  (load "support/defsys.lsp"))
 
 (shadowing-import '(simple-defsystem:defsystem
 		    simple-defsystem:find-system
@@ -91,7 +91,7 @@
 
 ;;; System definitions
 
-(load "system-definitions")
+(load "system-definitions.lsp")
 
 
 ;;; End
