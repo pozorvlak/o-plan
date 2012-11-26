@@ -1,4 +1,4 @@
-;;;; File: world-services.lsp
+;;;; File: world-services.lisp
 ;;; Contains: Core routines for the world simulation
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Tue Aug 03 1993
@@ -9,7 +9,7 @@
 ;;;  * Introductory remarks.
 ;;;  * The World agenda.
 ;;;  * Basic world-event types and operations.
-;;;  * Time control --> see support/sim-clock.lsp.
+;;;  * Time control --> see support/sim-clock.lisp.
 ;;;  * Initialization.
 ;;;  * The main event-handler.
 ;;;  * Message definitions.
@@ -59,7 +59,7 @@
 ;;; in the simulated world's terms.  If this isn't the case, the
 ;;; simulator wouldn't be able to keep up anyway.
 
-;;; For more information on time management, see support/sim-clock.lsp.
+;;; For more information on time management, see support/sim-clock.lisp.
 
 ;;; As an example, consider a simple case of plan execution.
 ;;; The principal message the Exec would send the World is:

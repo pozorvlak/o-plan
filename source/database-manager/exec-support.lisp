@@ -1,4 +1,4 @@
-;;;; File: exec-support.lsp
+;;;; File: exec-support.lisp
 ;;; Contains: Database Manager's execution support
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1999

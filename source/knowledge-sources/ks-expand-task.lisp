@@ -1,4 +1,4 @@
-;;;; File: ks-expand-task.lsp
+;;;; File: ks-expand-task.lisp
 ;;; Contains: Expands a task schema.
 ;;; Author: Richard Kirby and Jeff Dalton
 ;;; Created: Thu Jul 12 11:02:41 1990

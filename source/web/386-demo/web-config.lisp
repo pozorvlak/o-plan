@@ -1,4 +1,4 @@
-;;;; File: web-config.lsp
+;;;; File: web-config.lisp
 ;;; Contains: Spottisvax configuration for the Web / CGI demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1997

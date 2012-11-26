@@ -1,4 +1,4 @@
-;;;; File: no-x-programs.lsp
+;;;; File: no-x-programs.lisp
 ;;; Contains: Patch so O-paln2 no longer needs xmenu or xuim.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 17 February 1994
@@ -58,14 +58,14 @@
 ;;; 1. Eliminate the control panel.
 
 (defun set-up-control-panel ()
-  ;; Normally in interface-manager/control-panel.lsp
+  ;; Normally in interface-manager/control-panel.lisp
   nil)
 
 
 ;;; 2. Replace xmenu.
 
 (defun oplan-util:menu-request (xmenu-args &key (read-function #'read))
-  ;; Normally in support/lucid-util.lsp
+  ;; Normally in support/lucid-util.lisp
   (let ((io *terminal-io*)
 	(args xmenu-args))
     (loop

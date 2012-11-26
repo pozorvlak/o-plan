@@ -1,4 +1,4 @@
-;;;; File: oplan.lsp
+;;;; File: oplan.lisp
 ;;; Contains: Initial setup for compiling and building O-Plan
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993
@@ -19,11 +19,11 @@
 
 ;;; To build an executable image:
 ;;;   0. Run a Lisp.
-;;;   1. (load "oplan.lsp").
+;;;   1. (load "oplan.lisp").
 ;;;   2. Maybe:
 ;;;       2.1. (compile-system 'oplan), or
 ;;;            (compile-system 'everything)
-;;;       2.2. Exit Lisp, rerun, and reload "oplan.lsp".
+;;;       2.2. Exit Lisp, rerun, and reload "oplan.lisp".
 ;;;   3. (load-system 'oplan)
 ;;;   4. (oplan:save-oplan <filename>).
 
@@ -36,8 +36,8 @@
 ;;; However, most of these changes are confined to packages that have
 ;;; names beginning with "OPLAN-".
 
-;;; IMPORTANT: changes to this file (oplan.lsp) and to the files
-;;; it loads (such as support/lisp-prep.lsp) will not be noticed
+;;; IMPORTANT: changes to this file (oplan.lisp) and to the files
+;;; it loads (such as support/lisp-prep.lisp) will not be noticed
 ;;; by defsystem and hence will not result in recompilation.
 ;;; So you'll have to work out the required recompilations (if any)
 ;;; yourself.  This has not been a significant problem in practice.
@@ -50,12 +50,12 @@
 
 (push :oplan *features*)
 
-(load "oplan-release-date.lsp")		;defines *oplan-release-date*
+(load "oplan-release-date.lisp")		;defines *oplan-release-date*
 
 
 ;;; Lisp-implementation-specific prep
 
-(load "support/lisp-prep.lsp")
+(load "support/lisp-prep.lisp")
 
 
 ;;; General prep

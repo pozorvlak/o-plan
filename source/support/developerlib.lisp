@@ -1,4 +1,4 @@
-;;;; File: developerlib.lsp
+;;;; File: developerlib.lisp
 ;;; Contains: Routines for development use.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Thu Feb  1 13:59:27 1990

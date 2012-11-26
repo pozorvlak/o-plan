@@ -1,4 +1,4 @@
-;;;; File: program-interface.lsp
+;;;; File: program-interface.lisp
 ;;; Contains: Programmatic interface to single-process O-Plan
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994
@@ -300,7 +300,7 @@
 
 ;;; The user pprocess will signal a timeout condition when its
 ;;; wakeup-time arrives.  An error is signalled if the timout isn't
-;;; handled.  See subr-mode.lsp for the details.
+;;; handled.  See subr-mode.lisp for the details.
 
 (defun set-timeout (seconds)
   (pi-check-state 'set-timeout)

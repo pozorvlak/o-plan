@@ -1,4 +1,4 @@
-;;;; File: world-state-util-package.lsp
+;;;; File: world-state-util-package.lisp
 ;;; Contains: World-state-util package definition
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1999

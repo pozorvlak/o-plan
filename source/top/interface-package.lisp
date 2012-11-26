@@ -1,4 +1,4 @@
-;;;; File: interface-package.lsp
+;;;; File: interface-package.lisp
 ;;; Contains: Package defining the programmatic interface
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994
@@ -7,7 +7,7 @@
 
 ;;; The oplan-interface package defines the names in the programmatic
 ;;; interface to O-Plan.  Most of the actual definitions are in the files
-;;; subr-mode.lsp and program-interface.lsp.
+;;; subr-mode.lisp and program-interface.lisp.
 
 ;;; In a sense, this package defines the exports of the oplan package;
 ;;; but rather than have the exports in the definition of the oplan
@@ -63,7 +63,7 @@
      #:redirect-component-output
      #:set-component-output-stream
      #:set-component-debug-level
-     #:output-off			;defined in manual-interface.lsp
+     #:output-off			;defined in manual-interface.lisp
 
      ;; Sending and receiving
      #:ask-oplan
@@ -83,8 +83,8 @@
      ;; Etc
      #:pprocess-main-loop
      #:exit-oplan
-     #:add-exit-action			;defined in subr-mode.lsp
-     #:go-faster			;defined in manual-interface.lsp
+     #:add-exit-action			;defined in subr-mode.lisp
+     #:go-faster			;defined in manual-interface.lisp
      )
 
   )

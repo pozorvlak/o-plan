@@ -1,4 +1,4 @@
-;;;; File: ks-replan.lsp
+;;;; File: ks-replan.lisp
 ;;; Contains: A KS that replans
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: December 1996

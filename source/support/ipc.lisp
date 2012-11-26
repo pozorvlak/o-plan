@@ -1,4 +1,4 @@
-;;;; File: ipc.lsp
+;;;; File: ipc.lisp
 ;;; Contains: Inter-Process Communications interface, single-process version.
 ;;; Author: Jeff Dalton
 ;;; Created: Jan 1993

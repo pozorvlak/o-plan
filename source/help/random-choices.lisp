@@ -1,4 +1,4 @@
-;;;; File: random-choices.lsp
+;;;; File: random-choices.lisp
 ;;; Contains: Redefinitions that make certain choices random
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1995

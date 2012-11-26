@@ -1,4 +1,4 @@
-;;;; File: KS-PLANNER-FINISHED.lsp
+;;;; File: KS-PLANNER-FINISHED.lisp
 ;;; Contains: A KS to stuff a finished message out the TA.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Thu Dec 19 17:47:20 1991

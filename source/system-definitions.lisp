@@ -1,4 +1,4 @@
-;;;; File: system-definitions.lsp
+;;;; File: system-definitions.lisp
 ;;; Contains: O-Plan system definitions
 ;;; Author: Jeff Dalton
 ;;; Created: February 1993
@@ -15,12 +15,12 @@
 ;;; directory provides a convenient way to do this and other things.
 
 ;;; Note (if you're doing things by hand) that the first step is to
-;;; load the "oplan.lsp".  It will load this file, among other things.
+;;; load the "oplan.lisp".  It will load this file, among other things.
 
 ;;; To print a description of the system structure, evaluate
 ;;;   (print-system-tree 'everything)
 
-;;; For a description of the defsystem used here, see support/defsys.lsp.
+;;; For a description of the defsystem used here, see support/defsys.lisp.
 
 ;;; /\/: We need a better, cleaner division into systems.  Even though
 ;;; they're all called "systems" most of the systems defined in this file
@@ -39,7 +39,7 @@
 
 ;;; /\/: AKCL complains if packages that were used at compile-time
 ;;; aren't also used when the .o file is loaded even if no symbols
-;;; from those packages were used in the .lsp file.
+;;; from those packages were used in the .lisp file.
 
 
 (in-package :oplan)
@@ -873,7 +873,7 @@
 			(use-package :oplan-components :oplan)))
   ;; No files
   ;; /\/: Ok, one file.  It can't be in dependent-support because it
-  ;; needs pseudo-process.lsp.
+  ;; needs pseudo-process.lisp.
   #+(and :kcl (not :no-c-code))
   (kcl-select
     :defines (:functions)

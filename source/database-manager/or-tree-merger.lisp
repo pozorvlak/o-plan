@@ -1,4 +1,4 @@
-;;;; File: or-tree-merger.lsp
+;;;; File: or-tree-merger.lisp
 ;;; Contains: Or-tree trim, merge, and forced-action functions
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1996

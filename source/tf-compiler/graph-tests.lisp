@@ -1,4 +1,4 @@
-;;;; File: graph-tests.lsp
+;;;; File: graph-tests.lisp
 ;;; Contains: Tests for the TF compiler's graph algorithms.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1994

@@ -1,4 +1,4 @@
-;;;; File: domain-services-package.lsp
+;;;; File: domain-services-package.lisp
 ;;; Contains: Interface to domain services
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

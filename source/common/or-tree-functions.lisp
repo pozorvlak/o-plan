@@ -1,4 +1,4 @@
-;;;; File: or-tree-functions.lsp
+;;;; File: or-tree-functions.lisp
 ;;; Contains: Basic operations on or-trees
 ;;; Author: Jeff Dalton
 ;;; Created: March 1996

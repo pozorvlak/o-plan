@@ -1,4 +1,4 @@
-;;;; File: allegro-xwindowio.lsp
+;;;; File: allegro-xwindowio.lisp
 ;;; Contains: Allegro code for using X windows for IO.
 ;;; Author: Jeff Dalton
 ;;; Created: April 1994

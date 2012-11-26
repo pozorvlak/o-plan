@@ -1,4 +1,4 @@
-;;;; File: micro-exec.lsp
+;;;; File: micro-exec.lisp
 ;;; Contains: Simple, small, internal execution agent
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 13 February 1995

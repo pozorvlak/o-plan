@@ -1,4 +1,4 @@
-;;;; File: mout1-matrix-support.lsp
+;;;; File: mout1-matrix-support.lisp
 ;;; Contains: Support code for mout1 matrix demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1999

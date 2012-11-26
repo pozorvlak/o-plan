@@ -1,4 +1,4 @@
-;;;; File: KS-UNEXPECTED-WORLD-EVENT.lsp
+;;;; File: KS-UNEXPECTED-WORLD-EVENT.lisp
 ;;; Contains: KS to handle unplanned changes in the world.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 16 March 1995

@@ -1,4 +1,4 @@
-;;;; File: ta-questions.lsp
+;;;; File: ta-questions.lisp
 ;;; Contains: DM support for TA-questions
 ;;; Author: Jeff Dalton
 ;;; Created: July 1998

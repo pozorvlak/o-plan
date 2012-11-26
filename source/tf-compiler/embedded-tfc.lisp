@@ -1,4 +1,4 @@
-;;;; File: embedded-tfc.lsp
+;;;; File: embedded-tfc.lisp
 ;;; Contains: Top-level for the embedded TF syntax checker (tfc)
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 03 March 1994

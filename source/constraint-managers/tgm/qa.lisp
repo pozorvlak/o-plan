@@ -1,4 +1,4 @@
-;;;; File: qa.lsp
+;;;; File: qa.lisp
 ;;;; Contains: The QA code.
 ;;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;;; Created: Tue Jun 26 11:54:43 1990

@@ -1,4 +1,4 @@
-;;;; File: text-menus.lsp
+;;;; File: text-menus.lisp
 ;;; Contains: A textual version of util:menu-request
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 06 Oct 94
@@ -41,7 +41,7 @@
 (in-package :oplan-util)
 
 (defun menu-request (xmenu-args &key (read-function #'read))
-  ;; Normally in support/LISP-util.lsp where LISP={lucid,kcl,...}.
+  ;; Normally in support/LISP-util.lisp where LISP={lucid,kcl,...}.
   (let ((io *terminal-io*)
 	(args xmenu-args))
     (loop

@@ -2,7 +2,7 @@
 
 # Runs O-Plan to fork an HTTP server on a new port.  O-Plan will use
 # a "Location:" header in the response to redirect the browser to the
-# server.  See web/demo/http-server.lsp.
+# server.  See web/demo/http-server.lisp.
 
 # Updated: Thu Apr  8 04:54:44 1999 by Jeff Dalton
 

@@ -1,4 +1,4 @@
-;;;; File: any-tf-http-server-support.lsp
+;;;; File: any-tf-http-server-support.lisp
 ;;; Contains: Support code for generic matrix demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1999
@@ -19,7 +19,7 @@
 
 ;;;; Startup
 
-;;; /\/: See any-tf-matrix-support.lsp for something about why we
+;;; /\/: See any-tf-matrix-support.lisp for something about why we
 ;;; construct the TF file name as we do.
 
 (defmethod-local init-http-server-demo :after ()

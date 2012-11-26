@@ -1,4 +1,4 @@
-;;;; File: KS-POISON-STATE.lsp
+;;;; File: KS-POISON-STATE.lisp
 ;;; Contains: KS for poisoning the plan state.
 ;;; Author: Jeff Dalton and Richard Kirby (rbk)
 ;;; Created: Fri Jun 22 10:57:36 1990

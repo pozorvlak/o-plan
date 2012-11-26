@@ -1,4 +1,4 @@
-;;;; File: subr-mode.lsp
+;;;; File: subr-mode.lisp
 ;;; Contains: Subr mode
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994
@@ -33,7 +33,7 @@
 ;;;      have been sent to the user p-process.
 
 ;;; Low and high level routines for doing this, setting timeouts, etc
-;;; can be found in program-interface.lsp.
+;;; can be found in program-interface.lisp.
 
 ;;; The value of :do is either nil or a string containing an expression.
 ;;; If it's a string, the string is read and evaluated; otherwise a break
@@ -74,7 +74,7 @@
 
 ;;; The user pprocess exits the pprocess-main-loop when it receives
 ;;; a message, leaving the message in the event queue.  The message
-;;; is usually handled by procedures in program-interface.lsp.
+;;; is usually handled by procedures in program-interface.lisp.
 
 ;;; If the user pprocess runs and there's no message in its queue, it
 ;;; assumes that a timeout has occurred and signals a timeout condition.

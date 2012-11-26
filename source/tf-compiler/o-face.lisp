@@ -1,4 +1,4 @@
-;;;; File: o-face.lsp
+;;;; File: o-face.lisp
 ;;; Contains: Interface to TF compiler.
 ;;; Author: Jeff Dalton and Richard Kirby (rbk)
 ;;; Created: Thu Jun 18 12:06:13 1992

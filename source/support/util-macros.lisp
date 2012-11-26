@@ -1,4 +1,4 @@
-;;;; File: util-macros.lsp
+;;;; File: util-macros.lisp
 ;;; Contains: Useful macros that don't belong anywhere else
 ;;; Author: Jeff Dalton
 ;;; Created: February 1993

@@ -63,7 +63,7 @@ typedef struct {
 #define INITIAL_LEVEL "Minimal"
 
 /* This will need updating if any changes made in
-   OPLANDIR/support_lib/developerlib.lsp
+   OPLANDIR/support_lib/developerlib.lisp
  */
 
 #ifdef undef

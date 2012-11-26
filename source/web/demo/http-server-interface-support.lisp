@@ -1,4 +1,4 @@
-;;;; File: http-server-interface-support.lsp
+;;;; File: http-server-interface-support.lisp
 ;;; Contains: Support code for http-mode matrix interface
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1999

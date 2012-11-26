@@ -1,4 +1,4 @@
-;;;; File: world-loader.lsp
+;;;; File: world-loader.lisp
 ;;; Contains: World definition loader
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1995
@@ -29,7 +29,7 @@
 ;;; A world definition is a directory containing the files that define
 ;;; the world.  The definitions directory (e.g. lib/worlds in :world-dir)
 ;;; is therefore a directory of directories.  Each world directory W
-;;; should contain a Lisp source file named W-world.lsp.  There may
+;;; should contain a Lisp source file named W-world.lisp.  There may
 ;;; also be a correcponding object file.  The world is loaded by loading
 ;;; the source or object, whichever is newer.  During this load, the
 ;;; (Unix) working directory will be the directory W.  This should make

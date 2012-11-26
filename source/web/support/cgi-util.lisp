@@ -1,4 +1,4 @@
-;;;; File: cgi-util.lsp
+;;;; File: cgi-util.lisp
 ;;; Contains: Support for Web / CGI demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994
@@ -90,7 +90,7 @@
 	 (set-component-debug-level :kp :nothing)))))
 
 ;;; /\/: Defining condition-types with defstruct-style slot-specs.
-;;; /\/: Should be in util-macros.lsp, or someplace similarly low-level.
+;;; /\/: Should be in util-macros.lisp, or someplace similarly low-level.
 
 #+kcl
 (defmacro defcond (name (parent-type &rest include-slots) &rest new-slots)
@@ -120,7 +120,7 @@
 
 ;;;; String and other (low-level) utilities
 
-;;; /\/: Most of this should go in support/util-functions.lsp.
+;;; /\/: Most of this should go in support/util-functions.lisp.
 
 ;;; Print-length determines how many characters are needed to print
 ;;; various simple objects (symbols, strings, integers) w/o escape chars.
@@ -150,7 +150,7 @@
 
 ;;; Sequence functions
 
-;;; /\/: Move replace-subseq to util-function.lsp?
+;;; /\/: Move replace-subseq to util-function.lisp?
 
 ;;; /\/: Will type-of always return something concatenate will like?
 

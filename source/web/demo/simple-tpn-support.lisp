@@ -1,4 +1,4 @@
-;;;; File: simple-tpn-support.lsp
+;;;; File: simple-tpn-support.lisp
 ;;; Contains: Support code for the simple TPN Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 15 January 1995

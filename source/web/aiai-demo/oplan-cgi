@@ -33,5 +33,5 @@ ulimit -St 180  # soft limit: 3 minutes
 
 exec ./noplan ../lib/$lisp \
      -eval '(setq *load-verbose* nil)' \
-     -load ../lib/web-config.lsp  \
+     -load ../lib/web-config.lisp  \
      -not -interactive -noinit -no -windows -subr "$@"

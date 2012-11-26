@@ -1,4 +1,4 @@
-;;;; File: kp_toplevel.lsp
+;;;; File: kp_toplevel.lisp
 ;;; Contains: Top-level processing for the KP.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Tue Apr 17 15:28:10 1990

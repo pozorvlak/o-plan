@@ -1,4 +1,4 @@
-;;;; File: resource-demo-tests.lsp
+;;;; File: resource-demo-tests.lisp
 ;;; Contains: Release tests for automatic testing.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: July 1994

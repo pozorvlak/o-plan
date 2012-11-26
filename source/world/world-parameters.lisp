@@ -1,4 +1,4 @@
-;;;; File: world-parameters.lsp
+;;;; File: world-parameters.lisp
 ;;; Contains: WorldSim parameters that are global variables
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 15 May 1995

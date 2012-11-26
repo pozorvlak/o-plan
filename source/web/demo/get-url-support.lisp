@@ -1,4 +1,4 @@
-;;;; File: get-url-support.lsp
+;;;; File: get-url-support.lisp
 ;;; Contains: Support code for getting URLs
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 9 Apr 95

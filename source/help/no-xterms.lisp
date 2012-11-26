@@ -1,4 +1,4 @@
-;;;; File: no-xterms.lsp
+;;;; File: no-xterms.lisp
 ;;; Contains: Patch so O-Plan doesn't need xterm
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 9 March 1994

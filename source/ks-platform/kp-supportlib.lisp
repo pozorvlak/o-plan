@@ -1,4 +1,4 @@
-;;;; File: kp-supportlib.lsp
+;;;; File: kp-supportlib.lisp
 ;;; Contains: Various functions for use by KS writers.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Fri Jun 22 09:02:34 1990

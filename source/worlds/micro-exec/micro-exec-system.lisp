@@ -1,4 +1,4 @@
-;;;; File: micro-exec-system.lsp
+;;;; File: micro-exec-system.lisp
 ;;; Contains: The system definition for the micro-exec world
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1995

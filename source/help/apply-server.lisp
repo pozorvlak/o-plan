@@ -1,4 +1,4 @@
-;;; File: help/apply-server.lsp
+;;; File: help/apply-server.lisp
 ;;; Author: Jeff Dalton
 ;;; Updated: Thu Dec 12 01:51:14 1996 by Jeff Dalton
 

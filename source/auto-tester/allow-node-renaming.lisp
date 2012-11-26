@@ -1,4 +1,4 @@
-;;;; File: allow-node-renaming.lsp
+;;;; File: allow-node-renaming.lisp
 ;;; Contains: Auto-tester patch for some cases where node names may change
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: August 1994

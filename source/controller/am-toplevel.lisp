@@ -1,4 +1,4 @@
-;;;; File: am-toplevel.lsp
+;;;; File: am-toplevel.lisp
 ;;; Contains: Top-level processing for the AM.
 ;;; Author: Jeff Dalton and Richard Kirby
 ;;; Created: Sun Apr 15 20:21:56 1990

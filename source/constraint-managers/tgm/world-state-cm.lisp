@@ -1,4 +1,4 @@
-;;;; File: world-state-cm.lsp
+;;;; File: world-state-cm.lisp
 ;;; Contains: The CM interface to the TGM
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996
@@ -114,7 +114,7 @@
 	  nil)))))
 
 ;;; /\/: Rename to -condition rather than -cond (but there are -condition
-;;; versions in knowledge-sources/condition-support.lsp
+;;; versions in knowledge-sources/condition-support.lisp
 
 (defun try-adding-cond (cond)
   (let (act::*bindings*)
@@ -126,7 +126,7 @@
 
 ;;;; Sanity checks
 
-;;; /\/: Most TGM-related sanity checks are still in sanity-checker.lsp
+;;; /\/: Most TGM-related sanity checks are still in sanity-checker.lisp
 ;;; for historical reasons.
 
 (defmethod cm-check-constraints ((self tgm))

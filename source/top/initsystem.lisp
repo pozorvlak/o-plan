@@ -1,4 +1,4 @@
-;;;; File: initsystem.lsp
+;;;; File: initsystem.lisp
 ;;; Contains: Window and some parameter configuration and initialization
 ;;; Authors: Jeff Dalton and Richard Kirby
 ;;; Created: Mon Jan 22 12:17:30 1990

@@ -1,4 +1,4 @@
-;;; Calltrace.lsp
+;;; Calltrace.lisp
 ;;; Copyright (c) 1998, 1999 by Jeff Dalton
 
 ;;; This is supposed to be portable code that makes a backtrace

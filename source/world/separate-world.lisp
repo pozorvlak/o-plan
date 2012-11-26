@@ -1,4 +1,4 @@
-;;;; File: separate-world.lsp
+;;;; File: separate-world.lisp
 ;;; Contains: Code for starting a separate world simulator from the Exec.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1994

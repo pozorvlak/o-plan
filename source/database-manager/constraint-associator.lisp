@@ -1,4 +1,4 @@
-;;;; File: constraint-associator.lsp
+;;;; File: constraint-associator.lisp
 ;;; Contains: Constraint associator
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1996

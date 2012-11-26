@@ -1,4 +1,4 @@
-;;;; File: analysis.lsp
+;;;; File: analysis.lisp
 ;;; Contains: TF compiler's domain analysis
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: July 1994
@@ -7,9 +7,9 @@
 
 (in-package :oplan-tf-compiler)
 
-;;; The analysis phase determines action and effect levels (see levels.lsp).
+;;; The analysis phase determines action and effect levels (see levels.lisp).
 ;;; It also constructs a number of tables as support for "domain services"
-;;; (see domain-services-package.lsp).
+;;; (see domain-services-package.lisp).
 
 ;;; The following mappings are needed by other parts of O-Plan:
 ;;;
@@ -175,7 +175,7 @@
   ;; schema -> effect names
   (dolist (s (domain-schemas domain))
     (setf (schema->effect-names s)
-	  (get-schema-effect-names s)))	;see levels.lsp
+	  (get-schema-effect-names s)))	;see levels.lisp
 
   ;; schema -> [directly reachable] schemas
   (setf (mapping schema successor-schemas)

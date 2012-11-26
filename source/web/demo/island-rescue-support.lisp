@@ -1,4 +1,4 @@
-;;;; File: island-rescue-support.lsp
+;;;; File: island-rescue-support.lisp
 ;;; Contains: Support code for the island-rescue Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994

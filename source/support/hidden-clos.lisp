@@ -1,4 +1,4 @@
-;;;; File: hidden-clos.lsp
+;;;; File: hidden-clos.lisp
 ;;; Contains: Support for CLOSification
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1999

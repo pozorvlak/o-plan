@@ -1,4 +1,4 @@
-;;;; File: KS-DOMAIN.lsp
+;;;; File: KS-DOMAIN.lisp
 ;;; Contains: Handles the loading of a new TF file.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Thu Jul 12 11:03:09 1990

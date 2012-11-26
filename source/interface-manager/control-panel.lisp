@@ -1,4 +1,4 @@
-;;;; File: control-panel.lsp
+;;;; File: control-panel.lisp
 ;;; Contains: The Lisp interface to the control panel (xuim)
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1993

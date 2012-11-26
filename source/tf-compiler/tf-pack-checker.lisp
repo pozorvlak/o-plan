@@ -1,4 +1,4 @@
-;;;; File: tf-pack-checker.lsp
+;;;; File: tf-pack-checker.lisp
 ;;; Contains: Procedure for checking the TF-LANGUAGE package
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992
@@ -11,7 +11,7 @@
 ;;; ought to be in the "TF" package.  It was used when constructing the
 ;;; package and can also be used to check it.
 
-(defparameter *parser-source* "parser.lsp") ;see the defsystem
+(defparameter *parser-source* "parser.lisp") ;see the defsystem
 
 (defun potential-tf-symbols ()
   (let ((syms '()))

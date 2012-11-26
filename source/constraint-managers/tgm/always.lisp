@@ -1,4 +1,4 @@
-;;;; File: always.lsp
+;;;; File: always.lisp
 ;;; Contains: Simple "always" store
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: August 1996

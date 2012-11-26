@@ -1,4 +1,4 @@
-;;;; File: run-lights.lsp
+;;;; File: run-lights.lisp
 ;;; Contains: Code for maintaining a window that shows the running processes
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 1993

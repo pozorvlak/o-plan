@@ -1,4 +1,4 @@
-;;;; File: http-server.lsp
+;;;; File: http-server.lisp
 ;;; Contains: CGI code for starting a server and handling requests
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1997
@@ -215,7 +215,7 @@
   (cgi-redirection-response
     (http-server-url server-port (concat-string demo-name "/" url-suffix))))
 
-(defun cgi-redirection-response (redirect-url) ;/\/ move to cgi-env.lsp
+(defun cgi-redirection-response (redirect-url) ;/\/ move to cgi-env.lisp
   (write-cgi-response-headers "text/html"
     (concat-string "Location: " redirect-url))
   (html-paragraph 
@@ -544,7 +544,7 @@
 ;;; since CGI is often configured in awkward ways).
 
 ;;; The commands "oplan -http" and "oplan -netscape" end up here
-;;; via the routines in http-mode.lsp.  "-netscape" is equivalent
+;;; via the routines in http-mode.lisp.  "-netscape" is equivalent
 ;;; to "-http -browser netscape".  If a browser name is specified
 ;;; and contains "netscape", we will fork a child process that
 ;;; tries to direct the browser to an appropriate URL.  It will
@@ -585,7 +585,7 @@
     (let* ((s (create-socket))
 	   (p (if (parameter-set-p :port)
 		  (progn (bind-socket s (server-port))
-			 (server-port)) 		;see server-mode.lsp
+			 (server-port)) 		;see server-mode.lisp
 		(bind-socket-to-a-free-port s))))
       (listen-socket s *http-max-waiting-requests*)
       ;; Early initialization - things to do before directing the browser
@@ -1158,7 +1158,7 @@
 
 ;;; It seems that the content-length can legitimately be zero, e.g.
 ;;; when an HTML form is submitted and all the parameters are unchecked
-;;; checkboxes.  In cgi-env.lsp, we arrange for the query-arg-string
+;;; checkboxes.  In cgi-env.lisp, we arrange for the query-arg-string
 ;;; to be "" in such cases, and we should probably do the same here,
 ;;; by making the http-request-body-content be "" (rather than nil).
 
