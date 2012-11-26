@@ -1,4 +1,4 @@
-;;;; File: kcl-conditions.lsp
+;;;; File: kcl-conditions.lisp
 ;;; Contains: "Fake" CL condition system for KCL
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1994

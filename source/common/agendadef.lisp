@@ -1,4 +1,4 @@
-;;;; File: agendadef.lsp
+;;;; File: agendadef.lisp
 ;;; Contains: Agenda entry definition.
 ;;; Author: Richard Kirby (rbk) and jeff Dalton
 ;;; Created: Sun Apr 15 21:01:23 1990

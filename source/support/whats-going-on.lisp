@@ -1,4 +1,4 @@
-;;;; File: whats-going-on.lsp
+;;;; File: whats-going-on.lisp
 ;;; Contains: A simple log of whats happening.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Mon Dec  9 11:01:49 1991

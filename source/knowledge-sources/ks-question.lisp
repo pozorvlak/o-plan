@@ -1,4 +1,4 @@
-;;;; File: ks-question.lsp
+;;;; File: ks-question.lisp
 ;;; Contains: A KS for receiving answers to questions
 ;;; Author: Jeff Dalton
 ;;; Created: July 1998

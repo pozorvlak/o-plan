@@ -1,4 +1,4 @@
-;;;; File: load-web-config.lsp
+;;;; File: load-web-config.lisp
 ;;; Contains: Support for Web / CGI demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: February 2000
@@ -7,7 +7,7 @@
 
 (in-package :oplan)
 
-(defparameter *web-config-name* "../lib/web-config.lsp")
+(defparameter *web-config-name* "../lib/web-config.lisp")
 
 (eval-when (load eval)
   (cond ((probe-file *web-config-name*)

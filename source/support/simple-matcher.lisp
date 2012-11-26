@@ -1,4 +1,4 @@
-;;;; File: simple-matcher.lsp
+;;;; File: simple-matcher.lisp
 ;;; Contains: A simple pattern-matcher
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 6 March 1995

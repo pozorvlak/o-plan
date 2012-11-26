@@ -1,4 +1,4 @@
-;;;; File: KS-COMPUTE.lsp
+;;;; File: KS-COMPUTE.lisp
 ;;; Contains: The COMPUTE KS
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: July 1994

@@ -1,4 +1,4 @@
-;;;; File: matrix-server-exec-support.lsp
+;;;; File: matrix-server-exec-support.lisp
 ;;; Contains: Support code for COA matrix Web demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: April 1998
@@ -1260,7 +1260,7 @@
 ;;; Some :fix entries are now on the agenda.
 
 ;;; This is our equivalent of plan-for-coa and ask-for-plan-for-coa
-;;; from coa-planning-support.lsp.
+;;; from coa-planning-support.lisp.
 
 ;;; We also have to put a :planner-finished on the agenda and
 ;;; adjust the coa's plan-status.

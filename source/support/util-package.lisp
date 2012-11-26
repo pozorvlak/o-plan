@@ -1,4 +1,4 @@
-;;;; File: util-package.lsp
+;;;; File: util-package.lisp
 ;;; Contains: Definition of the UTIL package.
 ;;; Author: Jeff Dalton
 ;;; Created: February 1993

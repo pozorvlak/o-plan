@@ -1,4 +1,4 @@
-;;;; File: time-window-cm.lsp
+;;;; File: time-window-cm.lisp
 ;;; Contains: The constraint manager for time windows
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

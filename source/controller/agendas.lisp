@@ -1,4 +1,4 @@
-;;;; File: agendas.lsp
+;;;; File: agendas.lisp
 ;;; Contains: The agent agenda and the Controller's side of the plan agenda
 ;;; Author: Jeff Dalton and Richard Kirby
 ;;; Created: April 1990

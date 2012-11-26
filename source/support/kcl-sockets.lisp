@@ -1,4 +1,4 @@
-;;;; File: kcl-sockets.lsp
+;;;; File: kcl-sockets.lisp
 ;;; Contains: KCL socket code
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 16 May 1997
@@ -35,7 +35,7 @@
 
 
 
-;;; Our very own error routine, based on the one in xfork.lsp.
+;;; Our very own error routine, based on the one in xfork.lisp.
 ;;; We try to print the appropriate Unix error, if one exists.
 
 #|

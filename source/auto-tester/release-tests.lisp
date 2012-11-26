@@ -1,4 +1,4 @@
-;;;; File: release-tests.lsp
+;;;; File: release-tests.lisp
 ;;; Contains: Release tests for automatic testing.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: July 1994

@@ -1,4 +1,4 @@
-;;;; File: triggers.lsp
+;;;; File: triggers.lisp
 ;;; Contains: Code for handling agenda entry triggering.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Thu Jul 11 13:57:25 1991

@@ -1,4 +1,4 @@
-;;;; File: KS-EXTRACT.lsp
+;;;; File: KS-EXTRACT.lisp
 ;;; Contains: For extracting a plan segment.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Tue Jul 10 11:40:46 1990

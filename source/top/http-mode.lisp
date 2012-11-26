@@ -1,4 +1,4 @@
-;;;; File: http-mode.lsp
+;;;; File: http-mode.lisp
 ;;; Contains: HTTP / Netscape mode
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1999

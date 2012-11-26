@@ -1,4 +1,4 @@
-;;;; File: t-frame.lsp
+;;;; File: t-frame.lisp
 ;;; Contains: Test framework
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

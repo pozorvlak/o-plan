@@ -1,4 +1,4 @@
-;;;; File: use-cm.lsp
+;;;; File: use-cm.lisp
 ;;; Contains: An example plug-in constraint-manager
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1996

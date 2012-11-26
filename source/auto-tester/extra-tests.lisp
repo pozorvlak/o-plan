@@ -1,4 +1,4 @@
-;;;; File: extra-tests.lsp
+;;;; File: extra-tests.lisp
 ;;; Contains: More tests for automatic testing.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Mon 3 July 1995

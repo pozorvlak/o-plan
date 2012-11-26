@@ -1,4 +1,4 @@
-;;;; File: obactor-psvs.lsp
+;;;; File: obactor-psvs.lisp
 ;;; Contains: PSV extensions to OBACTOR package.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Thu Jul 11 17:22:23 1991
@@ -485,7 +485,7 @@ being the variable alist name.
 
 ;; x is a symbol representing a variable. This returns a given actor for this
 ;; symbol for use by the matcher.
-;; /\/: Now in obase.lsp
+;; /\/: Now in obase.lisp
 #+:undef
 (defun make-given-actor (x)
   (list actorsym :*act (list 'given x)))

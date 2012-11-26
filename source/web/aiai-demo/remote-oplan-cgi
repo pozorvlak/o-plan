@@ -1,1 +1,37 @@
-oplan-cgi
+#!/bin/bash
+
+# This script is used to run O-Plan for non-interactive Web demos
+# It inserts some standard command-line arguments and can also set
+# a time limit.
+
+# The Lisp image to use can be specified as arg 1, but only if
+# it is one of the known names.  (/\/: It should be an error
+# if the name isn't known; instead it's ignored and treated as
+# as one of the later arguments.)
+
+# echo "Now in " `/bin/pwd`
+
+default_lisp=kcl-image
+
+if [ "$#" -ge 1 ]
+then
+    case $1 in
+                 -*) lisp=$default_lisp;;
+          kcl-image) lisp=$1; shift;;
+        lucid-image) lisp=$1; shift;;
+    esac
+else
+    lisp=$default_lisp
+fi
+
+# ulimit -Ht 300  # hard limit: 5 minutes  --  doesn't work on Suns /\/
+ulimit -St 180  # soft limit: 3 minutes
+
+# Real-time limit: 2 minutes, then SIGTERM; 20 seconds later, KILL.
+
+# (sleep 120; kill -TERM $$; sleep 20 kill -KILL $$)> /tmp/web-rt-limit-$$ &
+
+exec ./noplan ../lib/$lisp \
+     -eval '(setq *load-verbose* nil)' \
+     -load ../lib/web-config.lisp  \
+     -not -interactive -noinit -no -windows -subr "$@"

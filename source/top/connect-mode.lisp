@@ -1,4 +1,4 @@
-;;;; File: connect-mode.lsp
+;;;; File: connect-mode.lisp
 ;;; Contains: Connected-mode
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 31 March 1993

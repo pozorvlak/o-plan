@@ -1,4 +1,4 @@
-;;;; File: compute-cm.lsp
+;;;; File: compute-cm.lisp
 ;;; Contains: The manager for compute constraints
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996
@@ -13,7 +13,7 @@
 ;;; evaluated as a filter, but does not bind any variables, then it
 ;;; will be evaluated again later on.  We avoid a repeat eval in other
 ;;; cases by rewriting the condition to note that it has already been
-;;; evaluated -- see the use of :computed in expand-support.lsp.
+;;; evaluated -- see the use of :computed in expand-support.lisp.
 
 
 ;;;; The CM

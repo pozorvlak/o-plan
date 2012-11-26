@@ -1,4 +1,4 @@
-;;;; File: text-viewer.lsp
+;;;; File: text-viewer.lisp
 ;;; Contains: Text and File Plan / World viewer
 ;;; Authors: Jeff Dalton and Brian Drabble
 ;;; Created: Wed Mar  4 17:00:03 1992

@@ -1,4 +1,4 @@
-;;;; File: levels.lsp
+;;;; File: levels.lisp
 ;;; Contains: Action / effect level algorithms and analysis
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Thu Sep 30 15:49:01 1993 by Jeff Dalton

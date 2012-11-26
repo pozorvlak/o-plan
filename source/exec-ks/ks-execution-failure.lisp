@@ -1,4 +1,4 @@
-;;;; File: KS-EXECUTION-FAILURE.lsp
+;;;; File: KS-EXECUTION-FAILURE.lisp
 ;;; Contains: KS that deals with an execution failure
 ;;; Author: Jeff Dalton
 ;;; Created: Sat 18 February 1995

@@ -1,4 +1,4 @@
-;;;; File: KS-EXECUTE.lsp
+;;;; File: KS-EXECUTE.lisp
 ;;; Contains: KS that starts the execution of a plan.
 ;;; Author: Jeff Dalton
 ;;; Created: Sat 18 Feb 1995
@@ -112,7 +112,7 @@
 ;;; possible in a "single-process" O-Plan.  It should eventually be
 ;;; moved to a different file.  /\/
 
-;;; See also database-manager/exec-support.lsp.
+;;; See also database-manager/exec-support.lisp.
 
 (import-struct 'oplan-schema-defs:pv-pair)
 
@@ -697,7 +697,7 @@
 
 #+:undef
 (defun make-achieve-from-gost (gost-entry)
-  ;; /\/: Same as make-cond-from-gost in KS-FIX.lsp
+  ;; /\/: Same as make-cond-from-gost in KS-FIX.lisp
   (list 'achievable
 	(tgm-gost-pattern gost-entry)
 	(tgm-gost-value gost-entry)

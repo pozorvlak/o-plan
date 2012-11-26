@@ -1,4 +1,4 @@
-;;;; File: kill-runaway-process.lsp
+;;;; File: kill-runaway-process.lisp
 ;;; Contains: CGI-invoked code to kill a runaway O-Plan
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1998

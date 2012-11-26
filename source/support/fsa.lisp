@@ -1,4 +1,4 @@
-;;;; File: fsa.lsp
+;;;; File: fsa.lisp
 ;;; Contains: FSA-like state transition handlers
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: April 1993

@@ -1,4 +1,4 @@
-;;;; File: KS-USER.lsp
+;;;; File: KS-USER.lisp
 ;;; Contains: A basic KS-USER.
 ;;; Author: Jeff Dalton
 ;;; Created: Wed Jun  3 07:36:59 1992

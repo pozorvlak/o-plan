@@ -1,4 +1,4 @@
-;;;; File: gpdt3-for-dera-matrix-support.lsp
+;;;; File: gpdt3-for-dera-matrix-support.lisp
 ;;; Contains: Support code for a "go places and do things" Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1999

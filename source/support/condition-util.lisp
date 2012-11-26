@@ -1,4 +1,4 @@
-;;;; File: condition-util.lsp
+;;;; File: condition-util.lisp
 ;;; Contains: Some useful condition types, etc.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: December 1996

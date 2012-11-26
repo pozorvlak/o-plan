@@ -1,4 +1,4 @@
-;;;; File: tgm.lsp
+;;;; File: tgm.lisp
 ;;; Contains: TOME and GOST management routines.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Fri Jun  5 16:22:12 1992

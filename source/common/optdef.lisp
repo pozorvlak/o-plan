@@ -1,4 +1,4 @@
-;;;; File: optdef.lsp
+;;;; File: optdef.lisp
 ;;; Contains: Definition of the option structure
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

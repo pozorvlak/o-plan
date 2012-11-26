@@ -1,4 +1,4 @@
-;;;; File: parser-tests.lsp
+;;;; File: parser-tests.lisp
 ;;; Contains: Tests for the TF scanner and parser
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

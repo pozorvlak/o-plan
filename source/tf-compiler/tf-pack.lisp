@@ -1,4 +1,4 @@
-;;;; File: tf-pack.lsp
+;;;; File: tf-pack.lisp
 ;;; Contains: Package definition for the TF language
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

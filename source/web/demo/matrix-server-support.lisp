@@ -1,4 +1,4 @@
-;;;; File: matrix-server-support.lsp
+;;;; File: matrix-server-support.lisp
 ;;; Contains: Support code for COA matrix Web demos
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: April 1998
@@ -849,7 +849,7 @@
 
 
 (defun write-action-level-table ()
-  ;; See report-level-assignments in tf-compiler/levels.lsp.
+  ;; See report-level-assignments in tf-compiler/levels.lisp.
   (let* ((table (mapping action-name level))
 	 (names (hash-table-keys table))
 	 (levels (group-by-numeric-key names (hash-table->function table))))
@@ -871,7 +871,7 @@
 		       (canonical-description-order level-members))))))))
 
 (defun write-unpacked-action-level-table ()
-  ;; See report-level-assignments in tf-compiler/levels.lsp.
+  ;; See report-level-assignments in tf-compiler/levels.lisp.
   (let* ((table (mapping action-name level))
 	 (names (hash-table-keys table))
 	 (levels (group-by-numeric-key names (hash-table->function table))))

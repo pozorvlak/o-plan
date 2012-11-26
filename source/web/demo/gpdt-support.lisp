@@ -1,4 +1,4 @@
-;;;; File: gpdt-support.lsp
+;;;; File: gpdt-support.lisp
 ;;; Contains: Support code for the "go places and do things" Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1997

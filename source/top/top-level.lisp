@@ -1,4 +1,4 @@
-;;;; File: top-level.lsp
+;;;; File: top-level.lisp
 ;;; Contains: O-Plan top-level 
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1993

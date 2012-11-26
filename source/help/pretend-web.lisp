@@ -1,4 +1,4 @@
-;;;; File: pretend-web.lsp
+;;;; File: pretend-web.lisp
 ;;; Contains: Code for running Web demos without the Web
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994

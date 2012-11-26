@@ -1,4 +1,4 @@
-;;;; File: psvs.lsp
+;;;; File: psvs.lisp
 ;;; Contains: Code for handling Plan State Variables.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Thu Jul 11 16:09:29 1991

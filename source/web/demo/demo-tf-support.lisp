@@ -1,4 +1,4 @@
-;;;; File: demo-tf-support.lsp
+;;;; File: demo-tf-support.lisp
 ;;; Contains: Support code for Web demos using standard demo TF
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994

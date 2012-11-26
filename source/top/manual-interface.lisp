@@ -1,4 +1,4 @@
-;;;; File: manual-interface.lsp
+;;;; File: manual-interface.lisp
 ;;; Contains: Manual interface to single-process O-Plan
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994
@@ -57,7 +57,7 @@
 ;;; Module tests
 
 (defun run-module-tests (&optional (module :all-tests))
-  (load "test-systems.lsp")
+  (load "test-systems.lisp")
   (load-test-modules)
   (funcall (read-from-string "RUN-ALL-TESTS") module))
 

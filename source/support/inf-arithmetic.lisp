@@ -1,4 +1,4 @@
-;;;; File: inf-arithmetic.lsp
+;;;; File: inf-arithmetic.lisp
 ;;; Contains: functions for arithmetic with infinity
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: June 1994

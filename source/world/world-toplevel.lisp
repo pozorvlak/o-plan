@@ -1,11 +1,11 @@
-;;;; File: world-toplevel.lsp
+;;;; File: world-toplevel.lisp
 ;;; Contains: The world simulation top-level
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Tue Aug 03 1993
 ;;; Updated: Tue Mar 23 02:09:46 1999 by Jeff Dalton
 ;;; Copyright: (c) 1992, 1993, AIAI, University of Edinburgh
 
-;;; See world-services.lsp for a description of the World process
+;;; See world-services.lisp for a description of the World process
 ;;; and how it works.
 
 ;;; This file defines the World process top-level for the version of

@@ -1,4 +1,4 @@
-;;;; File: sc-rum.lsp
+;;;; File: sc-rum.lisp
 ;;; Contains: Resource Utilization Manager for strictly consumable resources
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 10 June 1993

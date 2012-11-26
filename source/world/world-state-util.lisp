@@ -1,7 +1,7 @@
-;;;; File: world-state-util.lsp
+;;;; File: world-state-util.lisp
 ;;; Contains: 
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
-;;; Created: June 1999, from world-services.lsp
+;;; Created: June 1999, from world-services.lisp
 ;;; Updated: Wed Sep  8 01:11:18 1999 by Jeff Dalton
 ;;; Copyright: (c) 1993, 1994, 1999, AIAI, University of Edinburgh
 

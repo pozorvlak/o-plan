@@ -1,4 +1,4 @@
-;;;; File: sim-clock-package.lsp
+;;;; File: sim-clock-package.lisp
 ;;; Contains: Package definition for simulated-time clocks.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994

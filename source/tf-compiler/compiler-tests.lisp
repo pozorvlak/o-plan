@@ -1,4 +1,4 @@
-;;;; File: compiler-tests.lsp
+;;;; File: compiler-tests.lisp
 ;;; Contains: Definition of the TF-compiler test module
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: July 1994

@@ -1,4 +1,4 @@
-;;;; File: any-tf-matrix-support.lsp
+;;;; File: any-tf-matrix-support.lisp
 ;;; Contains: Support code for generic matrix demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: April 1999

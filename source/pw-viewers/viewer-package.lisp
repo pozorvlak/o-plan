@@ -1,4 +1,4 @@
-;;;; File: viewer-package.lsp
+;;;; File: viewer-package.lisp
 ;;; Contains: Plan/World viewer package definition
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1996

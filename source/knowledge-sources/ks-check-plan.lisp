@@ -1,4 +1,4 @@
-;;;; File: KS-CHECK-PLAN.lsp
+;;;; File: KS-CHECK-PLAN.lisp
 ;;; Contains: The KS for requesting a plan check.
 ;;; Author: Jeff Dalton
 ;;; Created: Thu Jul 29 19:04:43 1993 by Jeff Dalton

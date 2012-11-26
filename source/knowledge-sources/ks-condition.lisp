@@ -1,4 +1,4 @@
-;;;; File: KS-CONDITION.lsp
+;;;; File: KS-CONDITION.lisp
 ;;; Contains: Check on conditions that need tying up.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Thu Jul 11 11:56:35 1991

@@ -1,4 +1,4 @@
-;;;; File: nodes.lsp
+;;;; File: nodes.lisp
 ;;; Contains: Definition of nodes and node-ends
 ;;; Author: Jeff Dalton
 ;;; Created: 02 March 1994
@@ -97,7 +97,7 @@
 
 ;;; /\/: The "plan-" prefix is chiefly to distinguish names defined here
 ;;; from names defined elsewhere.  For instance, the TF compiler defines
-;;; a "node" struct, and schemadef.lsp defines some "node-" accessors.
+;;; a "node" struct, and schemadef.lisp defines some "node-" accessors.
 ;;; Perhaps eventually this file should own "node", but at present that's
 ;;; not the case.  Similar problems arise for "node-end", which sometimes
 ;;; means a node-end tag such as (node-1 :end).
@@ -148,7 +148,7 @@
 
 ;;; N.B. Must be comparable by EQUAL.  (/\/ really?)
 
-;;; /\/: Must match the node-end struct in schema-defs.lsp.
+;;; /\/: Must match the node-end struct in schema-defs.lisp.
 
 (defstruct (end-tag (:conc-name etag-)
 		    (:constructor make-etag)

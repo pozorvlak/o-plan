@@ -1,4 +1,4 @@
-;;;; File: xml-viewer.lsp
+;;;; File: xml-viewer.lisp
 ;;; Contains: A way to view a plan as XML
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: April 1999

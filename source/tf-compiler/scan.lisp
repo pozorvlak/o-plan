@@ -1,4 +1,4 @@
-;;;; File: scan.lsp
+;;;; File: scan.lisp
 ;;; Contains: TF scanner
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: March 1992

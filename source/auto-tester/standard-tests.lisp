@@ -1,4 +1,4 @@
-;;;; File: standard-tests.lsp
+;;;; File: standard-tests.lisp
 ;;; Contains: Standard tests for automatic testing.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 26 May 1993

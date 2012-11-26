@@ -1,1 +1,216 @@
-../demo/output-formats.html
+<TITLE>O-Plan Web demonstration outputs</TITLE>
+<H1>O-Plan Web demonstration outputs</H1>
+
+<P>
+A range of different outputs can be produced by the O-Plan Web demos.
+This document provides a brief explanation.
+
+<P>Contents:
+
+  <OL>
+  <LI> <A HREF="#O-Plan">O-Plan, tasks, and plans</A>
+  <LI> <A HREF="#demo">A demonstration</A>
+  <LI> <A HREF="#formats">Output formats</A>
+  </OL>
+
+<H2><A NAME="O-Plan">O-Plan, tasks, and plans</A></H2>
+
+First, something about what O-Plan does.
+The <A HREF="http://www.aiai.ed.ac.uk/~oplan/">O-Plan home page</A>
+may also be consulted.
+
+<H3>Tasks and plans</H3>
+
+<P>
+O-Plan is given a <I>task</I>, and it produces a <I>plan</I>.
+The task specifies <I>actions</I> to be carried out or <I>conditions</I>
+to be achieved.  Since conditions are achieved by actions that
+have the required effects, both aspects of the task result in
+actions being added to the plan.
+
+<P>
+The plans that O-Plan produces are hierarchical, partially-ordered
+networks of actions.  They're hierarchical because some actions are
+broken down (<I>expanded</I>) into subactions.  They're partially
+ordered because actions don't always have to occur in sequence.
+Sequencing is added only when it's needed.  For instance, if I'm
+going to go to work, I have to eat breakfast and get dressed first;
+but I could eat breakfast and get dressed in either order, and I
+might eat breakfast and read the paper at the same time.  
+
+<P>
+Note that it's only the latter case - actions that could be happening
+at the same time - that can remain unordered.  For actions that could
+happen in either order, a valid plan will have them in one order or
+the other; but both plans will be possible.
+
+<H3>Conditions and effects</H3>
+
+An action has conditions and effects.  Conditions and effects have
+the form
+
+<PRE>
+   <I>pattern = value</I>
+</PRE>
+
+for instance
+
+<PRE>
+   {on a b} = true
+   {size a} = 10
+   {distance_between a b} = 3
+   {location jeff} = work
+   {breakfast_eaten} = true
+</PRE>
+
+<P> 
+If we imagine the actions of a plan taking place in time, then at
+any given time the <I>state of the world</I> at that time can be
+described as a list of <I>pattern = value</I> pairs, or <I>p-v-pairs</I>.
+If <I>p=v</I> is such a pair, we might say <I>p</I> has value <I>v</I>
+or perhaps that <I>p=v</I> is true.  (Don't confuse this with the
+case where <I>v</I> is <TT>true</TT>.)  The pairs are sometimes 
+called <I>facts</I>.
+
+<P>
+An action's conditions describe what values certain patterns must
+have before the action can occur.  An action's effects describe
+changes in pattern values.
+
+<P> 
+Every condition in the plan must have at least one matching effect
+that (a) occurs at an earlier point in time, and (b) cannot be
+canceled by any intervening effect.  This ensures that the required
+condition is true.  When a condition depends on an effect in this
+way, the dependency is recorded in a table known as the GOST
+(for GOal STructure).
+
+<P>
+O-Plan does not explicitly track the state of the world.  Instead,
+it records effects and when they occur in another table called the
+TOME (Table Of Multiple Effects).  From this, and from information
+about when actions take place, it's possible to determine at least
+part of the state of the world at a given time, <I>t</I>.  It may
+not be possible to determine the entire state at <I>t</I>, because
+it may not be known whether certain effects must happen before
+<I>t</I> or not.
+
+<P>
+For instance, suppose I'm traveling to Edinburgh on a train that
+will arrive between 10 and 11 at night and that we're using effects
+to record my position.  (Forget about whether we could actually
+know the arrival time that precisely, given all the things that can 
+go wrong.)  We can represent this in a plan.  The travel-to-Edinburgh
+action would have an end-point that is listed as being between 10 and
+11, and there'd be an effect at that point such as
+
+<PRE>
+  {location jeff} = Edinburgh
+</PRE>
+
+Now supppse we ask for the state of the world at 10:30.  Am I
+in Edinburgh or not?  The answer is that we can't say, because
+there's nothing in the plan that tells us.  In the plan, I
+<I>could</I> be in Edinburgh by 10:30, but I am not <I>definitely</I>
+in Edinburgh until 11.  
+
+<!--
+Therefore, if you ask for the state of the world at 10:30, that
+state will not include {location jeff} = Edinburgh.  Presumably
+it won't include include {location jeff} = London or = train
+either.  Is that right?  Have to test...
+-->
+
+
+<H3>Time points and node-ends</H3>
+
+It's time to say more precisely how actions, points in time,
+and so forth, are represented in a plan.  We've already said that
+a plan is a network of actions, and we've mentioned some data
+structures, the TOME and GOST.  Now we're going to say more about
+the network, and about time.  Our aim is to reach a point where
+we can present a worked-out example.
+
+
+<! -- 
+/\/: time points, dummy nodes, state of world not always completely
+clear because not known whether certain actions have definitely
+started or finished.
+-->
+
+
+<H2><A NAME="demo">A demonstration</A></H2>
+
+
+
+<A HREF="../show-tf.cgi/get-to-work.tf">Definitions</A>
+
+<P>
+<A HREF="../get-to-work-examples.cgi">
+getting to work
+</A>
+
+
+
+<H2><A NAME="formats">Output formats</A></H2>
+
+<H3>Postscript graph</H3>
+
+<IMG SRC="image/get-to-work-graph.gif">
+
+<P>A PostScript graph of the nodes and links in the plan.  In order to
+simplify the graph, dummy nodes that can be removed without increasing
+the number of links have been removed, as have redundant links.
+However, all of the necessary order-relationships are preserved.
+
+<P>When possible, both ends of a node are shown as a single block.
+This happens when links do not enter or leave "between the ends", i.e.
+when links go only <EM>to</EM> the <EM>begin</EM>-half
+of the node or <EM>from</EM> the <EM>end</EM>-half.
+
+<H3>Narrative</H3>
+
+One possible execution trace of the plan.
+
+<H3>KP trace</H3>
+
+The output produced by the KP-1 Knowledge Platform while the planner
+is constructing a plan.  It shows each the planner followed when
+finding the plan.  (This is not available in all demos.)
+
+<P>
+Requesting a KP trace will substantially slow the planner.
+
+<H3>World-1</H3>
+
+The state of the world, or <I>world view</I>, at the end of node-1
+<I>as seen by conditions</I>.  Remember that the conditions at a given
+point (node-end) are infinitesimally before the effects at the same
+point.  So this world-view does not show the effects that happen at
+the end of node-1.  All you'll normally see are the "always" facts.
+However, some tasks, such as those in blocks-1, place their initial
+facts as effects at the beginning of node-1, and those effects
+<I>will</I> be seen.
+
+<P>
+The format is:
+<PRE>
+  world
+    pattern_1 = value_1
+    pattern_2 = value_2
+    ...
+  end_world
+</PRE>
+
+<H3>World-2</H3>
+
+The world view at the end of node-2.  By convention, this is the final
+state after the completion of the plan, and although difficulties
+analogous to those of World-1 are possible in theory, they
+never actually arise.  The format is the same as that of World-1.
+
+<HR>
+
+<Address>
+<A HREF="http://www.aiai.ed.ac.uk/~jeff/">Jeff Dalton</A>
+</Address>

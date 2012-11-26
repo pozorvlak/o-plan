@@ -1,4 +1,4 @@
-;;;; File: world-compiler.lsp
+;;;; File: world-compiler.lisp
 ;;; Contains: The means of compiling worlds.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: 23 June 1995
@@ -10,7 +10,7 @@
 ;;;; Compiling world definitions
 ;;;
 ;;; [Note that there are many similarities to how world definitions are
-;;; loaded.  See world-loader.lsp.]
+;;; loaded.  See world-loader.lisp.]
 ;;;
 ;;; Relevant parameters:
 ;;;
@@ -28,13 +28,13 @@
 ;;; A world definition is a directory containing the files that define
 ;;; the world.  The definitions directory (e.g. lib/worlds in :world-dir)
 ;;; is therefore a directory of directories.  Each world directory W
-;;; should contain a Lisp source file named W-system.lsp, and that file
+;;; should contain a Lisp source file named W-system.lisp, and that file
 ;;; should contain a defsystem for W-World in the WORLD package.
 ;;;
-;;; A world is compiled by loading W-system.lsp and then evaluating
+;;; A world is compiled by loading W-system.lisp and then evaluating
 ;;; (compile-system 'W-world).
 ;;;
-;;; When W-system.lsp is loaded, simple-defsystem:*system-base-directory*
+;;; When W-system.lisp is loaded, simple-defsystem:*system-base-directory*
 ;;; refers to the W directory, so the system definions should specify
 ;;; directories relative to W and w/o mentioning W itself.
 ;;;
@@ -47,7 +47,7 @@
   (let* ((world-dir
 	  (concat-string (world-definitions-dir) "/" world-name))
 	 (system-file
-	  (concat-name world-dir "/" world-name "-system.lsp"))
+	  (concat-name world-dir "/" world-name "-system.lisp"))
 	 (stream
 	  (open system-file :direction :input :if-does-not-exist nil)))
     (if (null stream)

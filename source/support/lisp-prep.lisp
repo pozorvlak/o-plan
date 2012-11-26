@@ -1,4 +1,4 @@
-;;;; File: lisp-prep.lsp
+;;;; File: lisp-prep.lisp
 ;;; Contains: Lisp-implemmentation-specific prep code
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1994

@@ -1,4 +1,4 @@
-;;;; File: atm.lsp
+;;;; File: atm.lisp
 ;;; Contains: Agenda Table Manager.
 ;;; Author: Richard Kirby (rbk) and Jeff Dalton
 ;;; Created: Wed Nov 27 18:38:45 1991
@@ -159,7 +159,7 @@
 	    (remove-1-eq ag (ctxt-symbol-value '*triggered-agenda*)))
       ag-id)))
 
-(defun find-agenda-entry (id agenda)	;/\/: move to agendadef.lsp
+(defun find-agenda-entry (id agenda)	;/\/: move to agendadef.lisp
   (declare (fixnum id))
   (dolist (ag agenda)
     (when (fix= id (ag-id ag))

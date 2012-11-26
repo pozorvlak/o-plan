@@ -1,4 +1,4 @@
-;;;; File: domain.lsp
+;;;; File: domain.lisp
 ;;; Contains: The DM's interface to the TF compiler etc.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

@@ -1,4 +1,4 @@
-;;;; File: context-tests.lsp
+;;;; File: context-tests.lisp
 ;;; Contains: Tests of the context mechanism
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1996

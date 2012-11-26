@@ -1,4 +1,4 @@
-;;;; File: lucid-xwindowio.lsp
+;;;; File: lucid-xwindowio.lisp
 ;;; Contains: LCL code for using X windows for IO.
 ;;; Author: Jeff Dalton
 ;;; Created: February 1993

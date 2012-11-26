@@ -1,4 +1,4 @@
-;;;; File: tests-to-html.lsp
+;;;; File: tests-to-html.lisp
 ;;; Contains: Procedures to write HTML from test sequences
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: October 1994

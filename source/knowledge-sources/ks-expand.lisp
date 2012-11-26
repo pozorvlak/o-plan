@@ -1,4 +1,4 @@
-;;;; File: KS-EXPAND.lsp
+;;;; File: KS-EXPAND.lisp
 ;;; Contains: The EXPAND KS.
 ;;; Author: Richard Kirby (rbk)
 ;;; Created: Fri Jun 22 07:58:42 1990

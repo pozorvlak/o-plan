@@ -1,4 +1,4 @@
-;;;; File: cto-cm.lsp
+;;;; File: cto-cm.lisp
 ;;; Contains: The "consume_the_only" constraint-manager
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: January 1997

@@ -1,4 +1,4 @@
-;;;; File: KS-CONTINUE-EXECUTION.lsp
+;;;; File: KS-CONTINUE-EXECUTION.lisp
 ;;; Contains: KS that continues execution after plan fixes.
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Wed 22 February 1995

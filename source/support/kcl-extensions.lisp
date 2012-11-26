@@ -1,4 +1,4 @@
-;;;; File: kcl-extensions.lsp
+;;;; File: kcl-extensions.lisp
 ;;; Contains: An attempt to make KCL more up to date
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: Sun Nov 14 1993

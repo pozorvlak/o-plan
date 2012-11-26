@@ -1,4 +1,4 @@
-;;;; File: plan-evaluator.lsp
+;;;; File: plan-evaluator.lisp
 ;;; Contains: Simple plan evaluator
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: September 1995

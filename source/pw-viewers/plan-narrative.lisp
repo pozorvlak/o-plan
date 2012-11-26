@@ -1,4 +1,4 @@
-;;;; File: plan-narrative.lsp
+;;;; File: plan-narrative.lisp
 ;;; Contains: A way to view a plan as a narrative
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: November 1994

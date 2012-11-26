@@ -1,4 +1,4 @@
-;;;; File: pacifica-coas-support.lsp
+;;;; File: pacifica-coas-support.lisp
 ;;; Contains: Support code for the Pacifica COA matrix Web demo
 ;;; Author: Jeff Dalton <J.Dalton@ed.ac.uk>
 ;;; Created: May 1997
