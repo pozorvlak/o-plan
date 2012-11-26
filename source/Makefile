@@ -26,7 +26,7 @@ KCL     = gcl-1.1
 GCL     = gcl-2.2.2
 
 # This is the default lisp for the "generic" make targets:
-Lisp = ${Allegro}
+Lisp = ${GCL}
 
 # Here are some default image names:
 Lucid-image   = lucid-image
