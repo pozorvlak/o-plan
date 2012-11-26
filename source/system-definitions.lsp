@@ -910,8 +910,6 @@
 				 external-support ;for XP
                                  #-no-c-code
 				 kcl-unix-support))
-  (kcl-clos
-    :compiler nil)
   (kcl-extensions
     :defines (:macros))
   (kcl-conditions
